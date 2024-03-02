@@ -3,6 +3,17 @@ layout: ti-post
 title: TI League
 ---
 
-Setting out to paint the miniatures of War of the Ring is a task that isn't necessarily rewarding, but it gets done anyway. The appeal of using muster dice to bring painted units on to the board was jsut too strong.
+| Player | Points | Games Played | Wins |
+| :----- | :----: | :----------: | :--: |
+| Ali    |   3    |      1       |  1   |
+| Ashlee |   1    |      1       |  0   |
+| James  |   0    |      1       |  0   |
+| Jacob  |   0    |      1       |  0   |
+| Ross   |   0    |      1       |  0   |
+| Tim    |   0    |      1       |  0   |
 
-![Image Alt Text](/images/war-of-the-ring-board-game-board.webp){: .shadow}
+
+Most Recent game 24/02/2024
+Last updated 02/03/2024
+
+
