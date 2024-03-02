@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: ti-post
 title: What it looks like to paint War of the Ring
 ---
 
