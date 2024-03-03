@@ -3,7 +3,6 @@ layout: ti-default
 title: TI League
 permalink: /ti-league/
 ---
-![This is an alt text.](/images/TI-logo.png)
 
 | Player | Points | Games Played | Wins |         Faction Last Played |
 | :----- | :----: | :----------: | :--: | :-------------------------  |
@@ -13,6 +12,7 @@ permalink: /ti-league/
 | Jacob  |   0    |      1       |  0   |          The Yssaril Tribes |
 | Ross   |   0    |      1       |  0   |        The Mentak Coalition |
 | Tim    |   0    |      1       |  0   | The Universities of Jol-Nar |
+
 
 
 Most Recent game 24/02/2024

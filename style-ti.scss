@@ -110,6 +110,10 @@ th, td {
   padding: 8px;
 }
 
+tr {
+  color: black;
+}
+
 th {
   background-color: #054daa;
   color: #ddd;
@@ -119,6 +123,21 @@ tr:nth-child(even) {background-color: #9aa1b1;}
 tr:nth-child(even):hover {background-color: #dac617;}
 tr:nth-child(odd) {background-color: #6e8fd6;}
 tr:nth-child(odd):hover {background-color: #dac617;}
+
+#layout_table {
+  background-color: transparent;
+  border: transparent;
+  border-collapse: collapse;
+}
+
+#league-key-th {
+  background-color: transparent
+}
+
+#league-key {
+  width: 70%;
+  background-color: transparent;
+}
 
 em, i {
   font-style: italic;

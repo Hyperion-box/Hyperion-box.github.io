@@ -38,10 +38,38 @@
         </header>
       </div>
     </div>
+    <img src="/images/TI-logo.png">
 
-    <div id="main" role="main" class="container">
-      {{ content }}
-    </div>
+    <table id="layout_table">
+      <tr id="layout_table">
+        <th id="layout_table">
+        <div id="main" role="main" class="container">
+         {{ content }}
+        </div>
+      </th>
+      <th id="league-key-th">
+        <table id="league-key">
+          <tr>
+            <th>VPs Needed</th>
+            <th>League Points</th>
+          </tr>
+          <tr>
+            <td>10 VPs (or Win)</td>
+            <td>3PTs</td>
+          </tr>
+          <tr>
+            <td>9 VPs (or Win-1)</td>
+            <td>2PTs</td>
+          </tr>
+          <tr>
+            <td>8 VPs (or Win-2)</td>
+            <td>1PT</td>
+          </tr>
+        </table>
+        
+      </th>
+      </tr>
+  </table>
 
 
     {% include analytics.html %}
