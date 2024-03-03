@@ -66,10 +66,11 @@ h4 {
 
 p {
   margin: 15px 0;
+  
 }
 
 a {
-  color: $blue;
+  color: antiquewhite;
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
@@ -215,6 +216,7 @@ nav {
   margin-top: 23px; // @TODO: Vertically middle align
   font-family: $helveticaNeue;
   font-size: 18px;
+ 
 
   @include mobile {
     float: none;
