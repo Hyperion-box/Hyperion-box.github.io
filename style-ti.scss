@@ -69,7 +69,7 @@ p {
 }
 
 a {
-  color: $blue;
+  color: antiquewhite;
   text-decoration: none;
 	cursor: pointer;
   &:hover, &:active {
@@ -110,10 +110,6 @@ th, td {
   padding: 8px;
 }
 
-tr {
-  color: black;
-}
-
 th {
   background-color: #054daa;
   color: #ddd;
@@ -124,19 +120,8 @@ tr:nth-child(even):hover {background-color: #dac617;}
 tr:nth-child(odd) {background-color: #6e8fd6;}
 tr:nth-child(odd):hover {background-color: #dac617;}
 
-#layout_table {
-  background-color: transparent;
-  border: transparent;
-  border-collapse: collapse;
-}
-
-#league-key-th {
-  background-color: transparent
-}
-
-#league-key {
-  width: 70%;
-  background-color: transparent;
+#faction-table {
+  background-color: #aa0505;
 }
 
 em, i {
@@ -236,9 +221,10 @@ img {
   }
 }
 
+
 .site-name {
   margin: 0;
-  color: $darkGray;
+  color: antiquewhite;
   cursor: pointer;
   font-family: $helveticaNeue;
   font-weight: 300;
@@ -248,7 +234,7 @@ img {
 
 .site-description {
   margin: -5px 0 0 0;
-  color: $gray;
+  color: antiquewhite;
   font-size: 16px;
 
   @include mobile {
@@ -271,7 +257,7 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $darkGray;
+    color: antiquewhite;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
