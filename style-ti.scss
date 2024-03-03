@@ -108,6 +108,7 @@ table {
 th, td {
   text-align: left;
   padding: 8px;
+  vertical-align: middle;
 }
 
 th {
@@ -124,6 +125,10 @@ tr:nth-child(odd):hover {background-color: #dac617;}
   background-color: #aa0505;
 }
 
+#emperor {
+  color: #dac617;
+}
+
 em, i {
   font-style: italic;
 }
@@ -132,12 +137,16 @@ strong, b {
   font-weight: bold;
 }
 
-img {
+#ti-logo {
   max-width: 99%;
   display: block;
   margin-left: auto;
   margin-right: auto;
   height: 200px;
+  position: center;
+}
+
+img {
   position: center;
 }
 
