@@ -16,6 +16,8 @@ permalink: /ti-league/
 | Ross   |   0    |      1       |  0   |        The Mentak Coalition |
 | Tim    |   0    |      1       |  0   | The Universities of Jol-Nar |
 
+<p id='emperor'>Current Emperor: Ali with The Clan of Saar</p>
+
 ___
 
 | VPs Needed         | League Points | 

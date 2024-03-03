@@ -8,6 +8,10 @@ name: The TI League
 # Short bio or description (displayed in the header)
 description: Updates on TI games
 
+#current emperor
+emperor: "Ali"
+emperor-faction: "The Clan of Saar"
+
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: 
 
