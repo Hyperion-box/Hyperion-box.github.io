@@ -1,10 +1,21 @@
 ---
-layout: ti-default
-title: TI League
+layout: post
+title: March Game - St Patrick's
+image: /images/march-game.png
+preview: 
+categories: game
+date: 04/03/2024
 ---
+Details and reference for upcoming game.
 
-When I'm better at this then I might add stuff after games here for updates.
+<img src="/images/march-game.png" style="width: 100%">
 
-Most Recent game 24/02/2024
+| Contenders |  Faction  |
+| ---------- | :-------: |
+| Ashlee     |             |
+| Jacob      |          |
+| Ross       |  |
+| Tim        |           |
+| William L  |           |
 
-Last updated 02/03/2024
+Last updated 04/03/2024

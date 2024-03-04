@@ -5,18 +5,37 @@ carousels:
     - image: /images/war-of-the-ring-board-game-board.webp
     - image: /images/jekyll-logo.png -->
 ---
-
+<section class="feed">
 <div class="posts">
   {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
+  <article class="page">
+    <div class="feed-card">
+      <div class="card-image">
+          {%- assign postImage = post.image | relative_url -%}
+          {%- if postImage -%}
+              <img src="{{postImage}}" alt="" class="featured-image">
+          {%- else -%}
+              {%- assign postImage = "/images/jekyll-logo.png" | relative_url -%}
+              <img src="{{postImage}}" alt="" class="featured-image">
+          {%- endif -%}
       </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
+      <div class="card-content">
+          <div class="card-title">
+              {%- assign postTitle = post.title | escape -%}
+              {%- assign postUrl = post.url | relative_url -%}
+              <span class="title"><a href="{{postUrl}}" class="post-link">{{post.title}}</a></span>
+          </div>
+          <div class="excerpt">
+              {%- assign postExcerpt = post.excerpt | strip_html | escape -%}
+              <span class="excerpt">{{postExcerpt}}</span>
+          </div>
+          <div class="card-date">
+              {%- assign postDate = post.date | date: "%d %b, %Y"-%}
+              <span class="date">{{postDate}}</span>
+          </div>
+      </div>
+  </div>
+</article>
   {% endfor %}
 </div>
+</section>

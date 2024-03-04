@@ -15,6 +15,9 @@ emperor-faction: "The Clan of Saar"
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: 
 
+#Only get the first sentence for excerpt
+excerpt_separator: .
+
 #
 # Flags below are optional
 #
