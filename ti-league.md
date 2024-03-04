@@ -3,7 +3,7 @@ layout: ti-default
 title: TI League
 permalink: /ti-league/
 ---
-![This is an alt text.](/images/TI-logo.png)
+<img src="/images/TI-logo.png" id="ti-logo">
 
 
 
