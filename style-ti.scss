@@ -7,6 +7,7 @@
 
 @import "reset";
 @import "variables";
+@import "feed";
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -148,6 +149,15 @@ strong, b {
 
 img {
   position: center;
+}
+
+article {
+  background-color: #ddd;
+  border-radius: 25px;
+  border: 5px solid #0b0c55;
+  padding: 20px;
+  width: 100%;
+  height: auto;
 }
 
 // Fixes images in popup boxes from Google Translate

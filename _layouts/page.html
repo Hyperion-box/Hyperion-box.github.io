@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: ti-default
 ---
 
 <article class="page">
@@ -9,4 +9,21 @@ layout: default
   <div class="entry">
     {{ content }}
   </div>
+
+  {%- assign feedType = page.feed-type -%}
+  {%- if feedType == "maps" or feedType == "fixture" or feedType == "game" -%}
+  <h2>Recent Post</h2>
+  {%- assign displayOffset = 0 -%}
+  {%- assign displayLimit = 1 -%}
+    {% include feed.html %}
+  {%- endif -%}
+
+  {%- assign feedType = page.feed-type -%}
+  {%- if feedType == "maps" or feedType == "fixture" or feedType == "game" -%}
+  <h2>Posts</h2>
+  {%- assign displayOffset = 1 -%}
+  {%- assign displayLimit = null -%}
+    {% include feed.html %}
+  {%- endif -%}
+  
 </article>
