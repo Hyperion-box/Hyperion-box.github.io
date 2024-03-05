@@ -8,14 +8,14 @@ date: 04/03/2024
 ---
 Details and reference for upcoming game.
 
-<img src="/images/march-game.png" style="width: 100%">
+<img src="/images/march-game.png" width="100%">
 
 | Contenders |  Faction  |
 | ---------- | :-------: |
-| Ashlee     |             |
-| Jacob      |          |
-| Ross       |  |
-| Tim        |           |
+| Ashlee     |   Mahact Gene-Sorcerers          |
+| Jacob      |   The Nomad       |
+| Ross       |   Naaz-Rokha Alliance|
+| Tim        |   Titans of Ul        |
 | William L  |           |
 
 Last updated 04/03/2024
