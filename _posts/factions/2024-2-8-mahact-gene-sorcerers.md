@@ -51,6 +51,4 @@ ___
 | Arvicon Rex     |  8   | 5 (x2) |  1   | 3        | Sustain Damage  | During combat against an opponent whose command token is not in your fleet pool, apply +2 to the results of this unit's combat rolls. |
 
 
-
-
-
+<!-- {% include mahact-abilities.html %}
