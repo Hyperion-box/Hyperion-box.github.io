@@ -6,9 +6,10 @@ preview:
 categories: faction
 date: 04/03/2024
 color: pink
+name: The Titans of Ul
 short-name: titans
 ---
-Faction Overview.
+The Titans of Ul Overview.
 ## Faction Abilities
 **TERRAGENESIS** - After you explore a planet that does not have a sleeper token, you may place or move 1 sleeper token onto that planet.
 

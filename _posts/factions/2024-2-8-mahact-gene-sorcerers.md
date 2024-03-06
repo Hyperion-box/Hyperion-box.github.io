@@ -6,9 +6,10 @@ preview:
 categories: faction
 date: 04/03/2024
 color: gold
+name: The Mahact Gene-Sorcerers
 short-name: mahact
 ---
-Faction Overview.
+The Mahact Gene-Sorcerers Overview.
 ## Faction Abilities
 **EDICT** - When you win a combat, place 1 command token from your opponent's reinforcements in your fleet pool if it does not already contain 1 of that player's tokens; other player's tokens in your fleet pool increase your fleet limit but cannot be redistributed.
 

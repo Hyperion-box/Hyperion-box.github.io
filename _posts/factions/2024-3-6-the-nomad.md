@@ -6,9 +6,10 @@ preview:
 categories: faction
 date: 04/03/2024
 color: blue
+name: The Nomad
 short-name: nomad
 ---
-Faction Overview.
+The Nomad Overview.
 ## Faction Abilities
 **THE COMPANY** - During setup, take the 2 additional Nomad faction agents and place them next to your faction sheet; you have 3 agents.
 

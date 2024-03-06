@@ -1,14 +1,15 @@
 ---
 layout: faction
-title: The Titans of Ul
+title: The Naaz-Rokha Alliance
 image: /images/faction-icons/naaz-rokha.png
 preview: 
 categories: faction
 date: 04/03/2024
 color: pink
+name: The Naaz-Rokha Alliance
 short-name: naaz-rokha
 ---
-Faction Overview.
+The Naaz-Rokha Alliance Overview.
 ## Faction Abilities
 **DISTANT SUNS** - When you explore a planet that contains 1 of your mechs, you may draw 1 additional card; choose 1 to resolve and discard the rest.
 
