@@ -6,9 +6,10 @@ preview:
 categories: faction
 date: 04/03/2024
 color: gold
+name: The Yin Brotherhood
 short-name: yin
 ---
-Faction Overview.
+The Yin Brotherhood Overview.
 ## Faction Abilities
 **INDOCTRINATION** - At the start of a ground combat, you may spend 2 influence to replace 1 of your opponent's participating infantry with 1 infantry from your reinforcements.
 
