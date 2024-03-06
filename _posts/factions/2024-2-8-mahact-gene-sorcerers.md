@@ -6,7 +6,7 @@ preview:
 categories: faction
 date: 04/03/2024
 color: gold
-
+short-name: mahact
 ---
 Faction Overview.
 ## Faction Abilities
@@ -40,16 +40,16 @@ ___
 
 ## Faction Specific Units
 
-{% include factions/mahact/mahact-unit.html %}
+{% include factions/{{ page.short-name }}/{{ page.short-name }}-unit.html %}
 
 ## Flagship
 
- {% include factions/mahact/mahact-flagship.html %}
+ {% include factions/{{ page.short-name }}/{{ page.short-name }}-flagship.html %}
 
 ## Mech
 
- {% include factions/mahact/mahact-mech.html %}
+ {% include factions/{{ page.short-name }}/{{ page.short-name }}-mech.html %}
 
 ## Leaders
 
- {% include factions/mahact/mahact-leaders.html %}
+ {% include factions/{{ page.short-name }}/{{ page.short-name }}-leaders.html %}
