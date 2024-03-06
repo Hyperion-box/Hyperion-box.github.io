@@ -1,7 +1,7 @@
 ---
 layout: faction
 title: The Nomad
-image: /images/faction-icons/nomad.png
+image: /images/faction-icons/Nomad.png
 preview: 
 categories: faction
 date: 04/03/2024
