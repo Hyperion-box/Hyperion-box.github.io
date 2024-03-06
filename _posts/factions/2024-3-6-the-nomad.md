@@ -6,7 +6,7 @@ preview:
 categories: faction
 date: 04/03/2024
 color: blue
-
+short-name: nomad
 ---
 Faction Overview.
 ## Faction Abilities
@@ -38,12 +38,12 @@ ___
 
 ## Flagship
 
- {% include factions/nomad/nomad-flagship.html %}
+ {% include factions/{{ page.short-name }}/{{ page.short-name }}-flagship.html %}
 
 ## Mech
 
- {% include factions/nomad/nomad-mech.html %}
+ {% include factions/{{ page.short-name }}/{{ page.short-name }}-mech.html %}
 
 ## Leaders
 
- {% include factions/nomad/nomad-leaders.html %}
+ {% include factions/{{ page.short-name }}/{{ page.short-name }}-leaders.html %}
