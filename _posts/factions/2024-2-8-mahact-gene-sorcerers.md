@@ -44,11 +44,13 @@ ___
 | Crimson Legionnaire I  | 1x2  |   8    |                                                                         After this unit is destroyed, gain 1 commodity or convert 1 of your commodities to a trade good                                                                          | None          |
 | Crimson Legionnaire II | 1x2  |   7    | After this unit is destroyed, gain 1 commodity or convert 1 of your commodities to a trade good. Then, place the unit on this card. At the start of your next turn, place each unit that is on this card on a planet you control in your home system | ![](/images/tech-icon/tech_biotic.png) ![](/images/tech-icon/tech_biotic.png)       |
 
+
+
+
 ## Flagship
 
-| Name            | Cost | Combat | Move | Capacity | Abilities      |
-| :-------------- | :--: | :----: | :--: | :------- | :------------- |
-| Arvicon Rex     |  8   | 5 (x2) |  1   | 3        | Sustain Damage  | During combat against an opponent whose command token is not in your fleet pool, apply +2 to the results of this unit's combat rolls. |
+ {% include factions/mahact/mahact-flagship.html %}
 
+## Mech
 
-<!-- {% include mahact-abilities.html %}
+ {% include factions/mahact/mahact-mech.html %}
