@@ -6,9 +6,9 @@ permalink: /tech-tree/
 <img src="/images/TI-logo.png" id="ti-logo">
 
 
-
-
 {% include technology/blue-tech.html %} 
+
+{% include technology/yellow-tech.html %} 
 
 
 
