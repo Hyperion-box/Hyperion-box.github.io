@@ -5,7 +5,9 @@ permalink: /faction-stats/
 ---
 <img src="/images/TI-logo.png" id="ti-logo">
 
+{% include league-stats/faction-stats.html %}
 
+<!-- 
 | Icon                                            |           Faction           | Played | Wins | Last Played by | Won with |
 | :---------------------------------------------- | :-------------------------: | :----: | :--: | :------------: | -------- |
 | <img src="/images/faction-icons/Saar.png">      |      The Clan of Saar       |   4    |  1   |      Ali       | Ali      |
@@ -31,7 +33,7 @@ permalink: /faction-stats/
 | <img src="/images/faction-icons/Argent.png">    |      The Argent Flight      |   1    |  0   |     Ashlee     |          |
 | <img src="/images/faction-icons/Empyrean.png">  |        The Empyrean         |   1    |  0   |      Tim       |          |
 | <img src="/images/faction-icons/Sardakk.png">   |        Sardakk N'orr        |   1    |  0   |    William B   |          |
-| <img src="/images/faction-icons/Naalu.png">     |    The Naalu Collective     |   0    |  0   |                |          |
+| <img src="/images/faction-icons/Naalu.png">     |    The Naalu Collective     |   0    |  0   |                |          | -->
 
 
 
