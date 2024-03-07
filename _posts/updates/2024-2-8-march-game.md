@@ -8,7 +8,10 @@ date: 04/03/2024
 ---
 Details and reference for upcoming game.
 
-| Contenders | Icon | Faction  |
+
+{% include games/march-game.html %}
+
+<!-- | Contenders | Icon | Faction  |
 | ---------- | :-------: | :--------:
 | Ashlee     | ![](/images/faction-icons/Mahact.png) | [The Mahact Gene-Sorcerers]({{ site.url }}/mahact-gene-sorcerers/)          |
 | Jacob      | ![](/images/faction-icons/Nomad.png) |  [The Nomad]({{ site.url }}/the-nomad/)       |
@@ -16,7 +19,7 @@ Details and reference for upcoming game.
 | Tim        | ![](/images/faction-icons/titans.png) |  [The Titans of Ul]({{ site.url }}/the-titans-of-ul/)        |
 | William B  | ![](/images/faction-icons/Sol.png) |  [The Federation of Sol]({{ site.url }}/the-federation-of-sol/)        |
 | William L  | ![](/images/faction-icons/Yin.png) |  [The Yin Brotherhood]({{ site.url }}/the-yin-brotherhood/)        |
-
+ -->
 
 
 

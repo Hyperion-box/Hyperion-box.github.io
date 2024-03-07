@@ -99,32 +99,51 @@ ul ul, ol ul {
   list-style-type: circle;
 }
 
-table {
-  border-collapse: collapse;
+.league-table {
+  overflow: auto;
   width: 100%;
-  border: solid 5px;
-  border-radius: 60px;
 }
 
-th, td {
+.league-table table {
+  border: 2px solid #dededf;
+  height: 100%;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  text-align: center;
+}
+
+.league-table caption {
+  caption-side: top;
   text-align: left;
-  padding: 8px;
-  vertical-align: middle;
 }
 
-th {
-  background-color: #054daa;
-  color: #ddd;
+.league-table th {
+  border: 2px solid #dededf;
+  background-color: #0045e6;
+  color: #ffffff;
+  padding: 5px;
 }
 
-tr:nth-child(even) {background-color: #9aa1b1;}
-tr:nth-child(even):hover {background-color: #dac617;}
-tr:nth-child(odd) {background-color: #6e8fd6;}
-tr:nth-child(odd):hover {background-color: #dac617;}
-
-#faction-table {
-  background-color: #aa0505;
+.league-table td {
+  border: 2px solid #dededf;
+  padding: 5px;
 }
+
+.league-table tr:nth-child(even) td {
+  background-color: #919fd9;
+  color: #1f1e1e;
+}
+
+.league-table tr:nth-child(odd) td {background-color: #949494;
+  color: #1f1e1e;
+}
+.league-table tr:nth-child(even):hover td{background-color: #dac617;}
+.league-table tr:nth-child(odd):hover td{background-color: #dac617;}
+
+
+
 
 #emperor {
   color: #dac617;
