@@ -10,7 +10,11 @@ permalink: /tech-tree/
 
 {% include technology/yellow-tech.html %} 
 
+{% include technology/green-tech.html %}
 
+{% include technology/red-tech.html %}
+
+{% include technology/unit-tech.html %}
 
 Starting from November 22
 
