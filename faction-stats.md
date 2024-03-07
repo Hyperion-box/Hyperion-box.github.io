@@ -14,7 +14,7 @@ permalink: /faction-stats/
 | <img src="/images/faction-icons/Nekro.png">     |       The Nekro Virus       |   2    |  1   |     Ashlee     | Alex     |
 | <img src="/images/faction-icons/Nomad.png">     |          The Nomad          |   2    |  1   |      Tim       | Tim      |
 | <img src="/images/faction-icons/Mahact.png">    |  The Mahact Gene-Sorcerors  |   1    |  1   |     Ashlee     | Ashlee   |
-| <img src="/images/faction-icons/NaazRokha.png"> |   The Naaz-Rokha Alliance   |   1    |  1   |     Ashlee     | Ashlee   |
+| <img src="/images/faction-icons/naaz-rokha.png"> |   The Naaz-Rokha Alliance   |   1    |  1   |     Ashlee     | Ashlee   |
 | <img src="/images/faction-icons/Sol.png">       |    The Federation of Sol    |   4    |  0   |     Ashlee     |          |
 | <img src="/images/faction-icons/L1Z1X.png">     |      The L1Z1X Mindnet      |   3    |  0   |      Tim       |          |
 | <img src="/images/faction-icons/Muaat.png">     |     The Embers of Muaat     |   3    |  0   |     James      |          |
@@ -27,7 +27,7 @@ permalink: /faction-stats/
 | <img src="/images/faction-icons/Winnu.png">     |          The Winnu          |   1    |  0   |      Ross      |          |
 | <img src="/images/faction-icons/Ghosts.png">    |    The Ghosts of Creuss     |   1    |  0   |      Ali       |          |
 | <img src="/images/faction-icons/Arborec.png">   |         The Arborec         |   1    |  0   |      Ali       |          |
-| <img src="/images/faction-icons/UI.png">        |      The Titans of Ul       |   1    |  0   |      Ross      |          |
+| <img src="/images/faction-icons/titans.png">        |      The Titans of Ul       |   1    |  0   |      Ross      |          |
 | <img src="/images/faction-icons/Argent.png">    |      The Argent Flight      |   1    |  0   |     Ashlee     |          |
 | <img src="/images/faction-icons/Empyrean.png">  |        The Empyrean         |   1    |  0   |      Tim       |          |
 | <img src="/images/faction-icons/Sardakk.png">   |        Sardakk N'orr        |   1    |  0   |    William B   |          |
