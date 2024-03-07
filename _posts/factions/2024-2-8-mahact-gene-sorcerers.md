@@ -8,6 +8,7 @@ date: 04/03/2024
 color: gold
 name: The Mahact Gene-Sorcerers
 short-name: mahact
+
 ---
 The Mahact Gene-Sorcerers Overview.
 ## Faction Abilities
