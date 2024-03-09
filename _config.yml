@@ -18,6 +18,11 @@ avatar:
 #Only get the first sentence for excerpt
 excerpt_separator: .
 
+section-color:
+ 1: "gold"
+ 2: "#ffffff"
+ 3: "#f00"
+
 #
 # Flags below are optional
 #

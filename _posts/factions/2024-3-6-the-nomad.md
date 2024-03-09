@@ -5,7 +5,7 @@ image: /images/faction-icons/Nomad.png
 preview: 
 categories: faction
 date: 04/03/2024
-color: blue
+color: blue;
 name: The Nomad
 short-name: nomad
 ---

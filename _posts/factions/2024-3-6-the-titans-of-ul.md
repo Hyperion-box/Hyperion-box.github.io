@@ -5,7 +5,7 @@ image: /images/faction-icons/titans.png
 preview: 
 categories: faction
 date: 04/03/2024
-color: pink
+color: pink;
 name: The Titans of Ul
 short-name: titans
 ---
