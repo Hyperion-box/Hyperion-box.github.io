@@ -5,7 +5,7 @@ image: /images/faction-icons/Yin.png
 preview: 
 categories: faction
 date: 04/03/2024
-color: gold
+color: gold;
 name: The Yin Brotherhood
 short-name: yin
 ---

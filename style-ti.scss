@@ -145,6 +145,90 @@ ul ul, ol ul {
 
 
 
+// FACTION DETAILS
+
+
+.faction-mech, .faction-leaders, .faction-flagship {
+  overflow: auto;
+  border: 2px solid #45454b;
+  height: auto;
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  text-align: center;
+}
+
+.faction-leaders th {
+  border: 2px solid #45454b;
+  background-color: rgb(0, 60, 255);
+  color: #ffffff;
+  padding: 5px;
+  text-align:center;
+}
+
+.faction-mech, .faction-leaders, .faction-flagship tr:nth-child(even) td {
+  border: 2px solid #45454b;
+  padding: 5px;
+  background-color: #919fd9;
+  color: #1f1e1e;
+
+  text-align:center;
+}
+
+.faction-leaders td {
+  border: 2px solid #45454b;
+}
+
+.faction-leaders tr:nth-child(odd) td {background-color: #949494;
+  border: 2px solid #45454b;
+  padding: 5px;
+  color: #1f1e1e;
+  text-align:center;
+}
+.faction-mech th {
+  background-color: #0ca82e;
+  color: white;
+  border: 2px solid #45454b;
+}
+.faction-mech tr {
+  border: 2px solid #45454b;
+}
+
+.faction-mech {
+  border: none;
+  
+}
+.faction-flagship {
+  background-color: #913de0;
+  color: white;
+  border: 2px solid #45454b;
+}
+.faction-flagship p {
+  background-color: #919fd9;
+  border: none;
+  color: #1f1e1e;
+}
+
+
+
+.faction-unit {
+  table-layout: fixed;
+  width: 100%;
+  border: 2px solid #45454b;
+}
+
+.faction-unit th {
+  background-color: #c75c04;
+  color: white;
+}
+
+.faction-unit td {
+  border: 2px solid #45454b;
+  background-color: #919fd9;
+}
+
+
 
 #emperor {
   color: #dac617;
@@ -320,9 +404,7 @@ nav {
   text-align:center;
 }
 
-.faction-flagship-text {
-  text-align:center;
-}
+
 
 .faction-unit-text {
   text-align:center;
