@@ -1,7 +1,7 @@
 ---
 layout: post
 title: March Game - St Patrick's
-image: /images/TI-map.png
+image: /images/March-TI.png
 preview: 
 categories: game
 date: 04/03/2024
