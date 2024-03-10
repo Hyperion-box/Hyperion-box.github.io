@@ -3,7 +3,7 @@ layout: ti-default
 title: Faction Stats
 permalink: /faction-stats/
 ---
-<img src="/images/TI-logo.png" id="ti-logo">
+
 
 {% include league-stats/faction-stats.html %}
 
