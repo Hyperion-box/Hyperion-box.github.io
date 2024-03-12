@@ -5,7 +5,7 @@ permalink: /ti-league/
 ---
 
 
-<p id='emperor'>Current Emperor: Ali with The Clan of Saar</p>
+<p id='emperor'>Current Emperor: AW with The Clan of Saar</p>
 
 {% include league-stats/league.html %}
 
