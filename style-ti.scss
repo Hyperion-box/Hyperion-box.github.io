@@ -256,6 +256,9 @@ img {
   position: center;
 }
 
+
+// FACTION POSTS
+
 article {
   background-color: #ddd;
   border-radius: 25px;
@@ -263,6 +266,19 @@ article {
   padding: 20px;
   width: 100%;
   height: auto;
+  
+}
+
+.feed {
+  display: grid;
+}
+
+.faction-container {
+  width: max-content;
+}
+
+.feed-card {
+  display: grid;
 }
 
 // Fixes images in popup boxes from Google Translate
