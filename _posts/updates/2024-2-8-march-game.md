@@ -4,7 +4,7 @@ title: March 2024 - St Patrick's
 image: /images/March-TI.png
 preview: 
 categories: game
-date: 15/03/2024
+date: 16/03/2024
 ---
 
 Details and reference for upcoming game.
