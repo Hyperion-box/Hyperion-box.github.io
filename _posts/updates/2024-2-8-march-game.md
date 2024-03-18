@@ -43,8 +43,6 @@ Mentak continued to "Pillage," mostly Naaz-Rokha and Yin.
 
 ***The Nomad-Titans Pact: Nomad and Titans struck a delicate agreement, reshaping borders and alliances allowing Nomad to camp next to Titan's home system. while Mahact and Titans vied for control over the vital wormhole system Quann.***
 
-<img src="/images/march-game/tension-system.png" class="map">
-
 ### The Quann Missile Crisis
 
 A diplomatic rift emerged as Titans disputed Mahact's claim over Quann. Nomad stoked the flames, urging Titans to assert dominance.
@@ -57,7 +55,7 @@ Mahact maintained that the planet of Quann would remain under their control, wit
 
 Titans began a build-up in fleets around the Quann system, with the intention to invade. Talks were initiated to de-escalate with a trade to exhange use of agents, and a sacrificial Destroyer to be sent to Mahact to fulfill their "Edict" ability at a later stage.
 
-<img src="/images/march-game/quann-missile-crisis.png" class="map">
+<img src="/images/march-game/tension-system.png" class="map">
 
 
 ## Episode III: The Unraveling
@@ -112,7 +110,7 @@ Nomad turns their sights to the jungle and enters the Alpha wormhole after the c
 
 With their Flagship in tow and the bulk of their fleet diverted to this new front, the war should be over quickly.
 
-<img src="/images/march-game/nomad-naaz.PNG" class="map">
+<img src="/images/march-game/nomad-naaz.png" class="map">
 
 *Agenda:*
 Mahact gained "Minister of War," allowing them to perform an action and remove one of their tokens from the board to then play another turn.
@@ -158,6 +156,6 @@ Mahact plays "Benediction" and forces the Titans Warsun home fleet to move out o
 
 Mahact score "Rule Distant Lands" bringing their score to 12.
 
-<img src="/images/march-game/end-game.PNG" class="map">
+<img src="/images/march-game/end-game.png" class="map">
 
 
