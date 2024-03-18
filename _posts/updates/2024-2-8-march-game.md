@@ -5,7 +5,7 @@ image: /images/March-TI.png
 preview: 
 categories: game
 date: 17/03/2024
-comments: true
+
 ---
 
 Details and reference for upcoming game. Using ChatGPT throughout this.
