@@ -5,7 +5,7 @@ permalink: /ti-league/
 ---
 
 
-<p id='emperor'>Current Emperor: AW with The Clan of Saar</p>
+<p id='emperor'>Current Emperor: ACW with The Mahact Gene-Sorcerers</p>
 
 {% include league-stats/league.html %}
 
