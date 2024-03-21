@@ -19,6 +19,11 @@ Details and reference for upcoming game. Using ChatGPT throughout this.
 
 ### Final Result:
 Winner: ACW with The Mahact Gene-Sorcerers
+
+**League Points**
+
+ACW: 3 Points in league
+
 <img src="/images/march-game/final-scores.png" class="map">
 
 ## Map
@@ -161,6 +166,6 @@ Mahact score "Rule Distant Lands" bringing their score to 12.
 
 ## 10 Min Recap
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4BGzWCj8BZc?si=Gv48U1VmQ5OK4cxI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Er_4c8EBKnY?si=l4AttCudUzWWrwLq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
