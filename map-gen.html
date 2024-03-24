@@ -36,14 +36,20 @@ permalink: /map-gen/
         z-index: 1; /* Set higher than default */
         clip-path: polygon(24% 0%, 74% -1%, 101% 51%, 74% 101%, 24% 100%, -1% 50%); /* Hexagon clip path */
     }
+    #used-tiles-display {
+     
+      
+      color: orange;
+    }
 </style>
 </head>
 <body>
 
 <h1>Twilight Imperium Map Generator</h1>
-
+<p id="used-tiles-display"></p>
 <div class="map-container" id="map-container"></div>
-<div id="output"></div>
+
+
 
 <script>
 //import { combinedGreenList } from 'map-resources/tiles.js';
@@ -108,31 +114,6 @@ function generateMap() {
         { hs: "y", top: '543px', left: '240px' },   // Tile 37 HS
     ];
 
-//TODO create a list of tiles which can make up the board, then loop through it.
-//     const green = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 51];
-//     const pokGreen = [52, 53, 54, 55, 56, 57, 58];
-//     const combinedGreenList = green.concat(pokGreen);
-
-//     for (let i = 0; i < tileCoordinates.length; i++) {
-//         const tileNumber = i + 1;
-
-//         if (!combinedGreenList.includes(tileNumber)) { // Check if the tile number is not in the combinedGreenList
-//             const tile = document.createElement('div');
-//             tile.classList.add('map-tile');
-//             tile.style.top = tileCoordinates[i].top;
-//             tile.style.left = tileCoordinates[i].left;
-
-//             tile.style.backgroundImage = `url('/images/tiles/ST_${tileNumber}.png')`;
-//             if (tileNumber === 19) {
-//                 tile.style.backgroundImage = `url('/images/tiles/ST_18.png')`;
-//             }
-//             mapContainer.appendChild(tile);
-//         }
-//       }
-
-
-// }
-
 const green = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 51];
 const pokGreen = [52, 53, 54, 55, 56, 57, 58];
 const blue = [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38];
@@ -182,9 +163,19 @@ for (let i = 0; i < tileCoordinates.length; i++) {
     mapContainer.appendChild(tile);
 }
 
+printUsedTiles(usedTiles);
+
 }
 
 generateMap(); // Auto-generate map on page load
+
+
+function printUsedTiles(usedTiles) {
+    const usedTilesString = "Used Tiles: " + usedTiles.join(', '); // Convert the array to a string separated by commas
+    const tilesDisplayElement = document.getElementById('used-tiles-display'); // Get the element where you want to display the used tiles
+    tilesDisplayElement.textContent = usedTilesString; // Set the text content of the element to the formatted string
+}
+
 </script>
 
 </body>
