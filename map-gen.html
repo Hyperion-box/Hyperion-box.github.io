@@ -46,6 +46,8 @@ permalink: /map-gen/
 <div id="output"></div>
 
 <script>
+//import { combinedGreenList } from 'map-resources/tiles.js';
+
 function generateMap() {
     const mapContainer = document.getElementById('map-container');
     mapContainer.innerHTML = '';
@@ -55,7 +57,7 @@ function generateMap() {
     //top: add 45px for each row
     //left: add 160px for each tile
     const tileCoordinates = [
-        { top: '1px', left: '240px' },   // Tile 1 HS
+        { hs: "y", top: '1px', left: '240px' },   // Tile 1 HS
 
         { top: '46px', left: '160px' },  // Tile 2
         { top: '46px', left: '320px' },  // Tile 3
@@ -64,10 +66,10 @@ function generateMap() {
         { top: '93px', left: '240px' }, // Tile 5
         { top: '93px', left: '400px' },  // Tile 6
 
-        { top: '138px', left: '0px' },   // Tile 7 HS
+        { hs: "y", top: '138px', left: '0px' },   // Tile 7 HS
         { top: '138px', left: '160px' }, // Tile 8
         { top: '138px', left: '320px' },  // Tile 9
-        { top: '138px', left: '480px' },   // Tile 10 HS
+        { hs: "y", top: '138px', left: '480px' },   // Tile 10 HS
 
         { top: '183px', left: '80px' }, // Tile 11
         { top: '183px', left: '240px' },  // Tile 12 
@@ -91,10 +93,10 @@ function generateMap() {
         { top: '363px', left: '240px' }, // Tile 26
         { top: '363px', left: '400px' },  // Tile 27
         
-        { top: '408px', left: '0px' },   // Tile 28 HS 
+        { hs: "y", top: '408px', left: '0px' },   // Tile 28 HS 
         { top: '408px', left: '160px' }, // Tile 29
         { top: '408px', left: '320px' },  // Tile 30
-        { top: '408px', left: '480px' },   // Tile 31 HS
+        { hs: "y", top: '408px', left: '480px' },   // Tile 31 HS
 
         { top: '453px', left: '80px' }, // Tile 32
         { top: '453px', left: '240px' },  // Tile 33
@@ -103,29 +105,67 @@ function generateMap() {
         { top: '498px', left: '160px' }, // Tile 35
         { top: '498px', left: '320px' },  // Tile 36
 
-        { top: '543px', left: '240px' },   // Tile 37 HS
+        { hs: "y", top: '543px', left: '240px' },   // Tile 37 HS
     ];
 
 //TODO create a list of tiles which can make up the board, then loop through it.
+//     const green = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 51];
+//     const pokGreen = [52, 53, 54, 55, 56, 57, 58];
+//     const combinedGreenList = green.concat(pokGreen);
 
-    for (let i = 0; i < tileCoordinates.length; i++) {
-        const tileNumber = i + 1;
-        const tile = document.createElement('div');
-        tile.classList.add('map-tile');
-        tile.style.top = tileCoordinates[i].top;
-        tile.style.left = tileCoordinates[i].left;
-        tile.style.backgroundImage = `url('/images/tiles/ST_${tileNumber}.png')`;
-        if (tileNumber === 19){
-          tile.style.backgroundImage = `url('/images/tiles/ST_18.png')`;
-        }
-        mapContainer.appendChild(tile);
+//     for (let i = 0; i < tileCoordinates.length; i++) {
+//         const tileNumber = i + 1;
+
+//         if (!combinedGreenList.includes(tileNumber)) { // Check if the tile number is not in the combinedGreenList
+//             const tile = document.createElement('div');
+//             tile.classList.add('map-tile');
+//             tile.style.top = tileCoordinates[i].top;
+//             tile.style.left = tileCoordinates[i].left;
+
+//             tile.style.backgroundImage = `url('/images/tiles/ST_${tileNumber}.png')`;
+//             if (tileNumber === 19) {
+//                 tile.style.backgroundImage = `url('/images/tiles/ST_18.png')`;
+//             }
+//             mapContainer.appendChild(tile);
+//         }
+//       }
+
+
+// }
+
+const green = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 51];
+const pokGreen = [52, 53, 54, 55, 56, 57, 58];
+const blue = [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38];
+const pokBlue = [59, 60, 61, 62, 63, 64, 65, 66, 69, 70, 71, 72, 73, 74, 75, 76];
+
+const combinedGreenList = green.concat(pokGreen);
+const combinedBlueList = blue.concat(pokBlue);
+
+for (let i = 0; i < tileCoordinates.length; i++) {
+    const tileNumber = i + 1;
+    const tile = document.createElement('div');
+
+    if (tileCoordinates[i].hs === 'y') {
+        const greenIndex = Math.floor(Math.random() * combinedGreenList.length);
+        const greenTileNumber = combinedGreenList[greenIndex];
+        tile.style.backgroundImage = `url('/images/tiles/ST_${greenTileNumber}.png')`;
+    } else { 
+        const blueIndex = Math.floor(Math.random() * combinedBlueList.length);
+        const blueTileNumber = combinedBlueList[blueIndex];
+        tile.style.backgroundImage = `url('/images/tiles/ST_${blueTileNumber}.png')`;
     }
-    function getRaceHomeTile () {
-      const races = [];
-        races[0]= "1"; //Sol
-        races[1]= "2";
-        races[2]= "3";
+    if (tileNumber === 19) {
+      tile.style.backgroundImage = `url('/images/tiles/ST_18.png')`;
     }
+
+    // Set other styles
+    tile.style.top = tileCoordinates[i].top;
+    tile.style.left = tileCoordinates[i].left;
+    tile.classList.add('map-tile'); // Add the class here if needed
+
+    // Append the tile to the map container
+    mapContainer.appendChild(tile);
+}
 }
 
 generateMap(); // Auto-generate map on page load
