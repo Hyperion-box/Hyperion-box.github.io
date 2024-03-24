@@ -141,19 +141,34 @@ const pokBlue = [59, 60, 61, 62, 63, 64, 65, 66, 69, 70, 71, 72, 73, 74, 75, 76]
 const combinedGreenList = green.concat(pokGreen);
 const combinedBlueList = blue.concat(pokBlue);
 
+let usedTiles = [];
+
 for (let i = 0; i < tileCoordinates.length; i++) {
     const tileNumber = i + 1;
     const tile = document.createElement('div');
 
+    let availableTiles;
     if (tileCoordinates[i].hs === 'y') {
-        const greenIndex = Math.floor(Math.random() * combinedGreenList.length);
-        const greenTileNumber = combinedGreenList[greenIndex];
-        tile.style.backgroundImage = `url('/images/tiles/ST_${greenTileNumber}.png')`;
+        availableTiles = combinedGreenList.filter(tile => !usedTiles.includes(tile));
     } else { 
-        const blueIndex = Math.floor(Math.random() * combinedBlueList.length);
-        const blueTileNumber = combinedBlueList[blueIndex];
-        tile.style.backgroundImage = `url('/images/tiles/ST_${blueTileNumber}.png')`;
+        availableTiles = combinedBlueList.filter(tile => !usedTiles.includes(tile));
     }
+
+    // Check if there are available tiles to place
+    if (availableTiles.length > 0) {
+        const randomIndex = Math.floor(Math.random() * availableTiles.length);
+        const selectedTile = availableTiles[randomIndex];
+
+        tile.style.backgroundImage = `url('/images/tiles/ST_${selectedTile}.png')`;
+
+        // Add the selected tile to the used tiles array
+        usedTiles.push(selectedTile);
+    } else {
+        // Handle case where no available tiles
+        console.log("No available tiles to place.");
+        // You may want to handle this case differently based on your requirements
+    }
+
     if (tileNumber === 19) {
       tile.style.backgroundImage = `url('/images/tiles/ST_18.png')`;
     }
@@ -166,6 +181,7 @@ for (let i = 0; i < tileCoordinates.length; i++) {
     // Append the tile to the map container
     mapContainer.appendChild(tile);
 }
+
 }
 
 generateMap(); // Auto-generate map on page load
