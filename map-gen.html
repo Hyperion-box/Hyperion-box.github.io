@@ -43,6 +43,7 @@ permalink: /map-gen/
 <h1>Twilight Imperium Map Generator</h1>
 
 <div class="map-container" id="map-container"></div>
+<div id="output"></div>
 
 <script>
 function generateMap() {
@@ -105,7 +106,7 @@ function generateMap() {
         { top: '543px', left: '240px' },   // Tile 37 HS
     ];
 
-
+//TODO create a list of tiles which can make up the board, then loop through it.
 
     for (let i = 0; i < tileCoordinates.length; i++) {
         const tileNumber = i + 1;
