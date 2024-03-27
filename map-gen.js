@@ -1,7 +1,5 @@
-
 //import { combinedGreenList } from 'map-resources/tiles.js';
-
-let isGreenSelected = true; // Flag to track whether green or blue tiles are selected
+ // Flag to track whether green or blue tiles are selected
 
 
 const red = [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
@@ -24,7 +22,7 @@ const supernovas = [43];
 const pokSupernovas = [80];
 const hyperlanes = ["83A", "83B", "84A", "84B", "85A", "85B", "86A", "86B", "87A", "87B", "88A", "88B", "89A", "89B", "90A", "90B", "91A", "91B"];
 
-const green = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 51];
+const green = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
 const pokGreen = [52, 53, 54, 55, 56, 57, 58];
 const blue = [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38];
 const pokBlue = [59, 60, 61, 62, 63, 64, 65, 66, 69, 70, 71, 72, 73, 74, 75, 76];
@@ -32,41 +30,59 @@ const pokBlue = [59, 60, 61, 62, 63, 64, 65, 66, 69, 70, 71, 72, 73, 74, 75, 76]
 
 const combinedGreenList = green.concat(pokGreen);
 const combinedBlueList = blue.concat(pokBlue);
+const combinedRedList = red.concat(pokRed);
 
 function selectTile(usedTiles) {
-        const mapTiles = document.querySelectorAll('.map-tile');
-        mapTiles.forEach(tile => {
-            tile.addEventListener('click', () => {
-                const selectedTile = document.querySelector('.tile-image.selected');
-                const previousTileNumber = parseInt(tile.dataset.tile);
-                if (selectedTile) {
+    const mapTiles = document.querySelectorAll('.map-tile');
+    mapTiles.forEach(tile => {
+        tile.addEventListener('click', () => {
+            const selectedTile = document.querySelector('.tile-image.selected');
+            const previousTileNumber = parseInt(tile.dataset.tile);
+
+            if (selectedTile) {
+                //if tile placed is already in usedTiles
+                //replace old tile with "18_Back"         
+
+                // Add the new tile number to the usedTiles list
+                const newTileNumber = parseInt(selectedTile.dataset.tile);
+
+                const duplicateIndex = usedTiles.indexOf(newTileNumber);
+                if (duplicateIndex !== -1) {
+                    console.log(`Tile ${newTileNumber} is already placed.`);
+                    return;
+                    //  usedTiles[duplicateIndex] = previousTileNumber; // Replace the duplicate tile with the previous one
+                } else {
                     console.log("Tile Replaced: " + tile.dataset.tile + " New Tile number: " + selectedTile.dataset.tile);
                     tile.style.backgroundImage = `url('/images/tiles/ST_${selectedTile.dataset.tile}.png')`;
                     tile.dataset.tile = selectedTile.dataset.tile;
 
-    
-                    // Add the new tile number to the usedTiles list
-                    const newTileNumber = parseInt(selectedTile.dataset.tile);
-
-
                     for (let i = 0; i < usedTiles.length; i++) {
-                        console.log(`Comparing ${usedTiles[i]} with ${previousTileNumber}`);
+                        // console.log(`Comparing ${usedTiles[i]} with ${previousTileNumber}`);
                         if (usedTiles[i] === previousTileNumber) {
-                            console.log(`Replacing ${previousTileNumber} with ${newTileNumber}`);
+                            // console.log(`Replacing ${previousTileNumber} with ${newTileNumber}`);
                             usedTiles[i] = newTileNumber;
                         }
-                    }
-                    
 
-                    //usedTiles.push(newTileNumber);
-    
-                    // Print the updated usedTiles list
-                    console.log(usedTiles);
-                    printUsedTiles(usedTiles);
+                    }
                 }
-            });
+
+
+
+
+                //usedTiles.push(newTileNumber);
+
+                // Print the updated usedTiles list
+                console.log(usedTiles);
+                printUsedTiles(usedTiles);
+            }
+
+
+
+
         });
-    }
+    });
+}
+
 
 function generateMap() {
     const mapString = document.getElementById('mapString').value;
@@ -74,7 +90,7 @@ function generateMap() {
     mapContainer.innerHTML = '';
 
     const tilePane = document.getElementById('tile-pane');
-        tilePane.innerHTML = ''; // Clear previous content
+    tilePane.innerHTML = ''; // Clear previous content
 
     // Coordinates for each hexagon tile
 
@@ -132,69 +148,65 @@ function generateMap() {
         { hs: "y", top: '543px', left: '240px' },   // Tile 37 HS
     ];
 
+    var usedTiles = [];
+
+    for (let i = 0; i < tileCoordinates.length; i++) {
+        const tileNumber = i + 1;
+        const tile = document.createElement('div');
+
+        let availableTiles;
+        if (tileCoordinates[i].hs === 'y') {
+            availableTiles = combinedGreenList.filter(tile => !usedTiles.includes(tile));
+        } else {
+            availableTiles = combinedBlueList.filter(tile => !usedTiles.includes(tile));
+        }
+
+        // Check if there are available tiles to place
+        if (availableTiles.length > 0) {
+            const randomIndex = Math.floor(Math.random() * availableTiles.length);
+            const selectedTile = availableTiles[randomIndex];
+
+            tile.style.backgroundImage = `url('/images/tiles/ST_${selectedTile}.png')`;
+            tile.dataset.tile = selectedTile;
+
+            // Add the selected tile to the used tiles array
+            usedTiles.push(selectedTile);
+        } else {
+            // Handle case where no available tiles
+            console.log("No available tiles to place.");
+
+        }
+
+        if (tileNumber === 19) {
+            tile.style.backgroundImage = `url('/images/tiles/ST_18.png')`;
+            tile.dataset.tile = 18;
+        }
+
+        // Set other styles
+        tile.style.top = tileCoordinates[i].top;
+        tile.style.left = tileCoordinates[i].left;
+        tile.classList.add('map-tile'); // Add the class here if needed
+
+        // Set tile selection event listener
+        tile.addEventListener('click', () => {
+            tile.classList.toggle('selected'); // Toggle the 'selected' class
+        });
 
 
-var usedTiles = [];
+        // Append the tile to the map container
+        mapContainer.appendChild(tile);
 
-for (let i = 0; i < tileCoordinates.length; i++) {
-    const tileNumber = i + 1;
-    const tile = document.createElement('div');
 
-    let availableTiles;
-    if (tileCoordinates[i].hs === 'y') {
-        availableTiles = combinedGreenList.filter(tile => !usedTiles.includes(tile));
-    } else { 
-        availableTiles = combinedBlueList.filter(tile => !usedTiles.includes(tile));
+
+        // Create images for all tiles and append them to the tile pane
+
     }
 
-    // Check if there are available tiles to place
-    if (availableTiles.length > 0) {
-        const randomIndex = Math.floor(Math.random() * availableTiles.length);
-        const selectedTile = availableTiles[randomIndex];
-
-        tile.style.backgroundImage = `url('/images/tiles/ST_${selectedTile}.png')`;
-        tile.dataset.tile = selectedTile;
-
-        // Add the selected tile to the used tiles array
-        usedTiles.push(selectedTile);
-    } else {
-        // Handle case where no available tiles
-        console.log("No available tiles to place.");
-        
-    }
-
-    if (tileNumber === 19) {
-      tile.style.backgroundImage = `url('/images/tiles/ST_18.png')`;
-      tile.dataset.tile = 18;
-    }
-
-    // Set other styles
-    tile.style.top = tileCoordinates[i].top;
-    tile.style.left = tileCoordinates[i].left;
-    tile.classList.add('map-tile'); // Add the class here if needed
-
-    // Set tile selection event listener
-    tile.addEventListener('click', () => {
-                tile.classList.toggle('selected'); // Toggle the 'selected' class
-            });
-
-
-    // Append the tile to the map container
-    mapContainer.appendChild(tile);
-    
-    
-
-// Create images for all tiles and append them to the tile pane
-
-}
-
-printUsedTiles(usedTiles);
-selectTile(usedTiles); // Call function to handle tile selection on the map
-generateTilePane();
+    printUsedTiles(usedTiles);
+    selectTile(usedTiles); // Call function to handle tile selection on the map
+    generateTilePane();
 }
 generateMap(); // Auto-generate map on page load
-
-
 
 
 // Function to generate map based on a tile string
@@ -210,63 +222,45 @@ const tileString = '57, 75, 25, 37, 24, 21, 7, 29, 20, 8, 69, 28, 59, 32, 74, 65
 generateMapFromTileString(tileString);
 
 
+function generateTilePane(colour) {
+var combinedTileList = combinedGreenList;
+    if (colour==="red") {
+        combinedTileList = combinedRedList;
+    } else if (colour==="green") {
+        combinedTileList = combinedGreenList;
+    } else if (colour==="blue") {
+        combinedTileList = combinedBlueList;
+    }
 
 
-// Get a reference to the toggle button
-const toggleButton = document.getElementById('toggle-button');
+    console.log('Generating tile pane');
+    const tilePane = document.getElementById('tile-pane');
+    tilePane.innerHTML = ''; // Clear previous content
+    combinedTileList.forEach(tileNumber => {
+        const tileImage = document.createElement('img');
+        tileImage.src = `/images/tiles/ST_${tileNumber}.png`; // Adjust image path as needed
+        tileImage.alt = `Tile ${tileNumber}`;
+        tileImage.dataset.tile = tileNumber; // Set data attribute to store tile number
+        tileImage.classList.add('tile-image'); // Add a class to the image
 
-// Add an event listener to the button
-toggleButton.addEventListener('click', toggleTiles);
+        tileImage.addEventListener('click', () => {
+            const selectedTile = document.querySelector('.tile-image.selected');
+            if (selectedTile) {
+                selectedTile.classList.remove('selected');
+            }
+            tileImage.classList.add('selected');
+        });
 
-// Function to toggle between green and blue tiles in the tile pane
-function toggleTiles() {
-    isGreenSelected = !isGreenSelected; // Toggle the flag
-
-    // Change the text of the toggle button based on the current selection
-    toggleButton.textContent = isGreenSelected ? 'Show Blue Tiles' : 'Show Green Tiles';
-
-    // Regenerate the tile pane to display the selected tiles
-    generateTilePane();
+        // Append the image to the tile pane
+        tilePane.appendChild(tileImage);
+    });
 }
 
 
 
 
-function generateTilePane() {
-    
-   
-    console.log('Generating tile pane');
-        const tilePane = document.getElementById('tile-pane');
-        tilePane.innerHTML = ''; // Clear previous content
-
-        // Determine which list to use based on the current selection
-        const combinedTileList = isGreenSelected ? combinedGreenList : combinedBlueList;
-
-        combinedTileList.forEach(tileNumber => {
-            const tileImage = document.createElement('img');
-            tileImage.src = `/images/tiles/ST_${tileNumber}.png`; // Adjust image path as needed
-            tileImage.alt = `Tile ${tileNumber}`;
-            tileImage.dataset.tile = tileNumber; // Set data attribute to store tile number
-            tileImage.classList.add('tile-image'); // Add a class to the image
-
-            tileImage.addEventListener('click', () => {
-                const selectedTile = document.querySelector('.tile-image.selected');
-                if (selectedTile) {
-                    selectedTile.classList.remove('selected');
-                }
-                tileImage.classList.add('selected');
-            });
-
-            // Append the image to the tile pane
-            tilePane.appendChild(tileImage);
-        });
-    }
-
-
-
-
 function printUsedTiles(usedTiles) {
-    
+
     const usedTilesString = "Used Tiles: " + usedTiles.join(', '); // Convert the array to a string separated by commas
     const tilesDisplayElement = document.getElementById('used-tiles-display'); // Get the element where you want to display the used tiles
     tilesDisplayElement.textContent = usedTilesString; // Set the text content of the element to the formatted string
