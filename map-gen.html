@@ -1,183 +1,27 @@
 ---
-layout: ti-default
+layout: ti-default-map
 permalink: /map-gen/
 ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Twilight Imperium Map Generator</title>
-
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-    }
-
-    .map-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 20px auto;
-        position: relative;
-    }
-
-    .map-tile {
-        width: 107px;
-        height: 92px; /* Adjusted height to make hexagons fit */
-        position: absolute;
-        background-size: cover;
-    }
-    .map-tile:hover {
-        background-color: rgb(226, 166, 35); /* Adjust as necessary */
-        z-index: 1; /* Set higher than default */
-        clip-path: polygon(24% 0%, 74% -1%, 101% 51%, 74% 101%, 24% 100%, -1% 50%); /* Hexagon clip path */
-    }
-    #used-tiles-display {
-     
-      
-      color: orange;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twilight Imperium Map Generator</title>
+    <link rel="stylesheet" href="style-ti.scss">
 </head>
 <body>
 
 <h1>Twilight Imperium Map Generator</h1>
+<button id="toggle-button">Show Blue Tiles</button>
+<input type="text" id="mapString" placeholder="Enter map string">
+<button onclick="generateMap()">Generate Map</button>
 <p id="used-tiles-display"></p>
+
+<div class="tile-pane" id="tile-pane"></div> <!-- Add a container for the tile pane -->
 <div class="map-container" id="map-container"></div>
 
-
-
-<script>
-//import { combinedGreenList } from 'map-resources/tiles.js';
-
-function generateMap() {
-    const mapContainer = document.getElementById('map-container');
-    mapContainer.innerHTML = '';
-
-    // Coordinates for each hexagon tile
-
-    //top: add 45px for each row
-    //left: add 160px for each tile
-    const tileCoordinates = [
-        { hs: "y", top: '1px', left: '240px' },   // Tile 1 HS
-
-        { top: '46px', left: '160px' },  // Tile 2
-        { top: '46px', left: '320px' },  // Tile 3
-
-        { top: '93px', left: '80px' },   // Tile 4
-        { top: '93px', left: '240px' }, // Tile 5
-        { top: '93px', left: '400px' },  // Tile 6
-
-        { hs: "y", top: '138px', left: '0px' },   // Tile 7 HS
-        { top: '138px', left: '160px' }, // Tile 8
-        { top: '138px', left: '320px' },  // Tile 9
-        { hs: "y", top: '138px', left: '480px' },   // Tile 10 HS
-
-        { top: '183px', left: '80px' }, // Tile 11
-        { top: '183px', left: '240px' },  // Tile 12 
-        { top: '183px', left: '400px' },   // Tile 13
-        
-        { top: '228px', left: '0px' }, // Tile 14
-        { top: '228px', left: '160px' },  // Tile 15
-        { top: '228px', left: '320px' },   // Tile 16
-        { top: '228px', left: '480px' }, // Tile 17
-
-        { top: '273px', left: '80px' },  // Tile 18
-        { top: '273px', left: '240px' },   // Tile 19 MECATOL
-        { top: '273px', left: '400px' }, // Tile 20
-
-        { top: '318px', left: '0px' },  // Tile 21
-        { top: '318px', left: '160px' },   // Tile 22
-        { top: '318px', left: '320px' }, // Tile 23
-        { top: '318px', left: '480px' },  // Tile 24
-
-        { top: '363px', left: '80px' },   // Tile 25
-        { top: '363px', left: '240px' }, // Tile 26
-        { top: '363px', left: '400px' },  // Tile 27
-        
-        { hs: "y", top: '408px', left: '0px' },   // Tile 28 HS 
-        { top: '408px', left: '160px' }, // Tile 29
-        { top: '408px', left: '320px' },  // Tile 30
-        { hs: "y", top: '408px', left: '480px' },   // Tile 31 HS
-
-        { top: '453px', left: '80px' }, // Tile 32
-        { top: '453px', left: '240px' },  // Tile 33
-        { top: '453px', left: '400px' },   // Tile 34
-
-        { top: '498px', left: '160px' }, // Tile 35
-        { top: '498px', left: '320px' },  // Tile 36
-
-        { hs: "y", top: '543px', left: '240px' },   // Tile 37 HS
-    ];
-
-const green = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 51];
-const pokGreen = [52, 53, 54, 55, 56, 57, 58];
-const blue = [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38];
-const pokBlue = [59, 60, 61, 62, 63, 64, 65, 66, 69, 70, 71, 72, 73, 74, 75, 76];
-
-const combinedGreenList = green.concat(pokGreen);
-const combinedBlueList = blue.concat(pokBlue);
-
-let usedTiles = [];
-
-for (let i = 0; i < tileCoordinates.length; i++) {
-    const tileNumber = i + 1;
-    const tile = document.createElement('div');
-
-    let availableTiles;
-    if (tileCoordinates[i].hs === 'y') {
-        availableTiles = combinedGreenList.filter(tile => !usedTiles.includes(tile));
-    } else { 
-        availableTiles = combinedBlueList.filter(tile => !usedTiles.includes(tile));
-    }
-
-    // Check if there are available tiles to place
-    if (availableTiles.length > 0) {
-        const randomIndex = Math.floor(Math.random() * availableTiles.length);
-        const selectedTile = availableTiles[randomIndex];
-
-        tile.style.backgroundImage = `url('/images/tiles/ST_${selectedTile}.png')`;
-
-        // Add the selected tile to the used tiles array
-        usedTiles.push(selectedTile);
-    } else {
-        // Handle case where no available tiles
-        console.log("No available tiles to place.");
-        // You may want to handle this case differently based on your requirements
-    }
-
-    if (tileNumber === 19) {
-      tile.style.backgroundImage = `url('/images/tiles/ST_18.png')`;
-    }
-
-    // Set other styles
-    tile.style.top = tileCoordinates[i].top;
-    tile.style.left = tileCoordinates[i].left;
-    tile.classList.add('map-tile'); // Add the class here if needed
-
-    // Append the tile to the map container
-    mapContainer.appendChild(tile);
-}
-
-printUsedTiles(usedTiles);
-
-}
-
-generateMap(); // Auto-generate map on page load
-
-
-function printUsedTiles(usedTiles) {
-    const usedTilesString = "Used Tiles: " + usedTiles.join(', '); // Convert the array to a string separated by commas
-    const tilesDisplayElement = document.getElementById('used-tiles-display'); // Get the element where you want to display the used tiles
-    tilesDisplayElement.textContent = usedTilesString; // Set the text content of the element to the formatted string
-}
-
-</script>
-
+<script src="/map-gen.js"></script>
 </body>
 </html>
-

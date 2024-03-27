@@ -22,10 +22,12 @@ const supernovas = [43];
 const pokSupernovas = [80];
 const hyperlanes = ["83A", "83B", "84A", "84B", "85A", "85B", "86A", "86B", "87A", "87B", "88A", "88B", "89A", "89B", "90A", "90B", "91A", "91B"];
 
+const combinedGreenList = green.concat(pokGreen);
+const combinedBlueList = blue.concat(pokBlue);
 
-const combinedList = blue.concat(pokBlue);
+module.exports = combinedGreenList;
+module.exports = combinedBlueList;
 
-module.exports = combinedList;
 
 const randomTiles = getRandomTiles();
 
@@ -54,4 +56,8 @@ function getRandomTiles() {
     return randomTiles;
 }
 
-module.exports = randomTiles;
+function printUsedTiles(usedTiles) {
+    const usedTilesString = "Used Tiles: " + usedTiles.join(', '); // Convert the array to a string separated by commas
+    const tilesDisplayElement = document.getElementById('used-tiles-display'); // Get the element where you want to display the used tiles
+    tilesDisplayElement.textContent = usedTilesString; // Set the text content of the element to the formatted string
+}
