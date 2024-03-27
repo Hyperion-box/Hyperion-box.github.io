@@ -32,6 +32,8 @@ const combinedGreenList = green.concat(pokGreen);
 const combinedBlueList = blue.concat(pokBlue);
 const combinedRedList = red.concat(pokRed);
 
+const combinedRedBlueList = combinedBlueList.concat(combinedRedList); //For generating map with anomalies and planets
+
 function selectTile(usedTiles) {
     const mapTiles = document.querySelectorAll('.map-tile');
     mapTiles.forEach(tile => {
@@ -158,7 +160,7 @@ function generateMap() {
         if (tileCoordinates[i].hs === 'y') {
             availableTiles = combinedGreenList.filter(tile => !usedTiles.includes(tile));
         } else {
-            availableTiles = combinedBlueList.filter(tile => !usedTiles.includes(tile));
+            availableTiles = combinedRedBlueList.filter(tile => !usedTiles.includes(tile));
         }
 
         // Check if there are available tiles to place
