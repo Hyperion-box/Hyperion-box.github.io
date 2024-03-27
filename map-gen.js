@@ -4,35 +4,64 @@
 let isGreenSelected = true; // Flag to track whether green or blue tiles are selected
 
 
+const red = [39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50];
+const pokRed = [67, 68, 77, 78, 79, 80];
+const anomaly = [41, 42, 43, 44, 45];
+const pokAnomaly = [67, 68, 79, 80];
+const blankRed = [39, 40, 46, 47, 48, 49, 50];
+const pokBlankRed = [77, 78];
+const alphaWormholes = [26, 39];
+const pokAlphaWormholes = [79];
+const betaWormholes = [25, 40];
+const pokBetaWormholes = [64];
+const asteroidFields = [44, 45];
+const pokAsteroidFields = [79];
+const gravityRifts = [41];
+const pokGravityRifts = [67];
+const nebulae = [42];
+const pokNebulae = [68];
+const supernovas = [43];
+const pokSupernovas = [80];
+const hyperlanes = ["83A", "83B", "84A", "84B", "85A", "85B", "86A", "86B", "87A", "87B", "88A", "88B", "89A", "89B", "90A", "90B", "91A", "91B"];
+
 const green = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 51];
 const pokGreen = [52, 53, 54, 55, 56, 57, 58];
 const blue = [19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38];
 const pokBlue = [59, 60, 61, 62, 63, 64, 65, 66, 69, 70, 71, 72, 73, 74, 75, 76];
 
+
 const combinedGreenList = green.concat(pokGreen);
 const combinedBlueList = blue.concat(pokBlue);
 
-function selectTile(tileNumber) {
+function selectTile(usedTiles) {
         const mapTiles = document.querySelectorAll('.map-tile');
         mapTiles.forEach(tile => {
             tile.addEventListener('click', () => {
                 const selectedTile = document.querySelector('.tile-image.selected');
+                const previousTileNumber = parseInt(tile.dataset.tile);
                 if (selectedTile) {
+                    console.log("Tile Replaced: " + tile.dataset.tile + " New Tile number: " + selectedTile.dataset.tile);
                     tile.style.backgroundImage = `url('/images/tiles/ST_${selectedTile.dataset.tile}.png')`;
                     tile.dataset.tile = selectedTile.dataset.tile;
 
-
-                    const previousTileNumber = parseInt(tile.dataset.tile);
-                    const index = usedTiles.indexOf(previousTileNumber);
-                    if (index !== -1) {
-                        usedTiles.splice(index, 1);
-                    }
     
                     // Add the new tile number to the usedTiles list
                     const newTileNumber = parseInt(selectedTile.dataset.tile);
-                    usedTiles.push(newTileNumber);
+
+
+                    for (let i = 0; i < usedTiles.length; i++) {
+                        console.log(`Comparing ${usedTiles[i]} with ${previousTileNumber}`);
+                        if (usedTiles[i] === previousTileNumber) {
+                            console.log(`Replacing ${previousTileNumber} with ${newTileNumber}`);
+                            usedTiles[i] = newTileNumber;
+                        }
+                    }
+                    
+
+                    //usedTiles.push(newTileNumber);
     
                     // Print the updated usedTiles list
+                    console.log(usedTiles);
                     printUsedTiles(usedTiles);
                 }
             });
@@ -105,7 +134,7 @@ function generateMap() {
 
 
 
-let usedTiles = [];
+var usedTiles = [];
 
 for (let i = 0; i < tileCoordinates.length; i++) {
     const tileNumber = i + 1;
@@ -124,6 +153,7 @@ for (let i = 0; i < tileCoordinates.length; i++) {
         const selectedTile = availableTiles[randomIndex];
 
         tile.style.backgroundImage = `url('/images/tiles/ST_${selectedTile}.png')`;
+        tile.dataset.tile = selectedTile;
 
         // Add the selected tile to the used tiles array
         usedTiles.push(selectedTile);
@@ -135,6 +165,7 @@ for (let i = 0; i < tileCoordinates.length; i++) {
 
     if (tileNumber === 19) {
       tile.style.backgroundImage = `url('/images/tiles/ST_18.png')`;
+      tile.dataset.tile = 18;
     }
 
     // Set other styles
@@ -158,7 +189,7 @@ for (let i = 0; i < tileCoordinates.length; i++) {
 }
 
 printUsedTiles(usedTiles);
-selectTile(); // Call function to handle tile selection on the map
+selectTile(usedTiles); // Call function to handle tile selection on the map
 generateTilePane();
 }
 generateMap(); // Auto-generate map on page load
@@ -235,6 +266,7 @@ function generateTilePane() {
 
 
 function printUsedTiles(usedTiles) {
+    
     const usedTilesString = "Used Tiles: " + usedTiles.join(', '); // Convert the array to a string separated by commas
     const tilesDisplayElement = document.getElementById('used-tiles-display'); // Get the element where you want to display the used tiles
     tilesDisplayElement.textContent = usedTilesString; // Set the text content of the element to the formatted string
