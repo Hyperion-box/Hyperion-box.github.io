@@ -335,7 +335,10 @@ function generateMapFromTileString() {
     generateTilePane();
 }
     
-
+function clearString () {
+    document.getElementById('mapString').value = "";
+    
+}
 
 function generateTilePane(colour) {
 var combinedTileList = combinedGreenList;
