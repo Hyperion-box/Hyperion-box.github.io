@@ -5,10 +5,6 @@
 
     {% include meta.html %}
 
-    <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style-ti.css" />
     <link rel="stylesheet" type="text/css" href="/styles/Stars.css">
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
@@ -17,15 +13,7 @@
 
   </head>
 
-  <body>
-    <style>
-      body {
-        background-image: url('/images/space-nowm.gif');
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100%;
-      }
-      </style>
+  <body class="map-body">
     <div class="wrapper-masthead">
       <div class="container">
         <header class="masthead clearfix">
@@ -44,7 +32,7 @@
       </div>
     </div>
     
-    <div id="main" role="main" class="faction-container">
+    <div id="main" role="main" class="containers">
       {{ content }}
     </div>
 
