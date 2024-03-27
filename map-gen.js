@@ -379,7 +379,7 @@ var combinedTileList = combinedGreenList;
 
 function printUsedTiles(usedTiles) {
 
-    const usedTilesString = "Used Tiles: " + usedTiles.join(', '); // Convert the array to a string separated by commas
+    const usedTilesString = "Map String: " + usedTiles.join(', '); // Convert the array to a string separated by commas
     const tilesDisplayElement = document.getElementById('used-tiles-display'); // Get the element where you want to display the used tiles
     tilesDisplayElement.textContent = usedTilesString; // Set the text content of the element to the formatted string
 }
