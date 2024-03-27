@@ -14,7 +14,13 @@ permalink: /map-gen/
 <body>
 
 <h1>Twilight Imperium Map Generator</h1>
-<button id="toggle-button">Show Blue Tiles</button>
+<div class="tile-pane-radios">
+<input type="radio" checked="checked" name="tiles" id="tiles-button" onclick="generateTilePane('green')">Show Home Systems</button>
+<input type="radio" name="tiles" id="tiles-button" onclick="generateTilePane('blue')">Show Blue Tiles</button>
+<input type="radio" name="tiles" id="tiles-button" onclick="generateTilePane('red')">Show Red Tiles</button>
+</div>
+
+
 <input type="text" id="mapString" placeholder="Enter map string">
 <button onclick="generateMap()">Generate Map</button>
 <p id="used-tiles-display"></p>

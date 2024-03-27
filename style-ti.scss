@@ -481,6 +481,7 @@ body {
   justify-content: center;
   margin: 20px auto;
   position: relative;
+  left: 20px;
 }
 
 .map-tile {
@@ -491,7 +492,8 @@ body {
 }
 .map-tile:hover {
   background-color: rgb(226, 166, 35); /* Adjust as necessary */
-  z-index: 1; /* Set higher than default */
+  border: 3px solid rgb(226, 166, 35);
+  z-index: 2; /* Set higher than default */
   clip-path: polygon(24% 0%, 74% -1%, 101% 51%, 74% 101%, 24% 100%, -1% 50%); /* Hexagon clip path */
 }
 .map-tile.selected {
@@ -504,20 +506,40 @@ body {
 
 color: orange;
 }
+
+
+.tile-pane-radios {
+  color: #c0351c;
+  background-color: #1f1e1e;
+  border: 5px solid #dededf;
+  width: auto;
+}
+
 .tile-pane {
   float: left;
   width: 200px; /* Adjust as needed */
   height: 100%; /* Match the height of the map container */
-  overflow-y: auto; /* Enable vertical scrolling if needed */
+  border: 5px solid #dededf;
+  padding-right: 20px;
+  background-color: #1f1e1e;
+  border-radius: 10px;
 }
 
-.tile-pane img {
-  display: block;
-  margin-bottom: 5px; /* Adjust spacing between images */
-}
 .tile-image {
-width: 80%; /* Scale down by 80% */
-margin-bottom: 5px; /* Add margin between images */
+  width: 80%; /* Scale down by 80% */
+  margin-bottom: 3px; /* Add margin between images */
+  margin-top: 3px;
+  margin-left: 15%;
+}
+
+.tile-image.selected {
+  border: 5px solid #c0351c;
+  width: 80%; /* Scale down by 80% */
+  margin-bottom: 5px; /* Add margin between images */
+  clip-path: polygon(24% 0%, 74% -1%, 101% 51%, 74% 101%, 24% 100%, -1% 50%);
+  background-color: #c0351c;
+  
+
 }
 
 
