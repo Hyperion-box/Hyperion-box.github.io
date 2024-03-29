@@ -32,6 +32,7 @@ const combinedGreenList = green.concat(pokGreen);
 const combinedBlueList = blue.concat(pokBlue);
 const combinedRedList = red.concat(pokRed);
 
+
 const combinedRedBlueList = combinedBlueList.concat(combinedRedList); //For generating map with anomalies and planets
 
 function selectTile(usedTiles) {
@@ -348,6 +349,8 @@ var combinedTileList = combinedGreenList;
         combinedTileList = combinedGreenList;
     } else if (colour==="blue") {
         combinedTileList = combinedBlueList;
+    } else if (colour==="hyper") {
+        combinedTileList = hyperlanes;
     }
 
 
