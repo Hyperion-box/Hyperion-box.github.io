@@ -547,11 +547,12 @@ color: orange;
 .tile-pane {
   float: left;
   width: 200px; /* Adjust as needed */
-  height: 100%; /* Match the height of the map container */
+  height: 600px; /* Match the height of the map container */
   border: 5px solid #CD6766;
   padding-right: 20px;
   background-color: #1f1e1e;
   border-radius: 10px;
+  overflow: auto;
 }
 
 .tile-image {
@@ -567,8 +568,6 @@ color: orange;
   margin-bottom: 5px; /* Add margin between images */
   clip-path: polygon(24% 0%, 74% -1%, 101% 51%, 74% 101%, 24% 100%, -1% 50%);
   background-color: #c0351c;
-  
-
 }
 
 
