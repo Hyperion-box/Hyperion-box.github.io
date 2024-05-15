@@ -18,6 +18,4 @@ permalink: /tech-tree/
 
 {% include technology/unit-tech.html %}
 
-Starting from November 22
-
 Last updated 03/03/2024
