@@ -8,7 +8,10 @@ date: 24/02/2024
 
 ---
 
-Details afor past February game.
+* TOC
+{:toc}
+
+Details a for past February game.
 
 ## Format
 * Scored to 11 points due to early quits
