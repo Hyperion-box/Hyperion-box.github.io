@@ -4,7 +4,7 @@ title: The Clan of Saar
 image: /images/faction-icons/Saar.png
 preview: 
 categories: faction
-date: 08/03/2024
+date: 27/05/2024
 color: gold
 name: The Clan of Saar
 short-name: saar

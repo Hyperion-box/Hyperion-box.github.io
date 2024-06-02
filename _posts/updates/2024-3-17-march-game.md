@@ -5,12 +5,28 @@ image: /images/March-TI.png
 preview: 
 categories: game
 date: 17/03/2024
-
+carousels:
+  - images: 
+    - image: /images/march-game/final-scores.png
+    - image: /images/march-game/first-two-obs.png
+    - image: /images/march-game/second-ob.png
+    - image: /images/march-game/third-ob.png
+    - image: /images/march-game/first-2vp.png
+    - image: /images/march-game/second-2vp.png
+    - image: /images/march-game/third-2vp.png
+  - images: 
+    - image: /uploads/slider/image5.jpg
+    - image: /uploads/slider/image6.jpg
+    - image: /uploads/slider/image7.jpg
+    - image: /uploads/slider/image8.jpg
 ---
 * TOC
 {:toc}
 
 Details and reference for upcoming game. Using ChatGPT throughout this.
+
+## Final Scores and Objectives
+{% include carousel.html height="50" unit="%" duration="7" number="1" %}
 
 ## Format
 * Scoring to 12 points
@@ -26,23 +42,18 @@ Winner: ACW with The Mahact Gene-Sorcerers
 
 ACW: 3 Points in league
 
-<img src="/images/march-game/final-scores.png" class="map">
-
 ## Map
 <img src="/images/March-TI.png" class="map">
 
 
 ## Post-Game
-## Episode I: The March of Empires
+## Turn 1
 
-<img src="/images/march-game/first-two-obs.png" class="map">
-Turn 1 initiated with cautious exploration across the galaxy, setting the stage for unfolding conflicts.
+Turn 1 began with exploration across the galaxy, setting the stage for unfolding conflicts.
 
 ***The Pillage of Yin: Mentak swiftly descended upon the Yin homeworld, pillaging their resources in a brazen display of power.***
 
 ## Episode II: The Gathering Storm
-
-<img src="/images/march-game/second-ob.png" class="map">
 
 Turn 2 echoed the quiet hum of expansion, yet beneath the surface, tensions simmered.
 
@@ -67,8 +78,6 @@ Titans began a build-up in fleets around the Quann system, with the intention to
 
 ## Episode III: The Unraveling
 
-<img src="/images/march-game/third-ob.png" class="map">
-
 Just when the Quann Missile Crisis was seemingly resolved, tensions flared again when there was reluctance from Titans to send their destroyer, after Mahact fulfilled their side of the agreement. This almost escalated to Mahact sending a fleet in to forcibly take a token from Titans, when Titans agreed to honour the agreement.
 
 Mentak claimed Mecatol, gaining the Custodians point and meaning Agenda would take place.
@@ -88,7 +97,6 @@ Alpha and beta wormholes have no effect during movement was enforced, limiting m
 Titans were elected Minister of Exploration, meaning when they gained control of a planet, they gained 1 trade good.
 
 ## Episode IV: Betrayal and Retribution
-<img src="/images/march-game/first-2vp.png" class="map">
 
 Yin moved their Flagship to Mecatol Rex, with Mentak retreating their fleet away before being blown up.
 
@@ -103,7 +111,6 @@ Custom Agenda: Repeal restriction of movement on wormholes.
 
 
 ## Episode V: Nomad's Gambit
-<img src="/images/march-game/second-2vp.png" class="map">
 
 Yin moved their fleets around Mecatol and drew aggression from Nomad, where Nomad destroyed Yin's Flagship yet again at the cost of their own cruisers.
 
@@ -126,7 +133,6 @@ Mahact gained "Minister of War," allowing them to perform an action and remove o
 
 
 ## Episode VI: Clash of Titans
-<img src="/images/march-game/third-2vp.png" class="map">
 
 <img src="/images/march-game/turn-6-map.png" class="map">
 

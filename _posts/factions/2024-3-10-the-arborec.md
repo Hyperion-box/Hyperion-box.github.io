@@ -4,7 +4,7 @@ title: The Arborec
 image: /images/faction-icons/Arborec.png
 preview: 
 categories: faction
-date: 10/03/2024
+date: 30/05/2024
 color: gold
 name: The Arborec
 short-name: arborec

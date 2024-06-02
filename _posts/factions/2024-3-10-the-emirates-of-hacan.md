@@ -4,7 +4,7 @@ title: The Emirates of Hacan
 image: /images/faction-icons/Hacan.png
 preview: 
 categories: faction
-date: 06/03/2024
+date: 25/05/2024
 color: gold
 name: The Emirates of Hacan
 short-name: hacan

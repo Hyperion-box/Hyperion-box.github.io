@@ -4,7 +4,7 @@ title: The Barony of Letnev
 image: /images/faction-icons/Barony.png
 preview: 
 categories: faction
-date: 9/03/2024
+date: 28/05/2024
 color: gold
 name: The Arborec
 short-name: barony

@@ -4,7 +4,7 @@ title: The Federation of Sol
 image: /images/faction-icons/Sol.png
 preview: 
 categories: faction
-date: 05/03/2024
+date: 23/05/2024
 color: blue
 name: The Federation of Sol
 short-name: sol

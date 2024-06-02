@@ -4,7 +4,7 @@ title: The Embers of Muaat
 image: /images/faction-icons/Muaat.png
 preview: 
 categories: faction
-date: 07/03/2024
+date: 26/05/2024
 color: gold
 name: The Embers of Muaat
 short-name: muaat

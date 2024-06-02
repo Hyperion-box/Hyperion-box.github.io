@@ -4,7 +4,7 @@ title: The L1Z1X Mindnet
 image: /images/faction-icons/L1Z1X.png
 preview: 
 categories: faction
-date: 03/03/2024
+date: 21/05/2024
 color: blue
 name: The L1Z1X Mindnet
 short-name: l1z1x
