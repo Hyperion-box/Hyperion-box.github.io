@@ -4,7 +4,7 @@ title: The Ghosts of Creuss
 image: /images/faction-icons/Ghosts.png
 preview: 
 categories: faction
-date: 04/03/2024
+date: 22/05/2024
 color: gold
 name: The Ghosts of Creuss
 short-name: ghosts

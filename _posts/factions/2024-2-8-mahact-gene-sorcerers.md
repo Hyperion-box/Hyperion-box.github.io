@@ -4,7 +4,7 @@ title: The Mahact Gene-Sorcerers
 image: /images/faction-icons/Mahact.png
 preview: 
 categories: faction
-date: 04/03/2024
+date: 20/05/2024
 color: gold
 name: The Mahact Gene-Sorcerers
 short-name: mahact

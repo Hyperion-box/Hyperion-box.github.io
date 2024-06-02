@@ -4,7 +4,7 @@ title: The Mentak Coalition
 image: /images/faction-icons/Mentak.png
 preview: 
 categories: faction
-date: 02/03/2024
+date: 19/05/2024
 color: yellow
 name: The Mentak Coalition
 short-name: mentak
