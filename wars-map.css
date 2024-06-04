@@ -34,7 +34,7 @@
     font-weight: bold;
     animation: rotate 120s linear infinite;
     position: absolute;
-    left: 40px;
+    left: 50px;
     user-select: none;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -59,10 +59,12 @@
 
 .point.industrial-planet {
     background-color: rgb(6, 160, 70);
+    animation: pulse-industry 1s ease-in-out infinite;
 }
 
 .point.cultural-planet {
-    background-color: rgb(6, 116, 160);
+    background-color: rgb(6, 55, 160);
+    animation: pulse-culture 1s ease-in-out infinite;
 }
 
 .point.alpha-wormhole {
@@ -136,6 +138,29 @@
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse-culture {
+    0% {
+        box-shadow: 0 0 5px #124bc7, 0 0 10px #124bc7, 0 0 15px #124bc7, 0 0 20px #124bc7;
+    }
+    50% {
+        box-shadow: 0 0 50px #124bc7, 0 0 20px #124bc7, 0 0 30px #124bc7, 0 0 40px #124bc7;
+    }
+    100% {
+        box-shadow: 0 0 5px #124bc7, 0 0 10px #124bc7, 0 0 15px #124bc7, 0 0 20px #124bc7;
+    }
+}
+@keyframes pulse-industry {
+    0% {
+        box-shadow: 0 0 5px #04af20, 0 0 10px #04af20, 0 0 15px #04af20, 0 0 20px #04af20;
+    }
+    50% {
+        box-shadow: 0 0 50px #04af20, 0 0 20px #04af20, 0 0 30px #04af20, 0 0 40px #04af20;
+    }
+    100% {
+        box-shadow: 0 0 5px #04af20, 0 0 10px #04af20, 0 0 15px #04af20, 0 0 20px #04af20;
     }
 }
 
