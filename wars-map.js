@@ -152,7 +152,7 @@ grid.appendChild(cursorCircle);
 grid.addEventListener('mousemove', function(event) {
     const rect = grid.getBoundingClientRect();
     const x = event.clientX - rect.left;
-    const y = event.clientY + 429;
+    const y = event.clientY + 409;
 
     verticalLine.style.left = x + 'px';
     horizontalLine.style.top = y + 'px';
