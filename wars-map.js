@@ -21,15 +21,13 @@ systems.forEach(system => {
     // Create an info window for the system
     const info = document.createElement('div');
     info.classList.add('info');
-    info.textContent = `System: ${system.label}`;
+    info.textContent = `System: ${system.info}`;
 
     // Create a label for the system
     const label = document.createElement('div');
     label.setAttribute('class', 'label');
     label.textContent = system.name;
     label.style.position = 'absolute';
-    label.style.left = `${system.x / 50 * 100}%`;
-    label.style.top = `${system.y / 50 * 100}%`;
     label.style.transform = 'translate(-50%, -50%)'; // Center the label
     label.style.zIndex = '1'; // Ensure the label is on top
     grid.appendChild(label);

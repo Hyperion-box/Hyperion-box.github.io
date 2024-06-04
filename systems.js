@@ -5,17 +5,17 @@ export let systems = [
         "x": 24,
         "y": 30,
         "image": "path_to_image_A.png",
-        "label": ""
+        "info": ""
       },
     
     // North West
     {
       "name": "The Shaleri Passage",
       "type": "planet",
-      "x": 10,
+      "x": 18,
       "y": 20,
       "image": "path_to_image_A.png",
-      "label": ""
+      "info": ""
     },
     {
       "name": "The Ghost Worlds",
@@ -27,9 +27,9 @@ export let systems = [
     {
       "name": "Kal Haddar ",
       "type": "star",
-      "x": 10,
+      "x": 13,
       "y": 10,
-      "label": "",
+      "info": "",
       "image": "/images/tech-icon/cybernetic.png"
     },
 
@@ -40,7 +40,7 @@ export let systems = [
         "type": "mecatol-rex",
         "x": 43,
         "y": 16,
-        "label": "System: Gul Planets: - Mecatol Rex \n - Jun \n - Semani",
+        "info": "System: Gul Planets: - Mecatol Rex \n - Jun \n - Semani",
         "image": "/images/planets-no-bg/MR-Planet.png"
       },
 
@@ -49,7 +49,7 @@ export let systems = [
         "type": "industrial-planet",
         "x":38,
         "y": 15,
-        "label": "N",
+        "info": "N",
         "image": "/images/tech-icon/cybernetic.png"
       },
 
@@ -58,7 +58,17 @@ export let systems = [
         "type": "cultural-planet",
         "x":39,
         "y": 25,
-        "label": "N",
+        "info": "N",
+        "image": "/images/tech-icon/cybernetic.png"
+      },
+
+      //South East
+      {
+        "name": "Quann",
+        "type": "cultural-planet",
+        "x": 81,
+        "y": 45,
+        "info": "N",
         "image": "/images/tech-icon/cybernetic.png"
       }
   ]
