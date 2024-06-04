@@ -1,0 +1,126 @@
+.grid {
+    background-image: url("images/holo-table.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: repeat(50, 1fr);
+    grid-template-rows: repeat(50, 1fr);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    border-radius: 50%;
+    border: solid 3px #000;
+    
+}
+
+#coordinates-window {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid black;
+}
+.cell {
+    border: 1px solid #999797;
+    position: relative;
+}
+.cell:hover {
+    background-color: #e7db34;
+}
+
+.label {
+    color: #ffffff;
+    font-weight: bold;
+    animation: rotate 120s linear infinite;
+    position: absolute;
+    left: 40px;
+    user-select: none;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.point {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+/* system colors */
+
+.point.industrial-planet {
+    background-color: rgb(6, 160, 70);
+}
+
+.point.cultural-planet {
+    background-color: rgb(6, 116, 160);
+}
+
+.point.alpha-wormhole {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 94, 0);
+    animation: pulse-alpha 1s ease-in-out infinite;
+}
+
+.point.delta-wormhole {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(140, 0, 255);
+    animation: pulse-delta 1s ease-in-out infinite;
+}
+
+.point.mecatol-rex {
+    width: 26px;
+    height: 26px;
+    background-color: rgba(255, 208, 0, 0.808);
+    animation: pulse-delta 1s ease-in-out infinite;
+}
+
+.info {
+    display: none;
+}
+
+
+/*  Animations */
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000;
+    }
+    50% {
+        box-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000;
+    }
+    100% {
+        box-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000, 0 0 20px #ff0000;
+    }
+}
+
+@keyframes pulse-alpha {
+    0%, 100% {
+        box-shadow: 0 0 5px rgb(255, 94, 0), 0 0 10px rgb(255, 94, 0), 0 0 15px rgb(255, 94, 0), 0 0 20px rgb(255, 94, 0);
+    }
+    50% {
+        box-shadow: 0 0 10px rgb(255, 94, 0), 0 0 20px rgb(255, 94, 0), 0 0 30px rgb(255, 94, 0), 0 0 40px rgb(255, 94, 0);
+    }
+}
+
+@keyframes pulse-delta {
+    0%, 100% {
+        box-shadow: 0 0 5px rgb(140, 0, 255), 0 0 10px rgb(140, 0, 255), 0 0 15px rgb(140, 0, 255), 0 0 20px rgb(140, 0, 255);
+    }
+    50% {
+        box-shadow: 0 0 10px rgb(140, 0, 255), 0 0 20px rgb(140, 0, 255), 0 0 30px rgb(140, 0, 255), 0 0 40px rgb(140, 0, 255);
+    }
+}
