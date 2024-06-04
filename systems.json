@@ -1,0 +1,24 @@
+[
+    {
+        "name": "System A",
+        "x": 10,
+        "y": 20,
+        "z": 30,
+        "image": "path_to_image_A.png"
+    },
+    {
+        "name": "System B",
+        "x": 15,
+        "y": 5,
+        "z": 40,
+        "image": "images/tech-icon/cybernetic.png"
+    },
+    {
+        "name": "System ",
+        "x": -10,
+        "y": -10,
+        "z": 40,
+        "label": "Quann",
+        "image": "./images/tech-icon/cybernetic.png"
+    }
+]
