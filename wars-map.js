@@ -1,6 +1,7 @@
 import {
     systems
 } from './systems.js';
+
 const gridSize = 50;
 const grid = document.getElementById('grid');
 for (let i = 0; i < 50 * 50; i++) {
@@ -27,8 +28,8 @@ systems.forEach(system => {
     label.setAttribute('class', 'label');
     label.textContent = system.name;
     label.style.position = 'absolute';
-    label.style.left = `${system.x / 0 * 100}%`;
-    label.style.top = `${system.y / 0 * 100}%`;
+    label.style.left = `${system.x / 50 * 100}%`;
+    label.style.top = `${system.y / 50 * 100}%`;
     label.style.transform = 'translate(-50%, -50%)'; // Center the label
     label.style.zIndex = '1'; // Ensure the label is on top
     grid.appendChild(label);

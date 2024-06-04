@@ -1,4 +1,4 @@
-export const systems = [
+export let systems = [
     {
         "name": "The Heart",
         "type": "heart",
@@ -29,7 +29,7 @@ export const systems = [
       "type": "star",
       "x": 10,
       "y": 10,
-      "label": "N",
+      "label": "",
       "image": "/images/tech-icon/cybernetic.png"
     },
 
@@ -40,7 +40,7 @@ export const systems = [
         "type": "mecatol-rex",
         "x": 43,
         "y": 16,
-        "label": "N",
+        "label": "System: Gul Planets: - Mecatol Rex \n - Jun \n - Semani",
         "image": "/images/planets-no-bg/MR-Planet.png"
       },
 

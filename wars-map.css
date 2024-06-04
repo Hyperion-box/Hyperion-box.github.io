@@ -90,6 +90,15 @@
     display: none;
 }
 
+#overlay img {
+    float: right;
+    margin-right: 15px;
+    margin-top: 15px;
+    border: solid 4px #000b70ab;
+    border-radius: 10%;
+    background-color: rgb(105, 105, 105);
+}
+
 #vertical-line, #horizontal-line {
     position: absolute;
     background: #000;
