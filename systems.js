@@ -1,4 +1,13 @@
 export const systems = [
+    {
+        "name": "The Heart",
+        "type": "heart",
+        "x": 24,
+        "y": 30,
+        "image": "path_to_image_A.png",
+        "label": ""
+      },
+    
     // North West
     {
       "name": "The Shaleri Passage",

@@ -123,8 +123,41 @@ grid.addEventListener('mouseover', function(event) {
 
     coordinatesText.textContent = `X: ${gridX}, Y: ${gridY}`;
     coordinatesWindow.style.display = 'block';
+    verticalLine.style.display = 'block';
+    horizontalLine.style.display = 'block';
+    cursorCircle.style.display = 'block';
 });
 
 grid.addEventListener('mouseout', function() {
     coordinatesWindow.style.display = 'none';
+    verticalLine.style.display = 'none';
+    horizontalLine.style.display = 'none';
+    cursorCircle.style.display = 'none';
 });
+
+
+// Create the lines
+const verticalLine = document.createElement('div');
+verticalLine.id = 'vertical-line';
+grid.appendChild(verticalLine);
+
+const horizontalLine = document.createElement('div');
+horizontalLine.id = 'horizontal-line';
+grid.appendChild(horizontalLine);
+const cursorCircle = document.createElement('div');
+cursorCircle.id = 'cursor-circle';
+grid.appendChild(cursorCircle);
+
+// Update the position of the lines on mousemove
+grid.addEventListener('mousemove', function(event) {
+    const rect = grid.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY + 429;
+
+    verticalLine.style.left = x + 'px';
+    horizontalLine.style.top = y + 'px';
+    cursorCircle.style.left = (x - cursorCircle.offsetWidth / 2) + 'px';
+    cursorCircle.style.top = (y - cursorCircle.offsetHeight / 2) + 'px';
+});
+
+

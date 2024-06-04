@@ -1,5 +1,5 @@
 .grid {
-    background-image: url("images/holo-table.jpg");
+    background-image: url("images/galaxy-wide-copy.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     display: grid;
@@ -9,8 +9,8 @@
     height: 100vh;
     overflow: hidden;
     border-radius: 50%;
-    border: solid 3px #000;
-    
+    border: solid 3px #000b70ab;
+    font-family: 'Lucida Console';
 }
 
 #coordinates-window {
@@ -22,7 +22,7 @@
     border: 1px solid black;
 }
 .cell {
-    border: 1px solid #999797;
+    border: 1px solid #4e9eac;
     position: relative;
 }
 .cell:hover {
@@ -46,9 +46,16 @@
     background-color: red;
     border-radius: 50%;
     animation: pulse 1s ease-in-out infinite;
+    z-index: 1;
 }
 
 /* system colors */
+.point.heart {
+    background-color: rgb(255, 249, 196);
+    width: 20px;
+    height: 20px;
+    animation: pulse-heart 1s ease-in-out infinite;
+}
 
 .point.industrial-planet {
     background-color: rgb(6, 160, 70);
@@ -83,6 +90,34 @@
     display: none;
 }
 
+#vertical-line, #horizontal-line {
+    position: absolute;
+    background: #000;
+}
+
+#vertical-line {
+    width: 1px;
+    height: 100%;
+    border: 1px solid #dd5757;
+    pointer-events: none;
+}
+
+#horizontal-line {
+    width: 100%;
+    height: 1px;
+    border: 1px solid #dd5757;
+    pointer-events: none;
+}
+
+#cursor-circle {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #dd5757;
+    pointer-events: none; /* This allows mouse events to pass through the circle */
+}
+
 
 /*  Animations */
 
@@ -92,6 +127,18 @@
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse-heart {
+    0% {
+        box-shadow: 0 0 5px #fffd9e, 0 0 10px #fffd9e, 0 0 15px #fffd9e, 0 0 20px #fffd9e;
+    }
+    50% {
+        box-shadow: 0 0 50px #fffd9e, 0 0 20px #fffd9e, 0 0 30px #fffd9e, 0 0 40px #fffd9e;
+    }
+    100% {
+        box-shadow: 0 0 5px #fffd9e, 0 0 10px #fffd9e, 0 0 15px #fffd9e, 0 0 20px #fffd9e;
     }
 }
 
