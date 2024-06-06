@@ -23,20 +23,43 @@ systems.forEach(system => {
     info.classList.add('info');
     info.textContent = `System: ${system.info}`;
 
-    // Create a label for the system
-    const label = document.createElement('div');
-    label.setAttribute('class', 'label');
-    label.textContent = system.name;
-    label.style.position = 'absolute';
-    label.style.transform = 'translate(-50%, -50%)'; // Center the label
-    label.style.zIndex = '1'; // Ensure the label is on top
-    grid.appendChild(label);
+// Create a parent div for the labels
+const labelContainer = document.createElement('div');
+labelContainer.setAttribute('class', 'label-container');
+labelContainer.style.position = 'absolute';
+labelContainer.style.transform = 'translate(-50%, -50%)'; // Center the container
+labelContainer.style.zIndex = '1'; // Ensure the container is on top
 
-    // Add the point, label and info window to the cell
-    const cell = grid.children[system.y * 40 + system.x];
-    cell.appendChild(point);
-    cell.appendChild(label);
-    cell.appendChild(info);
+// Create a label for the system
+const systemLabel = document.createElement('div');
+systemLabel.setAttribute('class', 'system-label');
+systemLabel.textContent = system.name;
+
+// Create a label for the planets
+const planetLabel = document.createElement('div');
+planetLabel.setAttribute('class', 'planet-label');
+
+// Iterate over the properties of the system
+for (let prop in system) {
+    // If the property name starts with "planet" and the property value is not an empty string
+    if (prop.startsWith('planet') && system[prop] !== '') {
+        // Add the planet to the planet label
+        planetLabel.textContent += system[prop] + '\n';
+    }
+}
+
+// Add the system and planet labels to the container
+labelContainer.appendChild(systemLabel);
+labelContainer.appendChild(planetLabel);
+
+// Add the container to the grid
+grid.appendChild(labelContainer);
+
+// Add the point, labels and info window to the cell
+const cell = grid.children[system.y * 50 + system.x];
+cell.appendChild(point);
+cell.appendChild(labelContainer);
+cell.appendChild(info);
 
     // Add hover and click events to the cell
     //cell.addEventListener('mouseover', () => info.style.display = 'block');
