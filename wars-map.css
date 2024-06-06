@@ -5,11 +5,11 @@
     display: grid;
     grid-template-columns: repeat(50, 1fr);
     grid-template-rows: repeat(50, 1fr);
-    width: 100vw;
+    width: 99vw;
     height: 100vh;
     overflow: hidden;
     border-radius: 50%;
-    border: solid 3px #000b70ab;
+    border: solid 10px #000b70ab;
     font-family: 'Lucida Console';
 }
 
@@ -54,7 +54,7 @@
     background-color: rgb(255, 249, 196);
     width: 20px;
     height: 20px;
-    animation: pulse-heart 1s ease-in-out infinite;
+    animation: swirl 5s linear infinite;
 }
 
 .point.industrial-planet {
@@ -111,6 +111,7 @@
     height: 100%;
     border: 1px solid #dd5757;
     pointer-events: none;
+    z-index: 2;
 }
 
 #horizontal-line {
@@ -118,6 +119,7 @@
     height: 1px;
     border: 1px solid #dd5757;
     pointer-events: none;
+    z-index: 2;
 }
 
 #cursor-circle {
@@ -127,6 +129,15 @@
     border-radius: 50%;
     border: 2px solid #dd5757;
     pointer-events: none; /* This allows mouse events to pass through the circle */
+}
+
+.line-label {
+    position: absolute;
+    color: #fff; /* Change this to whatever color you want the label to be */
+    font-size: 18px; /* Adjust as needed */
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    pointer-events: none;
+    z-index: 1;
 }
 
 
@@ -161,6 +172,15 @@
     }
     100% {
         box-shadow: 0 0 5px #04af20, 0 0 10px #04af20, 0 0 15px #04af20, 0 0 20px #04af20;
+    }
+}
+
+@keyframes swirl {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
     }
 }
 
