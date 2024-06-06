@@ -98,14 +98,30 @@ function drawLine(cell1, cell2) {
     const y1 = cell1.offsetTop + cellHeight / 2;
     const x2 = cell2.offsetLeft + cellWidth / 2;
     const y2 = cell2.offsetTop + cellHeight / 2;
-    line.style.width = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)) + 'px';
+    const lineLength = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+    line.style.width = lineLength + 'px';
     line.style.height = '4px';
-    line.style.background = 'yellow';
+    line.style.background = '#dd5757';
+    line.style.boxShadow= "-1px 0 black, 0 1px black, 1px 0 black, 0 -1px black";
     line.style.transform = 'rotate(' + Math.atan2(y2 - y1, x2 - x1) + 'rad)';
     line.style.transformOrigin = '0 0';
     line.style.left = x1 + 'px';
     line.style.top = y1 + 'px';
     grid.appendChild(line);
+
+    // Calculate the length in weeks (140 pixels = 1 week)
+    let weeks = lineLength / 140; // Canonically it takes 3 weeks from Mecatol Rex to Quann
+
+    // Create the label
+    let label = document.createElement('span');
+    label.textContent = `${weeks.toFixed(2)} weeks`; // Use toFixed(2) to round to 2 decimal places
+    label.classList.add('line-label'); // Add the CSS class for styling
+    label.style.left = `${(x1 + x2) / 2}px`;
+    label.style.top = `${(y1 + y2) / 2}px`;
+
+    // Append the label to the grid
+    grid.appendChild(label);
+
 }
 
 const coordinatesWindow = document.getElementById('coordinates-window');
@@ -151,12 +167,14 @@ grid.appendChild(cursorCircle);
 grid.addEventListener('mousemove', function(event) {
     const rect = grid.getBoundingClientRect();
     const x = event.clientX - rect.left;
-    const y = event.clientY + 409;
+    const y = event.clientY + 395;
 
     verticalLine.style.left = x + 'px';
     horizontalLine.style.top = y + 'px';
     cursorCircle.style.left = (x - cursorCircle.offsetWidth / 2) + 'px';
     cursorCircle.style.top = (y - cursorCircle.offsetHeight / 2) + 'px';
 });
+
+
 
 
