@@ -39,8 +39,31 @@
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+.label-container {
+    animation: rotate 120s linear infinite;
+    pointer-events: none;
+    white-space: pre;
+}
+
+.system-label {
+    font-size: 16px; /* Adjust as needed */
+    color: #ffffff;
+    font-weight: bold;
+    user-select: none;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.planet-label {
+    margin-top: 5px;
+    font-size: 12px; /* Adjust as needed */
+    color: #ffffff;
+    font-weight: bold;
+    user-select: none;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
 .point {
-    position: absolute;
+    position: relative;
     width: 10px;
     height: 10px;
     background-color: red;
@@ -49,12 +72,38 @@
     z-index: 1;
 }
 
+.point::before {
+    content: ""; /* Necessary for the pseudo-element to show up */
+    position: absolute;
+    top: -28px; /* Adjust these values to position the halo correctly */
+    left: -28px;
+    width: 80px; /* Make the halo larger than the .point */
+    height: 80px;
+    border-radius: 50%;
+    border: 6px solid rgba(255, 0, 0, 0.3); /* Use rgba for a semi-transparent halo */
+    opacity: 0; /* Start out invisible */
+    transition: opacity 0.3s ease-in-out; /* Transition the opacity */
+    z-index: -1; /* Put the halo behind the .point */
+    pointer-events: none;
+}
+
+.point:hover::before {
+    opacity: 1; /* Show the halo on hover */
+    pointer-events: none;
+}
+
+.point.home-planet {
+    background-color: rgb(255, 249, 196);
+    width: 15px;
+    height: 15px;
+}
+
 /* system colors */
 .point.heart {
     background-color: rgb(255, 249, 196);
     width: 20px;
     height: 20px;
-    animation: swirl 5s linear infinite;
+    animation: pulse-heart 5s ease-in-out infinite;
 }
 
 .point.industrial-planet {
