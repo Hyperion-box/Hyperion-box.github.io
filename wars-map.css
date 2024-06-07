@@ -22,7 +22,7 @@
     border: 1px solid black;
 }
 .cell {
-    border: 1px solid #4e9eac;
+    border: 1px solid rgba(0, 162, 255, 0.404);;
     position: relative;
 }
 .cell:hover {
