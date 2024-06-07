@@ -5,7 +5,7 @@ export let locations = [
         "x": 34,
         "y": 13,
         "image": "path_to_image_A.png",
-        "info": "",
+        "info": "THE CHAIN",
         "planet-1": "",
         "planet-2": "",
         "planet-3": "",

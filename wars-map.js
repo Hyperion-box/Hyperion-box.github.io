@@ -130,6 +130,7 @@ function drawLine(cell1, cell2) {
     line.style.transformOrigin = '0 0';
     line.style.left = x1 + 'px';
     line.style.top = y1 + 'px';
+    line.style.pointerEvents = 'none';
     grid.appendChild(line);
 
     // Calculate the length in weeks (140 pixels = 1 week)

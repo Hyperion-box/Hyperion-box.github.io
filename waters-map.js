@@ -21,7 +21,7 @@ locations.forEach(system => {
     // Create an info window for the system
     const info = document.createElement('div');
     info.classList.add('info');
-    info.textContent = `System: ${system.info}`;
+    info.textContent = `Quests: ${system.info}`;
 
 // Create a parent div for the labels
 const labelContainer = document.createElement('div');
@@ -130,6 +130,7 @@ function drawLine(cell1, cell2) {
     line.style.transformOrigin = '0 0';
     line.style.left = x1 + 'px';
     line.style.top = y1 + 'px';
+    line.style.pointerEvents = 'none';
     grid.appendChild(line);
 
     // Calculate the length in weeks (140 pixels = 1 day)
