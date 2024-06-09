@@ -4,9 +4,11 @@ import {
 
 const gridSize = 50;
 const grid = document.getElementById('grid');
+const gridContainer = document.getElementById('grid-container');
 for (let i = 0; i < 50 * 50; i++) {
     const cell = document.createElement('div');
     cell.classList.add('cell');
+    cell.classList.add('mist');
     grid.appendChild(cell);
 }
 
@@ -151,7 +153,7 @@ function drawLine(cell1, cell2) {
 const coordinatesWindow = document.getElementById('coordinates-window');
 const coordinatesText = document.getElementById('coordinates-text');
 
-grid.addEventListener('mouseover', function(event) {
+grid.addEventListener('mouseover', function(event) { //Coordinate info display
     const rect = grid.getBoundingClientRect();
     const x = event.clientX - rect.left; // x position within the grid
     const y = event.clientY - rect.top; // y position within the grid
@@ -167,7 +169,7 @@ grid.addEventListener('mouseover', function(event) {
     cursorCircle.style.display = 'block';
 });
 
-grid.addEventListener('mouseout', function() {
+gridContainer.addEventListener('mouseout', function() {
     coordinatesWindow.style.display = 'none';
     verticalLine.style.display = 'none';
     horizontalLine.style.display = 'none';
@@ -178,20 +180,20 @@ grid.addEventListener('mouseout', function() {
 // Create the lines
 const verticalLine = document.createElement('div');
 verticalLine.id = 'vertical-line';
-grid.appendChild(verticalLine);
+gridContainer.appendChild(verticalLine);
 
 const horizontalLine = document.createElement('div');
 horizontalLine.id = 'horizontal-line';
-grid.appendChild(horizontalLine);
+gridContainer.appendChild(horizontalLine);
 const cursorCircle = document.createElement('div');
 cursorCircle.id = 'cursor-circle';
-grid.appendChild(cursorCircle);
+gridContainer.appendChild(cursorCircle);
 
 // Update the position of the lines on mousemove
-grid.addEventListener('mousemove', function(event) {
-    const rect = grid.getBoundingClientRect();
+gridContainer.addEventListener('mousemove', function(event) {
+    const rect = gridContainer.getBoundingClientRect();
     const x = event.clientX - rect.left;
-    const y = event.clientY + 395;
+    const y = event.clientY + 400;
 
     verticalLine.style.left = x + 'px';
     horizontalLine.style.top = y + 'px';
