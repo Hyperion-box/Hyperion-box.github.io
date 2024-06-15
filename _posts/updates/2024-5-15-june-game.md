@@ -1,7 +1,7 @@
 ---
 layout: post
 title: June 2024
-image: /images/question-what.gif
+image: /images/june-game/map.jpg
 preview: 
 categories: game
 date: 04/06/2024
@@ -25,5 +25,7 @@ Winner:
 **League Points**
 
 ## Map
+
+![](/images/june-game/map.jpg)
 
 

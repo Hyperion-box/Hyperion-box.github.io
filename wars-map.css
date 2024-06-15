@@ -1,5 +1,5 @@
 .grid {
-    background-image: url("images/galaxy-spiral2.png");
+    background-image: url("images/galaxy-spiral2-gen.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     display: grid;
@@ -7,7 +7,7 @@
     grid-template-rows: repeat(50, 1fr);
     position: absolute;
     left: 400px;
-    width: 100vh; /* Changed from 99vw to 100vh */
+    width: 100vh; 
     height: 100vh;
     overflow: hidden;
     border-radius: 50%;
@@ -140,6 +140,21 @@
     animation: pulse-delta 1s ease-in-out infinite;
 }
 
+.m-point {
+    background-color: lime;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.m-line {
+    position: absolute;
+    height: 2px;
+    background-color: lime;
+}
+
 .info {
     display: none;
 }
@@ -151,6 +166,28 @@
     border: solid 4px #000b70ab;
     border-radius: 10%;
     background-color: rgb(105, 105, 105);
+}
+
+.quest-overlay {
+    position: fixed;
+    width: 40%;
+    height: 100%;
+    top: 0;
+    left: -40%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    transition: left 0.5s;
+}
+
+.quest-overlay.open {
+    left: 0;
+}
+
+#questDiv > h2 {
+    color: tomato;
+}
+#questDiv > h3 {
+    color: rgb(255, 160, 71);
 }
 
 #vertical-line, #horizontal-line {

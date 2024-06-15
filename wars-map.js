@@ -1,6 +1,9 @@
 import {
     systems
 } from './systems.js';
+import {
+    quests
+} from './questlog.js';
 
 const gridSize = 50;
 const grid = document.getElementById('grid');
@@ -98,19 +101,90 @@ cell.appendChild(info);
     });
 });
 
+//questlog
+document.getElementById('questlog-button').addEventListener('click', () => {
+    console.log('clicked');
+    const overlay = document.getElementById('quest-overlay');
+    const text = document.getElementById('quest-text');
+  
+     // Clear the existing quests
+    text.innerHTML = '';
+
+    // Iterate over the quests array
+    quests.forEach(quest => {
+        // Create a div for the quest
+        const questDiv = document.createElement('div');
+        questDiv.id = 'questDiv';
+
+        // Add a class to the div
+        questDiv.classList.add('quest');
+
+        // Set the inner HTML of the div
+        questDiv.innerHTML = `
+            <h2>${quest.name}</h2>
+            <h3>${quest.system}</h3>
+            <p>${quest.description}</p>
+        `;
+
+        // Append the div to the quest text
+        text.appendChild(questDiv);
+    });
+
+    let img = overlay.querySelector('img');
+
+
+
+    overlay.style.left = '0';
+
+});
+
+
+
+
+// Add an event listener to the overlay to hide it when clicked
+const overlay = document.getElementById('quest-overlay');
+overlay.addEventListener('click', () => {
+    overlay.style.left = '-40%';
+});
+const closeButton = document.getElementById('close');
+closeButton.addEventListener('click', () => {
+    overlay.style.left = '-40%';
+});
+
 let firstCell = null;
 let secondCell = null;
+
+// grid.addEventListener('contextmenu', function(event) {
+//     event.preventDefault();
+
+
+// });
+
+
+let greenLinePoints = [];
 
 grid.addEventListener('contextmenu', function(event) {
     event.preventDefault();
 
-    if (firstCell === null) {
-        firstCell = event.target;
-    } else if (secondCell === null) {
-        secondCell = event.target;
-        drawLine(firstCell, secondCell);
-        firstCell = null;
-        secondCell = null;
+    const action = document.querySelector('input[name="rightClickAction"]:checked').value;
+
+    if (action === 'drawLine') {
+        // Existing logic for drawing distance line
+        if (firstCell === null) {
+            firstCell = event.target;
+        } else if (secondCell === null) {
+            secondCell = event.target;
+            drawLine(firstCell, secondCell);
+            firstCell = null;
+            secondCell = null;
+        }
+    } else if (action === 'drawPoint') {
+        greenLinePoints.push(event.target);
+
+        if (greenLinePoints.length >= 2) {
+            drawGreenLine(greenLinePoints[greenLinePoints.length - 2], greenLinePoints[greenLinePoints.length - 1]);
+            greenLinePoints = []; // Reset the points after drawing the line
+        }
     }
 });
 
@@ -148,6 +222,27 @@ function drawLine(cell1, cell2) {
     // Append the label to the grid
     grid.appendChild(label);
 
+}
+
+function drawGreenLine(cell1, cell2) {
+    const line = document.createElement('div');
+    line.style.position = 'absolute';
+    const cellWidth = cell1.offsetWidth;
+    const cellHeight = cell1.offsetHeight;
+    const x1 = cell1.offsetLeft + cellWidth / 2;
+    const y1 = cell1.offsetTop + cellHeight / 2;
+    const x2 = cell2.offsetLeft + cellWidth / 2;
+    const y2 = cell2.offsetTop + cellHeight / 2;
+    const lineLength = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+    line.style.width = lineLength + 'px';
+    line.style.height = '4px';
+    line.style.background = 'lime';
+    line.style.transform = 'rotate(' + Math.atan2(y2 - y1, x2 - x1) + 'rad)';
+    line.style.transformOrigin = '0 0';
+    line.style.left = x1 + 'px';
+    line.style.top = y1 + 'px';
+    line.style.pointerEvents = 'none';
+    grid.appendChild(line);
 }
 
 const coordinatesWindow = document.getElementById('coordinates-window');
