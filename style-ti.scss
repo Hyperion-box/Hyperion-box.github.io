@@ -68,6 +68,23 @@ h4 {
   color: $gray;
 }
 
+.cool-button {
+  background-color: #be0533; /* Twilight Imperium orange */
+  border: solid 2px white;
+  border-radius: 10%;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition: background-color 0.5s ease;
+}
+
+.cool-button:hover {
+  background-color: #9c042a; /* Darker orange */
+}
+
 #markdown-toc {
   color: #1f1e1e;
   background-color: #212338;
