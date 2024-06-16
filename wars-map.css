@@ -95,50 +95,7 @@
     pointer-events: none;
 }
 
-.point.home-planet {
-    background-color: rgb(255, 249, 196);
-    width: 15px;
-    height: 15px;
-}
 
-/* system colors */
-.point.heart {
-    background-color: rgb(255, 249, 196);
-    width: 20px;
-    height: 20px;
-    animation: pulse-heart 5s ease-in-out infinite;
-}
-
-.point.industrial-planet {
-    background-color: rgb(6, 160, 70);
-    animation: pulse-industry 1s ease-in-out infinite;
-}
-
-.point.cultural-planet {
-    background-color: rgb(6, 55, 160);
-    animation: pulse-culture 1s ease-in-out infinite;
-}
-
-.point.alpha-wormhole {
-    width: 20px;
-    height: 20px;
-    background-color: rgb(255, 94, 0);
-    animation: pulse-alpha 1s ease-in-out infinite;
-}
-
-.point.delta-wormhole {
-    width: 20px;
-    height: 20px;
-    background-color: rgb(140, 0, 255);
-    animation: pulse-delta 1s ease-in-out infinite;
-}
-
-.point.mecatol-rex {
-    width: 26px;
-    height: 26px;
-    background-color: rgba(255, 208, 0, 0.808);
-    animation: pulse-delta 1s ease-in-out infinite;
-}
 
 .m-point {
     background-color: lime;
@@ -171,12 +128,14 @@
 .quest-overlay {
     position: fixed;
     width: 40%;
-    height: 100%;
+    height: 500px;
     top: 0;
     left: -40%;
     background-color: rgba(0,0,0,0.5);
     z-index: 2;
     transition: left 0.5s;
+    overflow-y: auto;
+    border: solid 10px rgb(4, 4, 126);
 }
 
 .quest-overlay.open {
@@ -184,10 +143,22 @@
 }
 
 #questDiv > h2 {
+    position: relative;
     color: tomato;
 }
 #questDiv > h3 {
     color: rgb(255, 160, 71);
+}
+#system-quest-list {
+    font-weight: bold;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px #000000;
+    position: relative;
+    margin-left: 1%;
+    top:51%;
+    color: tomato;
+    list-style-type: none;
+    padding: 0;
 }
 
 #vertical-line, #horizontal-line {
@@ -230,6 +201,60 @@
 }
 
 
+.point.home-planet {
+    background-color: rgb(255, 249, 196);
+    width: 15px;
+    height: 15px;
+}
+
+/* system colors */
+.point.heart {
+    background-color: rgb(255, 249, 196);
+    width: 20px;
+    height: 20px;
+    animation: pulse-heart 5s ease-in-out infinite;
+}
+
+.point.industrial-planet {
+    background-color: rgb(6, 160, 70);
+    animation: pulse-industry 1s ease-in-out infinite;
+}
+
+.point.cultural-planet {
+    background-color: rgb(6, 55, 160);
+    animation: pulse-culture 1s ease-in-out infinite;
+}
+
+.point.alpha-wormhole {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(255, 94, 0);
+    animation: pulse-alpha 1s ease-in-out infinite;
+}
+
+.point.delta-wormhole {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(140, 0, 255);
+    animation: pulse-delta 1s ease-in-out infinite;
+}
+
+.point.shaleri {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(22, 20, 175);
+    animation: pulse-shaleri 1s ease-in-out infinite;
+
+}
+
+.point.mecatol-rex {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 208, 0, 0.808);
+    animation: pulse-delta 1s ease-in-out infinite;
+}
+
+
 /*  Animations */
 
 @keyframes rotate {
@@ -261,6 +286,18 @@
     }
     100% {
         box-shadow: 0 0 5px #04af20, 0 0 10px #04af20, 0 0 15px #04af20, 0 0 20px #04af20;
+    }
+}
+
+@keyframes pulse-shaleri {
+    0% {
+        box-shadow: 0 0 5px #124bc7, 0 0 10px #124bc7, 0 0 15px #124bc7, 0 0 20px #124bc7;
+    }
+    50% {
+        box-shadow: 0 0 50px #124bc7, 0 0 20px #124bc7, 0 0 30px #124bc7, 0 0 40px #124bc7;
+    }
+    100% {
+        box-shadow: 0 0 5px #124bc7, 0 0 10px #124bc7, 0 0 15px #124bc7, 0 0 20px #124bc7;
     }
 }
 

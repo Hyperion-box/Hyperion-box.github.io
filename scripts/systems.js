@@ -3,7 +3,7 @@ export let systems = [
         "name": "The Heart",
         "type": "heart",
         "x": 24,
-        "y": 30,
+        "y": 25,
         "image": "path_to_image_A.png",
         "info": "",
         "planet-1": "",
@@ -18,19 +18,19 @@ export let systems = [
     // North West
     {
       "name": "The Shaleri Passage",
-      "type": "planet",
+      "type": "shaleri",
       "x": 16,
       "y": 21,
       "image": "path_to_image_A.png",
       "info": ""
     },
-    {
-      "name": "The Ghost Worlds",
-      "type": "delta-wormhole",
-      "x": 15,
-      "y": 5,
-      "image": "/images/tech-icon/cybernetic.png"
-    },
+    // {
+    //   "name": "The Ghost Worlds",
+    //   "type": "delta-wormhole",
+    //   "x": 15,
+    //   "y": 5,
+    //   "image": "/images/tech-icon/cybernetic.png"
+    // },
     {
       "name": "Kal Haddar ",
       "type": "star",
