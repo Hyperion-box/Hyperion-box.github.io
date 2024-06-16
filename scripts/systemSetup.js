@@ -1,19 +1,6 @@
-import {
-    systems
-} from './scripts/systems.js';
-import {
-    quests
-} from './scripts/questlog.js';
-
-const gridSize = 50;
-const grid = document.getElementById('grid');
-const gridContainer = document.getElementById('grid-container');
-for (let i = 0; i < 50 * 50; i++) {
-    const cell = document.createElement('div');
-    cell.classList.add('cell');
-    cell.classList.add('mist');
-    grid.appendChild(cell);
-}
+import { gridSize, grid, gridContainer } from './gridSetup.js';
+import { systems } from './systems.js';
+import { quests } from './questlog.js';
 
 systems.forEach(system => {
     // Create a point for the system
@@ -26,7 +13,7 @@ systems.forEach(system => {
     // Create an info window for the system
     const info = document.createElement('div');
     info.classList.add('info');
-    info.textContent = `System: ${system.info}`;
+    info.textContent = `System: ${system.name}`;
 
 // Create a parent div for the labels
 const labelContainer = document.createElement('div');
@@ -74,6 +61,32 @@ cell.appendChild(info);
         const text = document.getElementById('text');
         text.textContent = info.textContent;
 
+        const existingQuestList = overlay.querySelector('ul');
+        if (existingQuestList) {
+            overlay.removeChild(existingQuestList);
+        }
+
+        const questList = document.createElement('ul');
+        questList.id = 'system-quest-list';
+        for (const quest of quests) {
+            if (quest.system === system.name) {
+                const questItem = document.createElement('li');
+                // Create a text node for the quest name
+                const questName = document.createTextNode(`${quest.name}: `);
+                questItem.appendChild(questName);
+                // Create a line break element
+                const lineBreak = document.createElement('br');
+                questItem.appendChild(lineBreak);
+                // Create a text node for the quest description
+                const questDescription = document.createTextNode(quest.description);
+                questDescription.id = 'system-quest-list-quest-description';
+                questItem.appendChild(questDescription);
+                questItem.appendChild(lineBreak);
+                questList.appendChild(questItem);
+            }
+        }
+        overlay.appendChild(questList);
+
         let img = overlay.querySelector('img');
 
         if (img) {
@@ -100,42 +113,6 @@ cell.appendChild(info);
         overlay.style.right = '-40%';
     });
 });
-
-//questlog
-document.getElementById('questlog-button').addEventListener('click', () => {
-    console.log('clicked');
-    const overlay = document.getElementById('quest-overlay');
-    const text = document.getElementById('quest-text');
-  
-     // Clear the existing quests
-    text.innerHTML = '';
-
-    // Iterate over the quests array
-    quests.forEach(quest => {
-        // Create a div for the quest
-        const questDiv = document.createElement('div');
-        questDiv.id = 'questDiv';
-
-        // Add a class to the div
-        questDiv.classList.add('quest');
-
-        // Set the inner HTML of the div
-        questDiv.innerHTML = `
-            <h2>${quest.name}</h2>
-            <h3>${quest.system}</h3>
-            <p>${quest.description}</p>
-        `;
-
-        // Append the div to the quest text
-        text.appendChild(questDiv);
-    });
-
-    overlay.style.left = '0';
-
-});
-
-
-
 
 // Add an event listener to the overlay to hide it when clicked
 const overlay = document.getElementById('quest-overlay');
@@ -183,6 +160,8 @@ grid.addEventListener('contextmenu', function(event) {
         }
     }
 });
+
+
 
 function drawLine(cell1, cell2) {
     const line = document.createElement('div');
@@ -241,6 +220,9 @@ function drawGreenLine(cell1, cell2) {
     grid.appendChild(line);
 }
 
+
+// ************************NAV LINES************************
+
 const coordinatesWindow = document.getElementById('coordinates-window');
 const coordinatesText = document.getElementById('coordinates-text');
 
@@ -284,7 +266,7 @@ gridContainer.appendChild(cursorCircle);
 gridContainer.addEventListener('mousemove', function(event) {
     const rect = gridContainer.getBoundingClientRect();
     const x = event.clientX - rect.left;
-    const y = event.clientY + 400;
+    const y = event.clientY + 435;
 
     verticalLine.style.left = x + 'px';
     horizontalLine.style.top = y + 'px';
@@ -292,6 +274,4 @@ gridContainer.addEventListener('mousemove', function(event) {
     cursorCircle.style.top = (y - cursorCircle.offsetHeight / 2) + 'px';
 });
 
-
-
-
+// ************************************************
