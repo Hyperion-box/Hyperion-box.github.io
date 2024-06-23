@@ -20,9 +20,14 @@ Details and reference for upcoming game.
 {% include games/june-game.html %}
 
 ### Final Result:
-Winner: 
+
+>Winner: AW with The Vuil’Raith Cabal
 
 **League Points**
+
+AW: 3 Points
+
+ACW: 2 Points
 
 ## Map
 
