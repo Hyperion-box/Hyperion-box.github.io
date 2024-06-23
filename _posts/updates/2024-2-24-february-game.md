@@ -21,7 +21,8 @@ Details a for past February game.
 {% include games/february-game.html %}
 
 ### Final Result:
-Winner: AW with The Clan of Saar
+
+>Winner: AW with The Clan of Saar
 
 **League Points**
 
