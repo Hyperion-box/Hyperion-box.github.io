@@ -1,6 +1,7 @@
 ---
 title: Into the breach we go...
 layout: quest
+completed: false
 ---
 
 Investigate the area for signs of a rare artefact.
