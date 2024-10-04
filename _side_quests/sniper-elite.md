@@ -1,6 +1,7 @@
 ---
 title: A Furry with a Gun
 layout: quest
+completed: false
 ---
 
 A lone Saar sniper, out of a home and out of depth...
