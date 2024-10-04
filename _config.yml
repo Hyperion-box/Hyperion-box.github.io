@@ -96,3 +96,9 @@ exclude:
   - LICENSE
   - README.md
   - CNAME
+
+collections:
+  quests:
+    output: true
+  side_quests:
+    output: true
