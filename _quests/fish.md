@@ -1,5 +1,5 @@
 ---
-title: Like fish in a barrel
+title: That is not dead which can eternal lie
 layout: quest
 completed: false
 ---

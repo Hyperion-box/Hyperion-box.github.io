@@ -1,10 +1,10 @@
 ---
-title: Into the breach we go...
+title: Searchers after horror haunt strange, far places
 layout: quest
 completed: false
 ---
 
-We find ourselves waking up from stasis. Air decompressing around us. The officer in charge shouting to get a move on.
+Strange air decompresses around the crew as they wake up from stasis. The officer in charge is getting antsy for everyone to be up and ready.
 
 After moving along to get our gear we are briefly told what to do.
 

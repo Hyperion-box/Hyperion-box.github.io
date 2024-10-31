@@ -1,8 +1,10 @@
 ---
-title: A Furry with a Gun
+title: Homesick for those places I have never seen
 layout: quest
 completed: false
 ---
+
+### Ross
 
 A lone Saar sniper, out of a home and out of depth...
 

@@ -1,0 +1,94 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twilight Imperium Journal</title>
+    <link rel="stylesheet" href="/styles/secret-section.css">
+</head>
+<body>
+   
+    <div class="quest-screen">
+        <header class="mission-header">
+            <nav class="section-nav">
+                <a href="/secret-section" class="nav-link">MISSION LOG</a>
+                <a href="/codex-section" class="nav-link active">CODEX</a>
+            </nav>
+        </header>
+        <main>
+            <section class="missions">
+                <div class="primary-missions">
+                    <h2>Factions</h2>
+                    <ul>
+                        {% for entry in site.codex %}
+                            {% if entry.category == "faction" %}
+                                <li>
+                                    <a href="{{ entry.url | relative_url }}" class="mission-link">
+                                        <span class="mission-icon">◈</span>
+                                        {{ entry.title }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="secondary-missions">
+                    <h2>Locations</h2>
+                    <ul>
+                        {% for entry in site.codex %}
+                            {% if entry.category == "location" %}
+                                <li>
+                                    <a href="{{ entry.url | relative_url }}" class="mission-link">
+                                        <span class="mission-icon">●</span>
+                                        {{ entry.title }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="secondary-missions">
+                    <h2>Technology</h2>
+                    <ul>
+                        {% for entry in site.codex %}
+                            {% if entry.category == "location" %}
+                                <li>
+                                    <a href="{{ entry.url | relative_url }}" class="mission-link">
+                                        <span class="mission-icon">●</span>
+                                        {{ entry.title }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="secondary-missions">
+                    <h2>Species</h2>
+                    <ul>
+                        {% for entry in site.codex %}
+                            {% if entry.category == "location" %}
+                                <li>
+                                    <a href="{{ entry.url | relative_url }}" class="mission-link">
+                                        <span class="mission-icon">●</span>
+                                        {{ entry.title }}
+                                    </a>
+                                </li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+            </section>
+            
+            <section class="mission-info">
+                <div id="mission-details">
+                    <!-- Codex entry details will be loaded here -->
+                    <p>Select an entry to view details</p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="{{ '/scripts/secret-section.js' | relative_url }}"></script>
+</body>
+</html>
