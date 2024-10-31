@@ -102,3 +102,5 @@ collections:
     output: true
   side_quests:
     output: true
+  codex:
+    output: true
