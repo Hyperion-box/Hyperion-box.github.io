@@ -4,8 +4,6 @@ layout: quest
 completed: false
 ---
 
-### Ross
-
 A lone Saar sniper, out of a home and out of depth...
 
 ## Objectives:
