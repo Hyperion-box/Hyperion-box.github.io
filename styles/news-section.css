@@ -13,8 +13,8 @@
 
 .news-ticker {
     background: rgba(10, 14, 23, 0.7);
-    border-top: 1px solid var(--hologram-blue);
-    border-bottom: 1px solid var(--hologram-blue);
+    border: 2px solid var(--hologram-blue);
+    border-radius: 7px;
     overflow: hidden;
     margin-bottom: 20px;
     backdrop-filter: blur(10px);
