@@ -4,11 +4,10 @@ layout: quest
 completed: false
 ---
 
-A lone Saar sniper, out of a home and out of depth...
+Like Ragh in distant memory, a new call rings out, inviting all Saar to seek it out and discover what lies in store for them. 
 
 ## Objectives:
-1. Rendezvous with the Saar contact
+1. Locate the source of the Saar signal.
 
 ## Rewards:
-- 500 credits
 - 250 XP
