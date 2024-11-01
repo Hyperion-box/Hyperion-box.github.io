@@ -203,4 +203,20 @@
     }
 }
 
+/* General styles for the mission header */
+.mission-header {
+    font-size: 2em; /* Default font size for larger screens */
+    text-align: center; /* Center the header */
+    padding: 10px; /* Padding around the header */
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 600px) {
+    .mission-header {
+        font-size: 1.5em; /* Reduce font size for mobile */
+        padding: 5px; /* Reduce padding for mobile */
+        overflow-wrap: break-word; /* Allow text to wrap if necessary */
+    }
+}
+
 
