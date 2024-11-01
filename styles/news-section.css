@@ -337,22 +337,5 @@
         font-size: 0.8em;
     }
 }
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 80%;
-    margin: 0 auto 20px;  /* Match secret-section margin */
-    padding: 0 20px;
-    height: 100px;  /* Add explicit height to match */
-}
 
-/* Mobile adjustment */
-@media screen and (max-width: 768px) {
-    .header-container {
-        width: 95%;
-        padding: 0 10px;
-        height: 50px;  /* Slightly smaller on mobile */
-    }
-}
 
