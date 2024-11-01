@@ -148,4 +148,52 @@
     transform: translateX(64%);
 }
 
+.empire-key {
+    position: absolute; /* Absolute position within the galaxy map */
+    left: 20px; /* Distance from the left edge */
+    top: 20px; /* Distance from the top edge */
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside the key */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    z-index: 10; /* Ensure it is above other elements */
+}
+
+.key-item {
+    display: flex; /* Flexbox for alignment */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 5px; /* Space between items */
+}
+
+.key-color {
+    width: 20px; /* Width of the color square */
+    height: 20px; /* Height of the color square */
+    border-radius: 3px; /* Slightly rounded corners */
+    margin-right: 10px; /* Space between color square and text */
+}
+
+.key-name {
+    font-size: 1em; /* Font size for the empire name */
+    color: #333; /* Text color */
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 600px) {
+    .empire-key {
+        left: 10px; /* Adjust position for smaller screens */
+        top: 10px; /* Adjust position for smaller screens */
+        padding: 5px; /* Reduce padding */
+    }
+
+    .key-color {
+        width: 15px; /* Smaller color square */
+        height: 15px; /* Smaller color square */
+    }
+
+    .key-name {
+        font-size: 0.9em; /* Slightly smaller font size */
+    }
+}
+
 

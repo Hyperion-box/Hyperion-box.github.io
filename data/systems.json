@@ -1,5 +1,19 @@
 {
     "systems": {
+        "system-9": {
+            "name": "",
+            "backgroundColor": "rgba(0, 119, 255, 0.2)",
+            "borderColor": "rgba(0, 119, 255, 0.6)",
+            "textColor": "#ffffff",
+            "type": "system"
+        },
+        "system-17": {
+            "name": "",
+            "backgroundColor": "rgba(0, 119, 255, 0.2)",
+            "borderColor": "rgba(0, 119, 255, 0.6)",
+            "textColor": "#ffffff",
+            "type": "system"
+        },
         "system-18": {
             "name": "Jord",
             "backgroundColor": "rgba(0, 119, 255, 0.2)",
