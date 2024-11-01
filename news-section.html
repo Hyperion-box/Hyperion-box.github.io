@@ -1,0 +1,102 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twilight Imperium Journal</title>
+    <link rel="stylesheet" href="/styles/news-section.css">
+    <link rel="stylesheet" href="/styles/secret-section.css">
+</head>
+<body>
+    <div class="news-screen">
+        <header class="mission-header">
+            <div class="header-container">
+                <div class="ship-info">WSS HYPERION</div>
+                <nav class="section-nav">
+                    <a href="/secret-section" class="nav-link">MISSION LOG</a>
+                    <a href="/codex-section" class="nav-link">CODEX</a>
+                    <a href="/news-section" class="nav-link active">NET</a>
+                </nav>
+                <div class="system-info">
+                    <div class="ai-name">ARI</div>
+                    <div class="version">v1.0.2</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="news-ticker">
+            <div class="ticker-content">
+                BREAKING NEWS • Trade routes disrupted in Sector 7 • Strange signals detected near the Void • Imperial Senate calls emergency session • [ALERT] Increased military activity reported in outer systems
+            </div>
+        </div>
+
+        <main class="news-grid">
+            <article class="news-item featured">
+                {% assign latest_news = site.news | sort: 'date' | reverse | first %}
+                <div class="news-image-container">
+                    {% if latest_news.image %}
+                        <img 
+                            src="{{ latest_news.image }}" 
+                            srcset="{{ latest_news.image | replace: '.jpg', '-small.jpg' }} 400w,
+                                    {{ latest_news.image | replace: '.jpg', '-medium.jpg' }} 800w,
+                                    {{ latest_news.image }} 1200w"
+                            sizes="(max-width: 400px) 400px,
+                                   (max-width: 800px) 800px,
+                                   1200px"
+                            alt="{{ latest_news.title }}" 
+                            class="news-image"
+                            loading="lazy"
+                        >
+                    {% else %}
+                        <div class="image-placeholder pulse-bg"></div>
+                    {% endif %}
+                    {% if latest_news.breaking %}
+                        <div class="breaking-news">BREAKING</div>
+                    {% endif %}
+                </div>
+                <div class="news-content">
+                    <h2>{{ latest_news.title }}</h2>
+                    <div class="news-meta">
+                        <span class="timestamp">LIVE</span>
+                        <span class="sector">SECTOR: {{ latest_news.sector }}</span>
+                    </div>
+                    <p>{{ latest_news.content | strip_html | truncatewords: 50 }}</p>
+                </div>
+            </article>
+
+            {% assign other_news = site.news | sort: 'date' | reverse | offset: 1 | limit: 5 %}
+            {% for news in other_news %}
+            <article class="news-item">
+                <div class="news-image-container">
+                    {% if news.image %}
+                        <img 
+                            src="{{ news.image }}" 
+                            srcset="{{ news.image | replace: '.jpg', '-small.jpg' }} 400w,
+                                    {{ news.image | replace: '.jpg', '-medium.jpg' }} 800w,
+                                    {{ news.image }} 1200w"
+                            sizes="(max-width: 400px) 400px,
+                                   (max-width: 800px) 800px,
+                                   1200px"
+                            alt="{{ news.title }}" 
+                            class="news-image"
+                            loading="lazy"
+                        >
+                    {% else %}
+                        <div class="image-placeholder scanning-line"></div>
+                    {% endif %}
+                </div>
+                <div class="news-content">
+                    <h3>{{ news.title }}</h3>
+                    <div class="news-meta">
+                        <span class="timestamp">{{ news.date | date: "%Y.%m.%d" }}</span>
+                        <span class="sector">{{ news.sector }}</span>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </main>
+    </div>
+</body>
+</html>

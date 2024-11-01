@@ -104,3 +104,5 @@ collections:
     output: true
   codex:
     output: true
+  news:
+    output: true
