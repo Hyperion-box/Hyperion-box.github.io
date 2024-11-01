@@ -68,7 +68,7 @@
                         <span class="timestamp">LIVE</span>
                         <span class="sector">SECTOR: {{ latest_news.sector }}</span>
                     </div>
-                    <p>{{ latest_news.content | strip_html | truncatewords: 50 }}</p>
+                    <p>{{ latest_news.content | truncatewords: 80 }}</p>
                 </div>
             </article>
 

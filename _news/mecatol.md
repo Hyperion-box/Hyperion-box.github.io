@@ -1,9 +1,12 @@
 ---
-title: Strange Signals Detected Near Mecatol Rex
+title: EMPEROR DECLARES MECATOL REX LOCKDOWN
 date: 2024-03-20
 sector: IMPERIAL CORE
 breaking: true
 image: /images/news/mecatol-gov.jpeg
 ---
-Imperial scientists report unusual quantum fluctuations emanating from the direction of Mecatol Rex. Multiple research vessels have been dispatched to investigate the phenomenon.
+
+The Imperial Security Service (ISS) has implement a security cordon around key governmental and military complexes following what they describe as unusual fluctuations emanating from a yet unknown source.
+
+The ISS and Intelligence officers are now on the scene to investigate the cause and purpose of these signals with access granted only to a select few.
 
