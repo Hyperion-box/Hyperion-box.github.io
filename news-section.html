@@ -33,8 +33,9 @@
         </div>
 
         <main class="news-grid">
+            <!-- Featured article -->
+            {% assign latest_news = site.news | sort: 'date' | reverse | first %}
             <article class="news-item featured">
-                {% assign latest_news = site.news | sort: 'date' | reverse | first %}
                 <div class="news-image-container">
                     {% if latest_news.image %}
                         <img 
@@ -66,7 +67,8 @@
                 </div>
             </article>
 
-            {% assign other_news = site.news | sort: 'date' | reverse | offset: 1 | limit: 5 %}
+            <!-- Other news items, excluding the featured one -->
+            {% assign other_news = site.news | sort: 'date' | reverse | where_exp:"item", "item != latest_news" | limit: 5 %}
             {% for news in other_news %}
             <article class="news-item">
                 <div class="news-image-container">
