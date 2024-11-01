@@ -146,11 +146,11 @@
     100% { opacity: 1; }
 }
 
-/* Mobile Responsive Design */
+/* Enhanced mobile styles */
 @media screen and (max-width: 768px) {
     .news-grid {
         grid-template-columns: 1fr;
-        padding: 10px;
+        padding: 5px;
     }
 
     .news-item.featured {
@@ -159,15 +159,25 @@
     }
 
     .news-content {
-        padding: 15px;
+        padding: 10px;
+    }
+
+    .news-meta {
+        flex-direction: column;
+        gap: 5px;
+        align-items: flex-start;
     }
 
     .news-content h2 {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 
     .news-content h3 {
-        font-size: 1.2em;
+        font-size: 1em;
+    }
+
+    .ticker-content {
+        font-size: 0.9em;
     }
 }
 
