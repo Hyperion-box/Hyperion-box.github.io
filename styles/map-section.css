@@ -23,6 +23,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    overflow-y: hidden;
 }
 
 .map-placeholder {
