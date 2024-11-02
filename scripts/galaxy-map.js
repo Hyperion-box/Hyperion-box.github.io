@@ -24,7 +24,7 @@ class GalaxyMap {
 
     createHexGrid() {
         // Example 8x8 grid
-        for (let i = 0; i < 64; i++) {
+        for (let i = 0; i < 136; i++) {
             const hex = document.createElement('div');
             hex.className = 'hex';
             const systemId = `system-${i}`;

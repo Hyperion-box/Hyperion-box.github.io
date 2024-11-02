@@ -1,32 +1,74 @@
 {
     "systems": {
-        "system-9": {
-            "name": "",
-            "backgroundColor": "rgba(0, 119, 255, 0.2)",
-            "borderColor": "rgba(0, 119, 255, 0.6)",
+        "system-3": {
+            "name": "HS",
+            "backgroundColor": "rgba(0, 119, 10, 0.2)",
+            "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
-            "type": "system"
+            "type": "homeworld"
         },
-        "system-17": {
-            "name": "",
-            "backgroundColor": "rgba(0, 119, 255, 0.2)",
-            "borderColor": "rgba(0, 119, 255, 0.6)",
-            "textColor": "#ffffff",
-            "type": "system"
-        },
-        "system-18": {
+        "system-25": {
             "name": "Jord",
             "backgroundColor": "rgba(0, 119, 255, 0.2)",
             "borderColor": "rgba(0, 119, 255, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld"
         },
-        "system-27": {
+        "system-33": {
+            "name": "",
+            "backgroundColor": "rgba(0, 119, 255, 0.2)",
+            "borderColor": "rgba(0, 119, 255, 0.6)",
+            "textColor": "#ffffff",
+            "type": "system"
+        },
+        "system-34": {
+            "name": "",
+            "backgroundColor": "rgba(0, 119, 255, 0.2)",
+            "borderColor": "rgba(0, 119, 255, 0.6)",
+            "textColor": "#ffffff",
+            "type": "system"
+        },
+        "system-44": {
+            "name": "HS",
+            "backgroundColor": "rgba(0, 119, 10, 0.2)",
+            "borderColor": "rgba(0, 200, 10, 0.6)",
+            "textColor": "#ffffff",
+            "type": "homeworld"
+        },
+        "system-65": {
+            "name": "HS",
+            "backgroundColor": "rgba(0, 119, 10, 0.2)",
+            "borderColor": "rgba(0, 200, 10, 0.6)",
+            "textColor": "#ffffff",
+            "type": "homeworld"
+        },
+        "system-67": {
             "name": "Mecatol Rex",
             "backgroundColor": "rgba(255, 215, 0, 0.2)",
             "borderColor": "rgba(255,207,0, 0.6)",
             "textColor": "#ffffff",
             "type": "capital"
+        },
+        "system-92": {
+            "name": "HS",
+            "backgroundColor": "rgba(0, 119, 10, 0.2)",
+            "borderColor": "rgba(0, 200, 10, 0.6)",
+            "textColor": "#ffffff",
+            "type": "homeworld"
+        },
+        "system-105": {
+            "name": "HS",
+            "backgroundColor": "rgba(0, 119, 10, 0.2)",
+            "borderColor": "rgba(0, 200, 10, 0.6)",
+            "textColor": "#ffffff",
+            "type": "homeworld"
+        },
+        "system-131": {
+            "name": "HS",
+            "backgroundColor": "rgba(0, 119, 10, 0.2)",
+            "borderColor": "rgba(0, 200, 10, 0.6)",
+            "textColor": "#ffffff",
+            "type": "homeworld"
         }
     }
 }
