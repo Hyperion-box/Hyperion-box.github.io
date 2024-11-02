@@ -1,25 +1,18 @@
 {
     "systems": {
-        "system-3": {
+        "system-4": {
             "name": "HS",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld"
         },
-        "system-25": {
+        "system-26": {
             "name": "Jord",
             "backgroundColor": "rgba(0, 119, 255, 0.2)",
             "borderColor": "rgba(0, 119, 255, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld"
-        },
-        "system-33": {
-            "name": "",
-            "backgroundColor": "rgba(0, 119, 255, 0.2)",
-            "borderColor": "rgba(0, 119, 255, 0.6)",
-            "textColor": "#ffffff",
-            "type": "system"
         },
         "system-34": {
             "name": "",
@@ -28,42 +21,49 @@
             "textColor": "#ffffff",
             "type": "system"
         },
-        "system-44": {
+        "system-35": {
+            "name": "",
+            "backgroundColor": "rgba(0, 119, 255, 0.2)",
+            "borderColor": "rgba(0, 119, 255, 0.6)",
+            "textColor": "#ffffff",
+            "type": "system"
+        },
+        "system-45": {
             "name": "HS",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld"
         },
-        "system-65": {
+        "system-66": {
             "name": "HS",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld"
         },
-        "system-67": {
+        "system-68": {
             "name": "Mecatol Rex",
             "backgroundColor": "rgba(255, 215, 0, 0.2)",
             "borderColor": "rgba(255,207,0, 0.6)",
             "textColor": "#ffffff",
             "type": "capital"
         },
-        "system-92": {
+        "system-93": {
             "name": "HS",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld"
         },
-        "system-105": {
+        "system-106": {
             "name": "HS",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld"
         },
-        "system-131": {
+        "system-132": {
             "name": "HS",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
