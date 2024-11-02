@@ -106,3 +106,10 @@ collections:
     output: true
   news:
     output: true
+
+ship_info:
+  SHIP:
+    name: "HSS HYPERION"
+    ai_name: "ARI"
+    version: "v1.0.3"
+    theme_icon: "🌙"
