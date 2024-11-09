@@ -1,0 +1,104 @@
+:root {
+    --deep-space: #0a0e17;
+    --nebula-purple: #6b4e71;
+    --star-blue: #4a9ff5;
+    --cosmic-teal: #41e2ba;
+    --nova-orange: #ff6b35;
+    --alien-green: #5cdb95;
+    --space-gray: #c5c6c7;
+    --hologram-blue: #66fcf1;
+    --text-primary: #ffffff;
+    --bg-primary: #0a0e17;
+    --card-bg: rgba(68, 68, 68, 0.8);
+    --card-border: rgba(85, 85, 85, 0.5);
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.character-menu {
+    display: flex;
+    max-width: 95%;
+    height: calc(100vh - 100px);
+    padding: 20px;
+}
+
+.character-list {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    max-width: 40%;
+    border-right: 2px solid var(--nebula-purple);
+}
+
+.character-card {
+    display: flex;
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--nebula-purple);
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.character-card.selected {
+    background-color: #22942b;
+    color: #fff;
+}
+
+.character-card:hover {
+    background-color: #555;
+}
+
+.character-card.player-character {
+    color: #ff6b35;
+    background-color: #28837fcb;
+    border: 1px solid var(--nebula-purple);
+    font-weight: bold;
+}
+
+.character-card.player-character:hover {
+    background-color: #33aca6cb;
+}
+
+.character-card.player-character h2 {
+    color: #c0c0c0;
+}
+
+.character-portrait-pane {
+    flex: 0 0 80px;
+    margin-right: 15px;
+}
+
+.character-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.character-info {
+    flex: 1;
+}
+
+.character-details {
+    flex: 2;
+    padding: 20px;
+    overflow-y: auto;
+    color: var(--text-primary);
+    background-color: #353333;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    margin-left: 20px;
+}
+
+#markdown-content {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+}
