@@ -21,10 +21,9 @@ body {
 }
 
 .character-menu {
+    max-width: 99%;
     display: flex;
-    max-width: 95%;
     height: calc(100vh - 100px);
-    padding: 20px;
 }
 
 .character-list {
@@ -32,16 +31,16 @@ body {
     padding: 10px;
     overflow-y: auto;
     max-width: 40%;
-    border-right: 2px solid var(--nebula-purple);
+    display: flex;
+    flex-direction: column;
 }
 
 .character-card {
-    display: flex;
-    background-color: var(--card-bg);
-    color: var(--text-primary);
-    border: 1px solid var(--nebula-purple);
+    background-color: #444;
+    color: #fff;
+    border: 1px solid #555;
     border-radius: 8px;
-    margin: 10px;
+    margin: 10px 0;
     padding: 15px;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -77,7 +76,7 @@ body {
 }
 
 .character-image {
-    width: 100%;
+    width: 140px;
     height: auto;
     border-radius: 10px;
 }
@@ -88,17 +87,34 @@ body {
 
 .character-details {
     flex: 2;
-    padding: 20px;
+    padding: 10px;
     overflow-y: auto;
-    color: var(--text-primary);
-    background-color: #353333;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    margin-left: 20px;
+    color: #ffffff;
 }
 
 #markdown-content {
     background-color: #333;
     padding: 10px;
     border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .character-list {
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 10px 0;
+        white-space: nowrap;
+        max-width: 97%;
+    }
+
+    .character-card {
+        margin: 5px;
+        min-width: 120px;
+    }
+}
+
+@media (min-width: 769px) {
+    .character-list {
+        flex-direction: column;
+    }
 }
