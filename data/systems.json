@@ -5,7 +5,8 @@
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
-            "type": "homeworld"
+            "type": "homeworld",
+            "image": "/images/beta-wormhole.png"
         },
         "system-26": {
             "name": "Jord",
@@ -39,6 +40,7 @@
             "name": "HS",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
+            "objective": true,
             "textColor": "#ffffff",
             "type": "homeworld"
         },
