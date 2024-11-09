@@ -21,9 +21,9 @@ body {
 }
 
 .character-menu {
-    max-width: 99%;
     display: flex;
     height: calc(100vh - 100px);
+    max-width: 100%;
 }
 
 .character-list {
@@ -36,14 +36,18 @@ body {
 }
 
 .character-card {
+    display: flex;
+    align-items: center;
     background-color: #444;
     color: #fff;
     border: 1px solid #555;
     border-radius: 8px;
-    margin: 10px 0;
+    margin: 10px;
     padding: 15px;
     cursor: pointer;
     transition: background-color 0.3s;
+    flex: 0 0 auto;
+    min-height: fit-content;
 }
 
 .character-card.selected {
@@ -71,18 +75,19 @@ body {
 }
 
 .character-portrait-pane {
-    flex: 0 0 80px;
+    flex: 0 0 60px;
     margin-right: 15px;
 }
 
 .character-image {
-    width: 140px;
+    width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .character-info {
     flex: 1;
+    font-size: 1rem;
 }
 
 .character-details {
@@ -99,22 +104,46 @@ body {
 }
 
 @media (max-width: 768px) {
+    .character-menu {
+        flex-direction: column;
+    }
+
     .character-list {
         flex-direction: row;
         overflow-x: auto;
         padding: 10px 0;
         white-space: nowrap;
-        max-width: 97%;
+        max-width: 100%;
+        min-height: fit-content;
     }
 
     .character-card {
         margin: 5px;
         min-width: 120px;
+        min-height: auto;
+        padding: 10px;
+        height: fit-content;
+    }
+
+    .character-image {
+        width: 50px;
+    }
+
+    .character-info {
+        font-size: 0.9rem;
     }
 }
 
 @media (min-width: 769px) {
     .character-list {
         flex-direction: column;
+    }
+
+    .character-image {
+        width: 80px;
+    }
+
+    .character-info {
+        font-size: 1.2rem;
     }
 }
