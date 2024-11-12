@@ -85,7 +85,7 @@
                     <h2>Technology</h2>
                     <ul>
                         {% for entry in site.codex %}
-                            {% if entry.category == "location" %}
+                            {% if entry.category == "technology" %}
                                 <li>
                                     <a href="{{ entry.url | relative_url }}" class="mission-link">
                                         <span class="mission-icon">●</span>
@@ -100,7 +100,7 @@
                     <h2>Species</h2>
                     <ul>
                         {% for entry in site.codex %}
-                            {% if entry.category == "location" %}
+                            {% if entry.category == "species" %}
                                 <li>
                                     <a href="{{ entry.url | relative_url }}" class="mission-link">
                                         <span class="mission-icon">●</span>
