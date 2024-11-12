@@ -192,6 +192,18 @@
     color: #333; /* Text color */
 }
 
+.transit-line {
+    stroke-dasharray: 5, 15;
+    animation: moveTraffic 2s linear infinite;
+}
+
+@keyframes moveTraffic {
+    to {
+        stroke-dashoffset: -20;
+    }
+}
+
+
 /* Responsive adjustments for mobile devices */
 @media (max-width: 600px) {
     .empire-key {
@@ -210,5 +222,8 @@
     }
 }
 
-
+.triangle {
+    position: absolute; /* Ensure it can be positioned correctly */
+    z-index: 5; /* Ensure it appears above other elements */
+}
 

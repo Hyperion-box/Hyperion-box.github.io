@@ -1,31 +1,31 @@
 {
     "systems": {
         "system-4": {
-            "name": "HS",
-            "backgroundColor": "rgba(0, 119, 10, 0.2)",
-            "borderColor": "rgba(0, 200, 10, 0.6)",
+            "name": "Wren Terra / Arc Prime",
+            "backgroundColor": "rgba(93, 34, 34, 0.6)",
+            "borderColor": "rgba(160, 34, 34, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld",
             "image": "/images/beta-wormhole.png"
         },
         "system-26": {
-            "name": "Jord",
-            "backgroundColor": "rgba(0, 119, 255, 0.2)",
-            "borderColor": "rgba(0, 119, 255, 0.6)",
+            "name": "Phorus",
+            "backgroundColor": "rgba(143, 135, 91, 0.5)",
+            "borderColor": "rgba(190, 113, 25, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld"
         },
         "system-34": {
             "name": "",
-            "backgroundColor": "rgba(0, 119, 255, 0.2)",
-            "borderColor": "rgba(0, 119, 255, 0.6)",
+            "backgroundColor": "rgba(143, 135, 91, 0.5)",
+            "borderColor": "rgba(190, 113, 25, 0.6)",
             "textColor": "#ffffff",
             "type": "system"
         },
         "system-35": {
             "name": "",
-            "backgroundColor": "rgba(0, 119, 255, 0.2)",
-            "borderColor": "rgba(0, 119, 255, 0.6)",
+            "backgroundColor": "rgba(143, 135, 91, 0.5)",
+            "borderColor": "rgba(190, 113, 25, 0.6)",
             "textColor": "#ffffff",
             "type": "system"
         },
@@ -66,11 +66,13 @@
             "type": "homeworld"
         },
         "system-132": {
-            "name": "HS",
-            "backgroundColor": "rgba(0, 119, 10, 0.2)",
-            "borderColor": "rgba(0, 200, 10, 0.6)",
+            "name": "Jord",
+            "backgroundColor": "rgba(0, 119, 255, 0.2)",
+            "borderColor": "rgba(0, 119, 255, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld"
         }
     }
+    
 }
+

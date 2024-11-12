@@ -100,8 +100,78 @@ class GalaxyMap {
             console.log('System data:', systemData);
         }
     }
+
+    // drawTriangleOnHex(systemId, direction) {
+    //     const hex = document.querySelector(`[data-system-id="${systemId}"]`);
+    //     if (!hex) {
+    //         console.error(`Hex with systemId ${systemId} not found.`);
+    //         return;
+    //     }
+
+    //     // Log to confirm the method is called
+    //     console.log(`Drawing triangle on ${systemId} pointing ${direction}`);
+
+    //     const hexSize = hex.offsetWidth; // Assuming hex is a regular hexagon
+    //     const triangleSize = hexSize * 0.1; // Triangle size is 10% of hex size
+
+    //     const triangle = document.createElement('div');
+    //     triangle.className = 'triangle'; // Add a class for styling
+    //     triangle.style.width = 0;
+    //     triangle.style.height = 0;
+    //     triangle.style.borderLeft = `${triangleSize}px solid transparent`;
+    //     triangle.style.borderRight = `${triangleSize}px solid transparent`;
+    //     triangle.style.borderBottom = `${triangleSize}px solid black`; // Change color as needed
+    //     triangle.style.position = 'absolute';
+    //     triangle.style.zIndex = 5;
+
+    //     // Calculate position based on direction
+    //     const hexRect = hex.getBoundingClientRect();
+    //     switch (direction) {
+    //         case 'n':
+    //             triangle.style.left = `${hexRect.left + hexSize / 2 - triangleSize}px`;
+    //             triangle.style.top = `${hexRect.top}px`;
+    //             break;
+    //         case 'ne':
+    //             triangle.style.left = `${hexRect.left + hexSize}px`;
+    //             triangle.style.top = `${hexRect.top + hexSize / 4}px`;
+    //             break;
+    //         case 'e':
+    //             triangle.style.left = `${hexRect.left + hexSize}px`;
+    //             triangle.style.top = `${hexRect.top + hexSize / 2 - triangleSize}px`;
+    //             break;
+    //         case 'se':
+    //             triangle.style.left = `${hexRect.left + hexSize}px`;
+    //             triangle.style.top = `${hexRect.top + hexSize * 3 / 4}px`;
+    //             break;
+    //         case 's':
+    //             triangle.style.left = `${hexRect.left + hexSize / 2 - triangleSize}px`;
+    //             triangle.style.top = `${hexRect.top + hexSize}px`;
+    //             break;
+    //         case 'sw':
+    //             triangle.style.left = `${hexRect.left - triangleSize}px`;
+    //             triangle.style.top = `${hexRect.top + hexSize * 3 / 4}px`;
+    //             break;
+    //         case 'w':
+    //             triangle.style.left = `${hexRect.left - triangleSize}px`;
+    //             triangle.style.top = `${hexRect.top + hexSize / 2 - triangleSize}px`;
+    //             break;
+    //         case 'nw':
+    //             triangle.style.left = `${hexRect.left - triangleSize}px`;
+    //             triangle.style.top = `${hexRect.top + hexSize / 4}px`;
+    //             break;
+    //         default:
+    //             console.error('Invalid direction specified');
+    //             return;
+    //     }
+
+    //     triangle.style.backgroundColor = 'red'; // Temporary for debugging
+    //     hex.appendChild(triangle);
+    // }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const galaxyMap = new GalaxyMap();
+
 });
+
+
