@@ -51,4 +51,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
         return html;
     }
+
+    
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const equipmentHeader = document.getElementById('equipment-header');
+    const equipmentDiv = document.getElementById('equipment');
+
+    // Check if elements are found
+    if (!equipmentHeader || !equipmentDiv) {
+        console.error('Equipment header or div not found');
+        return;
+    }
+
+    equipmentHeader.addEventListener('click', () => {
+        // Toggle display property
+        if (equipmentDiv.style.display === 'none' || equipmentDiv.style.display === '') {
+            equipmentDiv.style.display = 'block'; // Show the equipment
+        } else {
+            equipmentDiv.style.display = 'none'; // Hide the equipment
+        }
+    });
 });
