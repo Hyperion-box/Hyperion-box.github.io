@@ -4,16 +4,43 @@
 
 <div class="character-details">
     <h2>{{ page.name }}</h2>
-    <div>Max HP: {{ page.max_hp }}</div>
-    <div>Class: {{ page.class }}</div>
-    <div>Level: {{ page.level }}</div>
-    <div>Experience: {{ page.experience }}</div>
-    <div>Strength: {{ page.strength }}</div>
-    <div>Constitution: {{ page.constitution }}</div>
-    <div>Dexterity: {{ page.dexterity }}</div>
-    <div>Intelligence: {{ page.intelligence }}</div>
-    <div>Wisdom: {{ page.wisdom }}</div>
-    <div>Charisma: {{ page.charisma }}</div>
+    <div style="display: flex; gap: 20px;">
+        <div style="display: inline-block;">Max HP: {{ page.max_hp }}</div>
+        <div style="display: inline-block;">Class: {{ page.class }}</div>
+        <div style="display: inline-block;">Level: {{ page.level }}</div>
+        <div style="display: inline-block;">Experience: {{ page.experience }}</div>
+    </div>
+    <div style="display: flex; gap: 20px;">
+        <div style="display: inline-block;">Background: {{ page.background }}</div>
+        <div style="display: inline-block;">Homeworld: {{ page.homeworld }}</div>
+        <div style="display: inline-block;">Origin: {{ page.origin }}</div>
+        <div style="display: inline-block;">Languages: {{ page.languages }}</div>
+    </div>
+    
+
+    <table style="border-collapse: collapse; width: 60%;">
+        <thead>
+            <tr>
+                <th style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Physical</th>
+                <th style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Evasion</th>
+                <th style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Mental</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Strength: {{ page.strength }}</td>
+                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Dexterity: {{ page.dexterity }}</td>
+                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Charisma: {{ page.charisma }}</td>
+            </tr>
+            <tr>
+                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Constitution: {{ page.constitution }}</td>
+                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Intelligence: {{ page.intelligence }}</td>
+                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Wisdom: {{ page.wisdom }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+      
 </div>
 
 <div>
@@ -21,3 +48,42 @@
     {{ page.content }}
 
 </div>
+
+<div id="character-skills">
+    <h2>SKILLS</h2>
+<table style="border-collapse: collapse; width: 100%;">
+    <tbody>
+        <tr>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Administer: {{ page.administer }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Connect: {{ page.connect }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Exert: {{ page.exert }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Fix: {{ page.fix }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Heal: {{ page.heal }}</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Know: {{ page.know }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Lead: {{ page.lead }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Notice: {{ page.notice }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Perform: {{ page.perform }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Pilot: {{ page.pilot }}</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Program: {{ page.program }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Punch: {{ page.punch }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Shoot: {{ page.shoot }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Sneak: {{ page.sneak }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Stab: {{ page.stab }}</td>
+        </tr>
+        <tr>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Survive: {{ page.survive }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Talk: {{ page.talk }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Trade: {{ page.trade }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Work: {{ page.work }}</td>
+            <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;"></td>
+        </tr>
+    </tbody>
+</table>
+
+
+</div>
+

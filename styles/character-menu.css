@@ -103,6 +103,7 @@ body {
     border-radius: 8px;
 }
 
+
 @media (max-width: 768px) {
     .character-menu {
         flex-direction: column;
