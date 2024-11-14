@@ -1,8 +1,8 @@
 ---
 title: EMPEROR DECLARES MECATOL REX LOCKDOWN
-date: 2024-03-20
-sector: IMPERIAL CORE
-breaking: true
+date: 2134-03-14
+sector: Gul System
+breaking: false
 image: /images/news/mecatol-gov.jpeg
 details: Signals are coming from L1Z1X, 
 ---

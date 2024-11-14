@@ -1,6 +1,7 @@
 class GalaxyMap {
     constructor() {
         this.hexGrid = document.querySelector('.hex-grid');
+        this.wormholeSvg = document.querySelector('.wormhole-svg');
         this.systems = {};
         this.init();
     }
@@ -80,6 +81,43 @@ class GalaxyMap {
         // Add type as a data attribute if specified
         if (systemData.type) {
             hex.setAttribute('data-system-type', systemData.type);
+            this.applyWormholeStyles(hex, systemData.type); // Apply styles based on type
+            
+            // New code to add a wormhole if the type is 'wormhole'
+            if (systemData.type === 'wormhole') {
+                const wormhole = document.createElement('div');
+                wormhole.className = 'hex-wormhole'; // Add a class for styling
+                wormhole.style.width = `${systemData.radius * 2}px`; // Diameter
+                wormhole.style.height = `${systemData.radius * 2}px`; // Diameter
+                wormhole.style.backgroundColor = systemData.color; // Wormhole color
+                hex.appendChild(wormhole); // Append the wormhole to the hex
+            }
+
+            // New code to add a black hole if the type is 'blackhole'
+            if (systemData.type === 'blackhole') {
+                const blackhole = document.createElement('div');
+                blackhole.className = 'hex-blackhole'; // Add a class for styling
+                blackhole.style.width = `${systemData.radius * 2}px`; // Diameter
+                blackhole.style.height = `${systemData.radius * 2}px`; // Diameter
+                blackhole.style.backgroundColor = systemData.color; // Black Hole color
+                hex.appendChild(blackhole); // Append the black hole to the hex
+            }
+        }
+    }
+
+    applyWormholeStyles(hex, type) {
+        switch (type) {
+            case 'alpha-wormhole':
+                hex.classList.add('alpha-wormhole');
+                break;
+            case 'beta-wormhole':
+                hex.classList.add('beta-wormhole');
+                break;
+            case 'gamma-wormhole':
+                hex.classList.add('gamma-wormhole');
+                break;
+            default:
+                break;
         }
     }
 
@@ -101,72 +139,6 @@ class GalaxyMap {
         }
     }
 
-    // drawTriangleOnHex(systemId, direction) {
-    //     const hex = document.querySelector(`[data-system-id="${systemId}"]`);
-    //     if (!hex) {
-    //         console.error(`Hex with systemId ${systemId} not found.`);
-    //         return;
-    //     }
-
-    //     // Log to confirm the method is called
-    //     console.log(`Drawing triangle on ${systemId} pointing ${direction}`);
-
-    //     const hexSize = hex.offsetWidth; // Assuming hex is a regular hexagon
-    //     const triangleSize = hexSize * 0.1; // Triangle size is 10% of hex size
-
-    //     const triangle = document.createElement('div');
-    //     triangle.className = 'triangle'; // Add a class for styling
-    //     triangle.style.width = 0;
-    //     triangle.style.height = 0;
-    //     triangle.style.borderLeft = `${triangleSize}px solid transparent`;
-    //     triangle.style.borderRight = `${triangleSize}px solid transparent`;
-    //     triangle.style.borderBottom = `${triangleSize}px solid black`; // Change color as needed
-    //     triangle.style.position = 'absolute';
-    //     triangle.style.zIndex = 5;
-
-    //     // Calculate position based on direction
-    //     const hexRect = hex.getBoundingClientRect();
-    //     switch (direction) {
-    //         case 'n':
-    //             triangle.style.left = `${hexRect.left + hexSize / 2 - triangleSize}px`;
-    //             triangle.style.top = `${hexRect.top}px`;
-    //             break;
-    //         case 'ne':
-    //             triangle.style.left = `${hexRect.left + hexSize}px`;
-    //             triangle.style.top = `${hexRect.top + hexSize / 4}px`;
-    //             break;
-    //         case 'e':
-    //             triangle.style.left = `${hexRect.left + hexSize}px`;
-    //             triangle.style.top = `${hexRect.top + hexSize / 2 - triangleSize}px`;
-    //             break;
-    //         case 'se':
-    //             triangle.style.left = `${hexRect.left + hexSize}px`;
-    //             triangle.style.top = `${hexRect.top + hexSize * 3 / 4}px`;
-    //             break;
-    //         case 's':
-    //             triangle.style.left = `${hexRect.left + hexSize / 2 - triangleSize}px`;
-    //             triangle.style.top = `${hexRect.top + hexSize}px`;
-    //             break;
-    //         case 'sw':
-    //             triangle.style.left = `${hexRect.left - triangleSize}px`;
-    //             triangle.style.top = `${hexRect.top + hexSize * 3 / 4}px`;
-    //             break;
-    //         case 'w':
-    //             triangle.style.left = `${hexRect.left - triangleSize}px`;
-    //             triangle.style.top = `${hexRect.top + hexSize / 2 - triangleSize}px`;
-    //             break;
-    //         case 'nw':
-    //             triangle.style.left = `${hexRect.left - triangleSize}px`;
-    //             triangle.style.top = `${hexRect.top + hexSize / 4}px`;
-    //             break;
-    //         default:
-    //             console.error('Invalid direction specified');
-    //             return;
-    //     }
-
-    //     triangle.style.backgroundColor = 'red'; // Temporary for debugging
-    //     hex.appendChild(triangle);
-    // }
 }
 
 document.addEventListener('DOMContentLoaded', async () => {
