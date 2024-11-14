@@ -120,8 +120,8 @@
 
 .hex-system-id {
     position: absolute;
-    top: 5px;
-    left: 50%;
+    top: 25px;
+    left: 45%;
     transform: translateX(-50%);
     font-size: 0.7em;
     color: var(--hologram-blue);
@@ -225,5 +225,142 @@
 .triangle {
     position: absolute; /* Ensure it can be positioned correctly */
     z-index: 5; /* Ensure it appears above other elements */
+}
+
+.hex {
+    position: relative; /* Ensure positioning for the glow effect */
+}
+
+.alpha-wormhole {
+    animation: pulse-red 2s infinite;
+}
+
+.beta-wormhole {
+    animation: pulse-green 2s infinite;
+}
+
+.gamma-wormhole {
+    animation: pulse-blue 2s infinite;
+}
+
+@keyframes pulse-red {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+    }
+}
+
+@keyframes pulse-green {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 1);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    }
+}
+
+@keyframes pulse-blue {
+    0% {
+        box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 0, 255, 1);
+    }
+    100% {
+        box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    }
+}
+
+.wormhole-path {
+    transition: stroke-opacity 0.3s ease;
+}
+
+.wormhole-path:hover {
+    stroke-opacity: 1;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        stroke-opacity: 0.5;
+    }
+    50% {
+        stroke-opacity: 1;
+    }
+    100% {
+        stroke-opacity: 0.5;
+    }
+}
+
+.hex-circle {
+    position: absolute; /* Position it absolutely */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    border-radius: 50%; /* Make it a circle */
+    animation: glow 1.5s infinite alternate; /* Add glowing animation */
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.8), 0 0 30px rgba(255, 69, 0, 0.8); /* Flame-like glow */
+}
+
+@keyframes glow {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
+}
+
+.hex-wormhole {
+    position: absolute; /* Position it absolutely */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    border-radius: 50%; /* Make it a circle */
+    animation: glow 1.5s infinite alternate; /* Add glowing animation */
+}
+
+/* Specific styles for each wormhole type */
+[data-system-type="wormhole-alpha"] .hex-wormhole {
+    box-shadow: 0 0 20px rgb(180, 92, 59), 0 0 30px rgba(255, 165, 0, 0.8); /* Alpha glow */
+}
+
+[data-system-type="wormhole-beta"] .hex-wormhole {
+    box-shadow: 0 0 20px rgba(41, 146, 41, 0.8), 0 0 30px rgba(41, 146, 41, 0.8); /* Beta glow */
+}
+
+[data-system-type="wormhole-gamma"] .hex-wormhole {
+    box-shadow: 0 0 20px rgba(50, 205, 50, 0.8), 0 0 30px rgba(0, 255, 0, 0.8); /* Gamma glow */
+}
+
+.hex-blackhole {
+    position: absolute; /* Position it absolutely */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for centering */
+    border-radius: 50%; /* Make it a circle */
+    animation: pulse 1.5s infinite alternate; /* Add pulsing animation */
+    box-shadow: 0 0 20px rgba(128, 128, 128, 0.8), 0 0 30px rgba(169, 169, 169, 0.8); /* Grey glow */
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
 }
 

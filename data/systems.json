@@ -1,6 +1,24 @@
 {
     "systems": {
         "system-4": {
+            "name": "Moll",
+            "backgroundColor": "rgba(150, 120, 0, 0.6)",
+            "borderColor": "rgba(160, 120, 34, 0.8)",
+            "textColor": "#ffffff",
+            "type": "homeworld",
+            "image": "/images/beta-wormhole.png"
+        },
+        "system-12": {
+            "name": "",
+            "type": "circle", 
+            "position": {
+                "x": 50, 
+                "y": 50  
+            },
+            "radius": 20, 
+            "color": "#FF0000"
+        },
+        "system-26": {
             "name": "Wren Terra / Arc Prime",
             "backgroundColor": "rgba(93, 34, 34, 0.6)",
             "borderColor": "rgba(160, 34, 34, 0.6)",
@@ -8,39 +26,47 @@
             "type": "homeworld",
             "image": "/images/beta-wormhole.png"
         },
-        "system-26": {
+        "system-42": {
+            "name": "",
+            "type": "circle", 
+            "position": {
+                "x": 50, 
+                "y": 50  
+            },
+            "radius": 20, 
+            "color": "#FF0000"
+        },
+        "system-43": {
+            "name": "α",
+            "type": "wormhole",
+            "position": {
+                "x": 50,
+                "y": 50
+            },
+            "radius": 10,
+            "color": "#FF4500" 
+        },
+        "system-45": {
+            "name": "Mallac",
+            "backgroundColor": "rgba(0, 119, 10, 0.2)",
+            "borderColor": "rgba(0, 200, 10, 0.6)",
+            "textColor": "#ffffff",
+            "type": "homeworld"
+        },
+        "system-50": {
+            "name": "β",
+            "type": "wormhole",
+            "position": {
+                "x": 100,
+                "y": 100
+            },
+            "radius": 10,
+            "color": "#37ad59" 
+        },
+        "system-66": {
             "name": "Phorus",
             "backgroundColor": "rgba(143, 135, 91, 0.5)",
             "borderColor": "rgba(190, 113, 25, 0.6)",
-            "textColor": "#ffffff",
-            "type": "homeworld"
-        },
-        "system-34": {
-            "name": "",
-            "backgroundColor": "rgba(143, 135, 91, 0.5)",
-            "borderColor": "rgba(190, 113, 25, 0.6)",
-            "textColor": "#ffffff",
-            "type": "system"
-        },
-        "system-35": {
-            "name": "",
-            "backgroundColor": "rgba(143, 135, 91, 0.5)",
-            "borderColor": "rgba(190, 113, 25, 0.6)",
-            "textColor": "#ffffff",
-            "type": "system"
-        },
-        "system-45": {
-            "name": "HS",
-            "backgroundColor": "rgba(0, 119, 10, 0.2)",
-            "borderColor": "rgba(0, 200, 10, 0.6)",
-            "textColor": "#ffffff",
-            "type": "homeworld"
-        },
-        "system-66": {
-            "name": "HS",
-            "backgroundColor": "rgba(0, 119, 10, 0.2)",
-            "borderColor": "rgba(0, 200, 10, 0.6)",
-            "objective": true,
             "textColor": "#ffffff",
             "type": "homeworld"
         },
@@ -51,24 +77,64 @@
             "textColor": "#ffffff",
             "type": "capital"
         },
+        "system-69": {
+            "name": "β",
+            "type": "wormhole",
+            "position": {
+                "x": 100,
+                "y": 100
+            },
+            "radius": 10,
+            "color": "#37ad59" 
+        },
+        "system-90": {
+            "name": "α",
+            "type": "wormhole",
+            "position": {
+                "x": 50,
+                "y": 50
+            },
+            "radius": 10,
+            "color": "#FF4500" 
+        },
         "system-93": {
-            "name": "HS",
-            "backgroundColor": "rgba(0, 119, 10, 0.2)",
+            "name": "Space Station Sumerian",
+            "backgroundColor": "rgba(102, 0, 153, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld"
+        },
+        "system-101": {
+            "name": "",
+            "type": "blackhole",
+            "position": {
+                "x": 200,
+                "y": 200
+            },
+            "radius": 25,
+            "color": "#000000" 
         },
         "system-106": {
-            "name": "HS",
-            "backgroundColor": "rgba(0, 119, 10, 0.2)",
-            "borderColor": "rgba(0, 200, 10, 0.6)",
-            "textColor": "#ffffff",
-            "type": "homeworld"
-        },
-        "system-132": {
             "name": "Jord",
             "backgroundColor": "rgba(0, 119, 255, 0.2)",
             "borderColor": "rgba(0, 119, 255, 0.6)",
+            "textColor": "#ffffff",
+            "type": "homeworld"
+        },
+        "system-124": {
+            "name": "β",
+            "type": "wormhole",
+            "position": {
+                "x": 100,
+                "y": 100
+            },
+            "radius": 10,
+            "color": "#37ad59" 
+        },
+        "system-132": {
+            "name": "Ragh",
+            "backgroundColor": "rgba(0, 128, 0, 0.2)",
+            "borderColor": "rgba(255, 223, 0, 0.8)",
             "textColor": "#ffffff",
             "type": "homeworld"
         }

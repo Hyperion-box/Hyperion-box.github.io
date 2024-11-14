@@ -3,19 +3,19 @@ layout: character
 name: "Mekka Zohrr"
 max_hp: 6
 class: "Expert"
-level: 4
+level: 1
 experience: 0
 background: Spacer
 homeworld: Ragh
 origin: Saar
 languages: Common, Saar
 
-strength: 12 (-1)
+strength: 7 (-1)
 dexterity: 14 (+1)
-constitution: 10 (+0)
-intelligence: 10 (+0)
+constitution: 9 (+0)
+intelligence: 11 (+0)
 wisdom: 12 (+0)
-charisma: 16 (+0)
+charisma: 10 (+0)
 
 administer:
 connect:
@@ -42,8 +42,6 @@ primary_weapon: "Laser Sword"
 secondary_weapon: "Plasma Pistol"
 is_player_character: true
 ---
-
-
 
 ## Class Abilities
 **Class Abilities:** Once per scene, you can reroll a failed skill check, taking the new roll if it's better.
