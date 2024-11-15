@@ -24,7 +24,7 @@ body {
     display: flex;
     height: calc(100vh - 100px);
     max-width: 100%;
-    max-height: fit-content;
+    max-height: 100%;
 }
 
 .character-list {
