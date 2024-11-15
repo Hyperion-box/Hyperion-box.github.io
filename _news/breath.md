@@ -3,7 +3,7 @@ title: THE GALAXY HOLDS ITS BREATH
 date: 2134-03-20
 sector: IMPERIAL CORE
 breaking: true
-image: /images/news/breath.png
+image: /images/news/breath-min.png
 details: Signals are coming from L1Z1X, 
 ---
 
