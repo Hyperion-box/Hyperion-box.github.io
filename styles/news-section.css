@@ -31,6 +31,13 @@
     text-shadow: 0 0 5px var(--hologram-blue);
 }
 
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .ticker-content {
+        animation: ticker-mobile 15s linear infinite;
+    }
+}
+
 .news-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -133,6 +140,11 @@
 @keyframes ticker {
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
+}
+
+@keyframes ticker-mobile {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-380%); }
 }
 
 @keyframes pulse {
