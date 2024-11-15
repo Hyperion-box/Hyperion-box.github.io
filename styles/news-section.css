@@ -131,6 +131,7 @@
 
 .timestamp {
     color: var(--cosmic-teal);
+    animation: blink 1.2s ease-in-out infinite;
 }
 
 .sector {
