@@ -111,19 +111,16 @@ body {
     }
 
     .character-list {
-        flex-direction: row;
-        overflow-x: auto;
-        white-space: nowrap;
-        max-width: 100%;
-
+        flex-direction: column; /* Stack character cards vertically */
+        padding: 5px; /* Reduce padding */
+        overflow-y: auto; /* Allow scrolling if necessary */
     }
 
     .character-card {
-        margin: 5px;
-        min-width: 120px;
-        min-height: auto;
-        padding: 10px;
-        height: fit-content;
+        margin: 5px; /* Reduce margin */
+        padding: 10px; /* Reduce padding */
+        min-width: 100%; /* Make cards full width */
+        font-size: 0.9rem; /* Adjust font size for readability */
     }
 
     .character-image {
@@ -131,7 +128,7 @@ body {
     }
 
     .character-info {
-        font-size: 0.9rem;
+        font-size: 0.8rem; /* Smaller font size for character info */
     }
 }
 
