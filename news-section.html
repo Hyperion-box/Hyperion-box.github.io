@@ -85,9 +85,10 @@
                     <h2>{{ latest_news.title }}</h2>
                     <div class="news-meta">
                         <span class="timestamp">🔴 LIVE</span>
+                        <span class="date">{{ latest_news.date | date: "%Y.%m.%d" }}</span>
                         <span class="sector">SECTOR: {{ latest_news.sector }}</span>
                     </div>
-                    <p>{{ latest_news.content | truncatewords: 80 }}</p>
+                    <p>{{ latest_news.content | truncatewords: 180 }}</p>
                 </div>
             </article>
 
