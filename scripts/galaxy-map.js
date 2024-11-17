@@ -90,6 +90,12 @@ class GalaxyMap {
                 wormhole.style.width = `${systemData.radius * 2}px`; // Diameter
                 wormhole.style.height = `${systemData.radius * 2}px`; // Diameter
                 wormhole.style.backgroundColor = systemData.color; // Wormhole color
+                
+                // Check for ion storm and apply ion storm styles
+                if (systemData.isIonStorm) {
+                    wormhole.classList.add('ion-storm'); // Add ion storm class
+                }
+
                 hex.appendChild(wormhole); // Append the wormhole to the hex
             }
 
