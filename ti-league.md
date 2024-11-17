@@ -5,12 +5,12 @@ permalink: /ti-league/
 ---
 
 
-<p id='emperor'>Current Emperor: AW with The Vuil’Raith Cabal</p>
+<p id='emperor'>Current Emperor: TP with The Argent Flight</p>
 
 {% include league-stats/league.html %}
 
 {% include league-stats/league-key.html %}
 
-Most Recent game 22/06/2024
+Most Recent game 16/11/2024
 
-Last updated 23/06/2024
+Last updated 17/11/2024
