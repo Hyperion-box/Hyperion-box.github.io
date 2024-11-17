@@ -251,6 +251,13 @@
             "textColor": "#ffffff",
             "type": ""
         },
+        "system-92": {
+            "name": "",
+            "backgroundColor": "rgba(180, 147, 217, 0.2)",
+            "borderColor": "rgba(0, 200, 10, 0.6)",
+            "textColor": "#ffffff",
+            "type": ""
+        },
         "system-93": {
             "name": "Space Station Sumerian",
             "backgroundColor": "rgba(180, 147, 217, 0.2)",
@@ -268,6 +275,8 @@
         "system-100": {
             "name": "α | β",
             "type": "wormhole",
+            "backgroundColor": "rgba(180, 147, 217, 0.2)",
+            "borderColor": "rgba(0, 200, 10, 0.6)",
             "position": {
                 "x": 100,
                 "y": 100
