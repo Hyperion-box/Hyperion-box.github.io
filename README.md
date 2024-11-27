@@ -27,7 +27,14 @@ This site uses Jekyll, likely not really how it is intended to be used. To get s
 4. Ensure "Deploy from branch" and "main" are selected in the dropdowns
 
 ## Setup for local development
-There are 3 main things you'll need to run this. Jekyll, Ruby, Git for Windows (if you are Windows).
+There are 3 main things you'll need to install to run this. 
+* Jekyll
+* Ruby
+* Git (if you are using Windows)
+  
+**Extras**
+  
+* An IDE to edit the code, use Visual Studio Code if you are a confident coder, or download Cursor to get AI assist. If you are using this on a 1:1 basis then you won't need to code, but know how to navigate a code repo.
 
 As mentioned, this is a Jekyll site. **Jekyll** uses **Ruby**. There are instructions on installing both of these [here](https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/testing-your-github-pages-site-locally-with-jekyll).
 
