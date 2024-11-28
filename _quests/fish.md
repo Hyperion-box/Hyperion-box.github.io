@@ -1,14 +1,14 @@
 ---
-title: That is not dead which can eternal lie
+title: Sundered Stars
 layout: quest
 completed: false
+hidden: false
 ---
 
-Feeling out of touch with the latest trends.
+The ship's comm system is down. Go to the bridge to find out what's happening.
 
 ## Objectives:
-1. Reach the research lab on Coorneeq to speak with Gi'naab 
+1. Go to the bridge 
 
 ## Rewards:
-- 500 credits
-- 250 XP
+
