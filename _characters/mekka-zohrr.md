@@ -4,7 +4,7 @@ name: "Mekka Zohrr"
 max_hp: 6
 class: "Expert"
 level: 1
-experience: 0
+experience: 
 background: Spacer
 homeworld: Ragh
 origin: Saar
