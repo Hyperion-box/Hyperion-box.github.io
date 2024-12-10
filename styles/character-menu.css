@@ -137,3 +137,32 @@ body {
     }
 }
 
+
+.toggle-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #66fcf1; /* Example color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle-button:hover {
+    background-color: #45a29e; /* Darker shade on hover */
+}
+
+.instructions {
+    border: 1px solid #66fcf1; /* Border color */
+    background-color: #f0f8ff; /* Light background color */
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 0.9em; /* Slightly smaller font size */
+    color: #333; /* Text color */
+}
+
+.instructions ol {
+    margin: 0; /* Remove default margin */
+    padding-left: 20px; /* Indent list */
+}
+
