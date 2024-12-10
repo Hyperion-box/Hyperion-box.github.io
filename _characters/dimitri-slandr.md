@@ -56,7 +56,7 @@ is_player_character: false
 ***Readied:*** Armored Undersuit, Backpack (TL 0), Dataslab, Laser Pistol, Metatool, Monoblade Knife
 ***Stowed:*** 4 x Power Cell (type A), 6 x Spare Parts, Toolkit (Postech)
 ***Cached:*** -
-***Credits:*** $1,100
+***Credits:*** $1,10
 
 ---
 
