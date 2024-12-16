@@ -166,3 +166,26 @@ body {
     padding-left: 20px; /* Indent list */
 }
 
+.character-skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent background */
+    color: var(--text-primary);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+}
+
+.character-skills-table th, .character-skills-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.character-skills-table th {
+    background-color: var(--nebula-purple); /* Header background */
+    color: var(--text-primary);
+}
+
+.character-skills-table td:hover {
+    background-color: var(--nebula-purple); /* Highlight on hover */
+}
