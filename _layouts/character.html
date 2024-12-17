@@ -5,10 +5,10 @@
 <div class="character-details">
     <h2>{{ page.name }}</h2>
     <div style="display: flex; gap: 15px;">
-        <div style="display: inline-block;">Max HP: {{ page.max_hp }}</div>
-        <div style="display: inline-block;">Class: {{ page.class }}</div>
-        <div style="display: inline-block;">Level: {{ page.level }}</div>
-        <div style="display: inline-block;">Experience: {{ page.experience }}</div>
+        <div style="display: inline-block;"><strong>Max HP:</strong> {{ page.max_hp }}</div>
+        <div style="display: inline-block;"><strong>Class:</strong> {{ page.class }}</div>
+        <div style="display: inline-block;"><strong>Level:</strong> {{ page.level }}</div>
+        <div style="display: inline-block;"><strong>Experience:</strong> {{ page.experience }}</div>
     </div>
     <div style="display: flex; gap: 10px;">
         <div style="display: inline-block;">Background: {{ page.background }}</div>
@@ -18,24 +18,24 @@
     </div>
     
 
-    <table style="border-collapse: collapse; width: 60%;">
+    <table class="character-attributes">
         <thead>
             <tr>
-                <th style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Physical</th>
-                <th style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Evasion</th>
-                <th style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Mental</th>
+                <th style="border: 1px solid var(--star-blue); padding: 8px; text-align: center; color: var(--cosmic-teal);">Physical</th>
+                <th style="border: 1px solid var(--star-blue); padding: 8px; text-align: center; color: var(--cosmic-teal)">Evasion</th>
+                <th style="border: 1px solid var(--star-blue); padding: 8px; text-align: center; color: var(--cosmic-teal)">Mental</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Strength: {{ page.strength }}</td>
-                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Dexterity: {{ page.dexterity }}</td>
-                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Charisma: {{ page.charisma }}</td>
+                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Strength: <strong>{{ page.strength }}</strong></td>
+                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Dexterity: <strong>{{ page.dexterity }}</strong></td>
+                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Charisma: <strong>{{ page.charisma }}</strong></td>
             </tr>
             <tr>
-                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Constitution: {{ page.constitution }}</td>
-                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Intelligence: {{ page.intelligence }}</td>
-                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Wisdom: {{ page.wisdom }}</td>
+                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Constitution: <strong>{{ page.constitution }}</strong></td>
+                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Intelligence: <strong>{{ page.intelligence }}</strong></td>
+                <td style="border: 1px solid var(--star-blue); padding: 8px; text-align: center;">Wisdom: <strong>{{ page.wisdom }}</strong></td>
             </tr>
         </tbody>
     </table>
