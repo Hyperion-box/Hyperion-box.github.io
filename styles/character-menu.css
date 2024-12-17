@@ -166,7 +166,8 @@ body {
     padding-left: 20px; /* Indent list */
 }
 
-.character-skills-table {
+.character-skills-table,
+.character-attributes {
     width: 100%;
     border-collapse: collapse;
     background-color: rgba(68, 68, 68, 0.8); /* Semi-transparent background */
@@ -175,17 +176,27 @@ body {
     border-radius: 8px;
 }
 
-.character-skills-table th, .character-skills-table td {
+.character-skills-table th, 
+.character-attributes th,
+.character-skills-table td, 
+.character-attributes td {
     padding: 10px;
     text-align: left;
     border-bottom: 1px solid var(--card-border);
+    color: var(--cosmic-teal);
 }
 
-.character-skills-table th {
+.character-skills-table th, 
+.character-attributes th {
     background-color: var(--nebula-purple); /* Header background */
     color: var(--text-primary);
 }
 
-.character-skills-table td:hover {
+.character-skills-table td:hover, 
+.character-attributes td:hover {
     background-color: var(--nebula-purple); /* Highlight on hover */
+}
+
+p strong {
+    color: var(--nova-orange);
 }
