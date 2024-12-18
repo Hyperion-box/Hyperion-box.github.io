@@ -108,6 +108,8 @@ collections:
     output: true
   characters:
     output: true
+  swn-help:
+    output: true
 
 ship_info:
   SHIP:
