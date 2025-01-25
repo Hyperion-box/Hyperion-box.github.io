@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Check for saved theme preference, otherwise use device preference
     const savedTheme = getCookie('theme') || 
-        (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark');
     
     // Apply saved theme on load
     setTheme(savedTheme);
