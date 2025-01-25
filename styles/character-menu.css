@@ -62,7 +62,7 @@ body {
 
 .character-card.player-character {
     color: #ff6b35;
-    background-color: #28837fcb;
+    background-color: #282983cb;
     border: 1px solid var(--nebula-purple);
     font-weight: bold;
 }

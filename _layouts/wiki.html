@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <link rel="stylesheet" href="{{ '../styles/wiki-style.css' | relative_url }}">
+</head>
+<body>
+  <div class="wiki-container">
+    <!-- Navigation Panel -->
+    <nav class="wiki-nav">
+      <h2>Sundered Stars Wiki</h2>
+      <ul>
+        {% for page in site.wiki %}
+        <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
+        {% endfor %}
+      </ul>
+      <button id="home-link" class="home-button" onclick="window.location.href='/'">
+        {{ site.ship_info.SHIP.name }} HOMESCREEN
+    </button>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="wiki-main">
+      <header class="wiki-header">
+        <h1>{{ page.title }}</h1>
+        <p class="subtitle">{{ page.subtitle }}</p>
+      </header>
+      <article class="wiki-content">
+        {{ content }}
+      </article>
+
+      <section class="recent-wiki-updates">
+        <h2>Recently Updated</h2>
+        <div class="card-container">
+          {% assign current_date = site.time %}
+          {% assign recent_pages = site.wiki | sort: "date" | reverse %}
+          {% assign recent_count = 0 %}
+  
+          {% for page in recent_pages %}
+            {% assign last_updated = page.date | date_to_time %}
+            {% if last_updated >= current_date | minus: 7 | date: "%Y-%m-%d" %}
+              {% if recent_count < 3 %}
+                <div class="card">
+                  <a href="{{ page.url | relative_url }}">
+                    <div class="card-image">
+                      <img src="{{ page.image }}" alt="{{ page.title }}">
+                    </div>
+                    <div class="card-title">{{ page.title }}</div>
+                    {% if last_updated >= current_date | minus: 1 | date: "%Y-%m-%d" %}
+                      <span class="recent-tag">Recently Updated</span>
+                    {% endif %}
+                  </a>
+                </div>
+                {% assign recent_count = recent_count | plus: 1 %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+
+      <footer class="wiki-footer">
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+      </footer>
+      
+    </main>
+  </div>
+</body>
+</html>

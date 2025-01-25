@@ -1,0 +1,222 @@
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle, #000428, #004e92);
+    color: #f4f4f4;
+    margin: 0;
+  }
+
+  .home-button {
+    margin-top: 10px; /* Add some space above the button */
+    padding: 5px 10px;
+    background-color: #6b4e71; /* Example color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #f0f7ff;
+}
+
+.home-button:hover {
+    background-color: #4a344e; /* Darker shade on hover */
+}
+  
+  .wiki-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .wiki-nav {
+    width: 250px;
+    background: #001f3f;
+    padding: 20px;
+    overflow-y: auto;
+    border-right: 2px solid #00c6ff;
+  }
+  
+  .wiki-nav h2 {
+    color: #00c6ff;
+    margin-top: 0;
+    font-size: 1.5em;
+  }
+  
+  .wiki-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .wiki-nav ul li {
+    margin: 10px 0;
+  }
+  
+  .wiki-nav ul li a {
+    color: #80d8ff;
+    text-decoration: none;
+    font-size: 1em;
+  }
+  
+  .wiki-nav ul li a:hover {
+    text-decoration: underline;
+    color: #00c6ff;
+  }
+  
+  .wiki-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .wiki-header {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #00c6ff;
+  }
+  
+  .wiki-header h1 {
+    margin: 0;
+    color: #00c6ff;
+  }
+  
+  .wiki-header .subtitle {
+    font-size: 1em;
+    color: #80d8ff;
+  }
+  
+  .wiki-content {
+    flex: 1;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.7);
+    overflow-y: auto;
+  }
+  
+  .wiki-footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8em;
+    background: #001f3f;
+    color: #80d8ff;
+  }
+
+/* Recent Updates Section */
+.recent-wiki-updates {
+  padding: 3%;
+}
+
+.recent-wiki-updates h2 {
+  color: #00c6ff;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Card Container */
+.card-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: scroll;
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  background: #001f3f;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.7);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-bottom: 2px solid #00c6ff;
+}
+
+.card-title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  font-size: 1.2em;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px 0;
+  border-radius: 5px;
+}
+
+.recent-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #00c6ff;
+  color: #001f3f;
+  font-size: 0.8em;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Scrollbar for Card Container */
+.card-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background: #00c6ff;
+  border-radius: 10px;
+}
+
+.card-container::-webkit-scrollbar-track {
+  background: #001f3f;
+}
+
+  
+/* cyberware-table */
+/* Cyberware Table Styling */
+.cyberware-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #111;
+  color: #f0f0f0;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.cyberware-table th,
+.cyberware-table td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #0077ff;
+}
+
+.cyberware-table th {
+  background-color: #1a1a1a;
+  color: #0077ff;
+  font-size: 1.2em;
+}
+
+.cyberware-table tr:nth-child(even) {
+  background-color: #222;
+}
+
+.cyberware-table tr:hover {
+  background-color: #333;
+}
+
+.cyberware-table td {
+  font-size: 1em;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.cyberware-table td:first-child a {
+  font-weight: bold;
+  color: #ff9a47;
+}
