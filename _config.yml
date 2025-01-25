@@ -110,6 +110,9 @@ collections:
     output: true
   swn-help:
     output: true
+  wiki:
+    output: true
+    permalink: /wiki/:path/
 
 ship_info:
   SHIP:

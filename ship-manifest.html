@@ -1,0 +1,74 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sundered Stars</title>
+    <link rel="stylesheet" href="/styles/secret-section.css">
+    <script src="/scripts/theme-switcher.js"></script>
+</head>
+<body>
+    <div class="system-info" data-system-id="SHIP">
+        <div class="ship-info">{{ site.ship_info.SHIP.name }}</div>
+        <div class="ai-name">{{ site.ship_info.SHIP.ai_name }}</div>
+        <div class="version">{{ site.ship_info.SHIP.version }}</div>
+        <button id="theme-toggle" class="theme-toggle">
+            <span class="theme-icon">{{ site.ship_info.SHIP.theme_icon }}</span>
+        </button>
+        <div class="dropdown">
+            <button class="dropbtn">☰</button>
+            <div class="dropdown-content">
+                <a href="#" class="popup-trigger" data-popup="skill-checks">Skill Checks</a>
+                <a href="#" class="popup-trigger" data-popup="saving-throws">Saving Throws</a>
+                <a href="#" class="popup-trigger" data-popup="combat">Combat</a>
+                <a href="#" class="popup-trigger" data-popup="death">Death</a>
+                <a href="#" class="popup-trigger" data-popup="leveling-up">Leveling Up and XP</a>
+                <a href="#" class="popup-trigger" data-popup="ship-travel">Ship Travel</a>
+                <a href="#" class="popup-trigger" data-popup="equipment-wealth">Equipment and Wealth</a>
+            </div>
+        </div>
+    </div>  
+
+    <!-- Pop-up Modals -->
+<div id="popup" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="popup-title"></h2>
+        <p id="popup-description"></p>
+    </div>
+</div>
+    <div class="quest-screen">
+        <header class="mission-header">
+                    <nav class="section-nav">
+                        <a href="/" class="nav-link">MISSION LOG</a>
+                        <a href="/codex-section" class="nav-link">CODEX</a>
+                        <a href="/map-section" class="nav-link">MAP</a>
+                        <a href="/news-section" class="nav-link">NET</a>
+                        <a href="/character-menu" class="nav-link">CREW</a>
+                        <a href="/ship-manifest" class="nav-link active">INVENTORY</a>
+                    </nav>
+            </header>
+        <main>
+            <section class="missions">
+                <div class="primary-missions">
+                    <pre class="mermaid">
+                        kanban
+                        weapons[**Weapons**]
+                            weapons[Energy disrupters]
+                        armour[**Armour**]
+                            armour[Energy disrupters]
+
+                  </pre>
+
+                </div>
+            </section>        
+    </div>
+    <script src="{{ '/scripts/secret-section.js' | relative_url }}"></script>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true });
+      </script>
+</body>
+</html>
