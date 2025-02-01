@@ -26,6 +26,7 @@
     overflow-x: auto; /* Allow horizontal scrolling */
     overflow-y: hidden;
     width: 1200px;
+    min-width: 1200px;
 }
 
 .map-placeholder {
