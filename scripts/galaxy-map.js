@@ -28,26 +28,40 @@ class GalaxyMap {
         for (let i = 0; i < 136; i++) {
             const hex = document.createElement('div');
             hex.className = 'hex';
-            const systemId = `system-${i}`;
+            const systemId = `7${(i + 1).toString().padStart(3, '0')}`;
             hex.setAttribute('data-system-id', systemId);
-
+    
             // Create a border div
             const borderDiv = document.createElement('div');
             borderDiv.className = 'hex-border'; // New class for the border
-
+    
+            // Create SVG for hexagon
+            const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            svg.setAttribute('class', 'hex-svg');
+            svg.setAttribute('viewBox', '0 0 100 100');
+            svg.setAttribute('width', '100');
+            svg.setAttribute('height', '100');
+    
+            const hexagon = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+            hexagon.setAttribute('points', '50,5 95,25 95,75 50,95 5,75 5,25');
+            hexagon.setAttribute('class', 'hexagon');
+    
+            svg.appendChild(hexagon);
+    
             const content = document.createElement('div');
             content.className = 'hex-content';
-            
             content.innerHTML = `
                 <div class="hex-system-id">${systemId}</div>
                 <div class="hex-text"></div>
             `;
-
+    
             hex.appendChild(borderDiv); // Append the border div
+            hex.appendChild(svg); // Append the SVG hexagon
             hex.appendChild(content);
             this.hexGrid.appendChild(hex);
         }
     }
+    
 
     applySystemData() {
         // Apply data from systems.json to matching hexes

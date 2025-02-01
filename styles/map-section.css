@@ -62,8 +62,9 @@
     grid-template-columns: repeat(8, 1fr);
     padding: 20px;
     transform: scale(0.9);
-    overflow: scroll;
+    overflow-x: scroll;
 }
+
 
 .hex {
     width: 100px;
@@ -71,38 +72,9 @@
     position: relative;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-right: 75px;
-    margin-top: -41px;
-    
-}
-
-.hex::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: var(--hex-bg, rgba(102, 252, 241, 0.1));
-    clip-path: polygon(0% 25%, 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%);
-    transition: all 0.3s ease;
-    z-index: 1;
-    transform: rotate(90deg) translateY(0px);
-    border: 2px solid var(--hex-border, rgba(102, 252, 241, 0.3));
-}
-
-.hex-border {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    clip-path: polygon(0% 25%, 50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%);
-    z-index: 0;
-    transition: all 0.3s ease;
-}
-
-.hex:hover::before {
-    background-color: rgba(102, 252, 241, 0.2);
+    margin-right: 65px;
+    margin-top: -35px;
+    background-color: transparent;
 }
 
 .hex-content {
@@ -118,15 +90,34 @@
     box-sizing: border-box;
 }
 
+.hexagon {
+    fill: var(--hex-bg, rgba(48, 117, 245, 0.308));
+    stroke: var(--hex-border, rgb(252, 217, 102));
+    stroke-width: 0.5;
+    transition: all 0.3s ease;
+}
+
+.hex-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transform: rotate(90deg); /* Rotate the SVG by 90 degrees */
+}
+
+.hex:hover .hexagon {
+    fill: rgba(102, 252, 241, 0.05);
+}
+
 .hex-system-id {
     position: absolute;
-    top: 25px;
-    left: 45%;
+    top: 15px;
+    left: 50%;
     transform: translateX(-50%);
-    font-size: 0.7em;
-    color: var(--hologram-blue);
+    font-size: 0.9em;
+    color: rgb(252, 217, 102);
     opacity: 0.8;
-    font-family: 'Courier New', monospace;
+    font-family: 'Copperplate', monospace;
 }
 
 /* Light theme override */
@@ -146,21 +137,120 @@
     font-size: 0.8em;
     text-align: center;
     margin-top: 5px;
+    font-family: 'Copperplate', monospace;
 }
 
-.hex:nth-child(16n + 9),
-.hex:nth-child(16n + 10),
-.hex:nth-child(16n + 11),
-.hex:nth-child(16n + 12),
-.hex:nth-child(16n + 13),
-.hex:nth-child(16n + 14),
-.hex:nth-child(16n + 15),
+/*7001 column*/
+.hex:nth-child(16n+1) {
+    top: 0px;
+}
+
+/*7009 column*/
+.hex:nth-child(16n + 9) {
+    transform: translateX(80%);
+    margin: -15px;
+    margin-top: -80px;
+    margin-left: -9px;
+    top: 15px;
+}
+/*7002 column*/
+.hex:nth-child(16n+2) {
+    margin-left: -23px;
+}
+
+/*7010 column*/
+.hex:nth-child(16n + 10) {
+    transform: translateX(80%);
+    margin: -15px;
+    margin-top: -80px;
+    margin-left: -32px;
+    top: 15px;
+}
+
+/*7003 column*/
+.hex:nth-child(16n+3) {
+    margin-left: -46px;
+}
+
+/*7011 column*/
+.hex:nth-child(16n + 11) {
+    transform: translateX(80%);
+    margin: -15px;
+    margin-top: -80px;
+    margin-left: -55px;
+    top: 15px;
+}
+
+/*7004 column*/
+.hex:nth-child(16n+4) {
+    margin-left: -69px;
+}
+
+/*7012 column*/
+.hex:nth-child(16n + 12) {
+    transform: translateX(80%);
+    margin: -15px;
+    margin-top: -80px;
+    margin-left: -79px;
+    top: 15px;
+}
+
+/*7005 column*/
+.hex:nth-child(16n+5) {
+    margin-left: -95px;
+}
+
+/*7013 column*/
+.hex:nth-child(16n + 13) {
+    transform: translateX(80%);
+    margin: -15px;
+    margin-top: -80px;
+    margin-left: -105px;
+    top: 15px;
+}
+
+/*7006 column*/
+.hex:nth-child(16n+6) {
+    margin-left: -119px;
+}
+
+/*7014 column*/
+.hex:nth-child(16n + 14) {
+    transform: translateX(80%);
+    margin: -15px;
+    margin-top: -80px;
+    margin-left: -128px;
+    top: 15px;
+}
+
+/*7007 column*/
+.hex:nth-child(16n+7) {
+    margin-left: -142px;
+}
+
+/*7015 column*/
+.hex:nth-child(16n + 15) {
+    transform: translateX(80%);
+    margin: -15px;
+    margin-top: -80px;
+    margin-left: -151px;
+    top: 15px;
+}
+
+/*7008 column*/
+.hex:nth-child(16n+8) {
+    margin-left: -165px;
+}
+
+/*7016 column*/
 .hex:nth-child(16n + 16) {
     transform: translateX(80%);
     margin: -15px;
-    margin-top: -57px;
-    margin-left: 8px;
+    margin-top: -80px;
+    margin-left: -174px;
+    top: 15px;
 }
+
 
 .empire-key {
     position: absolute; /* Absolute position within the galaxy map */
