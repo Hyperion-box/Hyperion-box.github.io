@@ -5,7 +5,8 @@
             "backgroundColor": "rgba(235, 165, 14, 0.5)",
             "borderColor": "rgba(204, 195, 4 0.8)",
             "textColor": "#ffffff",
-            "type": "homeworld"
+            "type": "homeworld",
+            "image":"/images/pixel-planets/Gold.png"
         },
         "7011": {
             "name": "",
@@ -26,7 +27,7 @@
         },
         "7019": {
             "name": "",
-            "backgroundColor": "rgba(93, 34, 34, 0.6)",
+            "backgroundColor": "rgba(93, 34, 34, 0.3)",
             "borderColor": "rgba(160, 34, 34, 0.6)",
             "textColor": "#ffffff",
             "type": ""
@@ -39,23 +40,23 @@
             "type": ""
         },
         "7026": {
-            "name": "Wren Terra / Arc Prime",
-            "backgroundColor": "rgba(93, 34, 34, 0.6)",
+            "name": "Arc Prime",
+            "backgroundColor": "rgba(93, 34, 34, 0.3)",
             "borderColor": "rgba(160, 34, 34, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld",
-            "image": "/images/beta-wormhole.png"
+            "image": "/images/pixel-planets/Barren3.png"
         },
         "7035": {
             "name": "",
-            "backgroundColor": "rgba(93, 34, 34, 0.6)",
+            "backgroundColor": "rgba(93, 34, 34, 0.3)",
             "borderColor": "rgba(160, 34, 34, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
         "7036": {
-            "name": "",
-            "type": "blackhole",
+            "name": "Horseshoe",
+            "image":"/images/pixel-planets/Nebulae.png",
             "position": {
                 "x": 200,
                 "y": 200
@@ -76,7 +77,7 @@
         "7043": {
             "name": "α",
             "type": "wormhole",
-            "backgroundColor": "rgba(93, 34, 34, 0.6)",
+            "backgroundColor": "rgba(93, 34, 34, 0.3)",
             "borderColor": "rgba(160, 34, 34, 0.6)",
             "position": {
                 "x": 50,
@@ -90,7 +91,8 @@
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
-            "type": "homeworld"
+            "type": "homeworld",
+            "image":"/images/pixel-planets/Desert1.png"
         },
         "7050": {
             "name": "β",
@@ -140,8 +142,8 @@
                 "y": 200
             },
             "radius": 15,
-            "color": "#000000" 
-        },
+            "color": "#000000"
+            },
         "7060": {
             "name": "",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
@@ -174,7 +176,8 @@
             "backgroundColor": "rgba(197, 8, 207, 0.2)",
             "borderColor": "rgba(255,207,0, 0.6)",
             "textColor": "#ffffff",
-            "type": "capital"
+            "type": "capital",
+            "image": "/images/pixel-planets/Barren.png"
         },
         "7069": {
             "name": "β",
@@ -220,7 +223,8 @@
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
-            "type": ""
+            "type": "",
+            "image":"/images/pixel-planets/Vorhal.png"
         },
         "7084": {
             "name": "",
@@ -258,11 +262,12 @@
             "type": ""
         },
         "7093": {
-            "name": "Space Station Sumerian",
+            "name": "Sumerian",
             "backgroundColor": "rgba(180, 147, 217, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
-            "type": "homeworld"
+            "type": "homeworld",
+            "image":"/images/pixel-planets/Station2.png"
         },
         "7099": {
             "name": "",
@@ -299,7 +304,8 @@
             "backgroundColor": "rgba(252, 255, 38, 0.2)",
             "borderColor": "rgba(252, 255, 38, 0.6)",
             "textColor": "#ffffff",
-            "type": "homeworld"
+            "type": "homeworld",
+            "image":"/images/pixel-planets/Terran.png"
         },
         "7107": {
             "name": "",
@@ -351,7 +357,8 @@
             "backgroundColor": "rgba(0, 128, 0, 0.2)",
             "borderColor": "rgba(255, 223, 0, 0.8)",
             "textColor": "#ffffff",
-            "type": "homeworld"
+            "type": "homeworld",
+            "image":"/images/pixel-planets/11.png"
         }
     }
     
