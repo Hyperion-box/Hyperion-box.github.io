@@ -123,6 +123,17 @@ class GalaxyMap {
                 hex.appendChild(blackhole); // Append the black hole to the hex
             }
         }
+            // Add image if available
+    if (systemData.image) {
+        let hexImage = hex.querySelector('.hex-image');
+        if (!hexImage) {
+            hexImage = document.createElement('div');
+            hexImage.className = 'hex-image';
+            hex.appendChild(hexImage);
+        }
+        hexImage.style.backgroundImage = `url(${systemData.image})`;
+    }
+        
     }
 
     applyWormholeStyles(hex, type) {
