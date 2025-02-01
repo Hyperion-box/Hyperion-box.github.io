@@ -1,21 +1,20 @@
 {
     "systems": {
-        "system-4": {
+        "7004": {
             "name": "Moll",
             "backgroundColor": "rgba(235, 165, 14, 0.5)",
-            "borderColor": "rgba(171, 121, 14 0.8)",
+            "borderColor": "rgba(204, 195, 4 0.8)",
             "textColor": "#ffffff",
-            "type": "homeworld",
-            "image": "/images/beta-wormhole.png"
+            "type": "homeworld"
         },
-        "system-11": {
+        "7011": {
             "name": "",
             "backgroundColor": "rgba(235, 165, 14, 0.5)",
             "borderColor": "rgba(171, 121, 14 0.8)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-12": {
+        "7012": {
             "name": "",
             "type": "blackhole",
             "position": {
@@ -25,21 +24,21 @@
             "radius": 30,
             "color": "#eb8634" 
         },
-        "system-19": {
+        "7019": {
             "name": "",
             "backgroundColor": "rgba(93, 34, 34, 0.6)",
             "borderColor": "rgba(160, 34, 34, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-20": {
+        "7020": {
             "name": "",
             "backgroundColor": "rgba(235, 165, 14, 0.5)",
             "borderColor": "rgba(171, 121, 14 0.8)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-26": {
+        "7026": {
             "name": "Wren Terra / Arc Prime",
             "backgroundColor": "rgba(93, 34, 34, 0.6)",
             "borderColor": "rgba(160, 34, 34, 0.6)",
@@ -47,14 +46,14 @@
             "type": "homeworld",
             "image": "/images/beta-wormhole.png"
         },
-        "system-35": {
+        "7035": {
             "name": "",
             "backgroundColor": "rgba(93, 34, 34, 0.6)",
             "borderColor": "rgba(160, 34, 34, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-36": {
+        "7036": {
             "name": "",
             "type": "blackhole",
             "position": {
@@ -64,7 +63,7 @@
             "radius": 22,
             "color": "#50e6dc" 
         },
-        "system-42": {
+        "7042": {
             "name": "",
             "type": "blackhole",
             "position": {
@@ -74,7 +73,7 @@
             "radius": 30,
             "color": "#eb8634" 
         },
-        "system-43": {
+        "7043": {
             "name": "α",
             "type": "wormhole",
             "backgroundColor": "rgba(93, 34, 34, 0.6)",
@@ -86,14 +85,14 @@
             "radius": 10,
             "color": "#FF4500" 
         },
-        "system-45": {
+        "7045": {
             "name": "Mallac",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld"
         },
-        "system-50": {
+        "7050": {
             "name": "β",
             "type": "wormhole",
             "backgroundColor": "rgba(143, 135, 91, 0.5)",
@@ -105,33 +104,33 @@
             "radius": 10,
             "color": "#37ad59" 
         },
-        "system-51": {
+        "7051": {
             "name": "",
             "backgroundColor": "rgba(143, 135, 91, 0.5)",
             "borderColor": "rgba(190, 113, 25, 0.6)",
             "color": "#37ad59" 
         },
-        "system-52": {
+        "7052": {
             "name": "",
             "backgroundColor": "rgba(197, 8, 207, 0.2)",
             "borderColor": "rgba(255,207,0, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-53": {
+        "7053": {
             "name": "",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-58": {
+        "7058": {
             "name": "",
             "backgroundColor": "rgba(143, 135, 91, 0.5)",
             "borderColor": "rgba(190, 113, 25, 0.6)",
             "color": "#37ad59" 
         },
-        "system-59": {
+        "7059": {
             "name": "",
             "type": "blackhole",
             "backgroundColor": "rgba(143, 135, 91, 0.5)",
@@ -143,41 +142,41 @@
             "radius": 15,
             "color": "#000000" 
         },
-        "system-60": {
+        "7060": {
             "name": "",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-61": {
+        "7061": {
             "name": "",
             "backgroundColor": "rgba(180, 147, 217, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-66": {
+        "7066": {
             "name": "Phorus",
             "backgroundColor": "rgba(143, 135, 91, 0.5)",
             "borderColor": "rgba(190, 113, 25, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld"
         },
-        "system-67": {
+        "7067": {
             "name": "",
             "backgroundColor": "rgba(143, 135, 91, 0.5)",
             "borderColor": "rgba(190, 113, 25, 0.6)",
             "color": "#37ad59" 
         },
-        "system-68": {
+        "7068": {
             "name": "Mecatol Rex",
             "backgroundColor": "rgba(197, 8, 207, 0.2)",
             "borderColor": "rgba(255,207,0, 0.6)",
             "textColor": "#ffffff",
             "type": "capital"
         },
-        "system-69": {
+        "7069": {
             "name": "β",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
@@ -189,90 +188,90 @@
             "radius": 10,
             "color": "#37ad59" 
         },
-        "system-74": {
+        "7074": {
             "name": "",
             "backgroundColor": "rgba(143, 135, 91, 0.5)",
             "borderColor": "rgba(190, 113, 25, 0.6)",
             "color": "#37ad59" 
         },
-        "system-75": {
+        "7075": {
             "name": "",
             "backgroundColor": "rgba(197, 8, 207, 0.2)",
             "borderColor": "rgba(255,207,0, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-76": {
+        "7076": {
             "name": "",
             "backgroundColor": "rgba(180, 147, 217, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-77": {
+        "7077": {
             "name": "",
             "backgroundColor": "rgba(180, 147, 217, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-83": {
+        "7083": {
             "name": "Vorhal",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-84": {
+        "7084": {
             "name": "",
-            "backgroundColor": "rgba(0, 119, 255, 0.2)",
-            "borderColor": "rgba(0, 119, 255, 0.6)",
+            "backgroundColor": "rgba(252, 255, 38, 0.2)",
+            "borderColor": "rgba(252, 255, 38, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-85": {
-            "name": "",
-            "backgroundColor": "rgba(180, 147, 217, 0.2)",
-            "borderColor": "rgba(0, 200, 10, 0.6)",
-            "textColor": "#ffffff",
-            "type": ""
-        },
-        "system-90": {
-            "name": "",
-            "backgroundColor": "rgba(0, 119, 255, 0.2)",
-            "borderColor": "rgba(0, 119, 255, 0.6)",
-            "textColor": "#ffffff",
-            "type": ""
-        },
-        "system-91": {
-            "name": "",
-            "backgroundColor": "rgba(0, 119, 255, 0.2)",
-            "borderColor": "rgba(0, 119, 255, 0.6)",
-            "textColor": "#ffffff",
-            "type": ""
-        },
-        "system-92": {
+        "7085": {
             "name": "",
             "backgroundColor": "rgba(180, 147, 217, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-93": {
+        "7090": {
+            "name": "",
+            "backgroundColor": "rgba(252, 255, 38, 0.2)",
+            "borderColor": "rgba(252, 255, 38, 0.6)",
+            "textColor": "#ffffff",
+            "type": ""
+        },
+        "7091": {
+            "name": "",
+            "backgroundColor": "rgba(252, 255, 38, 0.2)",
+            "borderColor": "rgba(252, 255, 38, 0.6)",
+            "textColor": "#ffffff",
+            "type": ""
+        },
+        "7092": {
+            "name": "",
+            "backgroundColor": "rgba(180, 147, 217, 0.2)",
+            "borderColor": "rgba(0, 200, 10, 0.6)",
+            "textColor": "#ffffff",
+            "type": ""
+        },
+        "7093": {
             "name": "Space Station Sumerian",
             "backgroundColor": "rgba(180, 147, 217, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld"
         },
-        "system-99": {
+        "7099": {
             "name": "",
-            "backgroundColor": "rgba(0, 119, 255, 0.2)",
-            "borderColor": "rgba(0, 119, 255, 0.6)",
+            "backgroundColor": "rgba(252, 255, 38, 0.2)",
+            "borderColor": "rgba(252, 255, 38, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-100": {
+        "7100": {
             "name": "α | β",
             "type": "wormhole",
             "backgroundColor": "rgba(180, 147, 217, 0.2)",
@@ -285,7 +284,7 @@
             "color": "#aa34c2",
             "isIonStorm": true
         },
-        "system-101": {
+        "7101": {
             "name": "",
             "type": "blackhole",
             "position": {
@@ -295,21 +294,21 @@
             "radius": 25,
             "color": "#000000" 
         },
-        "system-106": {
+        "7106": {
             "name": "Jord",
-            "backgroundColor": "rgba(0, 119, 255, 0.2)",
-            "borderColor": "rgba(0, 119, 255, 0.6)",
+            "backgroundColor": "rgba(252, 255, 38, 0.2)",
+            "borderColor": "rgba(252, 255, 38, 0.6)",
             "textColor": "#ffffff",
             "type": "homeworld"
         },
-        "system-107": {
+        "7107": {
             "name": "",
             "backgroundColor": "rgba(0, 128, 0, 0.2)",
             "borderColor": "rgba(255, 223, 0, 0.8)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-115": {
+        "7115": {
             "name": "α",
             "type": "wormhole",
             "position": {
@@ -321,21 +320,21 @@
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "color": "#FF4500" 
         },
-        "system-116": {
+        "7116": {
             "name": "",
             "backgroundColor": "rgba(0, 128, 0, 0.2)",
             "borderColor": "rgba(255, 223, 0, 0.8)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-123": {
+        "7123": {
             "name": "",
             "backgroundColor": "rgba(0, 128, 0, 0.2)",
             "borderColor": "rgba(255, 223, 0, 0.8)",
             "textColor": "#ffffff",
             "type": ""
         },
-        "system-124": {
+        "7124": {
             "name": "β",
             "type": "wormhole",
             "backgroundColor": "rgba(0, 128, 0, 0.2)",
@@ -347,7 +346,7 @@
             "radius": 10,
             "color": "#37ad59" 
         },
-        "system-132": {
+        "7132": {
             "name": "Ragh",
             "backgroundColor": "rgba(0, 128, 0, 0.2)",
             "borderColor": "rgba(255, 223, 0, 0.8)",
