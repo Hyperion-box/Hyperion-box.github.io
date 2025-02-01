@@ -235,11 +235,13 @@
 
 /*7007 column*/
 .hex:nth-child(16n+7) {
+    visibility: hidden;
     margin-left: -24px;
 }
 
 /*7015 column*/
 .hex:nth-child(16n + 15) {
+    visibility: hidden;
     transform: translateX(80%);
     margin: -15px;
     margin-top: -80px;
@@ -249,11 +251,13 @@
 
 /*7008 column*/
 .hex:nth-child(16n+8) {
+    visibility: hidden;
     margin-left: -24px;
 }
 
 /*7016 column*/
 .hex:nth-child(16n + 16) {
+    visibility: hidden;
     transform: translateX(80%);
     margin: -15px;
     margin-top: -80px;
