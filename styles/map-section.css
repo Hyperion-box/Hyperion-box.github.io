@@ -13,6 +13,7 @@
     border-radius: 15px;
     box-shadow: 0 0 30px rgba(102, 252, 241, 0.2);
     backdrop-filter: blur(10px);
+    overflow: scroll;
 }
 
 .galaxy-map {
@@ -24,7 +25,7 @@
     position: relative;
     overflow-x: auto; /* Allow horizontal scrolling */
     overflow-y: hidden;
-    width: 100%;
+    width: 1200px;
 }
 
 .map-placeholder {
@@ -63,6 +64,8 @@
     padding: 20px;
     transform: scale(0.9);
     overflow-x: scroll;
+    width: max-content; /* Prevent shrinking */
+
 }
 
 
@@ -175,7 +178,7 @@
 
 /*7003 column*/
 .hex:nth-child(16n+3) {
-    margin-left: -46px;
+    margin-left: -24px;
 }
 
 /*7011 column*/
@@ -183,13 +186,13 @@
     transform: translateX(80%);
     margin: -15px;
     margin-top: -80px;
-    margin-left: -55px;
+    margin-left: -33px;
     top: 15px;
 }
 
 /*7004 column*/
 .hex:nth-child(16n+4) {
-    margin-left: -69px;
+    margin-left: -24px;
 }
 
 /*7012 column*/
@@ -197,13 +200,13 @@
     transform: translateX(80%);
     margin: -15px;
     margin-top: -80px;
-    margin-left: -79px;
+    margin-left: -33px;
     top: 15px;
 }
 
 /*7005 column*/
 .hex:nth-child(16n+5) {
-    margin-left: -95px;
+    margin-left: -24px;
 }
 
 /*7013 column*/
@@ -211,13 +214,13 @@
     transform: translateX(80%);
     margin: -15px;
     margin-top: -80px;
-    margin-left: -105px;
+    margin-left: -33px;
     top: 15px;
 }
 
 /*7006 column*/
 .hex:nth-child(16n+6) {
-    margin-left: -119px;
+    margin-left: -24px;
 }
 
 /*7014 column*/
@@ -225,13 +228,13 @@
     transform: translateX(80%);
     margin: -15px;
     margin-top: -80px;
-    margin-left: -128px;
+    margin-left: -33px;
     top: 15px;
 }
 
 /*7007 column*/
 .hex:nth-child(16n+7) {
-    margin-left: -142px;
+    margin-left: -24px;
 }
 
 /*7015 column*/
@@ -239,13 +242,13 @@
     transform: translateX(80%);
     margin: -15px;
     margin-top: -80px;
-    margin-left: -151px;
+    margin-left: -33px;
     top: 15px;
 }
 
 /*7008 column*/
 .hex:nth-child(16n+8) {
-    margin-left: -165px;
+    margin-left: -24px;
 }
 
 /*7016 column*/
@@ -253,7 +256,7 @@
     transform: translateX(80%);
     margin: -15px;
     margin-top: -80px;
-    margin-left: -174px;
+    margin-left: -33px;
     top: 15px;
 }
 
