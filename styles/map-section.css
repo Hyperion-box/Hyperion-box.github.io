@@ -6,7 +6,7 @@
     justify-content: center;
     margin: 20px auto;
     position: relative;
-    width: 100%;
+    min-width: 1200px;
     height: 100vh;
     background-color: rgba(10, 14, 23, 0.7);
     border: 2px solid var(--nebula-purple);
