@@ -33,11 +33,12 @@
             "type": ""
         },
         "7020": {
-            "name": "",
+            "name": "Rarron",
             "backgroundColor": "rgba(235, 165, 14, 0.5)",
             "borderColor": "rgba(171, 121, 14 0.8)",
             "textColor": "#ffffff",
-            "type": ""
+            "type": "",
+            "image":"/images/pixel-planets/Rarron.png"
         },
         "7026": {
             "name": "Arc Prime",
@@ -145,11 +146,12 @@
             "color": "#000000"
             },
         "7060": {
-            "name": "",
+            "name": "Mehar Xull",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
-            "type": ""
+            "type": "",
+            "image":"/images/pixel-planets/Xull.png"
         },
         "7061": {
             "name": "",
@@ -163,7 +165,8 @@
             "backgroundColor": "rgba(143, 135, 91, 0.5)",
             "borderColor": "rgba(190, 113, 25, 0.6)",
             "textColor": "#ffffff",
-            "type": "homeworld"
+            "type": "homeworld",
+            "image":"/images/pixel-planets/Phorus.png"
         },
         "7067": {
             "name": "",
@@ -198,11 +201,12 @@
             "color": "#37ad59" 
         },
         "7075": {
-            "name": "",
+            "name": "Primor",
             "backgroundColor": "rgba(197, 8, 207, 0.2)",
             "borderColor": "rgba(255,207,0, 0.6)",
             "textColor": "#ffffff",
-            "type": ""
+            "type": "",
+            "image":"/images/pixel-planets/Primor.png"
         },
         "7076": {
             "name": "",
