@@ -79,7 +79,7 @@
                     </ul>
                 </div>
                 <div class="secondary-missions">
-                    <h2>Technology</h2>
+                    <!-- <h2>Technology</h2>
                     <ul>
                         {% for entry in site.codex %}
                             {% if entry.category == "technology" %}
@@ -91,13 +91,13 @@
                                 </li>
                             {% endif %}
                         {% endfor %}
-                    </ul>
+                    </ul> -->
                 </div>
                 <div class="secondary-missions">
-                    <h2>Species</h2>
+                    <h2>History</h2>
                     <ul>
                         {% for entry in site.codex %}
-                            {% if entry.category == "species" %}
+                            {% if entry.category == "history" %}
                                 <li>
                                     <a href="{{ entry.url | relative_url }}" class="mission-link">
                                         <span class="mission-icon">●</span>
