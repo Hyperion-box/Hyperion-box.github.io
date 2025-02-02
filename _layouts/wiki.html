@@ -6,6 +6,15 @@
   <title>{{ page.title | default: site.title }}</title>
   <link rel="stylesheet" href="{{ '../styles/wiki-style.css' | relative_url }}">
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CYCP7MTKDG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CYCP7MTKDG');
+</script>
 <body>
   <div class="wiki-container">
     <!-- Navigation Panel -->
