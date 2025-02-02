@@ -40,7 +40,7 @@ work:
 image: "/images/portraits/saar.jpg"
 primary_weapon: "Holospear"
 secondary_weapon: "Crude Pistol"
-is_player_character: false
+is_player_character: true
 ---
 
 ## Class Abilities
@@ -85,6 +85,10 @@ is_player_character: false
 >*1d2+1 damage (1d2 base damage +1 (DEX modifier) +0 (Punch skill level))*
 >*Unarmed attacks always add the attacker’s Punch skill to damage rolls, unlike other weapons.*
 
+## Strain
 
+**Maxmimum**: 15 (Base equal to Constitution 15)
+**Current**: 0
+**Permanant**:
 
 
