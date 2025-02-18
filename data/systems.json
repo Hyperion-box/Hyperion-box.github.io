@@ -5,7 +5,7 @@
             "backgroundColor": "rgba(235, 165, 14, 0.5)",
             "borderColor": "rgba(204, 195, 4 0.8)",
             "textColor": "#ffffff",
-            "type": "homeworld",
+            "type": "Homeworld",
             "image":"/images/pixel-planets/Gold.png"
         },
         "7011": {
@@ -17,7 +17,7 @@
         },
         "7012": {
             "name": "",
-            "type": "blackhole",
+            "type": "Blackhole",
             "position": {
                 "x": 100,
                 "y": 100
@@ -45,7 +45,7 @@
             "backgroundColor": "rgba(93, 34, 34, 0.3)",
             "borderColor": "rgba(160, 34, 34, 0.6)",
             "textColor": "#ffffff",
-            "type": "homeworld",
+            "type": "Homeworld",
             "image": "/images/pixel-planets/Barren3.png"
         },
         "7035": {
@@ -67,7 +67,7 @@
         },
         "7042": {
             "name": "",
-            "type": "blackhole",
+            "type": "Blackhole",
             "position": {
                 "x": 100,
                 "y": 100
@@ -77,7 +77,7 @@
         },
         "7043": {
             "name": "α",
-            "type": "wormhole",
+            "type": "Wormhole",
             "backgroundColor": "rgba(93, 34, 34, 0.3)",
             "borderColor": "rgba(160, 34, 34, 0.6)",
             "position": {
@@ -92,12 +92,12 @@
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
-            "type": "homeworld",
+            "type": "Homeworld",
             "image":"/images/pixel-planets/Desert1.png"
         },
         "7050": {
             "name": "β",
-            "type": "wormhole",
+            "type": "Wormhole",
             "backgroundColor": "rgba(143, 135, 91, 0.5)",
             "borderColor": "rgba(190, 113, 25, 0.6)",
             "position": {
@@ -135,7 +135,7 @@
         },
         "7059": {
             "name": "",
-            "type": "blackhole",
+            "type": "Blackhole",
             "backgroundColor": "rgba(143, 135, 91, 0.5)",
             "borderColor": "rgba(190, 113, 25, 0.6)",
             "position": {
@@ -165,7 +165,7 @@
             "backgroundColor": "rgba(143, 135, 91, 0.5)",
             "borderColor": "rgba(190, 113, 25, 0.6)",
             "textColor": "#ffffff",
-            "type": "homeworld",
+            "type": "Homeworld",
             "image":"/images/pixel-planets/Phorus.png"
         },
         "7067": {
@@ -186,7 +186,7 @@
             "name": "β",
             "backgroundColor": "rgba(0, 119, 10, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
-            "type": "wormhole",
+            "type": "Wormhole",
             "position": {
                 "x": 100,
                 "y": 100
@@ -270,7 +270,7 @@
             "backgroundColor": "rgba(180, 147, 217, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "textColor": "#ffffff",
-            "type": "homeworld",
+            "type": "Homeworld",
             "image":"/images/pixel-planets/Station2.png"
         },
         "7099": {
@@ -282,7 +282,7 @@
         },
         "7100": {
             "name": "α | β",
-            "type": "wormhole",
+            "type": "Wormhole",
             "backgroundColor": "rgba(180, 147, 217, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
             "position": {
@@ -295,7 +295,7 @@
         },
         "7101": {
             "name": "",
-            "type": "blackhole",
+            "type": "Blackhole",
             "position": {
                 "x": 200,
                 "y": 200
@@ -308,7 +308,8 @@
             "backgroundColor": "rgba(252, 255, 38, 0.2)",
             "borderColor": "rgba(252, 255, 38, 0.6)",
             "textColor": "#ffffff",
-            "type": "homeworld",
+            "details": "This is a Jordian test <br><br><hr><br> <h2>Quests</h2>Sundered Stars",
+            "type": "Homeworld",
             "image":"/images/pixel-planets/Terran.png"
         },
         "7107": {
@@ -320,7 +321,7 @@
         },
         "7115": {
             "name": "α",
-            "type": "wormhole",
+            "type": "Wormhole",
             "position": {
                 "x": 50,
                 "y": 50
@@ -346,7 +347,7 @@
         },
         "7124": {
             "name": "β",
-            "type": "wormhole",
+            "type": "Wormhole",
             "backgroundColor": "rgba(0, 128, 0, 0.2)",
             "borderColor": "rgba(255, 223, 0, 0.8)",
             "position": {
@@ -361,7 +362,7 @@
             "backgroundColor": "rgba(0, 128, 0, 0.2)",
             "borderColor": "rgba(255, 223, 0, 0.8)",
             "textColor": "#ffffff",
-            "type": "homeworld",
+            "type": "Homeworld",
             "image":"/images/pixel-planets/11.png"
         }
     }

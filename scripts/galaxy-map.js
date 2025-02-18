@@ -59,6 +59,9 @@ class GalaxyMap {
             hex.appendChild(svg); // Append the SVG hexagon
             hex.appendChild(content);
             this.hexGrid.appendChild(hex);
+
+            // Add click event listener to each hex
+            hex.addEventListener('click', () => this.handleHexClick(systemId));
         }
     }
     
@@ -98,7 +101,7 @@ class GalaxyMap {
             this.applyWormholeStyles(hex, systemData.type); // Apply styles based on type
             
             // New code to add a wormhole if the type is 'wormhole'
-            if (systemData.type === 'wormhole') {
+            if (systemData.type === 'Wormhole') {
                 const wormhole = document.createElement('div');
                 wormhole.className = 'hex-wormhole'; // Add a class for styling
                 wormhole.style.width = `${systemData.radius * 2}px`; // Diameter
@@ -114,7 +117,7 @@ class GalaxyMap {
             }
 
             // New code to add a black hole if the type is 'blackhole'
-            if (systemData.type === 'blackhole') {
+            if (systemData.type === 'Blackhole') {
                 const blackhole = document.createElement('div');
                 blackhole.className = 'hex-blackhole'; // Add a class for styling
                 blackhole.style.width = `${systemData.radius * 2}px`; // Diameter
@@ -160,21 +163,47 @@ class GalaxyMap {
                 this.handleHexClick(systemId);
             }
         });
+
+        // Close modal when the close button is clicked
+        const closeModalBtn = document.querySelector('.system-close');
+        
+        closeModalBtn.onclick = function () {
+            const modal = document.getElementById('system-modal');
+            modal.style.display = 'none';
+        };
+
+        // Close all modals when clicking outside of the modal content
+        window.onclick = function (event) {
+            const modals = document.querySelectorAll('.modal'); // Select all modals
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none'; // Close the modal
+                }
+            });
+        };
     }
+    
 
     handleHexClick(systemId) {
-        console.log(`Clicked system: ${systemId}`);
         const systemData = this.systems[systemId];
         if (systemData) {
-            console.log('System data:', systemData);
+            // Set modal title and description
+            document.getElementById('modal-title').textContent = systemData.name || 'System Information';
+            document.getElementById('modal-description').innerHTML = `
+                <p><strong>Type:</strong> ${systemData.type || 'N/A'}</p>
+                <p><strong>Details:</strong> ${systemData.details || 'No additional information available.'}</p>
+            `;
+            
+            // Display the modal
+            const modal = document.getElementById('system-modal');
+            modal.style.display = 'block';
         }
     }
-
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
     const galaxyMap = new GalaxyMap();
-
+    galaxyMap.setupModalClose(); // Call to set up modal close functionality
 });
 
 
