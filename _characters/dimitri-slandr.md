@@ -3,8 +3,8 @@ layout: character
 name: "Dimitri Slandr"
 max_hp: 7
 class: "Adventurer Expert/Warrior"
-level: 1
-experience: 0
+level: 2
+experience: 295
 background: Vagabond
 homeworld: Jord
 origin: Human

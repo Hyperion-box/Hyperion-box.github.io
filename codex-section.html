@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sundered Stars</title>
     <link rel="stylesheet" href="/styles/secret-section.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="/scripts/theme-switcher.js"></script>
+    <script src="/scripts/load-inventory.js" defer></script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYCP7MTKDG"></script>
@@ -23,6 +25,7 @@
         <div class="ship-info">{{ site.ship_info.SHIP.name }}</div>
         <div class="ai-name">{{ site.ship_info.SHIP.ai_name }}</div>
         <div class="version">{{ site.ship_info.SHIP.version }}</div>
+
         <button id="theme-toggle" class="theme-toggle">
             <span class="theme-icon">{{ site.ship_info.SHIP.theme_icon }}</span>
         </button>
@@ -35,6 +38,18 @@
         <button id="wiki-link" class="wiki-button" onclick="window.location.href='/wiki';">
             Wiki
         </button>
+        <div class="right-info">
+            <div class="credits">
+                <i class="fas fa-coins"></i>
+                <span id="total-credits">0</span>
+            </div>
+            <div class="fuel">
+                <span>Fuel: <span id="total-fuel">0</span> liters</span>
+                <div class="fuel-meter">
+                    <div class="fuel-level" id="fuel-level"></div>
+                </div>
+            </div>
+        </div>
     </div>  
 
     <!-- Pop-up Modals -->

@@ -8,8 +8,11 @@
     <title>Sundered Stars</title>
     <link rel="stylesheet" href="/styles/secret-section.css">
     <link rel="stylesheet" href="/styles/character-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="/scripts/character-menu.js" defer></script>
+    <script src="/scripts/load-inventory.js" defer></script>
     <script src="/scripts/theme-switcher.js"></script>
+    <script src="/scripts/character-level-check.js" defer></script>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYCP7MTKDG"></script>
@@ -37,6 +40,18 @@
         <button id="wiki-link" class="wiki-button" onclick="window.location.href='/wiki';">
             Wiki
         </button>
+        <div class="right-info">
+            <div class="credits">
+                <i class="fas fa-coins"></i>
+                <span id="total-credits">0</span>
+            </div>
+            <div class="fuel">
+                <span>Fuel: <span id="total-fuel">0</span> liters</span>
+                <div class="fuel-meter">
+                    <div class="fuel-level" id="fuel-level"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Pop-up Modals -->
@@ -66,10 +81,12 @@
                         <img src="{{ character.image }}" alt="{{ character.name }}" class="character-image">
                     </div>
                     <div class="character-info">
-                        <h2>{{ character.name }}</h2>
-                        <div>Max HP: {{ character.max_hp }}</div>
-                        <div>Class: {{ character.class }}</div>
-                        <div>Level: {{ character.level }}</div>
+                        <h2 class="character-name" id="character-name">{{ character.name }}</h2>
+                        <div class="character-stats">
+                            <div>Max HP: <span class="stat-value" id="max-hp">{{ character.max_hp }}</span></div>
+                            <div>Class: <span class="stat-value" id="class">{{ character.class }}</span></div>
+                            <div>Level: <span class="stat-value" id="level">{{ character.level }}</span></div>
+                            <div>Experience: <span class="stat-value" id="experience">{{ character.experience }}</span> / <span class="stat-value" id="required-xp">{{ character.required_xp }}</span></div>                        </div>
                     </div>
                 </div>
             {% endfor %}
@@ -80,6 +97,5 @@
             </div>
         </div>
     </main>
-    
 </body>
 </html>

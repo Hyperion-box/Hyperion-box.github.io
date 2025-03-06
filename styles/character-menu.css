@@ -111,12 +111,6 @@ body {
         padding: 5px;
     }
 
-    .character-card {
-        margin: 5px 0;
-        padding: 10px;
-        font-size: 1.1rem;
-    }
-
     .character-portrait-pane {
         flex: 0 0 50px;
         margin-right: 10px;
@@ -137,6 +131,51 @@ body {
     }
 }
 
+.character-card {
+    position: relative;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 12px;
+    text-align: center;
+    transition: box-shadow 0.5s ease-in-out;
+    border: 3px solid transparent; /* Placeholder border */
+}
+
+.character-card.xp-border::before {
+    content: "";
+    position: absolute;
+    inset: -3px; /* Adjust border thickness */
+    border-radius: 14px;
+    padding: 3px;
+    background: conic-gradient(
+        from 0deg,
+        var(--cosmic-teal) 0%,
+        var(--cosmic-teal) calc(var(--xp-progress) * 1%),
+        rgba(0, 255, 153, 0.1) calc(var(--xp-progress) * 1%),
+        rgba(0, 255, 153, 0) 100%
+    );
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+    0% { box-shadow: 0 0 10px rgba(0, 255, 153, 0.4); }
+    100% { box-shadow: 0 0 20px rgba(0, 255, 153, 0.8); }
+}
+
+.xp-text {
+    position: absolute;
+    bottom: -12px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 0 5px #00ff99;
+    text-align: center;
+}
 
 .toggle-button {
     margin-top: 10px;
