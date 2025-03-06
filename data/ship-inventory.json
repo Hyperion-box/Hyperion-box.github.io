@@ -1,0 +1,43 @@
+{
+    "shipInventory": {
+      "credits": 150000,
+      "fuel": {
+        "type": "Quantum Fuel",
+        "amount": 5000,
+        "unit": "litres"
+      },
+      "weapons": [
+        {
+          "name": "Laser Cannon",
+          "quantity": 2,
+          "damage": 150,
+          "range": "5000 km"
+        },
+        {
+          "name": "Plasma Torpedo",
+          "quantity": 10,
+          "damage": 300,
+          "range": "10000 km"
+        }
+      ],
+      "shields": {
+        "type": "Deflector Shield",
+        "strength": 2000,
+        "duration": "30 seconds"
+      },
+      "cargo": {
+        "food": {
+          "quantity": 1000,
+          "unit": "kg"
+        },
+        "medicalSupplies": {
+          "quantity": 500,
+          "unit": "units"
+        },
+        "spareParts": {
+          "quantity": 200,
+          "unit": "units"
+        }
+      }
+    }
+  }

@@ -4,7 +4,7 @@ name: "Dain Kessler"
 max_hp: 6
 class: "Expert"
 level: 1
-experience: 0
+experience: 295
 background: Pilot
 homeworld: Jord
 origin: Federation of Sol
