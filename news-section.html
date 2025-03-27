@@ -1,17 +1,22 @@
 ---
+layout: default
+styles:
+  - /styles/galactic-net.css
+  - /styles/news-section.css
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sundered Stars</title>
-    <link rel="stylesheet" href="/styles/news-section.css">
-    <link rel="stylesheet" href="/styles/secret-section.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <script src="/scripts/theme-switcher.js"></script>
-    <script src="/scripts/load-inventory.js" defer></script>
-</head>
+
+<!-- Import required stylesheets -->
+<link rel="stylesheet" href="{{ '/styles/global-theme.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/styles/galactic-net.css' | relative_url }}">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/styles/map-section.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="/scripts/theme-switcher.js"></script>
+<script src="/scripts/galaxy-map.js"></script>
+<script src="/scripts/load-inventory.js" defer></script>
+    
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYCP7MTKDG"></script>
 <script>
@@ -22,36 +27,7 @@
   gtag('config', 'G-CYCP7MTKDG');
 </script>
 <body>
-    <div class="system-info" data-system-id="SHIP">
-        <div class="ship-info">{{ site.ship_info.SHIP.name }}</div>
-        <div class="ai-name">{{ site.ship_info.SHIP.ai_name }}</div>
-        <div class="version">{{ site.ship_info.SHIP.version }}</div>
-        <button id="theme-toggle" class="theme-toggle">
-            <span class="theme-icon">{{ site.ship_info.SHIP.theme_icon }}</span>
-        </button>
-        <div class="dropdown">
-            <button class="dropbtn">☰</button>
-            <div class="dropdown-content">
-                {% include dropdown-content.html %}
-            </div>
-        </div>
-        <button id="wiki-link" class="wiki-button" onclick="window.location.href='/wiki';">
-            Wiki
-        </button>
-        <div class="right-info">
-            <div class="credits">
-                <i class="fas fa-coins"></i>
-                <span id="total-credits">0</span>
-            </div>
-            <div class="fuel">
-                <span>Fuel: <span id="total-fuel">0</span> liters</span>
-                <div class="fuel-meter">
-                    <div class="fuel-level" id="fuel-level"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Pop-up Modals -->
+     <!-- Pop-up Modals -->
 <div id="popup" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
@@ -60,15 +36,7 @@
     </div>
 </div>
     <div class="quest-screen">
-        <header class="mission-header">
-                <nav class="section-nav">
-                    <a href="/" class="nav-link">MISSION LOG</a>
-                    <a href="/codex-section" class="nav-link">CODEX</a>
-                    <a href="/map-section" class="nav-link">MAP</a>
-                    <a href="/news-section" class="nav-link active">NET</a>
-                    <a href="/character-menu" class="nav-link">CREW</a>
-                </nav>
-        </header>
+
 
         <div class="news-ticker">
             <div class="ticker-content">

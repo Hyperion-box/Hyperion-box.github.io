@@ -1,0 +1,358 @@
+/* GalacticNet Icon Styling */
+.nav-link.galactic-net {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.galactic-net-icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: 2px solid var(--hologram-blue);
+    border-radius: 50%;
+    animation: rotate 4s linear infinite;
+}
+
+.galactic-net-icon::before,
+.galactic-net-icon::after {
+    content: '';
+    position: absolute;
+    border: 1px solid var(--hologram-blue);
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.galactic-net-icon::before {
+    inset: -4px;
+    border-color: var(--cosmic-teal);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.galactic-net-icon::after {
+    inset: 4px;
+    border-color: var(--nova-orange);
+    animation: pulse 2s ease-in-out infinite reverse;
+}
+
+/* Main GalacticNet Layout */
+.galactic-net-container {
+    padding: 20px;
+    background: var(--deep-space);
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Network Status Bar */
+.network-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(
+        90deg,
+        rgba(10, 14, 23, 0.9) 0%,
+        rgba(74, 159, 245, 0.1) 50%,
+        rgba(10, 14, 23, 0.9) 100%
+    );
+    border-bottom: 1px solid var(--hologram-blue);
+    font-family: 'Courier New', monospace;
+}
+
+.network-status::before {
+    content: '◈ NETWORK STATUS: ACTIVE';
+    color: var(--alien-green);
+    text-shadow: 0 0 5px var(--alien-green);
+    animation: blink 2s infinite;
+}
+
+/* Content Grid */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* News Card */
+.net-card {
+    background: rgba(32, 36, 45, 0.9);
+    border: 1px solid var(--hologram-blue);
+    border-radius: 8px;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.net-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--hologram-blue), transparent);
+    animation: scanline 2s linear infinite;
+}
+
+/* Advertisement Banner */
+.galactic-ad {
+    grid-column: 1 / -1;
+    background: linear-gradient(
+        135deg,
+        rgba(107, 78, 113, 0.3) 0%,
+        rgba(74, 159, 245, 0.3) 100%
+    );
+    padding: 20px;
+    border: 2px solid var(--nova-orange);
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.galactic-ad::after {
+    content: 'SPONSORED BY HACAN TRADE FEDERATION';
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 0.8em;
+    color: var(--nova-orange);
+}
+
+/* Animations */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.1); opacity: 0.3; }
+    100% { transform: scale(1); opacity: 0.7; }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes scanline {
+    from { transform: translateY(0); }
+    to { transform: translateY(100vh); }
+}
+
+@keyframes ticker {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 0.1; }
+}
+
+/* Add these new styles to your existing galactic-net.css */
+
+.search-container {
+    margin: 20px 0;
+    position: relative;
+}
+
+.search-bar {
+    width: 100%;
+    padding: 15px;
+    background: rgba(10, 14, 23, 0.8);
+    border: 1px solid var(--hologram-blue);
+    border-radius: 4px;
+    color: var(--text-primary);
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+
+.popular-searches {
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: var(--space-gray);
+    animation: fadeInOut 4s infinite;
+}
+
+.breaking-tag {
+    background: var(--nova-orange);
+    color: var(--text-primary);
+    padding: 5px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: blink 1s infinite;
+}
+
+.academic-banner {
+    background: var(--nebula-purple);
+    padding: 10px;
+    margin: -15px -15px 15px -15px;
+    border-radius: 8px 8px 0 0;
+    font-weight: bold;
+}
+
+.course-list {
+    list-style: none;
+    padding: 0;
+}
+
+.course-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(102, 252, 241, 0.2);
+    transition: all 0.3s ease;
+}
+
+.course-list li:hover {
+    color: var(--hologram-blue);
+    padding-left: 10px;
+}
+
+.trade-ticker {
+    display: flex;
+    gap: 20px;
+    animation: ticker 20s linear infinite;
+    white-space: nowrap;
+}
+
+.classified-grid {
+    display: grid;
+    gap: 10px;
+}
+
+.classified-item {
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--space-gray);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.classified-item:hover {
+    border-color: var(--hologram-blue);
+    transform: translateX(5px);
+}
+
+.verified {
+    color: var(--alien-green);
+    font-size: 0.8em;
+    display: block;
+}
+
+.caution {
+    color: var(--nova-orange);
+    font-size: 0.8em;
+    display: block;
+}
+
+.emergency {
+    background: linear-gradient(
+        135deg,
+        rgba(255, 107, 53, 0.1) 0%,
+        rgba(255, 42, 109, 0.1) 100%
+    );
+    border-color: var(--nova-orange);
+}
+
+.warning-banner {
+    background: var(--nova-orange);
+    color: var(--text-primary);
+    padding: 5px 10px;
+    margin: -15px -15px 15px -15px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.net-footer {
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid var(--hologram-blue);
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links span {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.footer-links span:hover {
+    color: var(--hologram-blue);
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+@keyframes ticker {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Add to your existing galactic-net.css */
+
+.marketplace-banner {
+    background: var(--cyber-gradient);
+    padding: 10px;
+    margin: -15px -15px 15px -15px;
+    border-radius: 8px 8px 0 0;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.market-preview {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.featured-ship {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid rgba(102, 252, 241, 0.2);
+}
+
+.ship-price {
+    color: var(--cosmic-teal);
+    font-weight: bold;
+}
+
+.view-more {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: var(--hologram-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.view-more:hover {
+    background: rgba(102, 252, 241, 0.1);
+    transform: translateX(5px);
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.view-more:hover .arrow {
+    transform: translateX(5px);
+}
