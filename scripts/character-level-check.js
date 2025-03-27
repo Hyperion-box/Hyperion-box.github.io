@@ -35,9 +35,9 @@ function getRequiredXP(levels, currentLevel) {
 
 function updateCharacterXPBorder(card, currentXP, requiredXP) {
     if (requiredXP === 0) return;
-
-    const progressPercentage = (currentXP / requiredXP) * 100;
-    card.style.setProperty('--xp-progress', progressPercentage);
+    
+    const progressPercentage = Math.min((currentXP / requiredXP) * 100, 100);
+    card.style.setProperty('--xp-progress', `${progressPercentage}%`);
     card.classList.add('xp-border');
 }
 
