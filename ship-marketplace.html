@@ -1,0 +1,86 @@
+---
+layout: default
+title: Galactic Ship Marketplace
+styles:
+  - /styles/ship-marketplace.css
+  - /styles/galactic-net.css
+---
+<script src="/scripts/load-inventory.js" defer></script>
+
+
+<div class="marketplace-container">
+    <div class="marketplace-header">
+        <h1>GALACTIC SHIP MARKETPLACE</h1>
+        <div class="market-status">
+            <span class="status-tag">MARKET STATUS: ACTIVE</span>
+            <span class="listing-count">2,471 ACTIVE LISTINGS</span>
+        </div>
+    </div>
+
+    <div class="filters-bar">
+        <input type="text" placeholder="Search Ships..." class="search-input">
+        <div class="filter-buttons">
+            <button class="filter-btn active">ALL</button>
+            <button class="filter-btn">MILITARY</button>
+            <button class="filter-btn">CIVILIAN</button>
+            <button class="filter-btn">TRANSPORT</button>
+            <button class="filter-btn">SALVAGE</button>
+        </div>
+        <select class="sort-select">
+            <option>SORT BY: PRICE ▼</option>
+            <option>SORT BY: PRICE ▲</option>
+            <option>SORT BY: SIZE</option>
+            <option>SORT BY: CONDITION</option>
+        </select>
+    </div>
+
+    <div class="ships-grid">
+        <!-- Featured Listing -->
+        <div class="ship-card featured">
+            <div class="featured-tag">FEATURED</div>
+            <img src="/images/Sword_of_Dawn_mk1.webp" alt="Sol Cruiser" class="ship-image">
+            <div class="ship-info">
+                <h3>SOL FEDERATION CRUISER MK-IV</h3>
+                <div class="ship-specs">
+                    <span>CLASS: MILITARY</span>
+                    <span>CONDITION: EXCELLENT</span>
+                    <span>CREW: 15-20</span>
+                </div>
+                <div class="price">₡ 2,500,000</div>
+                <div class="seller-info">
+                    <span class="verified">✓ VERIFIED SELLER</span>
+                    <span>SOL FLEET SURPLUS</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Regular Listings -->
+        <div class="ship-card">
+            <img src="/assets/ships/hacan-trader.jpg" alt="Hacan Trader" class="ship-image">
+            <div class="ship-info">
+                <h3>HACAN TRADE VESSEL</h3>
+                <div class="ship-specs">
+                    <span>CLASS: TRANSPORT</span>
+                    <span>CONDITION: GOOD</span>
+                    <span>CREW: 5-8</span>
+                </div>
+                <div class="price">₡ 850,000</div>
+            </div>
+        </div>
+
+        <div class="ship-card warning">
+            <div class="warning-tag">SALVAGE</div>
+            <img src="/assets/ships/saar-wreck.jpg" alt="Saar Salvage" class="ship-image">
+            <div class="ship-info">
+                <h3>SAAR ASTEROID RUNNER</h3>
+                <div class="ship-specs">
+                    <span>CLASS: SALVAGE</span>
+                    <span>CONDITION: DAMAGED</span>
+                    <span>CREW: 3-5</span>
+                </div>
+                <div class="price">₡ 120,000</div>
+                <div class="seller-warning">SOLD AS-IS - NO WARRANTY</div>
+            </div>
+        </div>
+    </div>
+</div> 

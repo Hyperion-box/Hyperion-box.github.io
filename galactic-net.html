@@ -1,0 +1,153 @@
+---
+layout: default
+title: GalacticNet Terminal
+styles:
+  - /styles/galactic-net.css
+---
+
+<!-- Import required stylesheets -->
+<link rel="stylesheet" href="{{ '/styles/global-theme.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/styles/galactic-net.css' | relative_url }}">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="/scripts/load-inventory.js" defer></script>
+
+<div class="galactic-net-container">
+    <div class="network-status">
+        <span class="connection-status"></span>
+        <span class="encryption-level">ENCRYPTION: LEVEL 3</span>
+        <span class="timestamp">{{ site.time | date: "%Y.%m.%d.%H%M" }} GST</span>
+    </div>
+
+    <div class="content-grid">
+        <!-- Breaking News Section -->
+        <div class="net-card featured breaking">
+            <div class="breaking-tag">BREAKING NEWS</div>
+            <h2>MECATOL REX COUNCIL ANNOUNCES EMERGENCY SESSION</h2>
+            <div class="card-content">
+                <p>Following recent border disputes between the Emirates of Hacan and the Federation of Sol...</p>
+            </div>
+            <div class="source-tag">SOURCE: MECATOL HERALD</div>
+        </div>
+
+         <!-- Marketplace -->
+         <div class="net-card marketplace">
+            <div class="marketplace-banner">FEATURED MARKETPLACE</div>
+            <h3>SHIP MARKET HIGHLIGHTS</h3>
+            <div class="market-preview">
+                <div class="featured-ship">
+                    <span class="ship-name">SOL FEDERATION CRUISER MK-IV</span>
+                    <span class="ship-price">₡ 2,500,000</span>
+                </div>
+                <a href="/ship-marketplace" class="view-more">
+                    VIEW ALL LISTINGS
+                    <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Academic Section -->
+        <div class="net-card academic">
+            <div class="academic-banner">JOL-NAR UNIVERSITIES CONSORTIUM</div>
+            <h3>FEATURED PROGRAMS</h3>
+            <ul class="course-list">
+                <li>Advanced Quantum Warfare Studies</li>
+                <li>Theoretical Wormhole Engineering</li>
+                <li>Xenopolitical Economics</li>
+            </ul>
+            <div class="application-deadline">APPLICATIONS CLOSE: 3025.12.30 GST</div>
+        </div>
+
+        <!-- Historical Archives -->
+        <div class="net-card archives">
+            <h3>HISTORICAL ARCHIVES</h3>
+            <div class="archive-entry">
+                <h4>THE LAZAX EXODUS</h4>
+                <p>Interactive holocron records of the final days...</p>
+                <span class="archive-access">CLEARANCE LEVEL Ω REQUIRED</span>
+            </div>
+        </div>
+
+        <!-- Market Updates with Live Ticker -->
+        <div class="net-card market">
+            <h2>GALACTIC EXCHANGE</h2>
+            <div class="trade-ticker" data-scroll="infinite">
+                <span>HACAN SPICE ▲ 3.2%</span>
+                <span>SOL ANTIMATTER ▼ 1.8%</span>
+                <span>JOLL-NAR TECH ▲ 5.4%</span>
+                <span>XXCHA PEACE BONDS ▼ 0.7%</span>
+                <span>MINDNET SHARES ▲ 12.3%</span>
+            </div>
+        </div>
+
+        <!-- Classified Ads Section -->
+        <div class="net-card classifieds">
+            <h3>SECURE MARKETPLACE</h3>
+            <div class="classified-grid">
+                <div class="classified-item secure">
+                    <span class="verified">VERIFIED SELLER</span>
+                    "Genuine" Winnu Artifacts - Best Prices
+                </div>
+                <div class="classified-item warning">
+                    <span class="caution">CAUTION</span>
+                    Saar Salvage - "Slightly" Used Ships
+                </div>
+                <div class="classified-item">
+                    Naalu Crystal Exchange - Direct Trade Only
+                </div>
+            </div>
+        </div>
+
+        <!-- Tourism & Culture -->
+        <div class="net-card tourism">
+            <h3>CULTURAL EXCHANGE NETWORK</h3>
+            <div class="destination-feature">
+                <h4>FEATURED: XXCHA KINGDOM</h4>
+                <p>Experience the legendary Peace Markets...</p>
+            </div>
+        </div>
+
+        <!-- Emergency Broadcasts -->
+        <div class="net-card emergency">
+            <div class="warning-banner">TRAVEL ADVISORY</div>
+            <p>NEBULA ACTIVITY DETECTED IN SECTOR 7-G</p>
+            <p>AVOID CREUSS GATEWAY ALPHA - MAINTENANCE IN PROGRESS</p>
+        </div>
+
+        <!-- Sponsored Content -->
+        <div class="galactic-ad premium">
+            <div class="ad-tag">PREMIUM OFFER</div>
+            <h3>SAAR FLEET SERVICES</h3>
+            <ul class="service-list">
+                <li>✦ Premium Fuel Depot Access</li>
+                <li>✦ Asteroid Field Navigation Charts</li>
+                <li>✦ Emergency Repair Facilities</li>
+            </ul>
+            <div class="ad-footer">REGISTERED WITH GALACTIC COUNCIL</div>
+        </div>
+
+        <!-- Research Publications -->
+        <div class="net-card research">
+            <h3>LATEST RESEARCH</h3>
+            <div class="publication">
+                <h4>Universities of Jol-Nar</h4>
+                <p>"Quantum Entanglement in Warfare: A Theoretical Approach"</p>
+                <span class="citation">Vol. 3025, Issue 7</span>
+            </div>
+        </div>
+
+       
+    </div>
+
+    <!-- Footer Navigation -->
+    <div class="net-footer">
+        <div class="footer-links">
+            <span>SECURITY</span>
+            <span>PRIVACY</span>
+            <span>LEGAL</span>
+            <span>CONTACT</span>
+        </div>
+        <div class="connection-info">
+            CONNECTED VIA: MECATOL RELAY NETWORK
+        </div>
+    </div>
+</div> 

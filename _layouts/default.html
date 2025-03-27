@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
 
     {% include meta.html %}
 
@@ -11,6 +13,17 @@
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style-ti.css" />
     <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
     <link rel="icon" type="image/x-icon" href="/images/ulster-ti.png">
+
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="{{ '/styles/global-theme.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Page-specific styles -->
+    {% if page.styles %}
+        {% for style in page.styles %}
+            <link rel="stylesheet" href="{{ style | relative_url }}">
+        {% endfor %}
+    {% endif %}
   </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYCP7MTKDG"></script>
@@ -22,11 +35,7 @@
   gtag('config', 'G-CYCP7MTKDG');
 </script>
   <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-
-      </div>
-    </div>
+    {% include site-header.html %}
 
     <div id="main" role="main" class="container">
       {{ content }}

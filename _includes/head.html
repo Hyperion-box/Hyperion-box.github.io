@@ -1,0 +1,31 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="{{ '/styles/global-theme.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/styles/shared-header.css' | relative_url }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Page-specific styles -->
+    {% if page.styles %}
+        {% for style in page.styles %}
+            <link rel="stylesheet" href="{{ style | relative_url }}">
+        {% endfor %}
+    {% endif %}
+
+    <!-- Scripts -->
+    <script src="/scripts/theme-switcher.js"></script>
+    <script src="/scripts/load-inventory.js" defer></script>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYCP7MTKDG"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-CYCP7MTKDG');
+    </script>
+</head> 

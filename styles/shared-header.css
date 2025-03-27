@@ -1,0 +1,39 @@
+/* Global Header Container */
+.global-header {
+    width: 100%;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--hologram-blue);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* System Info Bar */
+.system-info {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(
+        180deg,
+        var(--space-darker) 0%,
+        rgba(5, 7, 8, 0.9) 100%
+    );
+    border-bottom: 1px solid var(--nebula-purple);
+    gap: 20px;
+}
+
+/* Navigation */
+.global-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(
+        180deg,
+        var(--space-darker) 0%,
+        rgba(5, 7, 8, 0.9) 100%
+    );
+}
+
+/* Rest of your existing header styles... */ 
