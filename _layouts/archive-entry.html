@@ -1,0 +1,33 @@
+---
+layout: default
+---
+
+<div class="archive-container">
+    <div class="archive-header">
+        <div class="classification-tag">
+            CLEARANCE LEVEL: {{ page.clearance_level | default: "PUBLIC" }}
+        </div>
+        <h1>{{ page.title }}</h1>
+        <div class="meta-info">
+            <span class="category">{{ page.category | upcase }}</span>
+            <span class="last-updated">LAST UPDATE: {{ page.last_modified_at | default: page.date | date: "%Y.%m.%d" }}</span>
+        </div>
+    </div>
+
+    <div class="archive-content">
+        {{ content }}
+    </div>
+
+    <div class="related-entries">
+        <h3>RELATED ENTRIES</h3>
+        <div class="entry-grid">
+            {% assign related = site.wiki | where: "category", page.category | where_exp: "item", "item.url != page.url" | sample: 3 %}
+            {% for entry in related %}
+            <a href="{{ entry.url }}" class="related-entry">
+                <h4>{{ entry.title }}</h4>
+                <span class="entry-category">{{ entry.category | upcase }}</span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div> 

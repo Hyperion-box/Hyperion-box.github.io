@@ -1,0 +1,62 @@
+---
+layout: default
+---
+<div class="archive-entry {{ page.category }}-entry">
+    <div class="entry-header">
+        <div class="connection-status">
+            <span class="status-dot"></span>
+            SECURE CONNECTION ESTABLISHED
+        </div>
+        <div class="data-source">
+            {{ page.source | default: "GALACTIC ARCHIVES" }}
+        </div>
+    </div>
+
+    <div class="entry-container">
+        <div class="entry-sidebar">
+            <div class="access-level">
+                <span class="access-tag">CLEARANCE: {{ page.clearance | default: "PUBLIC" }}</span>
+                <span class="timestamp">{{ page.last_modified_at | date: "%Y.%m.%d" }}</span>
+            </div>
+            {% if page.category == "faction" %}
+            <div class="faction-stats">
+                <div class="stat">INFLUENCE: {{ page.influence | default: "N/A" }}</div>
+                <div class="stat">MILITARY: {{ page.military | default: "N/A" }}</div>
+                <div class="stat">TECHNOLOGY: {{ page.tech | default: "N/A" }}</div>
+            </div>
+            {% endif %}
+            {% if page.category == "technology" %}
+            <div class="tech-specs">
+                <div class="spec">TYPE: {{ page.tech_type | default: "UNKNOWN" }}</div>
+                <div class="spec">ERA: {{ page.tech_era | default: "UNKNOWN" }}</div>
+                <div class="spec">STATUS: {{ page.tech_status | default: "UNKNOWN" }}</div>
+            </div>
+            {% endif %}
+            {% if page.category == "location" %}
+            <div class="location-data">
+                <div class="coord">SECTOR: {{ page.sector | default: "UNKNOWN" }}</div>
+                <div class="coord">SYSTEM: {{ page.system | default: "UNKNOWN" }}</div>
+                <div class="coord">STATUS: {{ page.status | default: "UNKNOWN" }}</div>
+            </div>
+            {% endif %}
+        </div>
+
+        <main class="entry-content">
+            <h1>{{ page.title }}</h1>
+            <div class="content-body">
+                {{ content }}
+            </div>
+        </main>
+
+        <div class="entry-related">
+            <h3>RELATED ENTRIES</h3>
+            {% assign related = site.wiki | where: "category", page.category | where_exp: "item", "item.url != page.url" | sample: 3 %}
+            {% for entry in related %}
+            <a href="{{ entry.url }}" class="related-link">
+                <span class="entry-title">{{ entry.title }}</span>
+                <span class="entry-type">{{ entry.category | upcase }}</span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div> 
