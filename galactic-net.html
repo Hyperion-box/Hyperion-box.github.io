@@ -8,8 +8,21 @@ styles:
 <!-- Import required stylesheets -->
 <link rel="stylesheet" href="{{ '/styles/global-theme.css' | relative_url }}">
 <link rel="stylesheet" href="{{ '/styles/galactic-net.css' | relative_url }}">
+<link rel="stylesheet" href="/styles/map-section.css">
+<script src="/scripts/theme-switcher.js"></script>
+
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="/scripts/load-inventory.js" defer></script>
+<script src="/scripts/galaxy-map.js"></script>
+
+     <!-- Pop-up Modals -->
+     <div id="popup" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="popup-title"></h2>
+            <p id="popup-description"></p>
+        </div>
+    </div>
 
 <div class="galactic-net-container">
     <div class="network-status">
