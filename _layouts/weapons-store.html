@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="/styles/global-theme.css">
+    <link rel="stylesheet" href="/styles/tech-wiki.css">
+    <link rel="stylesheet" href="/styles/weapons-store.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    {% include site-header.html %}
+    
+    <main class="weapons-store-container">
+        <!-- Dynamic Alert Banner -->
+        <div class="alert-banner">
+            <div class="alert-content">
+                <span class="alert-text">ALERT: NEW SHIPMENT OF MAG RIFLES INCOMING</span>
+                <span class="alert-time">ETA: 06:12:45</span>
+            </div>
+        </div>
+
+        <!-- Main Grid Layout -->
+        <div class="arsenal-grid">
+            <!-- Featured Weapon Showcase -->
+            <section class="weapon-showcase">
+                <div class="showcase-content">
+                    <div class="weapon-highlight">
+                        <h1>THUNDER GUN</h1>
+                        <div class="weapon-stats">
+                            <span class="stat">DMG: 2d10</span>
+                            <span class="stat">RANGE: 100/300</span>
+                            <span class="stat">TL: 5</span>
+                        </div>
+                        <div class="weapon-price">₡1,000</div>
+                    </div>
+                    <div class="tech-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-crosshairs"></i>
+                            <span>GRAV-ASSISTED TARGETING</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-wave-square"></i>
+                            <span>RESONANCE AMPLIFICATION</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Access Categories -->
+            <div class="weapon-categories">
+                <a href="#projectile" class="category-tile">
+                    <i class="fas fa-bullet"></i>
+                    <span>PROJECTILE</span>
+                    <div class="count">12 MODELS</div>
+                </a>
+                <a href="#energy" class="category-tile">
+                    <i class="fas fa-bolt"></i>
+                    <span>ENERGY</span>
+                    <div class="count">8 MODELS</div>
+                </a>
+                <a href="#heavy" class="category-tile">
+                    <i class="fas fa-explosion"></i>
+                    <span>HEAVY</span>
+                    <div class="count">4 MODELS</div>
+                </a>
+                <a href="#special" class="category-tile">
+                    <i class="fas fa-atom"></i>
+                    <span>SPECIAL</span>
+                    <div class="count">3 MODELS</div>
+                </a>
+            </div>
+
+            <!-- Main Weapons Catalog -->
+            <section class="weapons-catalog">
+                <div class="catalog-header">
+                    <h2>ARSENAL INVENTORY</h2>
+                    <div class="catalog-controls">
+                        <select class="tech-filter" aria-label="Filter by Tech Level">
+                            <option value="ALL">ALL TECH LEVELS</option>
+                            <option value="TL 1">TL 1 - PRIMITIVE</option>
+                            <option value="TL 2">TL 2 - INDUSTRIAL</option>
+                            <option value="TL 3">TL 3 - MODERN</option>
+                            <option value="TL 4">TL 4 - ADVANCED</option>
+                            <option value="TL 5">TL 5 - FUTURISTIC</option>
+                            <option value="TL 4+">TL 4+ AND ABOVE</option>
+                        </select>
+                        <div class="search-box">
+                            <input type="text" placeholder="Search weapons...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                {{ content }}
+            </section>
+
+            <!-- Armorer Services -->
+            <section class="armorer-services">
+                <div class="service-card">
+                    <div class="service-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>WEAPON CUSTOMIZATION</h3>
+                    </div>
+                    <div class="service-options">
+                        <div class="option">
+                            <span class="option-name">PRECISION TUNING</span>
+                            <span class="option-price">₡500</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-name">CUSTOM MODIFICATIONS</span>
+                            <span class="option-price">₡1,200</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-name">SIGNATURE SERIES</span>
+                            <span class="option-price">₡2,500</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Security Notice -->
+        <div class="security-notice">
+            <div class="notice-icon">
+                <i class="fas fa-fingerprint"></i>
+            </div>
+            <div class="notice-text">
+                FEDERATION ARMS LICENSE REQUIRED FOR PURCHASE
+                <span class="subtext">Unauthorized acquisition of military-grade weapons is punishable by law</span>
+            </div>
+        </div>
+    </main>
+
+    {% raw %}{% include site-footer.html %}{% endraw %}
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const techFilter = document.querySelector('.tech-filter');
+        const weaponTable = document.querySelector('.weapons-catalog table');
+        const searchInput = document.querySelector('.search-box input');
+        
+        // Store original table state
+        const originalRows = Array.from(weaponTable.querySelectorAll('tbody tr'));
+        
+        function filterWeapons() {
+            const selectedTL = techFilter.value;
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            originalRows.forEach(row => {
+                const tlCell = row.cells[7];
+                const techLevel = parseInt(tlCell.textContent);
+                const weaponName = row.cells[0].textContent.toLowerCase();
+                
+                let showRow = true;
+                
+                // Enhanced Tech Level filtering
+                switch(selectedTL) {
+                    case 'TL 1':
+                        showRow = techLevel === 1;
+                        break;
+                    case 'TL 2':
+                        showRow = techLevel === 2;
+                        break;
+                    case 'TL 3':
+                        showRow = techLevel === 3;
+                        break;
+                    case 'TL 4':
+                        showRow = techLevel === 4;
+                        break;
+                    case 'TL 5':
+                        showRow = techLevel === 5;
+                        break;
+                    case 'TL 4+':
+                        showRow = techLevel >= 4;
+                        break;
+                    case 'ALL':
+                    default:
+                        // Show all rows
+                        break;
+                }
+                
+                // Search term filtering
+                if (searchTerm && !weaponName.includes(searchTerm)) showRow = false;
+                
+                // Add or remove the row with animation
+                if (showRow) {
+                    if (!row.parentElement) weaponTable.querySelector('tbody').appendChild(row);
+                    row.classList.add('weapon-row-visible');
+                    row.classList.remove('weapon-row-hidden');
+                } else {
+                    row.classList.add('weapon-row-hidden');
+                    row.classList.remove('weapon-row-visible');
+                    setTimeout(() => {
+                        if (row.classList.contains('weapon-row-hidden')) {
+                            row.remove();
+                        }
+                    }, 300);
+                }
+            });
+
+            updateCategoryCounts();
+            updateFilterStats();
+        }
+
+        function updateCategoryCounts() {
+            const visibleRows = weaponTable.querySelectorAll('tbody tr:not(.weapon-row-hidden)');
+            
+            // Count weapons by type
+            const projectileCount = Array.from(visibleRows).filter(row => 
+                row.cells[0].textContent.match(/Bow|Pistol|Rifle|Shotgun|Carbine|Gun/)
+            ).length;
+            
+            const energyCount = Array.from(visibleRows).filter(row => 
+                row.cells[0].textContent.match(/Laser|Plasma|Thermal|Shear/)
+            ).length;
+            
+            const heavyCount = Array.from(visibleRows).filter(row => 
+                row.cells[0].textContent.match(/Thunder|Distortion|Spike/)
+            ).length;
+            
+            const specialCount = Array.from(visibleRows).filter(row => 
+                !row.cells[0].textContent.match(/Bow|Pistol|Rifle|Shotgun|Carbine|Gun|Laser|Plasma|Thermal|Shear|Thunder|Distortion|Spike/)
+            ).length;
+
+            // Update the category tiles
+            document.querySelector('[href="#projectile"] .count').textContent = `${projectileCount} MODELS`;
+            document.querySelector('[href="#energy"] .count').textContent = `${energyCount} MODELS`;
+            document.querySelector('[href="#heavy"] .count').textContent = `${heavyCount} MODELS`;
+            document.querySelector('[href="#special"] .count').textContent = `${specialCount} MODELS`;
+        }
+
+        // Add new function to show filtering statistics
+        function updateFilterStats() {
+            const visibleRows = weaponTable.querySelectorAll('tbody tr:not(.weapon-row-hidden)').length;
+            const totalRows = originalRows.length;
+            const statsElement = document.querySelector('.filter-stats') || createFilterStats();
+            
+            statsElement.innerHTML = `
+                <span class="stats-count">${visibleRows}</span> / ${totalRows} weapons shown
+                <span class="stats-tech">${techFilter.value}</span>
+            `;
+        }
+
+        function createFilterStats() {
+            const stats = document.createElement('div');
+            stats.className = 'filter-stats';
+            techFilter.parentElement.appendChild(stats);
+            return stats;
+        }
+
+        function highlightTechLevels() {
+            const selectedTL = techFilter.value;
+            const rows = weaponTable.querySelectorAll('tbody tr');
+            
+            rows.forEach(row => {
+                const tlCell = row.cells[7];
+                const techLevel = parseInt(tlCell.textContent);
+                
+                // Remove existing highlight classes
+                tlCell.classList.remove('tl-highlight', 'tl-primitive', 'tl-industrial', 
+                    'tl-modern', 'tl-advanced', 'tl-futuristic');
+                
+                // Add appropriate highlight class based on TL
+                if (selectedTL !== 'ALL') {
+                    switch(techLevel) {
+                        case 1:
+                            tlCell.classList.add('tl-primitive');
+                            break;
+                        case 2:
+                            tlCell.classList.add('tl-industrial');
+                            break;
+                        case 3:
+                            tlCell.classList.add('tl-modern');
+                            break;
+                        case 4:
+                            tlCell.classList.add('tl-advanced');
+                            break;
+                        case 5:
+                            tlCell.classList.add('tl-futuristic');
+                            break;
+                    }
+                    
+                    if ((selectedTL === 'TL 4+' && techLevel >= 4) ||
+                        (selectedTL === `TL ${techLevel}`)) {
+                        tlCell.classList.add('tl-highlight');
+                    }
+                }
+            });
+        }
+
+        // Event listeners
+        techFilter.addEventListener('change', () => {
+            filterWeapons();
+            highlightTechLevels();
+        });
+        
+        searchInput.addEventListener('input', filterWeapons);
+
+        // Initialize category counts
+        updateCategoryCounts();
+    });
+    </script>
+</body>
+</html> 
