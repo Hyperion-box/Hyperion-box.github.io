@@ -6,7 +6,7 @@
 name: Ship Computer 
 
 # Short bio or description (displayed in the header)
-description: Updates on TI games
+description: Sundered Stars Datapad
 
 #current emperor
 emperor: "Ali"
@@ -118,5 +118,5 @@ ship_info:
   SHIP:
     name: "HSS HYPERION"
     ai_name: "ARI"
-    version: "v1.5.17"
+    version: "v2.0.10"
     theme_icon: "🌙"
