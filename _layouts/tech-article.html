@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="{{ '/styles/global-theme.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/styles/tech-wiki.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    {% include site-header.html %}
+    
+    <div class="tech-wiki-container">
+        <!-- Side Navigation -->
+        <nav class="tech-nav">
+            <div class="nav-header">
+                <i class="fas fa-microchip"></i>
+                <h2>TECH DATABASE</h2>
+            </div>
+            
+            <!-- Category Links -->
+            <div class="tech-categories">
+                <a href="/wiki/cyberware" class="category-link {% if page.path contains 'cyberware.md' %}active{% endif %}">
+                    <i class="fas fa-robot"></i>
+                    <span>CYBERWARE</span>
+                </a>
+                <a href="/wiki/pharms" class="category-link {% if page.path contains 'pharms.md' %}active{% endif %}">
+                    <i class="fas fa-capsules"></i>
+                    <span>PHARMACEUTICALS</span>
+                </a>
+                <a href="/wiki/tech" class="category-link {% if page.path contains 'tech.md' %}active{% endif %}">
+                    <i class="fas fa-microchip"></i>
+                    <span>TECHNOLOGY</span>
+                </a>
+                <a href="/wiki/weapon-types" class="category-link {% if page.path contains 'weapon-types.md' %}active{% endif %}">
+                    <i class="fas fa-crosshairs"></i>
+                    <span>WEAPONS</span>
+                </a>
+            </div>
+
+            <!-- Market Status -->
+            <div class="market-status">
+                <h3><i class="fas fa-chart-line"></i> MARKET STATUS</h3>
+                <div class="status-indicators">
+                    <div class="indicator">
+                        <span class="label">TRADE VOLUME</span>
+                        <span class="value high">HIGH</span>
+                    </div>
+                    <div class="indicator">
+                        <span class="label">AVAILABILITY</span>
+                        <span class="value medium">MEDIUM</span>
+                    </div>
+                </div>
+            </div>
+
+            <button id="home-link" class="home-button" onclick="window.location.href='/'">
+                <i class="fas fa-home"></i> RETURN TO {{ site.ship_info.SHIP.name }}
+            </button>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="tech-main">
+            <header class="tech-header">
+                <div class="tech-breadcrumb">
+                    <a href="/wiki">DATABASE</a> / 
+                    <span>{{ page.category | upcase }}</span>
+                </div>
+                <h1>{{ page.title }}</h1>
+                <div class="tech-meta">
+                    <span class="legality-tag {% if page.legality == 'restricted' %}restricted{% endif %}">
+                        {{ page.legality | default: "LEGAL" | upcase }}
+                    </span>
+                    <span class="tech-level">TECH LEVEL: {{ page.tech_level | default: "1" }}</span>
+                    <span class="availability">{{ page.availability | default: "COMMON" | upcase }}</span>
+                </div>
+            </header>
+
+            <article class="tech-content">
+                <!-- Table Wrapper for Equipment Lists -->
+                <div class="equipment-table-wrapper">
+                    {{ content }}
+                </div>
+                
+                <!-- Technical Specifications -->
+                {% if page.specifications %}
+                <div class="tech-specs">
+                    <h3><i class="fas fa-cog"></i> TECHNICAL SPECIFICATIONS</h3>
+                    <div class="specs-grid">
+                        {% for spec in page.specifications %}
+                        <div class="spec-item">
+                            <span class="spec-label">{{ spec.label }}</span>
+                            <span class="spec-value">{{ spec.value }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+            </article>
+
+            <footer class="tech-footer">
+                <div class="footer-content">
+                    <div class="clearance-level">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>CLEARANCE: {{ page.clearance_level | default: "PUBLIC" }}</span>
+                    </div>
+                    <div class="last-update">
+                        LAST UPDATED: {{ page.last_modified_at | default: site.time | date: "%Y.%m.%d" }}
+                    </div>
+                </div>
+            </footer>
+        </main>
+    </div>
+</body>
+</html> 

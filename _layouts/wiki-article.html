@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ page.title | default: site.title }}</title>
-  <link rel="stylesheet" href="{{ '../styles/wiki-style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/styles/global-theme.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/styles/wiki-style.css' | relative_url }}">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CYCP7MTKDG"></script>
@@ -16,33 +19,83 @@
   gtag('config', 'G-CYCP7MTKDG');
 </script>
 <body>
+  {% include site-header.html %}
+  
   <div class="wiki-container">
-    <!-- Navigation Panel -->
+    <!-- Side Navigation -->
     <nav class="wiki-nav">
-      <h2><a href="/wiki" style="text-decoration: none; color: inherit;">Sundered Stars Wiki</a></h2>
-      <ul>
-        {% for page in site.wiki %}
-        <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
-        {% endfor %}
-      </ul>
+      <div class="nav-header">
+        <i class="fas fa-database"></i>
+        <h2>DATABANK ACCESS</h2>
+      </div>
+      
+      <!-- Search Bar -->
+      <div class="wiki-search">
+        <input type="text" placeholder="Search Archives..." id="wikiSearch">
+        <i class="fas fa-search search-icon"></i>
+      </div>
+
+      <!-- Recent Articles -->
+      <div class="recent-section">
+        <h3><i class="fas fa-clock"></i> RECENT UPDATES</h3>
+        <ul class="recent-list">
+          {% for page in site.wiki limit:5 %}
+          <li><a href="{{ page.url | relative_url }}">{{ page.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
       <button id="home-link" class="home-button" onclick="window.location.href='/'">
-        {{ site.ship_info.SHIP.name }} HOMESCREEN
-    </button>
+        <i class="fas fa-home"></i> {{ site.ship_info.SHIP.name }}
+      </button>
     </nav>
 
-    <!-- Main Content -->
+    <!-- Main Content Area -->
     <main class="wiki-main">
-      <header class="wiki-header">
+      <header class="article-header">
+        <div class="breadcrumb">
+          <a href="/wiki">DATABANK</a> / 
+          <span>{{ page.category | upcase }}</span> /
+          <span>{{ page.title | upcase }}</span>
+        </div>
         <h1>{{ page.title }}</h1>
-        <p class="subtitle">{{ page.subtitle }}</p>
+        <div class="article-meta">
+          <span class="category-tag">{{ page.category }}</span>
+          <span class="update-date">Last Updated: {{ page.last_modified_at | default: site.time | date: "%Y.%m.%d" }}</span>
+        </div>
       </header>
+
       <article class="wiki-content">
-        {{ content }}
-      </article>     
+        <div class="content-wrapper">
+          {{ content }}
+        </div>
+        
+        <!-- Related Articles -->
+        <div class="related-articles">
+          <h3><i class="fas fa-link"></i> RELATED ENTRIES</h3>
+          <div class="related-grid">
+            {% for page in site.wiki limit:3 %}
+            <div class="related-card">
+              <h4>{{ page.title }}</h4>
+              <p>{{ page.excerpt | truncate: 100 }}</p>
+              <a href="{{ page.url | relative_url }}" class="read-more">READ MORE →</a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </article>
+
       <footer class="wiki-footer">
-        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+        <div class="footer-content">
+          <div class="data-info">
+            <i class="fas fa-shield-alt"></i>
+            <span>SECURITY LEVEL: {{ page.security_level | default: "PUBLIC" }}</span>
+          </div>
+          <div class="copyright">
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+          </div>
+        </div>
       </footer>
-      
     </main>
   </div>
 </body>

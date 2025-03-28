@@ -1,5 +1,5 @@
 ---
-layout: wiki-article
+layout: cyberware-store
 title: Cyberware
 subtitle: A guide to cyberware in Sundered Stars
 image: "https://alakazam.co.uk/cdn/shop/products/72643-full.png?v=1677023245"

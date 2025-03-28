@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ "{{ content }}" }} <!-- This will include the head content from pharms.md -->
+    <link rel="stylesheet" href="/styles/pharm-store.css">
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+</head>
+<body>
+    <!-- Site header will be included via default layout -->
+    
+    <main class="pharm-store-container">
+        <!-- Store Header -->
+        <section class="store-header">
+            <div class="store-title">
+                <i class="fas fa-capsules"></i>
+                <h1>PHARMACEUTICAL MARKET</h1>
+                <span class="market-status online">MARKET ONLINE</span>
+            </div>
+            <div class="market-info">
+                <span class="info-item"><i class="fas fa-users"></i> Active Traders: 1,247</span>
+                <span class="info-item"><i class="fas fa-chart-line"></i> Market Volume: ₡4.2M</span>
+                <span class="info-item"><i class="fas fa-clock"></i> Next Restock: 2:14:33</span>
+            </div>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="filter-section">
+            <div class="search-bar">
+                <input type="text" placeholder="SEARCH PHARMACEUTICALS...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="filter-options">
+                <select class="filter-select">
+                    <option value="">CATEGORY</option>
+                    <option value="stims">STIMULANTS</option>
+                    <option value="med">MEDICAL</option>
+                    <option value="enhance">ENHANCEMENTS</option>
+                    <option value="emergency">EMERGENCY</option>
+                </select>
+                <select class="filter-select">
+                    <option value="">CERTIFICATION</option>
+                    <option value="jol-nar">JOL-NAR</option>
+                    <option value="mecatol">MECATOL</option>
+                    <option value="hacan">HACAN</option>
+                </select>
+                <select class="filter-select">
+                    <option value="">PRICE RANGE</option>
+                    <option value="low">₡0 - ₡5,000</option>
+                    <option value="mid">₡5,000 - ₡20,000</option>
+                    <option value="high">₡20,000+</option>
+                </select>
+                <button class="filter-reset">RESET FILTERS</button>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products">
+            <h2>FEATURED PRODUCTS</h2>
+            <div class="featured-grid">
+                <!-- Featured items will be populated here -->
+            </div>
+        </section>
+
+        <!-- Main Product Grid -->
+        <section class="products-grid">
+            <!-- Products will be populated here -->
+             {{ content }}
+        </section>
+
+        <!-- Market Advisory -->
+        <section class="market-advisory">
+            <div class="advisory-content">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>MARKET ADVISORY: All transactions are monitored. Valid medical license required for restricted substances.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html> 

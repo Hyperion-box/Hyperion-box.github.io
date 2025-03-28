@@ -1,0 +1,208 @@
+/* Tech Wiki Container */
+.tech-wiki-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    padding: 20px;
+    background: var(--bg-primary);
+    min-height: calc(100vh - 120px);
+}
+
+/* Navigation Styling */
+.tech-nav {
+    background: rgba(10, 14, 23, 0.95);
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--hologram-blue);
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 100px;
+}
+
+.nav-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--hologram-blue);
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(102, 252, 241, 0.2);
+}
+
+/* Category Links */
+.tech-categories {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.category-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 6px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.category-link:hover {
+    background: rgba(102, 252, 241, 0.1);
+    border-color: var(--hologram-blue);
+}
+
+.category-link.active {
+    background: var(--hologram-blue);
+    color: var(--deep-space);
+}
+
+/* Market Status */
+.market-status {
+    background: rgba(32, 36, 45, 0.9);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.status-indicators {
+    margin-top: 10px;
+}
+
+.indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.value.high { color: var(--alien-green); }
+.value.medium { color: var(--nova-orange); }
+.value.low { color: var(--neon-pink); }
+
+/* Main Content Area */
+.tech-main {
+    background: rgba(32, 36, 45, 0.9);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--hologram-blue);
+}
+
+.tech-header {
+    padding: 30px;
+    background: linear-gradient(
+        135deg,
+        rgba(102, 252, 241, 0.1) 0%,
+        rgba(74, 159, 245, 0.1) 100%
+    );
+    border-bottom: 1px solid var(--hologram-blue);
+}
+
+/* Equipment Tables */
+.equipment-table-wrapper {
+    padding: 20px;
+}
+
+.equipment-table-wrapper table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+}
+
+.equipment-table-wrapper th {
+    background: linear-gradient(
+        90deg,
+        var(--nebula-purple) 0%,
+        rgba(107, 78, 113, 0.8) 100%
+    );
+    color: var(--hologram-blue);
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid var(--star-blue);
+}
+
+.equipment-table-wrapper td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(74, 159, 245, 0.2);
+}
+
+.equipment-table-wrapper tr:hover td {
+    background: rgba(74, 159, 245, 0.1);
+    color: var(--hologram-blue);
+}
+
+/* Tech Specifications */
+.tech-specs {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(10, 14, 23, 0.9);
+    border-radius: 8px;
+    border: 1px solid var(--star-blue);
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.spec-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.spec-label {
+    color: var(--space-gray);
+    font-size: 0.9em;
+}
+
+.spec-value {
+    color: var(--hologram-blue);
+    font-weight: bold;
+}
+
+/* Status Tags */
+.legality-tag {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    background: var(--alien-green);
+}
+
+.legality-tag.restricted {
+    background: var(--nova-orange);
+}
+
+/* Footer */
+.tech-footer {
+    padding: 20px;
+    background: rgba(10, 14, 23, 0.9);
+    border-top: 1px solid var(--hologram-blue);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .tech-wiki-container {
+        grid-template-columns: 1fr;
+    }
+
+    .tech-nav {
+        position: static;
+    }
+
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+} 

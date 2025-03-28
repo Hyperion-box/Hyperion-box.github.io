@@ -356,3 +356,156 @@
 .view-more:hover .arrow {
     transform: translateX(5px);
 }
+
+/* Marketplace Cards Styling */
+.market-preview {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.featured-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid rgba(102, 252, 241, 0.2);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.item-name {
+    color: var(--text-primary);
+    font-weight: bold;
+    flex: 1;
+}
+
+.item-price {
+    color: var(--cosmic-teal);
+    font-weight: bold;
+    font-family: 'Courier New', monospace;
+}
+
+.market-stats {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    font-size: 0.9em;
+    color: var(--space-gray);
+    border-bottom: 1px solid rgba(102, 252, 241, 0.2);
+}
+
+/* Category-specific styling */
+.marketplace-banner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    margin: -15px -15px 15px -15px;
+    border-radius: 8px 8px 0 0;
+    font-weight: bold;
+    color: var(--text-primary);
+}
+
+.marketplace-banner i {
+    font-size: 1.2em;
+}
+
+/* Pharm Market */
+.marketplace-banner.pharm {
+    background: linear-gradient(90deg, var(--alien-green), var(--cosmic-teal));
+}
+
+.market-pharm .approval-tag {
+    color: var(--alien-green);
+    border: 1px solid var(--alien-green);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+/* Tech Market */
+.marketplace-banner.tech {
+    background: linear-gradient(90deg, var(--hologram-blue), var(--star-blue));
+}
+
+.market-tech .warning-tag {
+    color: var(--nova-orange);
+    border: 1px solid var(--nova-orange);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+/* Cyberware Market */
+.marketplace-banner.cyber {
+    background: linear-gradient(90deg, var(--neon-pink), var(--nebula-purple));
+}
+
+.market-cyber .certification-tag {
+    color: var(--hologram-blue);
+    border: 1px solid var(--hologram-blue);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+/* Weapons Market */
+.marketplace-banner.weapons {
+    background: linear-gradient(90deg, var(--nova-orange), var(--neon-pink));
+}
+
+.market-weapons .license-tag {
+    color: var(--cyber-yellow);
+    border: 1px solid var(--cyber-yellow);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8em;
+}
+
+/* Hover Effects */
+.net-card[class*="market-"] {
+    transition: all 0.3s ease;
+}
+
+.net-card[class*="market-"]:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.net-card[class*="market-"] .view-more {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: var(--hologram-blue);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.net-card[class*="market-"] .view-more:hover {
+    background: rgba(102, 252, 241, 0.1);
+    padding-left: 15px;
+}
+
+.net-card[class*="market-"] .arrow {
+    transition: transform 0.3s ease;
+}
+
+.net-card[class*="market-"] .view-more:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .featured-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .market-stats {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
