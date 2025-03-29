@@ -6,7 +6,8 @@ class: "Expert"
 level: 1
 experience: 0
 background: Spacer
-homeworld: -
+homeworld: None
+origin: Saar
 languages: Common
 
 strength: 9 (+0)
@@ -43,7 +44,7 @@ is_player_character: true
 ---
 
 ## Class Abilities
-**Class Abilities:** Once per scene, you can reroll a failed skill check, taking the new roll if it's better.
+Once per scene, you can reroll a failed skill check, taking the new roll if it's better.
 
 ## EQUIPMENT
 
