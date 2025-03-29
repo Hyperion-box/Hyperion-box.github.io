@@ -1,6 +1,6 @@
 {
     "shipInventory": {
-      "credits": 150000,
+      "credits": 0,
       "fuel": {
         "type": "Quantum Fuel",
         "amount": 5000,
