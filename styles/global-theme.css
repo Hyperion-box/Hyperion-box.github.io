@@ -335,7 +335,6 @@ a:hover {
 /* Dropdown Menu */
 .dropdown {
     position: relative;
-    display: inline-block;
 }
 
 .dropbtn {
