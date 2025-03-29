@@ -1,1 +1,0 @@
-Characters can acquire equipment and wealth through missions, trade, and exploration. Managing resources is key to survival.

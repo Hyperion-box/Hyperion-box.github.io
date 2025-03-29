@@ -1,14 +1,14 @@
 ---
-title: Sundered Stars
+title: A rude awakening
 layout: quest
 completed: false
 hidden: false
 ---
 
-The ship's comm system is down. Go to the bridge to find out what's happening.
+Hey you, you're finally awake.
 
-## Objectives:
-1. Go to the bridge 
+## Notes
+1. Investigate
 
-## Rewards:
+## Rewards
 
