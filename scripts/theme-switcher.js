@@ -78,85 +78,118 @@ document.addEventListener('DOMContentLoaded', function () {
         let inList = false;
         let inTable = false;
         let isHeaderRow = false;
-    
+        let currentParagraph = [];
+
+        function processParagraph() {
+            if (currentParagraph.length > 0) {
+                let paragraphText = currentParagraph.join(' ');
+                // Process inline formatting
+                paragraphText = paragraphText
+                    .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>')
+                    .replace(/___(.*?)___/g, '<strong><em>$1</em></strong>')
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/__(.*?)__/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                    .replace(/_(.*?)_/g, '<em>$1</em>')
+                    .replace(/`(.*?)`/g, '<code>$1</code>');
+                html += `<p>${paragraphText}</p>`;
+                currentParagraph = [];
+            }
+        }
+
+        function closeListsAndTable() {
+            if (inList) {
+                html += '</ul>';
+                inList = false;
+            }
+            if (inTable) {
+                html += '</table>';
+                inTable = false;
+            }
+        }
+
         lines.forEach(line => {
+            // Skip front matter
             if (line.startsWith('---')) {
                 inFrontMatter = !inFrontMatter;
                 return;
             }
-    
             if (inFrontMatter) return;
-    
+
             // Handle code blocks
             if (line.startsWith('```')) {
                 inCodeBlock = !inCodeBlock;
-                html += inCodeBlock ? '<pre><code>' : '</code></pre>';
+                if (inCodeBlock) {
+                    html += '<pre><code class="code-block">';
+                } else {
+                    html += '</code></pre>';
+                }
                 return;
             }
-    
+
             if (inCodeBlock) {
                 html += `${line}\n`;
                 return;
             }
-    
+
             // Handle headers
             const headerMatch = line.match(/^(#{1,6})\s+(.*)$/);
             if (headerMatch) {
+                processParagraph();
                 closeListsAndTable();
                 const level = headerMatch[1].length;
-                const content = headerMatch[2];
+                const content = headerMatch[2]
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>');
                 html += `<h${level}>${content}</h${level}>`;
                 return;
             }
-    
+
             // Handle unordered lists
             if (line.startsWith('- ')) {
-                closeListsAndTable();
+                processParagraph();
                 if (!inList) {
                     html += '<ul>';
                     inList = true;
                 }
-                html += `<li>${line.slice(2).trim()}</li>`;
+                const listContent = line.slice(2).trim()
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                    .replace(/`(.*?)`/g, '<code>$1</code>');
+                html += `<li>${listContent}</li>`;
                 return;
             }
-    
+
             // Handle ordered lists
             const orderedListMatch = line.match(/^\d+\.\s+(.*)$/);
             if (orderedListMatch) {
-                closeListsAndTable();
+                processParagraph();
                 if (!inList) {
                     html += '<ol>';
                     inList = true;
                 }
-                html += `<li>${orderedListMatch[1]}</li>`;
+                const listContent = orderedListMatch[1]
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                    .replace(/`(.*?)`/g, '<code>$1</code>');
+                html += `<li>${listContent}</li>`;
                 return;
             }
-    
-            if (inList && !line.trim()) {
-                html += inList ? '</ul>' : '</ol>';
-                inList = false;
-            }
-    
-            // Handle blockquotes
-            if (line.startsWith('> ')) {
-                closeListsAndTable();
-                html += `<blockquote>${line.slice(2).trim()}</blockquote>`;
-                return;
-            }
-    
+
             // Handle tables
             const tableRowMatch = line.match(/^\|(.+)\|$/);
             const separatorRowMatch = line.match(/^\|\s*[-:]+\s*\|(?:\s*[-:]+\s*\|)*$/);
-    
+
             if (tableRowMatch) {
+                processParagraph();
                 const cells = tableRowMatch[1].split('|').map(cell => cell.trim());
-    
+
                 if (!inTable) {
-                    html += '<table>';
+                    html += '<table class="markdown-table">';
                     inTable = true;
                     isHeaderRow = true;
                 }
-    
+
                 if (isHeaderRow && separatorRowMatch) {
                     html += '<thead><tr>';
                     cells.forEach(cell => {
@@ -175,52 +208,42 @@ document.addEventListener('DOMContentLoaded', function () {
                     } else {
                         html += '<tbody><tr>';
                         cells.forEach(cell => {
-                            html += `<td>${cell}</td>`;
+                            const processedCell = cell
+                                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                                .replace(/`(.*?)`/g, '<code>$1</code>');
+                            html += `<td>${processedCell}</td>`;
                         });
                         html += '</tr></tbody>';
                     }
                 }
                 return;
             }
-    
-            // Close tables if the line does not belong to a table
-            if (inTable && !tableRowMatch && !separatorRowMatch) {
-                html += '</table>';
-                inTable = false;
+
+            // Handle blockquotes
+            if (line.startsWith('> ')) {
+                processParagraph();
+                const quoteContent = line.slice(2).trim()
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>');
+                html += `<blockquote>${quoteContent}</blockquote>`;
+                return;
             }
-    
-            // **Bold**, *Italic*, ***Bold + Italic***
-            line = line
-                .replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>') // Bold + Italic
-                .replace(/___(.*?)___/g, '<strong><em>$1</em></strong>') // Bold + Italic
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') // Bold
-                .replace(/__(.*?)__/g, '<strong>$1</strong>') // Bold
-                .replace(/\*(.*?)\*/g, '<em>$1</em>') // Italic
-                .replace(/_(.*?)_/g, '<em>$1</em>'); // Italic
-    
-            // Handle paragraphs
-            if (line.trim()) {
-                html += `<p>${line.trim()}</p>`;
+
+            // Handle empty lines
+            if (!line.trim()) {
+                processParagraph();
+                return;
             }
+
+            // Add to current paragraph
+            currentParagraph.push(line);
         });
-    
-        // Close any open lists or tables
+
+        // Process any remaining paragraph
+        processParagraph();
         closeListsAndTable();
-    
-        function closeListsAndTable() {
-            if (inList) {
-                html += inList ? '</ul>' : '</ol>';
-                inList = false;
-            }
-            if (inTable) {
-                html += '</table>';
-                inTable = false;
-            }
-        }
-    
+
         return html;
     }
-    
-    
-    
 });

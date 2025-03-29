@@ -434,12 +434,113 @@ a:hover {
 }
 
 .modal-content {
-    background-color: #2c2c2c; /* Dark background for modal content */
-    margin: 15% auto; /* 15% from the top and centered */
+    background: rgba(10, 14, 23, 0.95);
+    border: 1px solid var(--hologram-blue);
+    border-radius: 8px;
     padding: 20px;
-    border: 1px solid #444; /* Darker border */
-    width: 80%; /* Could be more or less, depending on screen size */
-    color: #fefefe; /* Light text color for readability */
+    max-width: 800px;
+    margin: 15% auto;
+    position: relative;
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.2);
+}
+
+.modal-content h2 {
+    color: var(--hologram-blue);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    text-shadow: 0 0 10px rgba(102, 252, 241, 0.5);
+}
+
+.modal-content p {
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.modal-content strong {
+    color: var(--cosmic-teal);
+    text-shadow: 0 0 5px rgba(65, 226, 186, 0.5);
+}
+
+.modal-content em {
+    color: var(--star-blue);
+    font-style: italic;
+}
+
+.modal-content code {
+    background: rgba(102, 252, 241, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--hologram-blue);
+    font-family: 'Courier New', monospace;
+    border: 1px solid rgba(102, 252, 241, 0.2);
+}
+
+.modal-content pre {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 15px 0;
+    border: 1px solid var(--hologram-blue);
+}
+
+.modal-content pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: var(--hologram-blue);
+}
+
+.modal-content ul, .modal-content ol {
+    color: var(--text-primary);
+    margin: 15px 0;
+    padding-left: 20px;
+}
+
+.modal-content li {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+.modal-content blockquote {
+    border-left: 3px solid var(--hologram-blue);
+    margin: 15px 0;
+    padding: 10px 20px;
+    background: rgba(102, 252, 241, 0.05);
+    color: var(--text-primary);
+    font-style: italic;
+}
+
+.modal-content .markdown-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.modal-content .markdown-table th,
+.modal-content .markdown-table td {
+    padding: 12px;
+    border: 1px solid var(--hologram-blue);
+    text-align: left;
+}
+
+.modal-content .markdown-table th {
+    background: rgba(102, 252, 241, 0.1);
+    color: var(--hologram-blue);
+    font-weight: bold;
+}
+
+.modal-content .markdown-table tr:hover {
+    background: rgba(102, 252, 241, 0.05);
+}
+
+.modal-content h1, .modal-content h2, .modal-content h3, 
+.modal-content h4, .modal-content h5, .modal-content h6 {
+    color: var(--hologram-blue);
+    margin: 20px 0 15px;
+    text-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
 }
 
 .close {
