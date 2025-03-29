@@ -2,6 +2,7 @@
 title: The Yin Brotherhood
 category: faction
 layout: quest
+relations: 3
 ---
 
 ## Overview

@@ -1,0 +1,72 @@
+.mission-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+    margin: 4px 0;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.relation-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8em;
+    margin-left: 8px;
+}
+
+.relation-dots {
+    display: flex;
+    gap: 2px;
+}
+
+.relation-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--space-gray);
+    transition: all 0.3s ease;
+}
+
+/* Relation levels */
+[data-relation="1"] .relation-dot:nth-child(1) {
+    background: var(--nova-orange);
+    box-shadow: 0 0 8px var(--nova-orange);
+}
+
+[data-relation="2"] .relation-dot:nth-child(-n+2) {
+    background: var(--cosmic-teal);
+    box-shadow: 0 0 8px var(--cosmic-teal);
+}
+
+[data-relation="3"] .relation-dot:nth-child(-n+3) {
+    background: var(--alien-green);
+    box-shadow: 0 0 8px var(--alien-green);
+}
+
+[data-relation="4"] .relation-dot:nth-child(-n+4) {
+    background: var(--hologram-blue);
+    box-shadow: 0 0 8px var(--hologram-blue);
+}
+
+[data-relation="5"] .relation-dot:nth-child(-n+5) {
+    background: var(--star-blue);
+    box-shadow: 0 0 8px var(--star-blue);
+}
+
+.relation-label {
+    color: var(--text-secondary);
+    font-size: 0.8em;
+    margin-left: 4px;
+}
+
+/* Hover effects */
+.mission-link:hover {
+    background: rgba(102, 252, 241, 0.1);
+    transform: translateX(5px);
+}
+
+.mission-link:hover .relation-dot {
+    transform: scale(1.2);
+}

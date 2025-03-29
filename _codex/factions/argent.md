@@ -2,6 +2,7 @@
 title: The Argent Flight 
 category: faction
 layout: quest
+relations: 4
 ---
 
 ## Overview
