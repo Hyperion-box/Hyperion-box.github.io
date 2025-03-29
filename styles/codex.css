@@ -1,11 +1,21 @@
 .mission-link {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     padding: 8px 12px;
     margin: 4px 0;
     border-radius: 4px;
     transition: all 0.3s ease;
+}
+
+.mission-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Only apply space-between to faction links */
+.mission-link[data-relation] {
+    justify-content: space-between;
 }
 
 .relation-indicator {
