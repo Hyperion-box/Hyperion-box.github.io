@@ -119,23 +119,6 @@ li {
     margin-bottom: 15px;
 }
 
-a {
-    color: var(--cosmic-teal);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
-    padding: 5px;
-    border-radius: 5px;
-}
-
-a:hover {
-    color: var(--nova-orange);
-    text-shadow: 0 0 10px rgba(255, 107, 53, 0.7);
-    transform: translateX(5px);
-    background-color: rgba(255, 107, 53, 0.1);
-}
-
 .mission-icon {
     margin-right: 10px;
     font-size: 1.2em;
