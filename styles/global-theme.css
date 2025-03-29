@@ -27,7 +27,7 @@
     /* Gradients */
     --cyber-gradient: linear-gradient(
         135deg,
-        var(--neon-pink) 0%,
+        var(--space-gray) 0%,
         var(--hologram-blue) 100%
     );
     --matrix-gradient: linear-gradient(
