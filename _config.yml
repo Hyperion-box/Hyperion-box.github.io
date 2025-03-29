@@ -118,5 +118,5 @@ ship_info:
   SHIP:
     name: "HSS HYPERION"
     ai_name: "ARI"
-    version: "v2.0.10"
+    version: "v2.1.0"
     theme_icon: "🌙"
