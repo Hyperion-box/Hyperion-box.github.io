@@ -2,6 +2,7 @@
 layout: default
 styles:
   - /styles/galactic-net.css
+  - /styles/codex.css
 ---
 
     <meta charset="UTF-8">
@@ -42,9 +43,29 @@ styles:
                         {% for entry in site.codex %}
                             {% if entry.category == "faction" %}
                                 <li>
-                                    <a href="{{ entry.url | relative_url }}" class="mission-link">
-                                        <span class="mission-icon">◈</span>
-                                        {{ entry.title }}
+                                    <a href="{{ entry.url | relative_url }}" class="mission-link" data-relation="{{ entry.relations }}">
+                                        <div class="mission-title">
+                                            <span class="mission-icon">◈</span>
+                                            {{ entry.title }}
+                                        </div>
+                                        <div class="relation-indicator">
+                                            <div class="relation-dots">
+                                                <span class="relation-dot"></span>
+                                                <span class="relation-dot"></span>
+                                                <span class="relation-dot"></span>
+                                                <span class="relation-dot"></span>
+                                                <span class="relation-dot"></span>
+                                            </div>
+                                            <span class="relation-label">
+                                                {% case entry.relations %}
+                                                    {% when 1 %}Hostile
+                                                    {% when 2 %}Unfriendly
+                                                    {% when 3 %}Neutral
+                                                    {% when 4 %}Friendly
+                                                    {% when 5 %}Allied
+                                                {% endcase %}
+                                            </span>
+                                        </div>
                                     </a>
                                 </li>
                             {% endif %}

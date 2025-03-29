@@ -2,6 +2,7 @@
 title: The Barony of Letnev 
 category: faction
 layout: quest
+relations: 1
 ---
 
 ## Overview
