@@ -272,7 +272,7 @@ image: "https://farm5.static.flickr.com/4135/4924502604_dc1e1c4fed_z.jpg"
     </tbody>
 </table>
 <p>* <em>This weapon can fire in burst mode.</em></p>
-<p>* <em>This weapon requires two Main Actions to reload.</em></p>
+<p>@ <em>This weapon requires two Main Actions to reload.</em></p>
 
 ### Projectile Weaponry
 
