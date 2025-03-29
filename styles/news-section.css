@@ -9,7 +9,7 @@
     --hologram-blue: #66fcf1;
 }
 
-/* Inherit header styles from secret-section.css */
+/* Inherit header styles from missions.css */
 
 .news-ticker {
     background: rgba(10, 14, 23, 0.7);
