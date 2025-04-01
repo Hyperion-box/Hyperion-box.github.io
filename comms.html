@@ -1,0 +1,58 @@
+---
+layout: default
+styles:
+  - /styles/galactic-net.css
+---
+<link rel="stylesheet" href="{{ '/styles/global-theme.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/styles/galactic-net.css' | relative_url }}">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles/comms.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<script src="/scripts/comms.js" defer></script>
+<script src="/scripts/theme-switcher.js"></script>
+
+<main class="comms-menu">
+    <div class="message-list" id="message-list">
+        {% for message in site.comms %}
+            <div class="message-card" 
+                 data-priority="{{ message.priority }}" 
+                 data-tags="{{ message.tags | join: ' ' }}"
+                 data-url="{{ message.url | relative_url }}">
+                <div class="message-icon">
+                    <i class="fas fa-envelope {% if message.priority == 'high' %}fa-exclamation-circle{% endif %}"></i>
+                </div>
+                <div class="message-info">
+                    <h2 class="message-subject">{{ message.subject }}</h2>
+                    <div class="message-meta">
+                        <div>From: <span class="meta-value">{{ message.from }}</span></div>
+                        <div>Date: <span class="meta-value">{{ message.date | date: "%Y-%m-%d" }}</span></div>
+                        <div>Priority: <span class="meta-value">{{ message.priority }}</span></div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="message-details" id="message-details">
+        <div class="message-filters">
+            <button class="filter-btn active" data-filter="all">All Messages</button>
+            <button class="filter-btn" data-filter="high">High Priority</button>
+            <button class="filter-btn" data-filter="system">System</button>
+            <button class="filter-btn" data-filter="personal">Personal</button>
+            <div class="search-container">
+                <input type="text" placeholder="Search messages..." class="search-input">
+            </div>
+        </div>
+        <div id="message-content">
+            <p>Select a message to view details.</p>
+        </div>
+    </div>
+</main>
+
+<!-- Pop-up Modal for Message Content -->
+<div id="message-modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modal-message-content"></div>
+    </div>
+</div> 
