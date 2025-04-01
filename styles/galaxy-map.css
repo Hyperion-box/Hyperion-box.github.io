@@ -1,0 +1,4 @@
+.trade-route {
+    pointer-events: none;
+    transition: stroke-dashoffset 0.1s linear;
+} 

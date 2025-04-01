@@ -1,5 +1,13 @@
 {
     "systems": {
+        "7001": {
+            "name": "Mecatol Rex",
+            "backgroundColor": "rgba(197, 8, 207, 0.2)",
+            "borderColor": "rgba(255,207,0, 0.6)",
+            "textColor": "#ffffff",
+            "type": "capital",
+            "image": "/images/pixel-planets/Barren.png"
+        },
         "7004": {
             "name": "Moll",
             "backgroundColor": "rgba(235, 165, 14, 0.5)",
@@ -25,6 +33,15 @@
             "radius": 30,
             "color": "#eb8634" 
         },
+        "7017": {
+            "name": "",
+            "backgroundColor": "rgba(252, 255, 38, 0.2)",
+            "borderColor": "rgba(252, 255, 38, 0.6)",
+            "textColor": "#ffffff",
+            "details": "",
+            "type": "Homeworld",
+            "image":""
+        },
         "7019": {
             "name": "",
             "backgroundColor": "rgba(93, 34, 34, 0.3)",
@@ -40,6 +57,14 @@
             "type": "",
             "image":"/images/pixel-planets/Rarron.png"
         },
+        "7025": {
+            "name": "Ragh",
+            "backgroundColor": "rgba(0, 128, 0, 0.2)",
+            "borderColor": "rgba(255, 223, 0, 0.8)",
+            "textColor": "#ffffff",
+            "type": "Homeworld",
+            "image":"/images/pixel-planets/11.png"
+        },
         "7026": {
             "name": "Arc Prime",
             "backgroundColor": "rgba(93, 34, 34, 0.3)",
@@ -47,6 +72,15 @@
             "textColor": "#ffffff",
             "type": "Homeworld",
             "image": "/images/pixel-planets/Barren3.png"
+        },
+        "7033": {
+            "name": "",
+            "backgroundColor": "rgba(252, 255, 38, 0.2)",
+            "borderColor": "rgba(252, 255, 38, 0.6)",
+            "textColor": "#ffffff",
+            "details": "",
+            "type": "",
+            "image":""
         },
         "7035": {
             "name": "",
@@ -95,8 +129,17 @@
             "type": "Homeworld",
             "image":"/images/pixel-planets/Desert1.png"
         },
+        "7049": {
+            "name": "Jord",
+            "backgroundColor": "rgba(252, 255, 38, 0.2)",
+            "borderColor": "rgba(252, 255, 38, 0.6)",
+            "textColor": "#ffffff",
+            "details": "This is a Jordian test <br><br><hr><br> <h2>Quests</h2>Sundered Stars",
+            "type": "Homeworld",
+            "image":"/images/pixel-planets/Terran.png"
+        },
         "7050": {
-            "name": "β",
+            "name": "β QUANN",
             "type": "Wormhole",
             "backgroundColor": "rgba(143, 135, 91, 0.5)",
             "borderColor": "rgba(190, 113, 25, 0.6)",
@@ -112,13 +155,6 @@
             "backgroundColor": "rgba(143, 135, 91, 0.5)",
             "borderColor": "rgba(190, 113, 25, 0.6)",
             "color": "#37ad59" 
-        },
-        "7052": {
-            "name": "",
-            "backgroundColor": "rgba(197, 8, 207, 0.2)",
-            "borderColor": "rgba(255,207,0, 0.6)",
-            "textColor": "#ffffff",
-            "type": ""
         },
         "7053": {
             "name": "",
@@ -230,31 +266,10 @@
             "type": "",
             "image":"/images/pixel-planets/Vorhal.png"
         },
-        "7084": {
-            "name": "",
-            "backgroundColor": "rgba(252, 255, 38, 0.2)",
-            "borderColor": "rgba(252, 255, 38, 0.6)",
-            "textColor": "#ffffff",
-            "type": ""
-        },
         "7085": {
             "name": "",
             "backgroundColor": "rgba(180, 147, 217, 0.2)",
             "borderColor": "rgba(0, 200, 10, 0.6)",
-            "textColor": "#ffffff",
-            "type": ""
-        },
-        "7090": {
-            "name": "",
-            "backgroundColor": "rgba(252, 255, 38, 0.2)",
-            "borderColor": "rgba(252, 255, 38, 0.6)",
-            "textColor": "#ffffff",
-            "type": ""
-        },
-        "7091": {
-            "name": "",
-            "backgroundColor": "rgba(252, 255, 38, 0.2)",
-            "borderColor": "rgba(252, 255, 38, 0.6)",
             "textColor": "#ffffff",
             "type": ""
         },
@@ -272,13 +287,6 @@
             "textColor": "#ffffff",
             "type": "Homeworld",
             "image":"/images/pixel-planets/Station2.png"
-        },
-        "7099": {
-            "name": "",
-            "backgroundColor": "rgba(252, 255, 38, 0.2)",
-            "borderColor": "rgba(252, 255, 38, 0.6)",
-            "textColor": "#ffffff",
-            "type": ""
         },
         "7100": {
             "name": "α | β",
@@ -302,15 +310,6 @@
             },
             "radius": 25,
             "color": "#000000" 
-        },
-        "7106": {
-            "name": "Jord",
-            "backgroundColor": "rgba(252, 255, 38, 0.2)",
-            "borderColor": "rgba(252, 255, 38, 0.6)",
-            "textColor": "#ffffff",
-            "details": "This is a Jordian test <br><br><hr><br> <h2>Quests</h2>Sundered Stars",
-            "type": "Homeworld",
-            "image":"/images/pixel-planets/Terran.png"
         },
         "7107": {
             "name": "",
@@ -356,16 +355,28 @@
             },
             "radius": 10,
             "color": "#37ad59" 
-        },
-        "7132": {
-            "name": "Ragh",
-            "backgroundColor": "rgba(0, 128, 0, 0.2)",
-            "borderColor": "rgba(255, 223, 0, 0.8)",
-            "textColor": "#ffffff",
-            "type": "Homeworld",
-            "image":"/images/pixel-planets/11.png"
         }
-    }
+    },
+    "tradeRoutes": [
+        {
+            "id": "route1",
+            "name": "Core Trade Route",
+            "systems": ["7001", "7004", "7025", "7035"],
+            "color": "#FFD700",
+            "width": 3,
+            "dashArray": "5,10",
+            "speed": 0.3
+        },
+        {
+            "id": "route2",
+            "name": "Core Trade Route",
+            "systems": ["7035", "7004"],
+            "color": "#FAD700",
+            "width": 3,
+            "dashArray": "5,10",
+            "speed": 0.3
+        }
+    ]
     
 }
 

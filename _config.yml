@@ -104,6 +104,7 @@ collections:
     output: true
   codex:
     output: true
+    permalink: /codex/:slug/
   news:
     output: true
   characters:
@@ -113,6 +114,11 @@ collections:
   wiki:
     output: true
     permalink: /wiki/:path/
+  comms:
+    output: true
+    permalink: /comms/:slug/
+    sort_by: date
+    sort_reverse: true
 
 ship_info:
   SHIP:
