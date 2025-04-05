@@ -4,19 +4,34 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM Content Loaded');
     
     const characterCards = document.querySelectorAll('.character-card');
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabPanes = document.querySelectorAll('.tab-pane');
     let currentCharacterName = null;
     let mainContent = null;
     let backstoryContent = null;
     let mainTab = null;
     let backstoryTab = null;
+    let tabButtons = null;
+    let tabPanes = null;
 
-    console.log('Found elements:', {
-        characterCards: characterCards.length,
-        tabButtons: tabButtons.length,
-        tabPanes: tabPanes.length
-    });
+    function updateElementReferences() {
+        tabButtons = document.querySelectorAll('.tab-button');
+        tabPanes = document.querySelectorAll('.tab-pane');
+        mainContent = document.getElementById('markdown-content');
+        backstoryContent = document.getElementById('backstory-content');
+        mainTab = document.getElementById('main-tab');
+        backstoryTab = document.getElementById('backstory-tab');
+
+        console.log('Updated element references:', {
+            tabButtons: tabButtons.length,
+            tabPanes: tabPanes.length,
+            mainContent: !!mainContent,
+            backstoryContent: !!backstoryContent,
+            mainTab: !!mainTab,
+            backstoryTab: !!backstoryTab
+        });
+    }
+
+    // Initial element references
+    updateElementReferences();
 
     // Debug tab buttons
     console.log('Tab buttons found:', tabButtons.length);
@@ -48,10 +63,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.log('Switching to main tab');
                 if (mainTab) {
                     mainTab.classList.add('active');
+                    loadCharacterDetails('character');
+                } else {
+                    console.error('Main tab not found');
                 }
             } else if (tabId === 'backstory') {
                 console.log('Switching to backstory tab');
-                loadBackstory();
+                if (backstoryTab) {
+                    backstoryTab.classList.add('active');
+                    loadCharacterDetails('backstory');
+                } else {
+                    console.error('Backstory tab not found');
+                }
             }
         }
     });
@@ -61,51 +84,63 @@ document.addEventListener('DOMContentLoaded', () => {
             const characterName = card.getAttribute('data-name');
             console.log('Character card clicked:', characterName);
             currentCharacterName = characterName;
-            fetchCharacterDetails(characterName);
+            loadCharacterDetails('character');
         });
     });
 
-    function fetchCharacterDetails(name) {
-        console.log('Fetching character details for:', name);
-        fetch(`/characters/${name}`)
+    function loadCharacterDetails(contentType) {
+        console.log('loadCharacterDetails called for:', contentType);
+        console.log('Current character name:', currentCharacterName);
+        
+        if (!currentCharacterName) {
+            console.error('No character selected');
+            return;
+        }
+
+        let contentElement = null;
+        let url = '';
+
+        if (contentType === 'character') {
+            contentElement = mainContent;
+            url = `/characters/${currentCharacterName}`;
+        } else if (contentType === 'backstory') {
+            contentElement = backstoryContent;
+            url = `/characters/backstories/${currentCharacterName}-backstory.md`;
+        }
+
+        console.log('Content element:', contentElement);
+        console.log('URL to fetch:', url);
+
+        if (!contentElement) {
+            console.error(`${contentType} content element not found`);
+            return;
+        }
+
+        console.log('Fetching content from:', url);
+        
+        fetch(url)
             .then(response => {
+                console.log('Response status:', response.status);
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 return response.text();
             })
             .then(markdown => {
-                const contentHTML = formatMarkdownToHTML(markdown);
-                // Update our references to the content elements
-                mainContent = document.getElementById('markdown-content');
-                backstoryContent = document.getElementById('backstory-content');
-                mainTab = document.getElementById('main-tab');
-                backstoryTab = document.getElementById('backstory-tab');
+                console.log('Received markdown content:', markdown);
+                const html = formatMarkdownToHTML(markdown);
                 
-                console.log('Updated element references:', {
-                    mainContent: !!mainContent,
-                    backstoryContent: !!backstoryContent,
-                    mainTab: !!mainTab,
-                    backstoryTab: !!backstoryTab
-                });
+                // Clear existing content before setting new content
+                contentElement.innerHTML = '';
+                contentElement.innerHTML = html;
+                console.log('Content updated successfully');
 
-                if (mainContent) {
-                    mainContent.innerHTML = contentHTML;
-                }
-                
-                // Ensure main tab is visible and backstory tab is hidden
-                if (mainTab) {
-                    mainTab.classList.add('active');
-                }
-                if (backstoryTab) {
-                    backstoryTab.classList.remove('active');
-                }
+                // Update element references after content is loaded
+                updateElementReferences();
             })
             .catch(error => {
-                console.error('Error fetching character content:', error);
-                if (mainContent) {
-                    mainContent.innerHTML = '<p>Error loading character details.</p>';
-                }
+                console.error('Error loading content:', error);
+                contentElement.innerHTML = `<p>Error loading ${contentType} content.</p>`;
             });
     }
 
@@ -130,61 +165,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         return html;
-    }
-
-    // Function to load backstory content
-    function loadBackstory() {
-        console.log('loadBackstory called');
-        console.log('Current character name:', currentCharacterName);
-        
-        if (!currentCharacterName) {
-            console.error('No character selected');
-            return;
-        }
-
-        // Update our references to the content elements
-        mainContent = document.getElementById('markdown-content');
-        backstoryContent = document.getElementById('backstory-content');
-        mainTab = document.getElementById('main-tab');
-        backstoryTab = document.getElementById('backstory-tab');
-
-        if (!backstoryContent || !backstoryTab) {
-            console.error('Backstory elements not found');
-            return;
-        }
-
-        const backstoryUrl = `/characters/backstories/${currentCharacterName}-backstory.md`;
-        console.log('Fetching backstory from:', backstoryUrl);
-        
-        fetch(backstoryUrl)
-            .then(response => {
-                console.log('Response status:', response.status);
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(markdown => {
-                console.log('Received markdown content:', markdown);
-                const html = formatMarkdownToHTML(markdown);
-                
-                // Set backstory content
-                backstoryContent.innerHTML = html;
-                
-                // Hide main tab and show backstory tab
-                if (mainTab) {
-                    mainTab.classList.remove('active');
-                }
-                backstoryTab.classList.add('active');
-            })
-            .catch(error => {
-                console.error('Error loading backstory:', error);
-                if (backstoryContent) {
-                    backstoryContent.innerHTML = '<p>No backstory available.</p>';
-                }
-                if (backstoryTab) {
-                    backstoryTab.classList.add('active');
-                }
-            });
     }
 });
