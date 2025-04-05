@@ -603,3 +603,73 @@ p strong {
         opacity: 0;
     }
 }
+
+/* Tab System Styles */
+.tab-container {
+    margin: 20px 0;
+    background: linear-gradient(
+        135deg,
+        rgba(10, 14, 23, 0.95) 0%,
+        rgba(32, 36, 45, 0.95) 100%
+    );
+    border-radius: 12px;
+    border: 1px solid var(--hologram-blue);
+    box-shadow: 
+        0 0 20px rgba(102, 252, 241, 0.1),
+        inset 0 0 30px rgba(10, 14, 23, 0.8);
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    border-bottom: 1px solid var(--star-blue);
+}
+
+.tab-button {
+    background: transparent;
+    border: 1px solid var(--hologram-blue);
+    color: var(--text-primary);
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tab-button:hover {
+    background: rgba(102, 252, 241, 0.1);
+    box-shadow: 0 0 10px rgba(102, 252, 241, 0.3);
+}
+
+.tab-button.active {
+    background: var(--hologram-blue);
+    color: var(--deep-space);
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.5);
+}
+
+.tab-content {
+    padding: 20px;
+}
+
+.tab-pane {
+    display: none;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
