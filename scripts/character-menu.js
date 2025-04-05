@@ -145,25 +145,53 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function formatMarkdownToHTML(markdown) {
+        console.log('Formatting markdown:', markdown);
         const lines = markdown.split('\n');
         let html = '';
-        let inFrontMatter = false;
+        let inList = false;
 
         lines.forEach(line => {
-            if (line.startsWith('---')) {
-                inFrontMatter = !inFrontMatter;
+            // Skip empty lines
+            if (line.trim() === '') {
+                if (inList) {
+                    html += '</ul>';
+                    inList = false;
+                }
                 return;
             }
 
-            if (!inFrontMatter) {
-                if (line.startsWith('# ')) {
-                    html += `<h2>${line.slice(2).trim()}</h2>`;
-                } else {
-                    html += `<p>${line.trim()}</p>`;
+            // Handle headers
+            if (line.startsWith('# ')) {
+                html += `<h1>${line.slice(2).trim()}</h1>`;
+            } else if (line.startsWith('## ')) {
+                html += `<h2>${line.slice(3).trim()}</h2>`;
+            } else if (line.startsWith('### ')) {
+                html += `<h3>${line.slice(4).trim()}</h3>`;
+            }
+            // Handle lists
+            else if (line.trim().startsWith('- ')) {
+                if (!inList) {
+                    html += '<ul>';
+                    inList = true;
                 }
+                html += `<li>${line.trim().slice(2)}</li>`;
+            }
+            // Handle paragraphs
+            else {
+                if (inList) {
+                    html += '</ul>';
+                    inList = false;
+                }
+                html += `<p>${line.trim()}</p>`;
             }
         });
 
+        // Close any open list
+        if (inList) {
+            html += '</ul>';
+        }
+
+        console.log('Formatted HTML:', html);
         return html;
     }
 });
