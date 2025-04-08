@@ -37,7 +37,7 @@ talk: 0
 trade:
 work:
 
-image: "/images/portraits/sol-pilot.png"
+image: "/images/portraits/scuzz.png"
 primary_weapon: "Laser Pistol"
 secondary_weapon: "Monoblade Knife"
 is_player_character: true
