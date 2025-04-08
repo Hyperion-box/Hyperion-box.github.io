@@ -37,7 +37,7 @@ talk:
 trade:
 work:
 
-image: "/images/portraits/sol-pilot.png"
+image: "/images/portraits/mumford.png"
 primary_weapon: "Spear"
 secondary_weapon: "Knife"
 is_player_character: true

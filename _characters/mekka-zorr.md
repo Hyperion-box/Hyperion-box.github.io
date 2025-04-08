@@ -37,7 +37,7 @@ talk:
 trade: 0
 work:
 
-image: "/images/portraits/saar.jpg"
+image: "/images/portraits/mekka.png"
 primary_weapon: "Laser Pistol"
 secondary_weapon: "Unarmed Attack"
 is_player_character: true
