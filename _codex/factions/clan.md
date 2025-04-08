@@ -1,5 +1,5 @@
 ---
-title: The Clan of Saar
+title: Clan of Saar
 category: faction
 layout: quest
 relations: 3

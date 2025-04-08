@@ -38,10 +38,11 @@
 .hex-grid {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    padding: 20px;
-    transform: scale(0.9);
     overflow-x: scroll;
-    width: max-content; /* Prevent shrinking */
+    width: 100%; /* Prevent shrinking */
+    height: 100%;
+    padding: 100px;
+    padding-bottom: 200px;
 
 }
 

@@ -234,8 +234,8 @@ class GalaxyMap {
         
         // Calculate center point relative to the grid
         return {
-            x: rect.left + rect.width / 0.5 - gridRect.left,
-            y: rect.top + rect.height / 1 - gridRect.top
+            x: rect.left + rect.width / 1.2 - gridRect.left,
+            y: rect.top + rect.height / 1.3 - gridRect.top
         };
     }
 

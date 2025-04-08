@@ -1,5 +1,3 @@
-# Space Travel Mechanics
-
 ## Interstellar Travel
 - **Spike Drives**: Used for faster-than-light (FTL) travel through metadimensional space. 
   - Operable without fully understanding metadimensional physics.
