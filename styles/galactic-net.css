@@ -42,6 +42,11 @@
     background: var(--deep-space);
     min-height: 100vh;
     position: relative;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: gridPulse 4s infinite;
 }
 
 /* Network Status Bar */
@@ -58,13 +63,24 @@
     );
     border-bottom: 1px solid var(--hologram-blue);
     font-family: 'Courier New', monospace;
+    position: relative;
+    overflow: hidden;
 }
 
 .network-status::before {
-    content: '◈ NETWORK STATUS: ACTIVE';
-    color: var(--alien-green);
-    text-shadow: 0 0 5px var(--alien-green);
-    animation: blink 2s infinite;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(74, 159, 245, 0.2),
+        transparent
+    );
+    animation: scanline 2s linear infinite;
 }
 
 /* Content Grid */
@@ -73,6 +89,7 @@
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 20px;
+    position: relative;
 }
 
 /* News Card */
@@ -85,6 +102,7 @@
     overflow: hidden;
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(74, 159, 245, 0.2);
 }
 
 .net-card::before {
@@ -98,29 +116,145 @@
     animation: scanline 2s linear infinite;
 }
 
+.net-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(74, 159, 245, 0.1) 50%,
+        transparent 100%
+    );
+    pointer-events: none;
+}
+
 /* Advertisement Banner */
 .galactic-ad {
     grid-column: 1 / -1;
     background: linear-gradient(
         135deg,
-        rgba(107, 78, 113, 0.3) 0%,
-        rgba(74, 159, 245, 0.3) 100%
+        rgba(255, 0, 0, 0.2) 0%,
+        rgba(255, 255, 0, 0.2) 25%,
+        rgba(0, 255, 0, 0.2) 50%,
+        rgba(0, 255, 255, 0.2) 75%,
+        rgba(255, 0, 255, 0.2) 100%
     );
     padding: 20px;
-    border: 2px solid var(--nova-orange);
+    border: 3px solid var(--nova-orange);
     border-radius: 8px;
     text-align: center;
     position: relative;
     overflow: hidden;
+    animation: rainbowBorder 3s linear infinite;
 }
 
-.galactic-ad::after {
-    content: 'SPONSORED BY HACAN TRADE FEDERATION';
+.ad-tag {
     position: absolute;
-    top: 5px;
-    right: 10px;
-    font-size: 0.8em;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--nova-orange);
+    color: black;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-weight: bold;
+    animation: blink 1s infinite;
+    z-index: 2;
+}
+
+.ad-title {
+    font-size: 2.5em;
+    color: var(--hologram-blue);
+    text-shadow: 0 0 10px var(--hologram-blue);
+    margin: 20px 0;
+    animation: pulse 2s infinite;
+}
+
+.ad-flash {
+    font-size: 1.5em;
     color: var(--nova-orange);
+    text-shadow: 0 0 5px var(--nova-orange);
+    margin: 15px 0;
+    animation: flash 1s infinite;
+}
+
+.service-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.service-list li {
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--hologram-blue);
+    border-radius: 5px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.service-list li:nth-child(2n) {
+    animation-delay: 0.5s;
+}
+
+.service-list li:nth-child(3n) {
+    animation-delay: 1s;
+}
+
+.ad-ticker {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    margin: 15px 0;
+    border: 2px solid var(--nova-orange);
+    border-radius: 5px;
+    animation: rainbowText 3s linear infinite;
+}
+
+.ad-footer {
+    font-size: 0.9em;
+    color: var(--space-gray);
+    margin-top: 15px;
+    animation: slide 10s linear infinite;
+}
+
+@keyframes rainbowBorder {
+    0% { border-color: var(--nova-orange); }
+    25% { border-color: var(--hologram-blue); }
+    50% { border-color: var(--alien-green); }
+    75% { border-color: var(--cosmic-teal); }
+    100% { border-color: var(--nova-orange); }
+}
+
+@keyframes rainbowText {
+    0% { color: var(--nova-orange); }
+    25% { color: var(--hologram-blue); }
+    50% { color: var(--alien-green); }
+    75% { color: var(--cosmic-teal); }
+    100% { color: var(--nova-orange); }
+}
+
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+@keyframes slide {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
 }
 
 /* Animations */
@@ -129,31 +263,19 @@
     to { transform: rotate(360deg); }
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 0.7; }
-    50% { transform: scale(1.1); opacity: 0.3; }
-    100% { transform: scale(1); opacity: 0.7; }
-}
-
 @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.5; }
 }
 
 @keyframes scanline {
-    from { transform: translateY(0); }
-    to { transform: translateY(100vh); }
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
 }
 
 @keyframes ticker {
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
-}
-
-@keyframes pulse {
-    0% { opacity: 0.1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 0.1; }
 }
 
 /* Add these new styles to your existing galactic-net.css */
@@ -299,11 +421,6 @@
     50% { opacity: 1; }
 }
 
-@keyframes ticker {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-}
-
 /* Add to your existing galactic-net.css */
 
 .marketplace-banner {
@@ -362,6 +479,25 @@
     background: rgba(0, 0, 0, 0.3);
     padding: 15px;
     border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.market-preview::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        transparent 0%,
+        rgba(74, 159, 245, 0.1) 50%,
+        transparent 100%
+    );
+    animation: glitch 0.5s infinite;
+    pointer-events: none;
 }
 
 .featured-item {
@@ -378,12 +514,15 @@
     color: var(--text-primary);
     font-weight: bold;
     flex: 1;
+    text-shadow: 0 0 5px currentColor;
+    letter-spacing: 1px;
 }
 
 .item-price {
     color: var(--cosmic-teal);
     font-weight: bold;
     font-family: 'Courier New', monospace;
+    text-shadow: 0 0 5px var(--cosmic-teal);
 }
 
 .market-stats {
@@ -405,6 +544,25 @@
     border-radius: 8px 8px 0 0;
     font-weight: bold;
     color: var(--text-primary);
+    text-shadow: 0 0 5px currentColor;
+    position: relative;
+    overflow: hidden;
+}
+
+.marketplace-banner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    animation: scanline 2s linear infinite;
 }
 
 .marketplace-banner i {
@@ -470,7 +628,9 @@
 
 .net-card[class*="market-"]:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 
+        0 5px 15px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(74, 159, 245, 0.2);
 }
 
 .net-card[class*="market-"] .view-more {
@@ -508,4 +668,27 @@
         flex-direction: column;
         gap: 5px;
     }
+}
+
+/* Add new animations */
+@keyframes gridPulse {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; }
+}
+
+/* Remove glitch animation */
+@keyframes glitch {
+    0%, 100% { transform: translate(0); }
+}
+
+/* Add retro text effects */
+.item-name, .ship-name {
+    text-shadow: 0 0 5px currentColor;
+    letter-spacing: 1px;
+}
+
+.item-price, .ship-price {
+    font-family: 'Courier New', monospace;
+    color: var(--cosmic-teal);
+    text-shadow: 0 0 5px var(--cosmic-teal);
 }
