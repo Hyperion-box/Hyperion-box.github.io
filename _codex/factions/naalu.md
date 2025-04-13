@@ -34,7 +34,3 @@ Most of the galaxy fears the Naalu for their **neuro-weaponry**, capable of scra
 ## Notable Cities
 
 - **Eershin** – Capital of Druaa. A city of shimmering crystal towers and fluid architecture, where thought and design blend into living art. Every wall sings with psionic echoes, and even the air hums with knowledge.
-
-- **Tel Maaluk** – Hidden on the industrial moon Maaluk, this grim underworld hub fuels the Collective’s war machine. Off-limits to outsiders, it is also home to **Miashan laborers**, whose origins suggest a deeper, concealed link to the Druaa.
-
-- **The Orbifold Array** – A strange structure orbiting Druaa’s sun, believed to be a psionic amplifier or archive. It pulses with rhythmic thought-signals and may be tied to the Collective’s long-standing resistance to the Quiet Veil.
