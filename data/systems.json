@@ -17,6 +17,15 @@
             "image":"/images/pixel-planets/Gold.png",
             "details": "Originally founded as a prison planet for the Lazax Empire, Moll Primus is a beautiful world, teeming with life and the geo-logical variety of a relatively young planet. It lacks oceans, but deep lakes are scattered across its surface. High, sharp mountains are surrounded by steep overgrown valleys that give way to the flowing orange meet grasses on the plains, spreading out for hundreds of kilometers like a flaming sea."
         },
+        "7009": {
+            "name": "",
+            "backgroundColor": "rgba(93, 34, 34, 0.3)",
+            "borderColor": "rgba(252, 255, 38, 0.6)",
+            "textColor": "#ffffff",
+            "details": "",
+            "type": "",
+            "image":""
+        },
         "7011": {
             "name": "",
             "backgroundColor": "rgba(235, 165, 14, 0.5)",
@@ -37,6 +46,15 @@
         "7017": {
             "name": "",
             "backgroundColor": "rgba(252, 255, 38, 0.2)",
+            "borderColor": "rgba(252, 255, 38, 0.6)",
+            "textColor": "#ffffff",
+            "details": "",
+            "type": "Homeworld",
+            "image":""
+        },
+        "7018": {
+            "name": "",
+            "backgroundColor": "rgba(93, 34, 34, 0.3)",
             "borderColor": "rgba(252, 255, 38, 0.6)",
             "textColor": "#ffffff",
             "details": "",
@@ -83,6 +101,15 @@
             "type": "",
             "image":""
         },
+        "7034": {
+            "name": "",
+            "backgroundColor": "rgba(93, 34, 34, 0.3)",
+            "borderColor": "rgba(252, 255, 38, 0.6)",
+            "textColor": "#ffffff",
+            "details": "",
+            "type": "",
+            "image":""
+        },
         "7035": {
             "name": "",
             "backgroundColor": "rgba(93, 34, 34, 0.3)",
@@ -119,7 +146,7 @@
         "7043": {
             "name": "α",
             "type": "Wormhole",
-            "backgroundColor": "rgba(93, 34, 34, 0.3)",
+            "backgroundColor": "rgba(50, 168, 137, 0.5)",
             "borderColor": "rgba(160, 34, 34, 0.6)",
             "position": {
                 "x": 50,
@@ -158,10 +185,11 @@
             "color": "#37ad59" 
         },
         "7051": {
-            "name": "",
-            "backgroundColor": "rgba(143, 135, 91, 0.5)",
+            "name": "Xxlak",
+            "backgroundColor": "rgba(50, 168, 137, 0.5)",
             "borderColor": "rgba(190, 113, 25, 0.6)",
-            "color": "#37ad59" 
+            "color": "#37ad59",
+            "image": "/images/pixel-planets/GasGiant2.png"
         },
         "7053": {
             "name": "",
@@ -366,21 +394,48 @@
     },
     "tradeRoutes": [
         {
-            "id": "route1",
+            "id": "Jord-Mecatol",
             "name": "Core Trade Route",
-            "systems": ["7001", "7004", "7025", "7035"],
-            "color": "#FFD700",
+            "systems": ["7049", "7001"],
+            "color": "#32a852",
+            "width": 3,
+            "dashArray": "8,10",
+            "speed": 0.3
+        },
+        {
+            "id": "Rarron-Mecatol",
+            "name": "Core Trade Route",
+            "systems": ["7020", "7011", "7019", "7001"],
+            "color": "#FAD700",
             "width": 3,
             "dashArray": "5,10",
             "speed": 0.3
         },
         {
-            "id": "route2",
+            "id": "Jord-Quaan",
             "name": "Core Trade Route",
-            "systems": ["7035", "7004"],
-            "color": "#FAD700",
+            "systems": ["7049", "7041", "7050"],
+            "color": "#32a852",
             "width": 3,
-            "dashArray": "5,10",
+            "dashArray": "8,10",
+            "speed": 0.3
+        },
+        {
+            "id": "Xxlak-Mecatol",
+            "name": "Core Trade Route",
+            "systems": ["7051", "7043", "7011", "7001"],
+            "color": "#32a852",
+            "width": 3,
+            "dashArray": "8,10",
+            "speed": 0.3
+        },
+        {
+            "id": "Ragh-ArcPrime",
+            "name": "Core Trade Route",
+            "systems": ["7025", "7034", "7026"],
+            "color": "#a8323e",
+            "width": 3,
+            "dashArray": "8,10",
             "speed": 0.3
         }
     ]
