@@ -119,12 +119,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-        45deg,
-        transparent 0%,
-        rgba(74, 159, 245, 0.1) 50%,
-        transparent 100%
-    );
     pointer-events: none;
 }
 
@@ -331,13 +325,6 @@
 .course-list li:hover {
     color: var(--hologram-blue);
     padding-left: 10px;
-}
-
-.trade-ticker {
-    display: flex;
-    gap: 20px;
-    animation: ticker 20s linear infinite;
-    white-space: nowrap;
 }
 
 .classified-grid {
