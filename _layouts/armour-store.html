@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="/styles/global-theme.css">
+    <link rel="stylesheet" href="/styles/tech-wiki.css">
+    <link rel="stylesheet" href="/styles/armor-store.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    {% include site-header.html %}
+    
+    <main class="armor-store-container">
+        <!-- Dynamic Alert Banner -->
+        <div class="alert-banner">
+            <div class="alert-content">
+                <span class="alert-text">ALERT: NEW SHIPMENT OF COMBAT ARMOR INCOMING</span>
+                <span class="alert-time">ETA: 06:12:45</span>
+            </div>
+        </div>
+
+        <!-- Main Grid Layout -->
+        <div class="armor-grid">
+            <!-- Featured Armor Showcase -->
+            <section class="armor-showcase">
+                <div class="showcase-content">
+                    <div class="armor-highlight">
+                        <h1>POWERED COMBAT SUIT</h1>
+                        <div class="armor-stats">
+                            <span class="stat">AC: 18</span>
+                            <span class="stat">ENC: 2</span>
+                            <span class="stat">TL: 4</span>
+                        </div>
+                        <div class="armor-price">₡20,000</div>
+                    </div>
+                    <div class="tech-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>REINFORCED PLATING</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-bolt"></i>
+                            <span>POWER ASSIST</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Access Categories -->
+            <div class="armor-categories">
+                <a href="#primitive" class="category-tile">
+                    <i class="fas fa-shield"></i>
+                    <span>PRIMITIVE</span>
+                    <div class="count">3 MODELS</div>
+                </a>
+                <a href="#street" class="category-tile">
+                    <i class="fas fa-vest"></i>
+                    <span>STREET</span>
+                    <div class="count">4 MODELS</div>
+                </a>
+                <a href="#combat" class="category-tile">
+                    <i class="fas fa-helmet-battle"></i>
+                    <span>COMBAT</span>
+                    <div class="count">5 MODELS</div>
+                </a>
+                <a href="#powered" class="category-tile">
+                    <i class="fas fa-robot"></i>
+                    <span>POWERED</span>
+                    <div class="count">3 MODELS</div>
+                </a>
+            </div>
+
+            <!-- Main Armor Catalog -->
+            <section class="armor-catalog">
+                <div class="catalog-header">
+                    <h2>ARMORY INVENTORY</h2>
+                    <div class="catalog-controls">
+                        <select class="tech-filter" aria-label="Filter by Tech Level">
+                            <option value="ALL">ALL TECH LEVELS</option>
+                            <option value="TL 1">TL 1 - PRIMITIVE</option>
+                            <option value="TL 2">TL 2 - INDUSTRIAL</option>
+                            <option value="TL 3">TL 3 - MODERN</option>
+                            <option value="TL 4">TL 4 - ADVANCED</option>
+                        </select>
+                        <div class="search-box">
+                            <input type="text" placeholder="Search armor...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                {{ content }}
+            </section>
+
+            <!-- Armorer Services -->
+            <section class="armorer-services">
+                <div class="service-card">
+                    <div class="service-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>ARMOR CUSTOMIZATION</h3>
+                    </div>
+                    <div class="service-options">
+                        <div class="option">
+                            <span class="option-name">REINFORCEMENT</span>
+                            <span class="option-price">₡500</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-name">CUSTOM FITTING</span>
+                            <span class="option-price">₡1,200</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-name">SIGNATURE SERIES</span>
+                            <span class="option-price">₡2,500</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Security Notice -->
+        <div class="security-notice">
+            <div class="notice-icon">
+                <i class="fas fa-fingerprint"></i>
+            </div>
+            <div class="notice-text">
+                FEDERATION ARMOR LICENSE REQUIRED FOR PURCHASE
+                <span class="subtext">Unauthorized acquisition of military-grade armor is punishable by law</span>
+            </div>
+        </div>
+    </main>
+
+    {% raw %}{% include site-footer.html %}{% endraw %}
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const techFilter = document.querySelector('.tech-filter');
+        const armorTable = document.querySelector('.armor-catalog table');
+        const searchInput = document.querySelector('.search-box input');
+        
+        // Store original table state
+        const originalRows = Array.from(armorTable.querySelectorAll('tbody tr'));
+        
+        function filterArmor() {
+            const selectedTL = techFilter.value;
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            originalRows.forEach(row => {
+                const tlCell = row.cells[3];
+                const techLevel = parseInt(tlCell.textContent);
+                const armorName = row.cells[0].textContent.toLowerCase();
+                
+                let showRow = true;
+                
+                // Enhanced Tech Level filtering
+                switch(selectedTL) {
+                    case 'TL 1':
+                        showRow = techLevel === 1;
+                        break;
+                    case 'TL 2':
+                        showRow = techLevel === 2;
+                        break;
+                    case 'TL 3':
+                        showRow = techLevel === 3;
+                        break;
+                    case 'TL 4':
+                        showRow = techLevel === 4;
+                        break;
+                    case 'ALL':
+                    default:
+                        // Show all rows
+                        break;
+                }
+                
+                // Search term filtering
+                if (searchTerm && !armorName.includes(searchTerm)) showRow = false;
+                
+                // Add or remove the row with animation
+                if (showRow) {
+                    if (!row.parentElement) armorTable.querySelector('tbody').appendChild(row);
+                    row.classList.add('armor-row-visible');
+                    row.classList.remove('armor-row-hidden');
+                } else {
+                    row.classList.add('armor-row-hidden');
+                    row.classList.remove('armor-row-visible');
+                    setTimeout(() => {
+                        if (row.classList.contains('armor-row-hidden')) {
+                            row.remove();
+                        }
+                    }, 300);
+                }
+            });
+
+            updateCategoryCounts();
+            updateFilterStats();
+        }
+
+        function updateCategoryCounts() {
+            const visibleRows = armorTable.querySelectorAll('tbody tr:not(.armor-row-hidden)');
+            
+            // Count armor by type
+            const primitiveCount = Array.from(visibleRows).filter(row => 
+                row.cells[0].textContent.match(/Primitive|Leather|Hide/)
+            ).length;
+            
+            const streetCount = Array.from(visibleRows).filter(row => 
+                row.cells[0].textContent.match(/Street|Flak|Mesh/)
+            ).length;
+            
+            const combatCount = Array.from(visibleRows).filter(row => 
+                row.cells[0].textContent.match(/Combat|Battle|Heavy/)
+            ).length;
+            
+            const poweredCount = Array.from(visibleRows).filter(row => 
+                row.cells[0].textContent.match(/Powered|Exo|Power/)
+            ).length;
+
+            // Update the category tiles
+            document.querySelector('[href="#primitive"] .count').textContent = `${primitiveCount} MODELS`;
+            document.querySelector('[href="#street"] .count').textContent = `${streetCount} MODELS`;
+            document.querySelector('[href="#combat"] .count').textContent = `${combatCount} MODELS`;
+            document.querySelector('[href="#powered"] .count').textContent = `${poweredCount} MODELS`;
+        }
+
+        function updateFilterStats() {
+            const visibleRows = armorTable.querySelectorAll('tbody tr:not(.armor-row-hidden)').length;
+            const totalRows = originalRows.length;
+            const statsElement = document.querySelector('.filter-stats') || createFilterStats();
+            
+            statsElement.innerHTML = `
+                <span class="stats-count">${visibleRows}</span> / ${totalRows} armor types shown
+                <span class="stats-tech">${techFilter.value}</span>
+            `;
+        }
+
+        function createFilterStats() {
+            const stats = document.createElement('div');
+            stats.className = 'filter-stats';
+            techFilter.parentElement.appendChild(stats);
+            return stats;
+        }
+
+        function highlightTechLevels() {
+            const selectedTL = techFilter.value;
+            const rows = armorTable.querySelectorAll('tbody tr');
+            
+            rows.forEach(row => {
+                const tlCell = row.cells[3];
+                const techLevel = parseInt(tlCell.textContent);
+                
+                // Remove existing highlight classes
+                tlCell.classList.remove('tl-highlight', 'tl-primitive', 'tl-industrial', 
+                    'tl-modern', 'tl-advanced');
+                
+                // Add appropriate highlight class based on TL
+                if (selectedTL !== 'ALL') {
+                    switch(techLevel) {
+                        case 1:
+                            tlCell.classList.add('tl-primitive');
+                            break;
+                        case 2:
+                            tlCell.classList.add('tl-industrial');
+                            break;
+                        case 3:
+                            tlCell.classList.add('tl-modern');
+                            break;
+                        case 4:
+                            tlCell.classList.add('tl-advanced');
+                            break;
+                    }
+                    
+                    if (selectedTL === `TL ${techLevel}`) {
+                        tlCell.classList.add('tl-highlight');
+                    }
+                }
+            });
+        }
+
+        // Event listeners
+        techFilter.addEventListener('change', () => {
+            filterArmor();
+            highlightTechLevels();
+        });
+        
+        searchInput.addEventListener('input', filterArmor);
+
+        // Initialize category counts
+        updateCategoryCounts();
+    });
+    </script>
+</body>
+</html> 

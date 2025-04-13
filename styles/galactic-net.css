@@ -94,15 +94,11 @@
 
 /* News Card */
 .net-card {
-    background: rgba(32, 36, 45, 0.9);
+    background: rgba(0, 0, 0, 0.7);
     border: 1px solid var(--hologram-blue);
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 15px;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 10px rgba(74, 159, 245, 0.2);
+    margin-bottom: 20px;
 }
 
 .net-card::before {
@@ -424,12 +420,24 @@
 /* Add to your existing galactic-net.css */
 
 .marketplace-banner {
-    background: var(--cyber-gradient);
-    padding: 10px;
-    margin: -15px -15px 15px -15px;
-    border-radius: 8px 8px 0 0;
+    font-family: 'Orbitron', sans-serif;
     font-weight: bold;
-    color: var(--text-primary);
+    padding: 10px;
+    margin-bottom: 15px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.marketplace-banner.cyber {
+    background: linear-gradient(90deg, #1a1f2a 0%, #2a3f5a 100%);
+    border: 1px solid #00ffff;
+    color: #00ffff;
+}
+
+.marketplace-banner.armor {
+    background: linear-gradient(90deg, #1a1f2a 0%, #2a5a3f 100%);
+    border: 1px solid #00ff00;
+    color: #00ff00;
 }
 
 .market-preview {
