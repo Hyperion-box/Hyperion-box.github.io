@@ -5,8 +5,6 @@ layout: quest
 relations: 3
 ---
 
-# Naalu Collective Codex Entry
-
 ## Overview
 
 The **Naalu Collective** remains one of the galaxy's most enigmatic and unsettling powers. With their serpentine grace, crystalline fleets, and unshakable telepathic unity, they are at once mesmerizing and terrifying. Ancient beyond measure, they emerged seemingly from nowhere during the Twilight Wars, demanding audience with the great civilizations—and unsettling them with ease.
