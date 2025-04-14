@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <link rel="stylesheet" href="/styles/global-theme.css">
+    <link rel="stylesheet" href="/styles/tech-wiki.css">
+    <link rel="stylesheet" href="/styles/pharms-store.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    {% include site-header.html %}
+    
+    <main class="pharms-store-container">
+        <!-- Dynamic Alert Banner -->
+        <div class="alert-banner">
+            <div class="alert-content">
+                <span class="alert-text">ALERT: NEW BATCH OF BRAINWAVE AVAILABLE</span>
+                <span class="alert-time">QUANTITY: LIMITED</span>
+            </div>
+        </div>
+
+        <!-- Main Grid Layout -->
+        <div class="pharms-grid">
+            <!-- Featured Pharmaceutical Showcase -->
+            <section class="pharms-showcase">
+                <div class="showcase-content">
+                    <div class="pharms-highlight">
+                        <h1>BRAINWAVE</h1>
+                        <div class="pharms-stats">
+                            <span class="stat">EFFECT: +2 MAX EFFORT</span>
+                            <span class="stat">DURATION: 1 HOUR</span>
+                            <span class="stat">TL: 5</span>
+                        </div>
+                        <div class="pharms-price">₡10,000</div>
+                    </div>
+                    <div class="tech-specs">
+                        <div class="spec-item">
+                            <i class="fas fa-brain"></i>
+                            <span>PSITECH ENHANCEMENT</span>
+                        </div>
+                        <div class="spec-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>4 SYSTEM STRAIN</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Access Categories -->
+            <div class="pharms-categories">
+                <a href="#antibiotics" class="category-tile">
+                    <i class="fas fa-virus-slash"></i>
+                    <span>ANTIBIOTICS</span>
+                    <div class="count">1 MODEL</div>
+                </a>
+                <a href="#psitech" class="category-tile">
+                    <i class="fas fa-brain"></i>
+                    <span>PSITECH</span>
+                    <div class="count">1 MODEL</div>
+                </a>
+                <a href="#neuro" class="category-tile">
+                    <i class="fas fa-brain"></i>
+                    <span>NEURO</span>
+                    <div class="count">2 MODELS</div>
+                </a>
+                <a href="#stimulants" class="category-tile">
+                    <i class="fas fa-bolt"></i>
+                    <span>STIMULANTS</span>
+                    <div class="count">3 MODELS</div>
+                </a>
+            </div>
+
+            <!-- Main Pharmaceuticals Catalog -->
+            <section class="pharms-catalog">
+                <div class="catalog-header">
+                    <h2>PHARMACEUTICAL INVENTORY</h2>
+                    <div class="catalog-controls">
+                        <select class="tech-filter" aria-label="Filter by Tech Level">
+                            <option value="ALL">ALL TECH LEVELS</option>
+                            <option value="TL 3">TL 3 - MODERN</option>
+                            <option value="TL 4">TL 4 - ADVANCED</option>
+                            <option value="TL 5">TL 5 - FUTURISTIC</option>
+                        </select>
+                        <div class="search-box">
+                            <input type="text" placeholder="Search pharmaceuticals...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                {{ content }}
+            </section>
+
+            <!-- Medical Services -->
+            <section class="medical-services">
+                <div class="service-card">
+                    <div class="service-header">
+                        <i class="fas fa-user-md"></i>
+                        <h3>MEDICAL CONSULTATION</h3>
+                    </div>
+                    <div class="service-options">
+                        <div class="option">
+                            <span class="option-name">BASIC CHECKUP</span>
+                            <span class="option-price">₡500</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-name">SYSTEM STRAIN ANALYSIS</span>
+                            <span class="option-price">₡1,200</span>
+                        </div>
+                        <div class="option">
+                            <span class="option-name">CUSTOM PRESCRIPTION</span>
+                            <span class="option-price">₡2,500</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Medical Notice -->
+        <div class="medical-notice">
+            <div class="notice-icon">
+                <i class="fas fa-prescription-bottle-alt"></i>
+            </div>
+            <div class="notice-text">
+                MEDICAL LICENSE REQUIRED FOR PURCHASE
+                <span class="subtext">Unauthorized use of pharmaceuticals is punishable by law</span>
+            </div>
+        </div>
+    </main>
+
+    {% raw %}{% include site-footer.html %}{% endraw %}
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const techFilter = document.querySelector('.tech-filter');
+        const pharmsTable = document.querySelector('.pharms-catalog table');
+        const searchInput = document.querySelector('.search-box input');
+        
+        // Store original table state
+        const originalRows = Array.from(pharmsTable.querySelectorAll('tbody tr'));
+        
+        function filterPharms() {
+            const selectedTL = techFilter.value;
+            const searchTerm = searchInput.value.toLowerCase();
+            
+            originalRows.forEach(row => {
+                const tlCell = row.cells[5];
+                const techLevel = parseInt(tlCell.textContent);
+                const pharmName = row.cells[0].textContent.toLowerCase();
+                
+                let showRow = true;
+                
+                // Enhanced Tech Level filtering
+                switch(selectedTL) {
+                    case 'TL 3':
+                        showRow = techLevel === 3;
+                        break;
+                    case 'TL 4':
+                        showRow = techLevel === 4;
+                        break;
+                    case 'TL 5':
+                        showRow = techLevel === 5;
+                        break;
+                    case 'ALL':
+                    default:
+                        // Show all rows
+                        break;
+                }
+                
+                // Search term filtering
+                if (searchTerm && !pharmName.includes(searchTerm)) showRow = false;
+                
+                // Add or remove the row with animation
+                if (showRow) {
+                    if (!row.parentElement) pharmsTable.querySelector('tbody').appendChild(row);
+                    row.classList.add('pharm-row-visible');
+                    row.classList.remove('pharm-row-hidden');
+                } else {
+                    row.classList.add('pharm-row-hidden');
+                    row.classList.remove('pharm-row-visible');
+                    setTimeout(() => {
+                        if (row.classList.contains('pharm-row-hidden')) {
+                            row.remove();
+                        }
+                    }, 300);
+                }
+            });
+
+            updateCategoryCounts();
+            updateFilterStats();
+        }
+
+        function updateCategoryCounts() {
+            const visibleRows = pharmsTable.querySelectorAll('tbody tr:not(.pharm-row-hidden)');
+            
+            // Count pharmaceuticals by type
+            const antibioticsCount = Array.from(visibleRows).filter(row => 
+                row.cells[1].textContent.match(/Antibiotic/)
+            ).length;
+            
+            const psitechCount = Array.from(visibleRows).filter(row => 
+                row.cells[1].textContent.match(/Psitech/)
+            ).length;
+            
+            const neuroCount = Array.from(visibleRows).filter(row => 
+                row.cells[1].textContent.match(/Neuro/)
+            ).length;
+            
+            const stimulantsCount = Array.from(visibleRows).filter(row => 
+                row.cells[1].textContent.match(/Stimulant|Military|Combat/)
+            ).length;
+
+            // Update the category tiles
+            document.querySelector('[href="#antibiotics"] .count').textContent = `${antibioticsCount} MODELS`;
+            document.querySelector('[href="#psitech"] .count').textContent = `${psitechCount} MODELS`;
+            document.querySelector('[href="#neuro"] .count').textContent = `${neuroCount} MODELS`;
+            document.querySelector('[href="#stimulants"] .count').textContent = `${stimulantsCount} MODELS`;
+        }
+
+        function updateFilterStats() {
+            const visibleRows = pharmsTable.querySelectorAll('tbody tr:not(.pharm-row-hidden)').length;
+            const totalRows = originalRows.length;
+            const statsElement = document.querySelector('.filter-stats') || createFilterStats();
+            
+            statsElement.innerHTML = `
+                <span class="stats-count">${visibleRows}</span> / ${totalRows} pharmaceuticals shown
+                <span class="stats-tech">${techFilter.value}</span>
+            `;
+        }
+
+        function createFilterStats() {
+            const stats = document.createElement('div');
+            stats.className = 'filter-stats';
+            techFilter.parentElement.appendChild(stats);
+            return stats;
+        }
+
+        function highlightTechLevels() {
+            const selectedTL = techFilter.value;
+            const rows = pharmsTable.querySelectorAll('tbody tr');
+            
+            rows.forEach(row => {
+                const tlCell = row.cells[5];
+                const techLevel = parseInt(tlCell.textContent);
+                
+                // Remove existing highlight classes
+                tlCell.classList.remove('tl-highlight', 'tl-modern', 'tl-advanced', 'tl-futuristic');
+                
+                // Add appropriate highlight class based on TL
+                if (selectedTL !== 'ALL') {
+                    switch(techLevel) {
+                        case 3:
+                            tlCell.classList.add('tl-modern');
+                            break;
+                        case 4:
+                            tlCell.classList.add('tl-advanced');
+                            break;
+                        case 5:
+                            tlCell.classList.add('tl-futuristic');
+                            break;
+                    }
+                    
+                    if (selectedTL === `TL ${techLevel}`) {
+                        tlCell.classList.add('tl-highlight');
+                    }
+                }
+            });
+        }
+
+        // Event listeners
+        techFilter.addEventListener('change', () => {
+            filterPharms();
+            highlightTechLevels();
+        });
+        
+        searchInput.addEventListener('input', filterPharms);
+
+        // Initialize category counts
+        updateCategoryCounts();
+    });
+    </script>
+</body>
+</html> 
