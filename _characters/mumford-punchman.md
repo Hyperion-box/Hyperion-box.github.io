@@ -46,7 +46,7 @@ is_player_character: true
 ## Class Abilities
 Once per scene, negate a successful attack roll against you or turn a missed attack roll you made into a hit.
 
-## EQUIPMENT
+## Equipment
 
 ***Readied:*** Backpack (TL 0), Knife, Primitive Hide Armor, Primitive Shield, Spear  
 ***Stowed:*** 7 x Rations (1 day), Rope (20 meters, TL 0)  

@@ -46,7 +46,7 @@ is_player_character: true
 ## Class Abilities
 Once per scene, you can reroll a failed skill check, taking the new roll if it's better.
 
-## EQUIPMENT
+## Equipment
 
 ***Readied:*** Dataslab, Laser Pistol, 2 x Line Shunt, Metatool, Secure Clothing
 ***Stowed:*** 2 x Power Cell (type A), 3 x Spare Parts, Toolkit (Postech)

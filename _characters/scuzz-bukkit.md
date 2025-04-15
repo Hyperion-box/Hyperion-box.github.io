@@ -46,7 +46,7 @@ is_player_character: true
 ## Class Abilities
 Psychic disciplines and techniques, plus possess an Effort score.
 
-## EQUIPMENT
+## Equipment
 
 ***Readied:*** Armored Undersuit, Backpack (TL 0), Compad, Laser Pistol, Low-light Googles, Metatool, Monoblade  
 ***Stowed:*** Climbing Harness, 2 x Power Cell (type A)  
