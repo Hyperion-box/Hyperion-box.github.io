@@ -1,6 +1,6 @@
 ---
 layout: character
-name: "J"
+name: "Gilead Khet"
 max_hp: 6
 class: "Expert"
 level: 1
@@ -37,7 +37,7 @@ talk: 0
 trade: 0
 work:
 
-image: "/images/portraits/character.png"
+image: "/images/portraits/gilead-khet.jpeg"
 primary_weapon: "Laser Rifle"
 secondary_weapon: "Knife"
 is_player_character: true
