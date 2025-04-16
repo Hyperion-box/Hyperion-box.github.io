@@ -13,3 +13,14 @@ In **Stars Without Number**, skill checks are made by rolling **2d6** and adding
 | Level-2 | Veteran expert, one respected even by those with considerable experience |
 | Level-3 | Master of the skill, likely one of the best on the planet |
 | Level-4 | Superlative expertise, one of the best in the entire stellar sector |
+
+
+**Skill Check Difficulty Levels:**
+
+| Target Number | Description |
+|--------------|-------------|
+| 6 | A relatively simple task that is still more than the PC would usually be expected to manage in their regular background. Anything easier than this isn't worth a skill check. |
+| 8 | A significant challenge to a competent professional that they'd still succeed at more often than not. |
+| 10 | Something too difficult to be expected of anyone but a skilled expert, and even they might fail. |
+| 12 | Only a true master could expect to carry this off with any degree of reliability. |
+| 14+ | Only a true master has any chance of achieving this at all, and even they will probably fail. |
