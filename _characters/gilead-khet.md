@@ -4,7 +4,7 @@ name: "Gilead Khet"
 max_hp: 6
 class: "Expert"
 level: 1
-experience: 0
+experience: 150
 background: Custom
 homeworld: Jord
 origin: Human

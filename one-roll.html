@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One-Roll Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        select, button {
+            padding: 8px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .name-result {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .name-column {
+            flex: 1;
+        }
+        .quick-npc {
+            background-color: #2196F3;
+        }
+        .quick-npc:hover {
+            background-color: #1976D2;
+        }
+        .npc-details {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .npc-details h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        .npc-details p {
+            margin: 5px 0;
+        }
+        .problem-generator {
+            background-color: #FF9800;
+        }
+        .problem-generator:hover {
+            background-color: #F57C00;
+        }
+        .problem-details {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .problem-details h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        .problem-details p {
+            margin: 5px 0;
+        }
+        .problem-section {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+        .world-generator {
+            background-color: #9C27B0;
+        }
+        .world-generator:hover {
+            background-color: #7B1FA2;
+        }
+        .world-details {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .world-details h3 {
+            color: #333;
+            margin-top: 0;
+        }
+        .world-details p {
+            margin: 5px 0;
+        }
+        .world-section {
+            margin-bottom: 15px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 4px;
+        }
+        .world-detail {
+            margin-bottom: 10px;
+        }
+        .world-detail h4 {
+            margin-bottom: 5px;
+        }
+        .world-detail p {
+            margin: 0;
+        }
+        .world-detail.associated {
+            font-size: 0.9em;
+            color: #666;
+        }
+        .world-summary {
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Name Generator</h1>
+        <select id="nameCulture">
+            <option value="arabic">Arabic</option>
+            <option value="chinese">Chinese</option>
+            <option value="english">English</option>
+            <option value="greek">Greek</option>
+            <option value="indian">Indian</option>
+            <option value="japanese">Japanese</option>
+            <option value="latin">Latin</option>
+            <option value="nigerian">Nigerian</option>
+            <option value="russian">Russian</option>
+            <option value="spanish">Spanish</option>
+        </select>
+        <button onclick="generateName()">Generate Name</button>
+        <button class="quick-npc" onclick="generateQuickNPC()">Generate Quick NPC</button>
+        <div id="nameResult" class="result">
+            <div class="name-result">
+                <div class="name-column">
+                    <h3>Male Names</h3>
+                    <div id="maleNames"></div>
+                </div>
+                <div class="name-column">
+                    <h3>Female Names</h3>
+                    <div id="femaleNames"></div>
+                </div>
+                <div class="name-column">
+                    <h3>Surnames</h3>
+                    <div id="surnames"></div>
+                </div>
+                <div class="name-column">
+                    <h3>Places</h3>
+                    <div id="places"></div>
+                </div>
+            </div>
+        </div>
+        <div id="quickNPCResult" class="npc-details"></div>
+    </div>
+
+    <div class="container">
+        <h1>Problem Generator</h1>
+        <button class="problem-generator" onclick="generateProblem()">Generate Problem</button>
+        <div id="problemResult" class="problem-details"></div>
+    </div>
+
+    <div class="container">
+        <h1>One-Roll Generator</h1>
+        <select id="generatorType">
+            <option value="npc">NPC Generator</option>
+            <option value="patron">Patron Generator</option>
+            <option value="urban">Urban Encounter</option>
+            <option value="wilderness">Wilderness Encounter</option>
+        </select>
+        <button onclick="generate()">Generate</button>
+        <div id="result" class="result"></div>
+    </div>
+
+    <div class="container">
+        <h1>World Generator</h1>
+        <button class="world-generator" onclick="generateWorld()">Generate World</button>
+        <div id="worldResult" class="world-details"></div>
+    </div>
+
+    <script>
+        const nameGenerators = {
+            arabic: {
+                male: ["Aamir", "Ayub", "Binyamin", "Efraim", "Ibrahim", "Ilyas", "Ismail", "Jibril", "Jumanah", "Kazi", "Lut", "Matta", "Mohammed", "Mubarak", "Mustafa", "Nazir", "Rahim", "Reza", "Sharif", "Taimur", "Usman", "Yakub", "Yusuf", "Zakariya", "Zubair"],
+                female: ["Aisha", "Alimah", "Badia", "Bisharah", "Chanda", "Daliya", "Fatimah", "Ghania", "Halah", "Kaylah", "Khayrah", "Layla", "Mina", "Munisa", "Mysha", "Naimah", "Nissa", "Nura", "Parveen", "Rana", "Shalha", "Suhira", "Tahirah", "Yasmin", "Zulehka"],
+                surname: ["Abdel", "Awad", "Dahhak", "Essa", "Hanna", "Harbi", "Hassan", "Isa", "Kasim", "Katib", "Khalil", "Malik", "Mansoor", "Mazin", "Musa", "Najeeb", "Namari", "Naser", "Rahman", "Rasheed", "Saleh", "Salim", "Shadi", "Sulaiman", "Tabari"],
+                place: ["Adan", "Ahsa", "Andalus", "Asmara", "Asqlan", "Baqubah", "Basit", "Baysan", "Baytlahm", "Bursaid", "Dahilah", "Darasalam", "Dawhah", "Ganin", "Gebal", "Gibuti", "Giddah", "Harmah", "Hartum", "Hibah", "Hims", "Hubar", "Karbala", "Kut", "Lacant"]
+            },
+            chinese: {
+                male: ["Aiguo", "Bohai", "Chao", "Dai", "Dawei", "Duyi", "Fa", "Fu", "Gui", "Hong", "Jianyu", "Kang", "Li", "Niu", "Peng", "Quan", "Ru", "Shen", "Shi", "Song", "Tao", "Xue", "Yi", "Yuan", "Zian"],
+                female: ["Biyu", "Changying", "Daiyu", "Huidai", "Huiliang", "Jia", "Jingfei", "Lan", "Liling", "Liu", "Meili", "Niu", "Peizhi", "Qiao", "Qing", "Ruolan", "Shu", "Suyin", "Ting", "Xia", "Xiaowen", "Xiulan", "Ya", "Ying", "Zhilan"],
+                surname: ["Bai", "Cao", "Chen", "Cui", "Ding", "Du", "Fang", "Fu", "Guo", "Han", "Hao", "Huang", "Lei", "Li", "Liang", "Liu", "Long", "Song", "Tan", "Tang", "Wang", "Wu", "Xing", "Yang", "Zhang"],
+                place: ["Andong", "Anqing", "Anshan", "Chaoyang", "Chaozhou", "Chifeng", "Dalian", "Dunhuang", "Fengjia", "Fengtian", "Fuliang", "Fushun", "Gansu", "Ganzhou", "Guizhou", "Hotan", "Hunan", "Jinan", "Jingdezhen", "Jinxi", "Jinzhou", "Kunming", "Liaoning", "Linyi", "Lushun"]
+            },
+            english: {
+                male: ["Adam", "Albert", "Alfred", "Allan", "Archibald", "Arthur", "Basil", "Charles", "Colin", "Donald", "Douglas", "Edgar", "Edmund", "Edward", "George", "Harold", "Henry", "Ian", "James", "John", "Lewis", "Oliver", "Philip", "Richard", "William"],
+                female: ["Abigail", "Anne", "Beatrice", "Blanche", "Catherine", "Charlotte", "Claire", "Eleanor", "Elizabeth", "Emily", "Emma", "Georgia", "Harriet", "Joan", "Judy", "Julia", "Lucy", "Lydia", "Margaret", "Mary", "Molly", "Nora", "Rosie", "Sarah", "Victoria"],
+                surname: ["Barker", "Brown", "Butler", "Carter", "Chapman", "Collins", "Cook", "Davies", "Gray", "Green", "Harris", "Jackson", "Jones", "Lloyd", "Miller", "Roberts", "Smith", "Taylor", "Thomas", "Turner", "Watson", "White", "Williams", "Wood", "Young"],
+                place: ["Aldington", "Appleton", "Ashdon", "Berwick", "Bramford", "Brimstage", "Carden", "Churchill", "Clifton", "Colby", "Copford", "Cromer", "Davenham", "Dersingham", "Doverdale", "Elsted", "Ferring", "Gissing", "Heydon", "Holt", "Hunston", "Hutton", "Inkberrow", "Inworth", "Isfield"]
+            },
+            greek: {
+                male: ["Alexander", "Alexius", "Anastasius", "Christodoulos", "Christos", "Damian", "Dimitris", "Dysmas", "Elias", "Giorgos", "Ioannis", "Konstantinos", "Lambros", "Leonidas", "Marcos", "Miltiades", "Nestor", "Nikos", "Orestes", "Petros", "Simon", "Stavros", "Theodore", "Vassilios", "Yannis"],
+                female: ["Alexandra", "Amalia", "Callisto", "Charis", "Chloe", "Dorothea", "Elena", "Eudoxia", "Giada", "Helena", "Ioanna", "Lydia", "Melania", "Melissa", "Nika", "Nikolina", "Olympias", "Philippa", "Phoebe", "Sophia", "Theodora", "Valentina", "Valeria", "Yianna", "Zoe"],
+                surname: ["Andreas", "Argyros", "Dimitriou", "Floros", "Gavras", "Ioannidis", "Katsaros", "Kyrkos", "Leventis", "Makris", "Metaxas", "Nikolaidis", "Pallis", "Pappas", "Petrou", "Raptis", "Simonides", "Spiros", "Stavros", "Stephanidis", "Stratigos", "Terzis", "Theodorou", "Vasiliadis", "Yannakakis"],
+                place: ["Adramyttion", "Ainos", "Alikarnassos", "Avydos", "Dakia", "Dardanos", "Dekapoli", "Dodoni", "Efesos", "Efstratios", "Elefsina", "Ellada", "Epidavros", "Erymanthos", "Evripos", "Gavdos", "Gytheio", "Ikaria", "Ilios", "Illyria", "Iraia", "Irakleio", "Isminos", "Ithaki", "Kadmeia"]
+            },
+            indian: {
+                male: ["Amrit", "Ashok", "Chand", "Dinesh", "Gobind", "Harinder", "Jagdish", "Johar", "Kurien", "Lakshman", "Madhav", "Mahinder", "Mohal", "Narinder", "Nikhil", "Omrao", "Prasad", "Pratap", "Ranjit", "Sanjay", "Shankar", "Thakur", "Vijay", "Vipul", "Yash"],
+                female: ["Amala", "Asha", "Chandra", "Devika", "Esha", "Gita", "Indira", "Indrani", "Jaya", "Jayanti", "Kiri", "Lalita", "Malati", "Mira", "Mohana", "Neela", "Nita", "Rajani", "Sarala", "Sarika", "Sheela", "Sunita", "Trishna", "Usha", "Vasanta"],
+                surname: ["Achari", "Banerjee", "Bhatnagar", "Bose", "Chauhan", "Chopra", "Das", "Dutta", "Gupta", "Johar", "Kapoor", "Mahajan", "Malhotra", "Mehra", "Nehru", "Patil", "Rao", "Saxena", "Shah", "Sharma", "Singh", "Trivedi", "Venkatesan", "Verma", "Yadav"],
+                place: ["Ahmedabad", "Alipurduar", "Alubari", "Anjanadri", "Ankleshwar", "Balarika", "Bhanuja", "Bhilwada", "Brahmaghosa", "Bulandshahar", "Candrama", "Chalisgaon", "Chandragiri", "Charbagh", "Chayanka", "Chittorgarh", "Dayabasti", "Dikpala", "Ekanga", "Gandhidham", "Gollaprolu", "Grahisa", "Guwahati", "Haridasva", "Indraprastha"]
+            },
+            japanese: {
+                male: ["Akira", "Daisuke", "Fukashi", "Goro", "Hiro", "Hiroya", "Hotaka", "Katsu", "Katsuto", "Keishuu", "Kyuuto", "Mikiya", "Mitsunobu", "Mitsuru", "Naruhiko", "Nobu", "Shigeo", "Shigeto", "Shou", "Shuji", "Takaharu", "Teruaki", "Tetsushi", "Tsukasa", "Yasuharu"],
+                female: ["Aemi", "Airi", "Ako", "Ayu", "Chikaze", "Eriko", "Hina", "Kaori", "Keiko", "Kyouka", "Mayumi", "Miho", "Namiko", "Natsu", "Nobuko", "Rei", "Ririsa", "Sakimi", "Shihoko", "Shika", "Tsukiko", "Tsuzune", "Yoriko", "Yorimi", "Yoshiko"],
+                surname: ["Abe", "Arakaki", "Endo", "Fujiwara", "Goto", "Ito", "Kikuchi", "Kinjo", "Kobayashi", "Koga", "Komatsu", "Maeda", "Nakamura", "Narita", "Ochi", "Oshiro", "Saito", "Sakamoto", "Sato", "Suzuki", "Takahashi", "Tanaka", "Watanabe", "Yamamoto", "Yamasaki"],
+                place: ["Bando", "Chikuma", "Chikusei", "Chino", "Hitachi", "Hitachinaka", "Hitachiomiya", "Hitachiota", "Iida", "Iiyama", "Ina", "Inashiki", "Ishioka", "Itako", "Kamisu", "Kasama", "Kashima", "Kasumigaura", "Kitaibaraki", "Kiyose", "Koga", "Komagane", "Komoro", "Matsumoto", "Mito"]
+            },
+            latin: {
+                male: ["Agrippa", "Appius", "Aulus", "Caeso", "Decimus", "Faustus", "Gaius", "Gnaeus", "Hostus", "Lucius", "Mamercus", "Manius", "Marcus", "Mettius", "Nonus", "Numerius", "Opiter", "Paulus", "Proculus", "Publius", "Quintus", "Servius", "Tiberius", "Titus", "Volescus"],
+                female: ["Appia", "Aula", "Caesula", "Decima", "Fausta", "Gaia", "Gnaea", "Hosta", "Lucia", "Maio", "Marcia", "Maxima", "Mettia", "Nona", "Numeria", "Octavia", "Postuma", "Prima", "Procula", "Septima", "Servia", "Tertia", "Tiberia", "Titia", "Vibia"],
+                surname: ["Antius", "Aurius", "Barbatius", "Calidius", "Cornelius", "Decius", "Fabius", "Flavius", "Galerius", "Horatius", "Julius", "Juventius", "Licinius", "Marius", "Minicius", "Nerius", "Octavius", "Pompeius", "Quinctius", "Rutilius", "Sextius", "Titius", "Ulpius", "Valerius", "Vitellius"],
+                place: ["Abilia", "Alsium", "Aquileia", "Argentoratum", "Ascrivium", "Asculum", "Attalia", "Barium", "Batavorum", "Belum", "Bobbium", "Brigantium", "Burgodunum", "Camulodunum", "Clausentum", "Corduba", "Coriovallum", "Durucobrivis", "Eboracum", "Emona", "Florentia", "Lactodurum", "Lentia", "Lindum", "Londinium"]
+            },
+            nigerian: {
+                male: ["Adesegun", "Akintola", "Amabere", "Arikawe", "Asagwara", "Chidubem", "Chinedu", "Chiwetei", "Damilola", "Esangbedo", "Ezenwoye", "Folarin", "Genechi", "Idowu", "Kelechi", "Ketanndu", "Melubari", "Nkanta", "Obafemi", "Olatunde", "Olumide", "Tombari", "Udofia", "Uyoata", "Uzochi"],
+                female: ["Abike", "Adesuwa", "Adunola", "Anguli", "Arewa", "Asari", "Bisola", "Chioma", "Eduwa", "Emilohi", "Fehintola", "Folasade", "Mahparah", "Minika", "Nkolika", "Nuanae", "Obioma", "Olafemi", "Shanumi", "Sominabo", "Suliat", "Tariere", "Temedire", "Yemisi"],
+                surname: ["Adegboye", "Adeniyi", "Adeyeku", "Adunola", "Agbaje", "Akpan", "Akpehi", "Aliki", "Asuni", "Babangida", "Ekim", "Ezeiruaku", "Fabiola", "Fasola", "Nwokolo", "Nzeocha", "Ojo", "Okonkwo", "Okoye", "Olaniyan", "Olawale", "Olumese", "Onajobi", "Soyinka", "Yamusa"],
+                place: ["Abadan", "Ador", "Agatu", "Akamkpa", "Akpabuyo", "Ala", "Askira", "Bakassi", "Bama", "Bayo", "Bekwara", "Biase", "Boki", "Buruku", "Calabar", "Chibok", "Damboa", "Dikwa", "Etung", "Gboko", "Gubio", "Guzamala", "Gwoza", "Hawul", "Ikom"]
+            },
+            russian: {
+                male: ["Aleksandr", "Andrei", "Arkady", "Boris", "Dmitri", "Dominik", "Grigory", "Igor", "Ilya", "Ivan", "Kiril", "Konstantin", "Leonid", "Nikolai", "Oleg", "Pavel", "Petr", "Sergei", "Stepan", "Valentin", "Vasily", "Viktor", "Yakov", "Yegor", "Yuri"],
+                female: ["Aleksandra", "Anastasia", "Anja", "Catarina", "Devora", "Dima", "Ekaterina", "Eva", "Irina", "Karolina", "Katlina", "Kira", "Ludmilla", "Mara", "Nadezdha", "Nastassia", "Natalya", "Oksana", "Olena", "Olga", "Sofia", "Svetlana", "Tatyana", "Vilma", "Yelena"],
+                surname: ["Abelev", "Bobrikov", "Chemerkin", "Gogunov", "Gurov", "Iltchenko", "Kavelin", "Komarov", "Korovin", "Kurnikov", "Lebedev", "Litvak", "Mekhdiev", "Muraviov", "Nikitin", "Ortov", "Peshkov", "Romasko", "Shvedov", "Sikorski", "Stolypin", "Turov", "Volokh", "Zaitsev", "Zhukov"],
+                place: ["Amur", "Arkhangelsk", "Astrakhan", "Belgorod", "Bryansk", "Chelyabinsk", "Chita", "Gorki", "Irkutsk", "Ivanovo", "Kaliningrad", "Kaluga", "Kamchatka", "Kemerovo", "Kirov", "Kostroma", "Kurgan", "Kursk", "Leningrad", "Lipetsk", "Magadan", "Moscow", "Murmansk", "Novgorod", "Novosibirsk"]
+            },
+            spanish: {
+                male: ["Alejandro", "Alonso", "Amelio", "Armando", "Bernardo", "Carlos", "Cesar", "Diego", "Emilio", "Estevan", "Felipe", "Francisco", "Guillermo", "Javier", "Jose", "Juan", "Julio", "Luis", "Pedro", "Raul", "Ricardo", "Salvador", "Santiago", "Valeriano", "Vicente"],
+                female: ["Adalina", "Aleta", "Ana", "Ascencion", "Beatriz", "Carmela", "Celia", "Dolores", "Elena", "Emelina", "Felipa", "Inez", "Isabel", "Jacinta", "Lucia", "Lupe", "Maria", "Marta", "Nina", "Paloma", "Rafaela", "Soledad", "Teresa", "Valencia", "Zenaida"],
+                surname: ["Arellano", "Arispana", "Borrego", "Carderas", "Carranzo", "Cordova", "Enciso", "Espejo", "Gavilan", "Guerra", "Guillen", "Huertas", "Illan", "Jurado", "Moretta", "Motolinia", "Pancorbo", "Paredes", "Quesada", "Roma", "Rubiera", "Santoro", "Torrillas", "Vera", "Vivero"],
+                place: ["Aguascebas", "Alcazar", "Barranquete", "Bravatas", "Cabezudos", "Calderon", "Cantera", "Castillo", "Delgadas", "Donablanca", "Encinetas", "Estrella", "Faustino", "Fuentebravia", "Gafarillos", "Gironda", "Higueros", "Huelago", "Humilladero", "Illora", "Isabela", "Izbor", "Jandilla", "Jinetes", "Limones"]
+            }
+        };
+
+        const generators = {
+            npc: {
+                occupation: [
+                    "Criminal, thug, thief, swindler",
+                    "Menial, cleaner, retail worker, servant",
+                    "Unskilled heavy labor, porter, construction",
+                    "Skilled trade, electrician, mechanic, pilot",
+                    "Idea worker, programmer, writer",
+                    "Merchant, business owner, trader, banker",
+                    "Official, bureaucrat, courtier, clerk",
+                    "Military, soldier, enforcer, law officer"
+                ],
+                background: [
+                    "The local underclass or poorest natives",
+                    "Common laborers or cube workers",
+                    "Aspiring bourgeoise or upper class",
+                    "The elite of this society",
+                    "Minority or foreigners",
+                    "Offworlders or exotics"
+                ],
+                problem: [
+                    "They have significant debt or money woes",
+                    "A loved one is in trouble",
+                    "Romantic failure with a desired person",
+                    "Drug or behavioral addiction",
+                    "Their superior dislikes or resents them",
+                    "They have a persistent sickness",
+                    "They hate their job or life situation",
+                    "Someone dangerous is targeting them",
+                    "They're pursuing a disastrous purpose",
+                    "They have no problems worth mentioning"
+                ],
+                desire: [
+                    "They want a particular romantic partner",
+                    "They want money for them or a loved one",
+                    "They want a promotion in their job",
+                    "They want answers about a past trauma",
+                    "They want revenge on an enemy",
+                    "They want to help a beleaguered friend",
+                    "They want an entirely different job",
+                    "They want protection from an enemy",
+                    "They want to leave their current life",
+                    "They want fame and glory",
+                    "They want power over those around them",
+                    "They have everything they want from life"
+                ],
+                age: [
+                    "Unusually young or old for their role",
+                    "Young adult",
+                    "Mature prime",
+                    "Middle-aged or elderly"
+                ],
+                trait: [
+                    "Ambition", "Avarice", "Bitterness", "Courage", "Cowardice",
+                    "Curiosity", "Deceitfulness", "Determination", "Devotion to a cause",
+                    "Filiality", "Hatred", "Honesty", "Hopefulness", "Love of a person",
+                    "Nihilism", "Paternalism", "Pessimism", "Protectiveness", "Resentment",
+                    "Shame"
+                ]
+            },
+            patron: {
+                trustworthiness: [
+                    "They intend to totally screw the PCs",
+                    "They won't pay unless forced to do so",
+                    "They'll pay slowly or reluctantly",
+                    "They'll pay, but discount for mistakes",
+                    "They'll pay without quibbling",
+                    "They'll pay more than they promised"
+                ],
+                challenge: [
+                    "Kill somebody who might deserve it",
+                    "Kidnap someone dangerous",
+                    "Steal a well-guarded object",
+                    "Arson or sabotage on a place",
+                    "Get proof of some misdeed",
+                    "Protect someone from an immediate threat",
+                    "Transport someone through danger",
+                    "Guard an object being transported"
+                ],
+                counterforce: [
+                    "A treacherous employer or subordinate",
+                    "An open and known enemy of the patron",
+                    "Official governmental meddling",
+                    "An unknown rival of the patron",
+                    "The macguffin itself opposes them",
+                    "Very short time frame allowed",
+                    "The job is spectacularly illegal",
+                    "A participant would profit by their failure",
+                    "The patron is badly wrong about a thing",
+                    "The locals are against the patron"
+                ],
+                eagerness: [
+                    "Cautious, but can be convinced to hire",
+                    "Willing to promise standard rates",
+                    "Eager, willing to offer a bonus",
+                    "Desperate, might offer what they can't pay"
+                ],
+                rewards: [
+                    "Government official favors owed",
+                    "Property in the area",
+                    "An item very valuable on another world",
+                    "Pretech mod components",
+                    "Useful pretech artifact",
+                    "Information the PCs need",
+                    "Membership in a powerful group",
+                    "Black market access",
+                    "Use of restricted facilities or shipyards",
+                    "Shares in a profitable business",
+                    "Maps to a hidden or guarded treasure",
+                    "Illegal but valuable weapons or gear"
+                ],
+                complication: [
+                    "An ambush is laid somewhere",
+                    "PC involvement is leaked to the enemy",
+                    "The patron gives faulty aid somehow",
+                    "Failing would be extremely unhealthy",
+                    "The job IDs them as allies of a local faction",
+                    "The macguffin is physically dangerous",
+                    "An important location is hard to get into",
+                    "Succeeding would be morally distasteful",
+                    "A supposed ally is very unhelpful or stupid",
+                    "The patron badly misunderstood the PCs",
+                    "The job changes suddenly partway through",
+                    "An unexpected troublemaker is involved",
+                    "Critical gear will fail partway through",
+                    "An unrelated accident complicates things",
+                    "Payment comes in a hard-to-handle form",
+                    "Someone is turning traitor on the patron",
+                    "A critical element has suddenly moved",
+                    "Payment is in avidly-pursued hot goods",
+                    "The true goal is a subsidiary part of the job",
+                    "No complications; it's just as it seems to be"
+                ]
+            },
+            urban: {
+                conflict: [
+                    "Money, extortion, payment due, debts",
+                    "Respect, submission to social authority",
+                    "Grudges, ethnic resentment, gang payback",
+                    "Politics, religion, or other ideology"
+                ],
+                venue: [
+                    "In the middle of the street",
+                    "In a public plaza",
+                    "Down a side alley",
+                    "Inside a local business",
+                    "Next to or in a public park",
+                    "At a mass-transit station"
+                ],
+                involvement: [
+                    "A sympathetic participant appeals to them",
+                    "Ways around it are all dangerous/blocked",
+                    "It happens immediately around them",
+                    "A valuable thing looks snatchable amid it",
+                    "A participant offers a reward for help",
+                    "Someone mistakenly involves the PCs in it",
+                    "The seeming way out just leads deeper in",
+                    "Responsibility is somehow pinned on them"
+                ],
+                event: [
+                    "A parade or festival is being disrupted",
+                    "Innocents are being assaulted",
+                    "An establishment is being robbed",
+                    "A disturbance over local politics happens",
+                    "Someone is being blamed for something",
+                    "Fires or building collapses are happening",
+                    "A medical emergency is happening",
+                    "Someone's trying to cheat the PCs",
+                    "A vehicle accident is happening",
+                    "A religious ceremony is being disrupted"
+                ],
+                antagonists: [
+                    "A local bully and their thugs",
+                    "A ruthless political boss and their zealots",
+                    "Violent criminals",
+                    "Religious fanatics",
+                    "A blisteringly obnoxious offworlder",
+                    "Corrupt or over-strict government official",
+                    "A mob of intoxicated locals",
+                    "A ranting demagogue and their followers",
+                    "A stupidly bull-headed local grandee",
+                    "A very capable assassin or strong-arm",
+                    "A self-centered local scion of power",
+                    "A confused foreigner or backwoodsman"
+                ],
+                features: [
+                    "Heavy traffic running through the place",
+                    "Music blaring at deafening volumes",
+                    "Two groups present that detest each other",
+                    "Large delivery taking place right there",
+                    "Swarm of schoolkids or feral youth",
+                    "Insistent soapbox preacher here",
+                    "Several pickpockets working the crowd",
+                    "A kiosk is tipping over and spilling things",
+                    "Streetlights are out or visibility is low",
+                    "A cop patrol is here and reluctant to act",
+                    "PC-hostile reporters are recording here",
+                    "Someone's trying to sell something to PCs",
+                    "Feral dogs or other animals crowd here",
+                    "Unrelated activists are protesting here",
+                    "Street kids are trying to steal from the PCs",
+                    "GPS maps are dangerously wrong here",
+                    "Downed power lines are a danger here",
+                    "Numerous open manholes and utility holes",
+                    "The street's blockaded by something",
+                    "Crowds so thick one can barely move"
+                ]
+            },
+            wilderness: {
+                weather: [
+                    "Takes place in daylight and clear weather",
+                    "Daylight, but fog, mist, rain or the like",
+                    "Daylight, but harsh seasonal weather",
+                    "Night encounter, but clear weather",
+                    "Night, with rain or other obscuring effects",
+                    "Night, with terrible weather and wind"
+                ],
+                hostiles: [
+                    "Bandits in their wilderness hideout",
+                    "Dangerous locals looking for easy marks",
+                    "Rabid or diseased large predator",
+                    "Pack of hungry hunting beasts",
+                    "Herd of potentially dangerous prey animals",
+                    "Swarm of dangerous vermin",
+                    "Criminal seeking to evade the law",
+                    "Brutal local landowner and their men",
+                    "Crazed hermit seeking enforced solitude",
+                    "Friendly-seeming guide into lethal danger",
+                    "Harmless-looking but dangerous beast",
+                    "Confidence man seeking to gull the PCs"
+                ],
+                nature: [
+                    "Attack by pack of hostiles",
+                    "Ambush by single lone hostile",
+                    "Meet people who don't want to be met",
+                    "Encounter people in need of aid",
+                    "Encounter hostile creatures",
+                    "Nearby feature is somehow dangerous",
+                    "Nearby feature promises useful loot",
+                    "Meet hostiles that aren't immediately so"
+                ],
+                friendlies: [
+                    "Affable but reclusive hermit",
+                    "Local herd animal let loose to graze",
+                    "Government ranger or circuit judge",
+                    "Curious local animal",
+                    "Remote homesteader and family",
+                    "Working trapper or hunter",
+                    "Back-country villager or native",
+                    "Hiker or wilderness tourist",
+                    "Religious recluse or holy person",
+                    "Impoverished social exile"
+                ],
+                range: [
+                    "Visible from a long distance away",
+                    "Noticed 1d4 hundred meters away",
+                    "Noticed only within 1d6 x 10 meters",
+                    "Noticed only when adjacent to the event"
+                ],
+                features: [
+                    "Overgrown homestead",
+                    "Stream prone to flash-flooding",
+                    "Narrow bridge or beam over deep cleft",
+                    "Box canyon with steep sides",
+                    "Unstable hillside that slides if disturbed",
+                    "Long-lost crash site of a gravflyer",
+                    "Once-inhabited cave or tunnel",
+                    "Steep and dangerous cliff",
+                    "Quicksand-laden swamp or dust pit",
+                    "Ruins of a ghost town or lost hamlet",
+                    "Hunting cabin with necessities",
+                    "Ill-tended graveyard of a lost family stead",
+                    "Narrow pass that's easily blocked",
+                    "Dilapidated resort building",
+                    "Remote government monitoring outpost",
+                    "Illicit substance farm or processing center",
+                    "Old and forgotten battleground",
+                    "Zone overrun by dangerous plants",
+                    "Thick growth that lights up at a spark",
+                    "Abandoned vehicle"
+                ]
+            }
+        };
+
+        const problemGenerators = {
+            conflictTypes: {
+                "Money": {
+                    situations: [
+                        "Money is owed to a ruthless creditor",
+                        "Money was stolen from someone",
+                        "A sudden profit opportunity arises",
+                        "There's a hidden stash of wealth",
+                        "Money is offered from an evil source"
+                    ],
+                    focuses: [
+                        "Organized crime wants it",
+                        "Corrupt officials want it",
+                        "A sympathetic NPC needs it",
+                        "The PCs are owed it",
+                        "It will disappear very soon"
+                    ]
+                },
+                "Revenge": {
+                    situations: [
+                        "Someone was murdered",
+                        "Someone was stripped of rank",
+                        "Someone lost all their wealth",
+                        "Someone lost someone's love",
+                        "Someone was framed for a crime"
+                    ],
+                    focuses: [
+                        "It was wholly justified",
+                        "The wrong person is targeted",
+                        "The reaction is excessive",
+                        "The PCs are somehow blamed",
+                        "Both sides were wronged"
+                    ]
+                },
+                "Power": {
+                    situations: [
+                        "An influential political leader",
+                        "A stern community elder",
+                        "A ruling patriarch of a large family",
+                        "A star expert in a particular industry",
+                        "A criminal boss or outcast leader"
+                    ],
+                    focuses: [
+                        "They've betrayed their own",
+                        "Someone's gunning for them",
+                        "They made a terrible choice",
+                        "They usurped their position",
+                        "They're oppressing their own"
+                    ]
+                },
+                "Natural Danger": {
+                    situations: [
+                        "A cyclical planetary phenomenon",
+                        "A sudden natural disaster",
+                        "Sudden loss of vital infrastructure",
+                        "Catastrophe from outside meddling",
+                        "Formerly-unknown planetary peril"
+                    ],
+                    focuses: [
+                        "Anti-helpful bureaucrats",
+                        "Religious zealots panic",
+                        "Bandits and looters strike",
+                        "The government hushes it up",
+                        "There's money in exploiting it"
+                    ]
+                },
+                "Religion": {
+                    situations: [
+                        "Sects that hate each other bitterly",
+                        "Zealot reformers forcing new things",
+                        "Radical traditionalists fighting back",
+                        "Ethnic religious divisions",
+                        "Corrupt and decadent institutions"
+                    ],
+                    focuses: [
+                        "Charismatic new leader",
+                        "Mandatory state religion",
+                        "Heavy foreign influence",
+                        "Religious purging underway",
+                        "Fighting for holy ground"
+                    ]
+                },
+                "Ideology": {
+                    situations: [
+                        "A universally-despised fringe group",
+                        "Terrorists with widespread support",
+                        "A political party's goon squads",
+                        "Dead-end former regime supporters",
+                        "Ruthless ascendant political group"
+                    ],
+                    focuses: [
+                        "Terrorist attack",
+                        "Street rioting",
+                        "Police state crackdown",
+                        "Forced expulsions",
+                        "Territory under hostile rule"
+                    ]
+                },
+                "Ethnicity": {
+                    situations: [
+                        "A traditionally subordinate group",
+                        "An ethnic group from offworld",
+                        "A dominant caste or ethnicity",
+                        "An alien or transhuman group",
+                        "Two groups that hate each other"
+                    ],
+                    focuses: [
+                        "Forced immigration",
+                        "Official ethnic ghettos",
+                        "Rigid separation of groups",
+                        "Group statuses have changed",
+                        "Rising ethnic violence"
+                    ]
+                },
+                "Resources": {
+                    situations: [
+                        "There's a cache of illegal materials",
+                        "A hidden strike of rare resources",
+                        "Cargo has been abandoned as lost",
+                        "Land ownership is disputed",
+                        "A resource is desperately necessary"
+                    ],
+                    focuses: [
+                        "Someone thinks they own it",
+                        "The state is looking for it",
+                        "It has its own protectors",
+                        "Rights to it were stolen",
+                        "Offworlders want it badly"
+                    ]
+                }
+            },
+            restraints: [
+                "The government is cracking down on the conflict",
+                "One side seems invincibly stronger to the other",
+                "Both sides have 'doomsday' info or devices",
+                "A prior conflict ended horribly for both of them",
+                "Foreign participants are keeping things tamped",
+                "Elements of both sides seek accommodation",
+                "The conflict is only viable in a narrow location",
+                "Catastrophic cost of losing a direct showdown",
+                "Each thinks they'll win without further exertion",
+                "They expect a better opening to appear soon",
+                "Former ties of friendship or family restrain them",
+                "Religious principles are constraining them",
+                "One side's still licking their wounds after a failure",
+                "They're building up force to make sure they win",
+                "Their cultural context makes open struggle hard",
+                "They expect an outside power to hand them a win",
+                "They're still searching for a way to get at their goal",
+                "One side mistakenly thinks they've already won",
+                "A side is busy integrating a recent success",
+                "An outside power threatens both sides"
+            ],
+            twists: [
+                "There's a very sharp time limit for any resolution",
+                "The sympathetic side is actually a bunch of bastards",
+                "There's an easy but very repugnant solution to hand",
+                "PC success means a big benefit to a hostile group",
+                "The real bone of contention is hidden from most",
+                "A sympathetic figure's on an unsympathetic side",
+                "There's a profitable chance for PCs to turn traitor",
+                "The 'winner' will actually get in terrible trouble",
+                "There's a very appealing third party in the mix",
+                "The PCs could really profit off the focus of the strife",
+                "The PCs are mistaken for an involved group",
+                "Somebody plans on screwing over the PCs",
+                "Both sides think the PCs are working for them",
+                "A side wants to use the PCs as a distraction for foes",
+                "The PCs' main contact is mistrusted by their allies",
+                "If the other side can't get it, they'll destroy it",
+                "The focus isn't nearly as valuable as both sides think",
+                "The focus somehow has its own will and goals",
+                "Victory will drastically change one of the sides",
+                "Actually, there is no twist. It's all exactly as it seems."
+            ]
+        };
+
+        const npcDetails = {
+            motivation: [
+                "An ambition for greater social status",
+                "Greed for wealth and indulgent riches",
+                "Protect a loved one who is somehow imperiled",
+                "A sheer sadistic love of inflicting pain and suffering",
+                "Hedonistic enjoyment of pleasing company",
+                "Searching out hidden knowledge or science",
+                "Establishing or promoting a cultural institution",
+                "Avenging a grievous wrong to them or a loved one",
+                "Promoting their religion and living out their faith",
+                "Winning the love of a particular person",
+                "Winning glory and fame in their profession",
+                "Dodging an enemy who is pursuing them",
+                "Driving out or killing an enemy group",
+                "Deposing a rival to them in their line of work",
+                "Getting away from this world or society",
+                "Promote a friend or offspring's career or future",
+                "Taking control of a property or piece of land",
+                "Building a structure or a complex prototype tech",
+                "Perform or create their art to vast acclaim",
+                "Redeem themselves from a prior failure"
+            ],
+            want: [
+                "Bring them an exotic piece of tech",
+                "Convince someone to meet with the NPC",
+                "Kill a particular NPC",
+                "Kidnap or non-fatally eliminate a particular NPC",
+                "Pay them a large amount of money",
+                "Take a message to someone hard to reach",
+                "Acquire a tech component that's hard to get",
+                "Find proof of a particular NPC's malfeasance",
+                "Locate a missing NPC",
+                "Bring someone to a destination via dangerous travel",
+                "Retrieve a lost or stolen object",
+                "Defend someone from an impending attack",
+                "Burn down or destroy a particular structure",
+                "Explore a dangerous or remote location",
+                "Steal something from a rival NPC or group",
+                "Intimidate a rival into ceasing their course of action",
+                "Commit a minor crime to aid the NPC",
+                "Trick a rival into doing something",
+                "Rescue an NPC from a dire situation",
+                "Force a person or group to leave an area"
+            ],
+            power: [
+                "They're just really appealing and sympathetic to PCs",
+                "They have considerable liquid funds",
+                "They control the use of large amounts of violence",
+                "They have a position of great social status",
+                "They're a good friend of an important local leader",
+                "They have blackmail info on the PCs",
+                "They have considerable legal influence here",
+                "They have tech the PCs might reasonably want",
+                "They can get the PCs into a place they want to go",
+                "They know where significant wealth can be found",
+                "They have information about the PCs' current goal",
+                "An NPC the PCs need has implicit trust in them",
+                "The NPC can threaten someone the PCs like",
+                "They control a business relevant to PC needs",
+                "They have considerable criminal contacts",
+                "They have pull with the local religion",
+                "They know a great many corrupt politicians",
+                "They can alert the PCs to an unexpected peril",
+                "They're able to push a goal the PCs currently have",
+                "They can get the PCs useful permits and rights"
+            ],
+            hook: [
+                "A particular odd style of dress",
+                "An amputation or other maiming",
+                "Visible cyberware or prosthetics",
+                "Unusual hair, skin, or eye colors",
+                "Scarring, either intentional or from old injuries",
+                "Tic-like overuse of a particular word or phrase",
+                "Specific unusual fragrance or cologne",
+                "Constant fiddling with a particular item",
+                "Visible signs of drug use",
+                "Always seems to be in one particular mood",
+                "Wears badges or marks of allegiance to a cause",
+                "Extremely slow or fast pace of speech",
+                "Wheezes, shakes, or other signs of infirmity",
+                "Constantly with a drink to hand",
+                "Always complaining about a group or organization",
+                "Paranoid, possibly for justifiable reasons",
+                "Insists on a particular location for all meetings",
+                "Communicates strictly through a third party",
+                "Abnormally obese, emaciated, tall, or short",
+                "Always found with henchmen or friends"
+            ],
+            initialManner: [
+                "Ingratiating and cloying",
+                "Grim suspicion of the PCs or their backers",
+                "Xenophilic interest in the novelty of the PCs",
+                "Pragmatic and businesslike",
+                "Romantically interested in one or more PCs",
+                "A slimy used-gravcar dealer's approach",
+                "Wide-eyed awe at the PCs",
+                "Cool and superior attitude toward PC 'hirelings'",
+                "Benevolently patronizing toward outsiders",
+                "Sweaty-palmed need or desperation",
+                "Xenophobic mistrust of the PCs",
+                "Idealistic enthusiasm for a potentially shared cause",
+                "Somewhat intoxicated by recent indulgence",
+                "Smoothly persuasive and reasonable",
+                "Visibly uncomfortable with the PCs",
+                "Grossly overconfident in PC abilities",
+                "Somewhat frightened by the PCs",
+                "Deeply misunderstanding the PCs' culture",
+                "Extremely well-informed about the PCs' past",
+                "Distracted by their current situation"
+            ],
+            defaultDealOutcome: [
+                "They'll screw the PCs over even at their own cost",
+                "They firmly intend to actively betray the PCs",
+                "They won't keep the deal unless driven to it",
+                "They plan to twist the deal to their own advantage",
+                "They won't keep their word unless it's profitable",
+                "They'll flinch from paying up when the time comes",
+                "They mean to keep the deal, but are reluctant",
+                "They'll keep most of the deal, but not all of it",
+                "They'll keep the deal slowly and grudgingly",
+                "They'll keep the deal but won't go out of their way",
+                "They'll be reasonably punctual about the deal",
+                "They'll want a further small favor to pay up on it",
+                "They'll keep the deal in a way that helps them",
+                "They'll keep the deal if it's still good for them",
+                "They'll offer a bonus for an additional favor",
+                "Trustworthy as long as the deal won't hurt them",
+                "Trustworthy, with the NPC following through",
+                "They'll be very fair in keeping to their agreements",
+                "They'll keep bargains even to their own cost",
+                "Complete and righteous integrity to the bitter end"
+            ]
+        };
+
+        const worldTags = {
+            tags: {
+                "Abandoned Colony": {
+                    description: "The world was once settled by humans, but something drove them away or killed them off. The ruins of their presence remain.",
+                    associated: ["Ruined cities", "Ancient technology", "Mysterious artifacts", "Abandoned infrastructure"]
+                },
+                "Alien Ruins": {
+                    description: "The world hosts the remains of an alien civilization, whether a few structures or vast complexes.",
+                    associated: ["Strange architecture", "Alien artifacts", "Ancient mysteries", "Xenoarchaeology sites"]
+                }
+                // ... (other tags with similar structure)
+            },
+            atmospheres: {
+                "Breathable Mix": {
+                    description: "The atmosphere is perfectly breathable by humans without assistance.",
+                    associated: ["Normal breathing", "No protection needed", "Standard air", "Human-compatible"]
+                }
+                // ... (other atmospheres with similar structure)
+            },
+            temperatures: {
+                "Frozen": {
+                    description: "The world is extremely cold, with temperatures well below freezing.",
+                    associated: ["Extreme cold", "Ice worlds", "Frozen surfaces", "Cryogenic conditions"]
+                }
+                // ... (other temperatures with similar structure)
+            },
+            biospheres: {
+                "Remnant": {
+                    description: "The world's biosphere is a remnant of a once-thriving ecosystem.",
+                    associated: ["Dying ecosystem", "Last survivors", "Ecological remnants", "Fading life"]
+                }
+                // ... (other biospheres with similar structure)
+            },
+            populations: {
+                "Failed Colony": {
+                    description: "The world's human population failed to establish itself properly.",
+                    associated: ["Colony failure", "Abandoned settlement", "Failed expansion", "Lost pioneers"]
+                }
+                // ... (other populations with similar structure)
+            },
+            techLevels: {
+                "TL0 - Stone Age": {
+                    description: "The world's technology is limited to basic tools and weapons.",
+                    associated: ["Primitive tools", "Basic weapons", "Simple technology", "Stone age living"]
+                }
+                // ... (other tech levels with similar structure)
+            }
+        };
+
+        function getRandomItem(array) {
+            return array[Math.floor(Math.random() * array.length)];
+        }
+
+        function getRandomCulture() {
+            const cultures = Object.keys(nameGenerators);
+            return cultures[Math.floor(Math.random() * cultures.length)];
+        }
+
+        function generateQuickNPC() {
+            const culture = getRandomCulture();
+            const generator = nameGenerators[culture];
+            const npcGenerator = generators.npc;
+            
+            const isMale = Math.random() < 0.5;
+            const name = isMale ? 
+                getRandomItem(generator.male) : 
+                getRandomItem(generator.female);
+            const surname = getRandomItem(generator.surname);
+            const place = getRandomItem(generator.place);
+            
+            const occupation = getRandomItem(npcGenerator.occupation);
+            const background = getRandomItem(npcGenerator.background);
+            const problem = getRandomItem(npcGenerator.problem);
+            const desire = getRandomItem(npcGenerator.desire);
+            const age = getRandomItem(npcGenerator.age);
+            const trait = getRandomItem(npcGenerator.trait);
+            
+            const motivation = getRandomItem(npcDetails.motivation);
+            const want = getRandomItem(npcDetails.want);
+            const power = getRandomItem(npcDetails.power);
+            const hook = getRandomItem(npcDetails.hook);
+            const initialManner = getRandomItem(npcDetails.initialManner);
+            const defaultDealOutcome = getRandomItem(npcDetails.defaultDealOutcome);
+            
+            const result = `
+                <h3>${name} ${surname} from ${place}</h3>
+                <p><strong>Gender:</strong> ${isMale ? 'Male' : 'Female'}</p>
+                <p><strong>Occupation:</strong> ${occupation}</p>
+                <p><strong>Background:</strong> ${background}</p>
+                <p><strong>Age:</strong> ${age}</p>
+                <p><strong>Most Obvious Trait:</strong> ${trait}</p>
+                <p><strong>Biggest Problem:</strong> ${problem}</p>
+                <p><strong>Greatest Desire:</strong> ${desire}</p>
+                <div class="npc-details-section">
+                    <h4>Character Details</h4>
+                    <p><strong>Motivation:</strong> ${motivation}</p>
+                    <p><strong>Immediate Want:</strong> ${want}</p>
+                    <p><strong>Power/Influence:</strong> ${power}</p>
+                    <p><strong>Distinctive Hook:</strong> ${hook}</p>
+                    <p><strong>Initial Manner:</strong> ${initialManner}</p>
+                    <p><strong>Default Deal Outcome:</strong> ${defaultDealOutcome}</p>
+                </div>
+            `;
+            
+            document.getElementById('quickNPCResult').innerHTML = result;
+        }
+
+        function generateName() {
+            const culture = document.getElementById('nameCulture').value;
+            const generator = nameGenerators[culture];
+            
+            let maleNames = '';
+            let femaleNames = '';
+            let surnames = '';
+            let places = '';
+            
+            for (let i = 0; i < 5; i++) {
+                maleNames += `<p>${getRandomItem(generator.male)}</p>`;
+                femaleNames += `<p>${getRandomItem(generator.female)}</p>`;
+                surnames += `<p>${getRandomItem(generator.surname)}</p>`;
+                places += `<p>${getRandomItem(generator.place)}</p>`;
+            }
+            
+            document.getElementById('maleNames').innerHTML = maleNames;
+            document.getElementById('femaleNames').innerHTML = femaleNames;
+            document.getElementById('surnames').innerHTML = surnames;
+            document.getElementById('places').innerHTML = places;
+        }
+
+        function generateProblem() {
+            const conflictType = getRandomItem(Object.keys(problemGenerators.conflictTypes));
+            const conflictData = problemGenerators.conflictTypes[conflictType];
+            const situation = getRandomItem(conflictData.situations);
+            const focus = getRandomItem(conflictData.focuses);
+            const restraint = getRandomItem(problemGenerators.restraints);
+            const twist = getRandomItem(problemGenerators.twists);
+            
+            const result = `
+                <div class="problem-section">
+                    <h3>Conflict Type</h3>
+                    <p>${conflictType}</p>
+                </div>
+                <div class="problem-section">
+                    <h3>Situation</h3>
+                    <p>${situation}</p>
+                </div>
+                <div class="problem-section">
+                    <h3>Focus</h3>
+                    <p>${focus}</p>
+                </div>
+                <div class="problem-section">
+                    <h3>Restraint</h3>
+                    <p>${restraint}</p>
+                </div>
+                <div class="problem-section">
+                    <h3>Twist</h3>
+                    <p>${twist}</p>
+                </div>
+            `;
+            
+            document.getElementById('problemResult').innerHTML = result;
+        }
+
+        function generate() {
+            const type = document.getElementById('generatorType').value;
+            const generator = generators[type];
+            let result = `<h2>Generated ${type.toUpperCase()}</h2>`;
+
+            for (const [key, value] of Object.entries(generator)) {
+                result += `<p><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${getRandomItem(value)}</p>`;
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+
+        function generateWorld() {
+            const tag1 = getRandomItem(Object.keys(worldTags.tags));
+            const tag2 = getRandomItem(Object.keys(worldTags.tags));
+            const atmosphere = getRandomItem(Object.keys(worldTags.atmospheres));
+            const temperature = getRandomItem(Object.keys(worldTags.temperatures));
+            const biosphere = getRandomItem(Object.keys(worldTags.biospheres));
+            const population = getRandomItem(Object.keys(worldTags.populations));
+            const techLevel = getRandomItem(Object.keys(worldTags.techLevels));
+            
+            const result = `
+                <div class="world-section">
+                    <h3>World Tags</h3>
+                    <div class="world-detail">
+                        <h4>${tag1}</h4>
+                        <p>${worldTags.tags[tag1].description}</p>
+                        <p class="associated"><strong>Associated Elements:</strong> ${worldTags.tags[tag1].associated.join(", ")}</p>
+                    </div>
+                    <div class="world-detail">
+                        <h4>${tag2}</h4>
+                        <p>${worldTags.tags[tag2].description}</p>
+                        <p class="associated"><strong>Associated Elements:</strong> ${worldTags.tags[tag2].associated.join(", ")}</p>
+                    </div>
+                </div>
+                <div class="world-section">
+                    <h3>Planetary Characteristics</h3>
+                    <div class="world-detail">
+                        <h4>Atmosphere: ${atmosphere}</h4>
+                        <p>${worldTags.atmospheres[atmosphere].description}</p>
+                        <p class="associated"><strong>Associated Elements:</strong> ${worldTags.atmospheres[atmosphere].associated.join(", ")}</p>
+                    </div>
+                    <div class="world-detail">
+                        <h4>Temperature: ${temperature}</h4>
+                        <p>${worldTags.temperatures[temperature].description}</p>
+                        <p class="associated"><strong>Associated Elements:</strong> ${worldTags.temperatures[temperature].associated.join(", ")}</p>
+                    </div>
+                    <div class="world-detail">
+                        <h4>Biosphere: ${biosphere}</h4>
+                        <p>${worldTags.biospheres[biosphere].description}</p>
+                        <p class="associated"><strong>Associated Elements:</strong> ${worldTags.biospheres[biosphere].associated.join(", ")}</p>
+                    </div>
+                    <div class="world-detail">
+                        <h4>Population: ${population}</h4>
+                        <p>${worldTags.populations[population].description}</p>
+                        <p class="associated"><strong>Associated Elements:</strong> ${worldTags.populations[population].associated.join(", ")}</p>
+                    </div>
+                    <div class="world-detail">
+                        <h4>Tech Level: ${techLevel}</h4>
+                        <p>${worldTags.techLevels[techLevel].description}</p>
+                        <p class="associated"><strong>Associated Elements:</strong> ${worldTags.techLevels[techLevel].associated.join(", ")}</p>
+                    </div>
+                </div>
+                <div class="world-section">
+                    <h3>World Description</h3>
+                    <p class="world-summary">This world combines the characteristics of ${tag1.toLowerCase()} and ${tag2.toLowerCase()}. 
+                    With a ${atmosphere.toLowerCase()} atmosphere and ${temperature.toLowerCase()} climate, 
+                    it hosts a ${biosphere.toLowerCase()} biosphere. The ${population.toLowerCase()} inhabitants 
+                    have developed ${techLevel.toLowerCase()} technology.</p>
+                </div>
+            `;
+            
+            document.getElementById('worldResult').innerHTML = result;
+        }
+    </script>
+</body>
+</html>
