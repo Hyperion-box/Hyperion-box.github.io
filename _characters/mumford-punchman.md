@@ -51,12 +51,15 @@ Once per scene, negate a successful attack roll against you or turn a missed att
 ***Readied:*** Backpack (TL 0), Knife, Primitive Hide Armor, Primitive Shield, Spear  
 ***Stowed:*** 7 x Rations (1 day), Rope (20 meters, TL 0)  
 ***Cached:*** -  
-***Credits:*** $500  
+***Credits:*** $450  
 
 ---
 
 **- Backpack (TL 0)**  
 >A worn backpack counts as a readied item, though objects stowed inside it still require the usual round to dig free. Characters without backpacks or similar carrying devices might have difficulty justifying the hauling of large amounts of gear. (enc. 1)
+
+**- Compad:**  
+>One of a host of different hand-held portable communications devices. Most TL4 worlds have global comm coverage, but primitive worlds render these devices useless without a nearby comm server to provide connectivity. (enc. -)
 
 **- Knife:**  
 >+0 to hit, 1d4+1 dmg, Shock 2pts/AC15, TL 0  
