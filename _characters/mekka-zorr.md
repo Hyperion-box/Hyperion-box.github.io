@@ -4,7 +4,7 @@ name: "Mekka Zorr"
 max_hp: 5
 class: "Expert"
 level: 1
-experience: 0
+experience: 150
 background: Spacer
 homeworld: None
 origin: Saar

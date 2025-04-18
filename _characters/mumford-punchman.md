@@ -4,7 +4,7 @@ name: "Mumford Punchman"
 max_hp: 7
 class: "Warrior"
 level: 1
-experience: 0
+experience: 150
 background: Barbarian
 homeworld: Kamdorn
 origin: Human
