@@ -3,8 +3,8 @@
       "credits": 0,
       "fuel": {
         "type": "Quantum Fuel",
-        "amount": 5000,
-        "unit": "litres"
+        "amount": 1,
+        "unit": "Jump"
       },
       "weapons": [
         {

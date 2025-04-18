@@ -9,7 +9,7 @@ async function loadInventory() {
 
         // Update the fuel level meter
         const fuelAmount = inventory.shipInventory.fuel.amount;
-        const maxFuel = 5000; // Set this to the maximum fuel capacity
+        const maxFuel = 1; // Set this to the maximum fuel capacity
         const fuelLevel = (fuelAmount / maxFuel) * 100; // Calculate percentage
         document.getElementById('fuel-level').style.width = fuelLevel + '%'; // Set the width of the fuel level
     } catch (error) {
