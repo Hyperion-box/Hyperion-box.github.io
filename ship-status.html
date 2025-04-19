@@ -1,0 +1,268 @@
+---
+layout: default
+title: HSS Hyperion Status
+---
+
+<div class="ship-status-container">
+    <h1>Ship Status</h1>
+    
+    <div class="ship-diagram">
+        <div class="ship-background"></div>
+        <svg id="ship-svg" width="800" height="1000" viewBox="0 0 800 1000">
+            <!-- Weapons -->
+            <path id="multifocal-laser" 
+                  d="M220,95 L270,95 L270,195 L220,195 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+            <path id="sandthrower" 
+                  d="M530,95 L580,95 L580,195 L530,195 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+
+            <!-- Main Cargo Area -->
+            <path id="cargohold" 
+                  d="M312,80 L488,80 L488,300 L312,300 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+
+            <!-- Mid-Section -->
+            <path id="workshop" 
+                  d="M260,205 L310,205 L310,310 L360,310 L360,375 L260,375 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+            
+            <path id="medbay" 
+                  d="M460,310 L540,310 L540,490 L460,490 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+
+            <path id="gangway" 
+                  d="M345,350 L455,350 L455,500 L345,500 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+
+            <!-- Lower Section -->
+            <path id="port-dock" 
+                  d="M150,480 L215,480 L215,580 L150,580 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+
+            <path id="starboard-dock" 
+                  d="M585,480 L650,480 L650,580 L585,580 Z" 
+                  fill="rgba(255, 0, 0, 0.4)" stroke="rgba(200, 0, 0, 0.8)" stroke-width="2"/>
+
+            <path id="bridge" 
+                  d="M325,500 L475,500 L475,670 L325,670 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+
+            <!-- Living Areas -->
+            <path id="kitchen" 
+                  d="M165,580 L265,580 L265,740 L165,740 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+
+            <path id="bed" 
+                  d="M265,525 L315,525 L315,775 L265,775 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+
+            <path id="room" 
+                  d="M315,700 L480,700 L480,781 L315,781 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+
+            <path id="astro" 
+                  d="M510,650 L610,650 L610,770 L510,770 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+
+            <!-- Engine Section -->
+            <path id="engine-room" 
+                  d="M236,780 L564,780 L564,852 L236,852 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+
+            <path id="port-thruster" 
+                  d="M280,850 L380,850 L380,980 L280,980 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+
+            <path id="starboard-thruster" 
+                  d="M420,850 L520,850 L520,980 L420,980 Z" 
+                  fill="rgba(40, 180, 40, 0.4)" stroke="rgba(30, 150, 30, 0.8)" stroke-width="2"/>
+        </svg>
+    </div>
+
+    <div class="status-details">
+        <div id="status-info" class="hidden">
+            <h3>Section Status</h3>
+            <p id="status-text">Select a section to view its status</p>
+        </div>
+    </div>
+</div>
+
+<style>
+.ship-status-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+}
+
+.ship-diagram {
+    margin: 20px 0;
+    text-align: center;
+    background-color: #0a0a0a;
+    border-radius: 12px;
+    padding: 40px;
+    position: relative;
+    width: 800px;
+    height: 1000px;
+    margin: 0 auto;
+}
+
+.ship-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/ship-layout.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    border-radius: 12px;
+}
+
+#ship-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#ship-svg path {
+    cursor: pointer;
+}
+
+.info-popup {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    min-width: 200px;
+    max-width: 300px;
+}
+
+.info-popup h4 {
+    margin: 0 0 5px 0;
+    color: #4CAF50;
+}
+
+.info-popup p {
+    margin: 0;
+    color: #ffffff;
+}
+
+.status-details {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgba(26, 38, 52, 0.9);
+    border-radius: 8px;
+    color: #ecf0f1;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+}
+
+.hidden {
+    display: none;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const sections = document.querySelectorAll('#ship-svg path');
+    const shipDiagram = document.querySelector('.ship-diagram');
+    let popup = null;
+
+    const statusMessages = {
+        'multifocal-laser': { name: 'Multifocal Laser', status: 'Charged and ready. Power at 98%.' },
+        'sandthrower': { name: 'Sandthrower', status: 'Ammunition at 92%. All systems nominal.' },
+        'cargohold': { name: 'Cargo Hold', status: 'Pressure stable. 65% capacity utilized.' },
+        'workshop': { name: 'Workshop', status: 'All tools operational. Fabrication systems ready.' },
+        'medbay': { name: 'Medical Bay', status: '6 cryo pods ready, 2 in standby.' },
+        'gangway': { name: 'Main Gangway', status: 'Pressure sealed. All airlocks operational.' },
+        'bridge': { name: 'Bridge', status: 'All command and navigation systems online.' },
+        'port-dock': { name: 'Port Docking Bay', status: 'Bay doors operational. Docking clamps ready.' },
+        'starboard-dock': { name: 'Starboard Docking Bay', status: 'WARNING: Non-operational. Bay doors malfunctioning. Docking clamps offline.' },
+        'kitchen': { name: 'Kitchen & Recreation', status: 'Food storage at 78%. Systems normal. Recreation area available.' },
+        'bed': { name: 'Crew Quarters', status: '6/8 quarters occupied.' },
+        'room': { name: 'Common Room', status: 'Environmental controls normal.' },
+        'astro': { name: 'Astrogation', status: 'Navigation systems online. Charts updated.' },
+        'engine-room': { name: 'Engine Room', status: 'Main reactor at 98% efficiency.' },
+        'port-thruster': { name: 'Port Thruster', status: 'Operating at 97% efficiency.' },
+        'starboard-thruster': { name: 'Starboard Thruster', status: 'Operating at 96% efficiency.' }
+    };
+
+    function createPopup(x, y, name, status) {
+        // Remove existing popup if any
+        if (popup) {
+            popup.remove();
+        }
+
+        // Create new popup
+        popup = document.createElement('div');
+        popup.className = 'info-popup';
+        popup.innerHTML = `
+            <h4>${name}</h4>
+            <p>${status}</p>
+        `;
+
+        // Get the ship diagram's position relative to the viewport
+        const diagramRect = shipDiagram.getBoundingClientRect();
+        
+        // Calculate position relative to the ship diagram
+        const relativeX = x - diagramRect.left;
+        const relativeY = y - diagramRect.top;
+
+        // Position popup relative to the ship diagram
+        popup.style.left = `${relativeX + 20}px`;
+        popup.style.top = `${relativeY + 20}px`;
+
+        // Add popup to the ship diagram container
+        shipDiagram.appendChild(popup);
+
+        // Ensure popup stays within the ship diagram bounds
+        const popupRect = popup.getBoundingClientRect();
+        const maxX = diagramRect.width - popupRect.width;
+        const maxY = diagramRect.height - popupRect.height;
+
+        if (relativeX + popupRect.width > diagramRect.width) {
+            popup.style.left = `${relativeX - popupRect.width - 20}px`;
+        }
+        if (relativeY + popupRect.height > diagramRect.height) {
+            popup.style.top = `${relativeY - popupRect.height - 20}px`;
+        }
+    }
+
+    sections.forEach(section => {
+        section.addEventListener('click', function(e) {
+            const sectionId = this.id;
+            const info = statusMessages[sectionId];
+            
+            if (info) {
+                createPopup(
+                    e.clientX,
+                    e.clientY,
+                    info.name,
+                    info.status
+                );
+            }
+        });
+    });
+
+    // Close popup when clicking outside
+    document.addEventListener('click', function(e) {
+        if (popup && !e.target.closest('#ship-svg')) {
+            popup.remove();
+            popup = null;
+        }
+    });
+});
+</script> 
